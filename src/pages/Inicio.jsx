@@ -3,13 +3,11 @@ import { NavLink } from "react-router-dom";
 import "./Inicio.css";
 
 export default function Inicio() {
-  // 👉 Reemplaza por tus imágenes reales (ideal en /public/images/...)
+  // ✅ Carrusel SOLO en el Hero detrás del título
   const slides = useMemo(
     () => [
-      "/images/inicio/slide-1.webp",
-      "/images/inicio/slide-2.webp",
-      "/images/inicio/slide-3.webp",
-      "/images/inicio/slide-4.webp",
+      "/images/inicio/hero-1.webp",
+      "/images/inicio/hero-2.webp",
     ],
     []
   );
@@ -18,109 +16,226 @@ export default function Inicio() {
 
   useEffect(() => {
     if (!slides.length) return;
-    const t = setInterval(() => {
-      setIdx((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    const t = setInterval(() => setIdx((p) => (p + 1) % slides.length), 5000);
     return () => clearInterval(t);
   }, [slides.length]);
 
-  const goTo = (i) => setIdx(i);
+  const quick = [
+    { label: "Primaria", to: "/primaria" },
+    { label: "Secundaria", to: "/secundaria" },
+    { label: "Calendario", to: "/calendario" },
+    { label: "Otros campus", to: "/otros-campus" },
+  ];
+
+  const explore = [
+    { label: "Modelo educativo", to: "/modelo-educativo" },
+    { label: "Instalaciones", to: "/instalaciones" },
+    { label: "Galería", to: "/galeria" },
+  ];
 
   return (
-    <main className="inicio-page">
-      {/* HERO / CARRUSEL */}
-      <section className="inicio-hero" aria-label="Inicio Colegio Colonial">
-        {/* Fondo (crossfade simple) */}
-        <div className="inicio-hero-bg" aria-hidden="true">
-          {slides.map((src, i) => (
-            <div
-              key={src}
-              className={`inicio-hero-slide ${i === idx ? "is-active" : ""}`}
-              style={{ backgroundImage: `url("${src}")` }}
-            />
-          ))}
-          <div className="inicio-hero-overlay" />
-          <div className="inicio-hero-grain" />
-        </div>
+    <main className="cc-home">
+      {/* =========================
+          HERO (solo aquí carrusel)
+      ========================== */}
+<header className="cc-hero" aria-label="Inicio Colegio Colonial">
+  <div className="cc-hero-bg" aria-hidden="true">
+    {slides.map((src, i) => (
+      <div
+        key={src}
+        className={`cc-hero-slide ${i === idx ? "is-active" : ""}`}
+        style={{ backgroundImage: `url("${src}")` }}
+      />
+    ))}
+    <div className="cc-hero-overlay" />
+  </div>
 
-        <div className="inicio-hero-content">
-          <div className="inicio-badge">Bienvenidos</div>
+  <div className="cc-hero-inner cc-hero-left">
+    <div className="cc-hero-titleWrap">
+      <h1 className="cc-hero-title">Colegio Colonial</h1>
+      <p className="cc-hero-tag">
+        Formación integral • Comunidad • Excelencia académica
+      </p>
 
-          <h1 className="inicio-title">
-            Colegio <span className="inicio-title-accent">Colonial</span>
-          </h1>
+      <div className="cc-hero-actions" role="navigation" aria-label="Acciones principales">
+        {quick.map((b) => (
+          <NavLink key={b.to} className="cc-btn cc-btnPrimary" to={b.to}>
+            {b.label}
+          </NavLink>
+        ))}
+      </div>
 
-          <p className="inicio-subtitle">
-            Formación integral con identidad, excelencia académica y comunidad.
-          </p>
+      <div className="cc-hero-actions cc-hero-actions--secondary" role="navigation" aria-label="Explorar">
+        {explore.map((b) => (
+          <NavLink key={b.to} className="cc-btn cc-btnGhost" to={b.to}>
+            {b.label}
+          </NavLink>
+        ))}
+      </div>
 
-          <div className="inicio-actions" role="navigation" aria-label="Acciones principales">
-            <NavLink className="btn btn-primary" to="/primaria">
-              Primaria
-            </NavLink>
-            <NavLink className="btn btn-primary" to="/secundaria">
-              Secundaria
-            </NavLink>
-            <NavLink className="btn btn-outline" to="/calendario">
-              Calendario
-            </NavLink>
-            <NavLink className="btn btn-outline" to="/otros-campus">
-              Otros campus
-            </NavLink>
-          </div>
+      <div className="cc-dots" aria-label="Cambiar imagen del carrusel">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            className={`cc-dot ${i === idx ? "is-active" : ""}`}
+            onClick={() => setIdx(i)}
+            aria-label={`Ir a imagen ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</header>
 
-          <div className="inicio-actions secondary" role="navigation" aria-label="Explorar más">
-            <NavLink className="btn btn-ghost" to="/modelo-educativo">
-              Modelo educativo
-            </NavLink>
-            <NavLink className="btn btn-ghost" to="/instalaciones">
-              Instalaciones
-            </NavLink>
-            <NavLink className="btn btn-ghost" to="/galeria">
-              Galería
-            </NavLink>
-            <NavLink className="btn btn-ghost" to="/mas">
-              Más
-            </NavLink>
-          </div>
 
-          {/* Dots carrusel */}
-          <div className="inicio-dots" aria-label="Cambiar imagen del carrusel">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                className={`inicio-dot ${i === idx ? "is-active" : ""}`}
-                onClick={() => goTo(i)}
-                aria-label={`Ir a imagen ${i + 1}`}
-              />
-            ))}
+      {/* =========================
+          SECCIÓN: “Manifiesto”
+      ========================== */}
+      <section className="cc-band cc-bandRed" aria-label="Manifiesto">
+        <div className="cc-wrap">
+          <div className="cc-bandGrid">
+            <div>
+              <h2 className="cc-h2">Nuestro compromiso</h2>
+              <p className="cc-p">
+                Educación con estructura, corazón y propósito. Un ambiente seguro,
+                exigente y humano.
+              </p>
+            </div>
+
+            <div className="cc-metrics">
+              <div className="cc-metric">
+                <span className="cc-metricNum">01</span>
+                <span className="cc-metricTxt">Acompañamiento</span>
+              </div>
+              <div className="cc-metric">
+                <span className="cc-metricNum">02</span>
+                <span className="cc-metricTxt">Excelencia</span>
+              </div>
+              <div className="cc-metric">
+                <span className="cc-metricNum">03</span>
+                <span className="cc-metricTxt">Comunidad</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CONTENIDO */}
-      <section className="inicio-section">
-        <div className="inicio-grid">
-          {/* CITAS */}
-          <article className="card">
-            <header className="card-head">
-              <h2 className="card-title">Citas de Jeanne Chézard de Matel</h2>
-              <p className="card-sub">
-                Ideas que inspiran nuestro estilo de formación y comunidad.
-              </p>
-            </header>
+      {/* =========================
+          SECCIÓN: Cards creativas
+      ========================== */}
+      <section className="cc-section" aria-label="Secciones principales">
+        <div className="cc-wrap">
+          <div className="cc-cardGrid">
+  <article className="cc-feature">
+    <div className="cc-featureText">
+      <div className="cc-featureHead">
+        <span className="cc-kicker">Oferta educativa</span>
+        <h3>Primaria</h3>
+      </div>
+      <p>
+        Bases académicas sólidas, hábitos de estudio y formación en valores.
+      </p>
+      <NavLink className="cc-link" to="/primaria">
+        Ver Primaria →
+      </NavLink>
+    </div>
 
-            <div className="quotes">
-              <figure className="quote">
+    <div className="cc-featureMedia" aria-hidden="true">
+      <img
+        src="/images/inicio/primaria-card.webp"
+        alt=""
+        loading="lazy"
+      />
+    </div>
+  </article>
+
+  <article className="cc-feature">
+    <div className="cc-featureText">
+      <div className="cc-featureHead">
+        <span className="cc-kicker">Oferta educativa</span>
+        <h3>Secundaria</h3>
+      </div>
+      <p>
+        Disciplina, pensamiento crítico y crecimiento integral con acompañamiento.
+      </p>
+      <NavLink className="cc-link" to="/secundaria">
+        Ver Secundaria →
+      </NavLink>
+    </div>
+
+    <div className="cc-featureMedia" aria-hidden="true">
+      <img
+        src="/images/inicio/secundaria-card.webp"
+        alt=""
+        loading="lazy"
+      />
+    </div>
+  </article>
+
+<article className="cc-feature">
+  <div className="cc-featureText">
+    <div className="cc-featureHead">
+      <span className="cc-kicker">Vida escolar</span>
+      <h3>Calendario</h3>
+    </div>
+    <p>
+      Fechas importantes, eventos y actividades. Todo en un solo lugar.
+    </p>
+    <NavLink className="cc-link" to="/calendario">
+      Abrir Calendario →
+    </NavLink>
+
+    <div className="cc-miniGrid" aria-hidden="true">
+      <div className="cc-mini" />
+      <div className="cc-mini" />
+      <div className="cc-mini" />
+      <div className="cc-mini" />
+    </div>
+  </div>
+</article>
+
+
+<article className="cc-feature">
+  <div className="cc-featureText">
+    <div className="cc-featureHead">
+      <span className="cc-kicker">Comunidad</span>
+      <h3>Otros campus</h3>
+    </div>
+    <p>
+      Conoce nuestras sedes y encuentra la mejor opción para tu familia.
+    </p>
+    <NavLink className="cc-link" to="/otros-campus">
+      Ver Campus →
+    </NavLink>
+  </div>
+</article>
+
+</div>
+        </div>
+      </section>
+
+      {/* =========================
+          SECCIÓN: Citas + Video
+      ========================== */}
+      <section className="cc-split" aria-label="Citas y video">
+        <div className="cc-wrap cc-splitGrid">
+          <article className="cc-panel cc-panelQuotes">
+            <h3 className="cc-panelTitle">Jeanne Chézard de Matel</h3>
+            <p className="cc-panelSub">
+              Tres frases que inspiran nuestro modo de formar.
+            </p>
+
+            <div className="cc-quoteList">
+              <figure className="cc-quote">
                 <blockquote>
-                  “I have never wanted, nor will I ever want to be learned; rather, I
-                  want to be a lover…”
+                  “I have never wanted, nor will I ever want to be learned; rather,
+                  I want to be a lover…”
                 </blockquote>
                 <figcaption>— Jeanne Chézard de Matel</figcaption>
               </figure>
 
-              <figure className="quote">
+              <figure className="cc-quote">
                 <blockquote>
                   “La distancia geográfica o la ruptura de los lazos físicos no separan
                   ni alejan a los espíritus unidos por el amor”.
@@ -128,7 +243,7 @@ export default function Inicio() {
                 <figcaption>— Jeanne Chézard de Matel</figcaption>
               </figure>
 
-              <figure className="quote">
+              <figure className="cc-quote">
                 <blockquote>
                   “We must preserve peace with our neighbor… Let us be mediators of
                   peace between our neighbor and God.”
@@ -138,19 +253,14 @@ export default function Inicio() {
             </div>
           </article>
 
-          {/* VIDEO */}
-          <article className="card">
-            <header className="card-head">
-              <h2 className="card-title">Conoce más en video</h2>
-              <p className="card-sub">
-                Inserta aquí un video institucional, invitación o mensaje formativo.
-              </p>
-            </header>
+          <article className="cc-panel cc-panelVideo">
+            <h3 className="cc-panelTitle">Video</h3>
+            <p className="cc-panelSub">
+              Inserta un video institucional, bienvenida o recorrido.
+            </p>
 
-            <div className="video-wrap" aria-label="Video de YouTube">
-              {/* Cambia el VIDEO_ID */}
+            <div className="cc-videoFrame" aria-label="Video de YouTube">
               <iframe
-                className="video"
                 src="https://www.youtube.com/embed/VIDEO_ID"
                 title="Video Colegio Colonial"
                 frameBorder="0"
@@ -159,34 +269,35 @@ export default function Inicio() {
               />
             </div>
 
-            <div className="card-cta">
-              <NavLink className="btn btn-primary" to="/contacto">
-                Agendar visita / Contacto
+            <div className="cc-videoActions">
+              <NavLink className="cc-btn cc-btnBlue" to="/modelo-educativo">
+                Modelo educativo
               </NavLink>
-              <NavLink className="btn btn-outline" to="/inscripciones">
-                Inscripciones
+              <NavLink className="cc-btn cc-btnOutline" to="/galeria">
+                Galería
               </NavLink>
             </div>
           </article>
         </div>
       </section>
 
-      {/* BANDA CREATIVA */}
-      <section className="inicio-band" aria-label="Accesos rápidos">
-        <div className="band-inner">
-          <div className="band-copy">
-            <h3>Explora el Colegio Colonial</h3>
-            <p>
-              Accesos rápidos a secciones clave: vida escolar, eventos, instalaciones y
-              recursos.
-            </p>
-          </div>
+      {/* =========================
+          BANDA FINAL
+      ========================== */}
+      <section className="cc-band cc-bandBlue" aria-label="Explorar más">
+        <div className="cc-wrap">
+          <div className="cc-footerCTA">
+            <div>
+              <h3>Explora el Colegio Colonial</h3>
+              <p>Accesos directos a secciones clave.</p>
+            </div>
 
-          <div className="band-actions">
-            <NavLink className="chip" to="/eventos">Eventos</NavLink>
-            <NavLink className="chip" to="/vida-escolar">Vida escolar</NavLink>
-            <NavLink className="chip" to="/admisiones">Admisiones</NavLink>
-            <NavLink className="chip" to="/ubicacion">Ubicación</NavLink>
+            <div className="cc-footerLinks">
+              <NavLink className="cc-chip" to="/instalaciones">Instalaciones</NavLink>
+              <NavLink className="cc-chip" to="/galeria">Galería</NavLink>
+              <NavLink className="cc-chip" to="/eventos">Eventos</NavLink>
+              <NavLink className="cc-chip" to="/contacto">Contacto</NavLink>
+            </div>
           </div>
         </div>
       </section>

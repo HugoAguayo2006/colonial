@@ -1,0 +1,99 @@
+
+
+body {
+  font-family: 'Onest', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #b51e27; /* MISMO AZUL DEL FOOTER */
+  overflow-x: hidden; /* 🔑 evita fugas laterales */
+}
+
+
+/* Se utiliza para que el NavBar fijo no tape las demas secciones*/
+
+/* Ajusta según tus secciones. Desktop: 72 + 48 = 120 */
+.app-main {
+  padding-top: 60px;
+}
+
+@media (max-width: 768px) {
+  /* El bloque azul es más alto en móvil */
+  .app-main {
+    padding-top: 190px;
+  }
+}
+
+/* 📱 MÓVIL HORIZONTAL (override del padding-top) */
+@media (max-width: 933px) and (orientation: landscape) {
+  .app-main {
+    padding-top: 78px !important; /* altura real del navbar horizontal */
+  }
+}
+
+
+html, body, #root {
+  min-height: 100%;
+}
+
+.app-main {
+  min-height: calc(100vh - 80px); /* ajusta según altura del navbar */
+}
+
+
+/* =========================================================
+   📞 15. BOTÓN FLOTANTE WHATSAPP
+   ========================================================= */
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  left: auto;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #22c55e;
+  color: #ffffff;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px -10px rgba(34, 197, 94, 0.5);
+  font-weight: 700;
+}
+
+.whatsapp-float img {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Evita scroll horizontal por el slide */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Tu contenedor normal */
+.app-main {
+  position: relative;
+  overflow-x: hidden; /* clave para que no se vea el “arrastre” */
+}
+
+/* Página animada (ya NO fixed) */
+.route-page {
+  width: 100%;
+}
+
+
+html, body { overflow-x: hidden; }
+.app-main { position: relative; overflow-x: hidden; }
+.route-page { width: 100%; }
+
+/*
+html,
+body {
+  background-color: #1f2a85;  o #1f2a85 si quieres azul 
+}*/
+

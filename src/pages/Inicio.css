@@ -3,356 +3,677 @@
   --cc-blue: #2F3E52;
   --cc-white: #ffffff;
 
-  --ink: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.72);
-  --shadow: 0 18px 50px rgba(0,0,0,.28);
-  --border: rgba(255,255,255,.14);
+  --ink: rgba(11, 18, 32, .92);
+  --muted: rgba(11, 18, 32, .68);
+
+  --radius: 18px;
+  --shadow: 0 18px 50px rgba(0,0,0,.14);
+  --border: rgba(47,62,82,.16);
 }
 
-.inicio-page{
+.cc-home{
   background: var(--cc-white);
-  color: #0b1220;
 }
 
 /* =========================
-   HERO (carrusel fondo)
+   HERO con carrusel atrás del título
 ========================= */
-.inicio-hero{
+.cc-hero{
   position: relative;
-  min-height: clamp(560px, 78vh, 860px);
-  display: grid;
-  place-items: center;
+  height: clamp(520px, 70vh, 720px);
   overflow: hidden;
   background: #0b1220;
 }
 
-.inicio-hero-bg{
+.cc-hero-bg{
   position: absolute;
   inset: 0;
 }
 
-.inicio-hero-slide{
+.cc-hero-slide{
   position: absolute;
   inset: 0;
+  opacity: 0;
+  transition: opacity 800ms ease;
   background-size: cover;
   background-position: center;
-  opacity: 0;
   transform: scale(1.02);
-  transition: opacity 800ms ease, transform 1600ms ease;
-  will-change: opacity, transform;
-  filter: saturate(1.05) contrast(1.02);
 }
 
-.inicio-hero-slide.is-active{
+.cc-hero-slide.is-active{
   opacity: 1;
-  transform: scale(1.0);
 }
 
-.inicio-hero-overlay{
+.cc-hero-overlay{
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(900px 500px at 20% 30%, rgba(255,255,255,.12), transparent 55%),
-    radial-gradient(700px 420px at 70% 35%, rgba(139,0,0,.22), transparent 55%),
-    linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.82) 72%, rgba(11,18,32,.94));
+    radial-gradient(800px 500px at 20% 40%, rgba(255,255,255,.18), transparent 60%),
+    radial-gradient(900px 600px at 80% 35%, rgba(139,0,0,.28), transparent 60%),
+    linear-gradient(180deg, rgba(11,18,32,.10), rgba(11,18,32,.70));
 }
 
-.inicio-hero-grain{
-  position: absolute;
-  inset: 0;
-  opacity: .12;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-}
-
-.inicio-hero-content{
+.cc-hero-inner{
   position: relative;
   z-index: 2;
-  width: min(1100px, 92vw);
-  padding: 42px 18px;
-  text-align: left;
+  width: min(1200px, 94vw);
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 18px;
+  align-content: center;
+  padding: 28px 0;
 }
 
-.inicio-badge{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  color: var(--ink);
-  background: rgba(255,255,255,.06);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.15);
-  font-weight: 700;
-  letter-spacing: .2px;
+.cc-hero-titleWrap{
+  align-self: center;
 }
 
-.inicio-title{
-  margin: 14px 0 6px;
+.cc-hero-title{
+  margin: 0;
+  display: inline-block;
+  background: rgba(139,0,0,.92);
   color: var(--cc-white);
-  font-size: clamp(40px, 5vw, 68px);
-  line-height: 1.05;
+  padding: 18px 26px;
+  border-radius: 10px;
+  font-size: clamp(40px, 5.2vw, 72px);
   letter-spacing: -0.8px;
-  text-shadow: 0 18px 50px rgba(0,0,0,.35);
+  font-weight: 950;
+  box-shadow: 0 18px 50px rgba(0,0,0,.28);
+  border: 2px solid rgba(255,255,255,.10);
+  border-color: #2F3E52;
+  border-width: 10px;
 }
 
-.inicio-title-accent{
-  color: var(--cc-red);
-  text-shadow: 0 18px 50px rgba(0,0,0,.35);
+.cc-hero-tag{
+  margin: 12px 0 18px;
+  color: rgba(255,255,255,.82);
+  font-weight: 750;
+  letter-spacing: .2px;
+  max-width: 58ch;
 }
 
-.inicio-subtitle{
-  margin: 0 0 18px;
-  max-width: 64ch;
-  color: var(--muted);
-  font-size: clamp(15px, 1.4vw, 18px);
-  line-height: 1.55;
-}
-
-/* =========================
-   BOTONES
-========================= */
-.inicio-actions{
+.cc-hero-actions{
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.inicio-actions.secondary{
-  margin-top: 10px;
   gap: 10px;
+  
 }
 
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  border-radius: 14px;
-  border: 1px solid transparent;
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: .2px;
-  transition: transform 120ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
-  user-select: none;
+.cc-hero-actions--secondary{
+  margin-top: 10px;
 }
 
-.btn:active{ transform: translateY(1px) scale(.995); }
-
-.btn-primary{
-  background: var(--cc-red);
-  color: var(--cc-white);
-  box-shadow: var(--shadow);
-}
-.btn-primary:hover{
-  background: #7a0000;
-}
-
-.btn-outline{
-  background: rgba(255,255,255,.08);
-  color: var(--cc-white);
-  border-color: rgba(255,255,255,.22);
-  backdrop-filter: blur(10px);
-}
-.btn-outline:hover{
-  background: rgba(255,255,255,.12);
-  border-color: rgba(255,255,255,.34);
-}
-
-.btn-ghost{
-  background: rgba(47,62,82,.35);
-  color: var(--cc-white);
-  border-color: rgba(255,255,255,.14);
-}
-.btn-ghost:hover{
-  background: rgba(47,62,82,.52);
-  border-color: rgba(255,255,255,.22);
-}
-
-.inicio-dots{
-  margin-top: 18px;
+/* Dots */
+.cc-dots{
+  margin-top: 16px;
   display: flex;
   gap: 10px;
 }
 
-.inicio-dot{
+.cc-dot{
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.35);
-  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.45);
+  background: rgba(255,255,255,.22);
   cursor: pointer;
-  transition: transform 120ms ease, background 180ms ease, border-color 180ms ease;
 }
-.inicio-dot.is-active{
+.cc-dot.is-active{
   background: var(--cc-white);
-  border-color: var(--cc-white);
-  transform: scale(1.15);
+}
+
+/* Tarjeta lateral */
+.cc-hero-card{
+  align-self: center;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.22);
+  padding: 18px;
+}
+
+.cc-hero-cardTop{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.cc-pill{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  background: rgba(139,0,0,.10);
+  color: var(--cc-red);
+  border: 1px solid rgba(139,0,0,.20);
+}
+
+.cc-pillBlue{
+  background: rgba(47,62,82,.10);
+  color: var(--cc-blue);
+  border: 1px solid rgba(47,62,82,.20);
+}
+
+.cc-hero-cardTitle{
+  margin: 0;
+  color: var(--cc-blue);
+  font-weight: 950;
+  letter-spacing: -0.3px;
+}
+
+.cc-hero-cardText{
+  margin: 10px 0 14px;
+  color: rgba(11,18,32,.72);
+  line-height: 1.5;
+  font-weight: 650;
+}
+
+.cc-hero-cardCTA{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 /* =========================
-   SECCIONES
+   Botones
 ========================= */
-.inicio-section{
-  padding: 46px 0;
+.cc-btn{
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  border: 2px solid transparent;
+  transition: transform 120ms ease, background 180ms ease, border-color 180ms ease;
+  user-select: none;
+}
+.cc-btn:active{ transform: translateY(1px); }
+
+.cc-btnPrimary{
+  background: #2F3E52;
+  color: var(--cc-white);
+  border-color: var(--cc-red);
+  border-width: 4px;
+}
+.cc-btnPrimary:hover{ background: #780000; }
+
+.cc-btnBlue{
+  background: var(--cc-blue);
+  color: var(--cc-white);
+}
+.cc-btnBlue:hover{ filter: brightness(1.05); }
+
+.cc-btnOutline{
+  background: rgba(255,255,255,.10);
+  color: var(--cc-blue);
+  border-color: rgba(47,62,82,.20);
+}
+.cc-btnOutline:hover{ background: rgba(255,255,255,.16); }
+
+.cc-btnGhost{
+  background: rgba(255,255,255,.10);
+  color: var(--cc-white);
+  border-color: rgba(255,255,255,.24);
+}
+.cc-btnGhost:hover{ background: rgba(255,255,255,.16); }
+
+/* =========================
+   Bandas
+========================= */
+.cc-band{
+  padding: 34px 0;
+}
+
+.cc-bandRed{
+  background: var(--cc-red);
+  color: var(--cc-white);
+}
+
+.cc-bandBlue{
+  background: var(--cc-blue);
+  color: var(--cc-white);
+}
+
+.cc-wrap{
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+}
+
+.cc-bandGrid{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+}
+
+.cc-h2{
+  margin: 0;
+  font-size: clamp(22px, 3.2vw, 36px);
+  font-weight: 950;
+  letter-spacing: -0.4px;
+}
+
+.cc-p{
+  margin: 10px 0 0;
+  color: rgba(255,255,255,.82);
+  line-height: 1.55;
+  font-weight: 650;
+  max-width: 70ch;
+}
+
+.cc-metrics{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 14px;
+}
+
+.cc-metric{
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 16px;
+  padding: 12px 14px;
+  min-width: 160px;
+}
+
+.cc-metricNum{
+  display: block;
+  font-weight: 950;
+  font-size: 18px;
+  letter-spacing: .2px;
+}
+
+.cc-metricTxt{
+  display: block;
+  margin-top: 4px;
+  color: rgba(255,255,255,.82);
+  font-weight: 750;
+}
+
+/* =========================
+   Sección features (cards creativas)
+========================= */
+.cc-section{
+  padding: 40px 0 46px;
   background: #fff;
 }
 
-.inicio-grid{
-  width: min(1100px, 92vw);
-  margin: 0 auto;
+.cc-cardGrid{
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
-.card{
-  background: #ffffff;
-  border: 1px solid rgba(47,62,82,.14);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 18px 50px rgba(11,18,32,.08);
+
+.cc-feature{
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(11,18,32,.08);
+  padding: 18px;
+  background:
+    radial-gradient(280px 180px at 20% 15%, rgba(139,0,0,.08), transparent 60%),
+    radial-gradient(280px 180px at 85% 30%, rgba(47,62,82,.08), transparent 60%),
+    #fff;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 210px;
 }
 
-.card-head{
-  padding: 18px 18px 0;
+.cc-featureTall{
+  grid-row: span 2;
+  min-height: 434px;
 }
 
-.card-title{
+.cc-featureHead{
+  display: grid;
+  gap: 6px;
+}
+
+.cc-kicker{
+  font-size: 12px;
+  font-weight: 950;
+  color: rgba(11,18,32,.58);
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+.cc-feature h3{
   margin: 0;
   color: var(--cc-blue);
-  font-size: 18px;
-  letter-spacing: -.2px;
+  font-weight: 950;
+  letter-spacing: -0.2px;
 }
 
-.card-sub{
-  margin: 6px 0 0;
-  color: rgba(11,18,32,.68);
-  font-size: 14px;
+.cc-feature p{
+  margin: 0;
+  color: rgba(11,18,32,.70);
   line-height: 1.5;
+  font-weight: 650;
 }
 
-.quotes{
-  padding: 14px 18px 18px;
+.cc-link{
+  margin-top: auto;
+  font-weight: 950;
+  text-decoration: none;
+  color: var(--cc-red);
+  border-bottom: 2px solid rgba(139,0,0,.18);
+  width: fit-content;
+  padding-bottom: 2px;
+}
+
+.cc-miniGrid{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cc-mini{
+  height: 84px;
+  border-radius: 14px;
+  border: 1px solid rgba(47,62,82,.14);
+  background:
+    linear-gradient(135deg, rgba(47,62,82,.10), rgba(139,0,0,.08));
+}
+
+/* =========================
+   Split (citas + video)
+========================= */
+.cc-split{
+  padding: 40px 0 54px;
+  background: #fff;
+}
+
+.cc-splitGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cc-panel{
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(11,18,32,.08);
+  padding: 18px;
+  background: #fff;
+}
+
+.cc-panelTitle{
+  margin: 0;
+  color: var(--cc-blue);
+  font-weight: 950;
+}
+
+.cc-panelSub{
+  margin: 8px 0 14px;
+  color: rgba(11,18,32,.66);
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.cc-quoteList{
   display: grid;
   gap: 12px;
 }
 
-.quote{
+.cc-quote{
   margin: 0;
-  padding: 14px 14px 12px;
+  padding: 12px 12px;
   border-radius: 16px;
   border: 1px solid rgba(47,62,82,.14);
+  border-left: 6px solid var(--cc-red);
   background: linear-gradient(180deg, rgba(47,62,82,.04), rgba(139,0,0,.03));
 }
 
-.quote blockquote{
+.cc-quote blockquote{
   margin: 0;
-  color: rgba(11,18,32,.88);
-  font-weight: 700;
+  font-weight: 850;
   line-height: 1.45;
+  color: rgba(11,18,32,.86);
 }
 
-.quote figcaption{
+.cc-quote figcaption{
   margin-top: 8px;
-  color: rgba(11,18,32,.62);
+  font-weight: 850;
+  color: rgba(11,18,32,.58);
   font-size: 13px;
-  font-weight: 700;
 }
 
-/* VIDEO */
-.video-wrap{
-  margin: 14px 18px 0;
-  border-radius: 18px;
+.cc-videoFrame{
+  aspect-ratio: 16/9;
+  border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(47,62,82,.14);
   background: #0b1220;
-  aspect-ratio: 16 / 9;
 }
-.video{
+
+.cc-videoFrame iframe{
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.card-cta{
-  padding: 16px 18px 18px;
+.cc-videoActions{
+  margin-top: 12px;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 /* =========================
-   BANDA INFERIOR
+   Footer CTA
 ========================= */
-.inicio-band{
-  padding: 28px 0 44px;
-  background: linear-gradient(135deg, rgba(47,62,82,1), rgba(47,62,82,.92) 55%, rgba(139,0,0,.92));
-}
-
-.band-inner{
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-  border-radius: 24px;
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.06);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 22px 60px rgba(0,0,0,.18);
-  padding: 18px;
+.cc-footerCTA{
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
 }
 
-.band-copy h3{
+.cc-footerCTA h3{
   margin: 0;
-  color: var(--cc-white);
-  font-size: 18px;
-}
-.band-copy p{
-  margin: 6px 0 0;
-  color: rgba(255,255,255,.78);
-  line-height: 1.45;
-  font-size: 14px;
+  font-weight: 950;
+  letter-spacing: -0.2px;
 }
 
-.band-actions{
+.cc-footerCTA p{
+  margin: 8px 0 0;
+  color: rgba(255,255,255,.80);
+  font-weight: 650;
+}
+
+.cc-footerLinks{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-end;
 }
 
-.chip{
+.cc-chip{
   text-decoration: none;
+  color: var(--cc-white);
+  font-weight: 900;
   padding: 10px 12px;
   border-radius: 999px;
+  background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.22);
-  color: var(--cc-white);
-  background: rgba(255,255,255,.08);
-  font-weight: 800;
-  transition: transform 120ms ease, background 180ms ease, border-color 180ms ease;
+  transition: transform 120ms ease, background 180ms ease;
 }
-.chip:hover{
-  background: rgba(255,255,255,.14);
-  border-color: rgba(255,255,255,.34);
-}
-.chip:active{ transform: translateY(1px); }
+.cc-chip:hover{ background: rgba(255,255,255,.16); }
+.cc-chip:active{ transform: translateY(1px); }
 
 /* =========================
-   RESPONSIVE
+   Responsive
 ========================= */
-@media (max-width: 980px){
-  .inicio-grid{
+@media (max-width: 1000px){
+  .cc-hero-inner{
     grid-template-columns: 1fr;
   }
-  .band-inner{
+  .cc-bandGrid{
     grid-template-columns: 1fr;
   }
-  .band-actions{
+  .cc-metrics{
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .cc-cardGrid{
+    grid-template-columns: 1fr 1fr;
+  }
+  .cc-featureTall{
+    grid-row: auto;
+    min-height: 260px;
+  }
+  .cc-splitGrid{
+    grid-template-columns: 1fr;
+  }
+  .cc-footerCTA{
+    grid-template-columns: 1fr;
+  }
+  .cc-footerLinks{
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px){
+  .cc-cardGrid{
+    grid-template-columns: 1fr;
+  }
+  .cc-metrics{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ====== Feature con foto ====== */
+.cc-feature{
+  display: grid;
+  grid-template-columns: 1fr 170px;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.cc-featureText{
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+/* contenedor imagen */
+.cc-featureMedia{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(47,62,82,.14);
+  box-shadow: 0 14px 35px rgba(11,18,32,.10);
+  background: #0b1220;
+}
+
+/* imagen */
+.cc-featureMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+}
+
+/* overlay suave para que combine con colores del sitio */
+.cc-featureMedia::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(47,62,82,.08), rgba(11,18,32,.08)),
+    radial-gradient(220px 180px at 30% 25%, rgba(139,0,0,.10), transparent 55%);
+  pointer-events: none;
+}
+
+/* si es la card grande (Calendario), que la foto sea más alta */
+.cc-featureTall{
+  grid-row: span 2;
+}
+.cc-featureTall .cc-featureMedia{
+  min-height: 220px;
+}
+
+/* responsive: en móvil la foto baja */
+@media (max-width: 720px){
+  .cc-feature{
+    grid-template-columns: 1fr;
+  }
+  .cc-featureMedia{
+    height: 170px;
+  }
+  .cc-featureTall .cc-featureMedia{
+    height: 210px;
+  }
+}
+
+
+@media (max-width: 720px){
+  .cc-cardGrid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Cards SIN imagen (Calendario / Otros campus)
+   → el texto ocupa TODO el ancho
+========================= */
+.cc-feature:not(:has(.cc-featureMedia)) {
+  grid-template-columns: 1fr;
+}
+
+/* quitar cualquier límite de ancho del texto */
+.cc-feature:not(:has(.cc-featureMedia)) .cc-featureText{
+  max-width: none !important;
+  width: 100%;
+}
+
+/* por si el párrafo tenía max-width */
+.cc-feature:not(:has(.cc-featureMedia)) p{
+  max-width: none !important;
+}
+
+
+/* =========================
+   MOVER BLOQUE VERDE MÁS A LA IZQUIERDA
+========================= */
+
+/* El contenedor del hero ocupa todo el ancho */
+.cc-hero-inner{
+  width: 100%;
+  max-width: none; /* 🔥 rompe el centrado tipo container */
+  padding-left: 4vw; /* controla qué tan pegado queda */
+  padding-right: 0;
+}
+
+/* El bloque del título */
+.cc-hero-titleWrap{
+  margin-left: 0 !important;
+  justify-self: start;
+  text-align: left;
+  max-width: 720px; /* ancho del bloque verde */
+}
+
+/* En desktop grande: todavía más a la izquierda */
+@media (min-width: 1200px){
+  .cc-hero-inner{
+    padding-left: 3vw;
+  }
+}
+
+/* En pantallas MUY grandes (4K, etc.) */
+@media (min-width: 1600px){
+  .cc-hero-inner{
+    padding-left: 2.5vw;
   }
 }
