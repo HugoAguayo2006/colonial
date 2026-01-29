@@ -7,7 +7,7 @@ import { Outlet, useLocation } from "react-router-dom";
 // ⛔ Comentamos componentes externos
 // import WhatsAppFloat from "./components/WhatsAppFloat";
 // import ScrollToTop from "./components/ScrollToTop";
- import Navbar from "./components/Navbar/Navbar.jsx";
+ import Navbar from "./components/NavBar/Navbar.jsx";
 // import Footer from "./components/Footer/Footer";
 // import ImageModal from "./components/ImageModal.jsx";
 
