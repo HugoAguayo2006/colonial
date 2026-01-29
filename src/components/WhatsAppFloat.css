@@ -1,0 +1,24 @@
+/* =========================================================
+   📞 15. BOTÓN FLOTANTE WHATSAPP
+   ========================================================= */
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  left: auto;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #22c55e;
+  color: #ffffff;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px -10px rgba(34, 197, 94, 0.5);
+  font-weight: 700;
+}
+
+.whatsapp-float img {
+  width: 20px;
+  height: 20px;
+}
