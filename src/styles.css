@@ -8,7 +8,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #b51e27; /* MISMO AZUL DEL FOOTER */
+  background-color: #8B0000; /* MISMO AZUL DEL FOOTER */
   overflow-x: hidden; /* 🔑 evita fugas laterales */
 }
 
@@ -17,7 +17,7 @@ body {
 
 /* Ajusta según tus secciones. Desktop: 72 + 48 = 120 */
 .app-main {
-  padding-top: 60px;
+  padding-top: 180px;
 }
 
 @media (max-width: 768px) {
@@ -97,3 +97,16 @@ body {
   background-color: #1f2a85;  o #1f2a85 si quieres azul 
 }*/
 
+
+
+.separator-blue {
+  width: 100%;
+  height: 10px;               /* grosor de la línea */
+  background-color: #2F3E52; /* azul institucional */
+}
+
+.separator-red {
+  width: 100%;
+  height: 10px;               /* grosor de la línea */
+  background-color: #7b0b0b; /* rojo institucional */
+}

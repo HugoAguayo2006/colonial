@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Inicio.css";
+import IntercolegialesVideoHero from "../components/IntercolegialesVideoHero";
 
 export default function Inicio() {
   // ✅ Carrusel SOLO en el Hero detrás del título
@@ -88,7 +89,18 @@ export default function Inicio() {
   </div>
 </header>
 
-
+            <div className="separator-blue" />
+    <div>
+      <IntercolegialesVideoHero
+        title="Intercolegiales 2026"
+        subtitle="Invitamos a los colegios de la orden a disputar torneos deportivos y vivir una experiencia de unidad, respeto y convivencia."
+        youtubeId="VNn2FhvNGTI"
+        start={44}
+        ctaHref="/intercolegiales/inscripcion"
+        logoSrc="/images/logo-escudo.webp"
+        logoAlt="Escudo ING"
+      />
+    </div>
       {/* =========================
           SECCIÓN: “Manifiesto”
       ========================== */}
@@ -120,6 +132,7 @@ export default function Inicio() {
           </div>
         </div>
       </section>
+                  <div className="separator-blue" />
 
       {/* =========================
           SECCIÓN: Cards creativas
@@ -254,14 +267,15 @@ export default function Inicio() {
           </article>
 
           <article className="cc-panel cc-panelVideo">
-            <h3 className="cc-panelTitle">Video</h3>
+            <h3 className="cc-panelTitle">
+Nuestras Instalaciones.</h3>
             <p className="cc-panelSub">
-              Inserta un video institucional, bienvenida o recorrido.
+Una vista de nuestras maravillosas instalaciones.
             </p>
 
             <div className="cc-videoFrame" aria-label="Video de YouTube">
               <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID"
+                src="https://www.youtube.com/embed/Eg_MtjuNGtM"
                 title="Video Colegio Colonial"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -280,7 +294,7 @@ export default function Inicio() {
           </article>
         </div>
       </section>
-
+                  <div className="separator-red" />
       {/* =========================
           BANDA FINAL
       ========================== */}

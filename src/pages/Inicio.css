@@ -1,5 +1,5 @@
 :root{
-  --cc-red: #8B0000;
+  --cc-red: #7b0b0b;
   --cc-blue: #2F3E52;
   --cc-white: #ffffff;
 
@@ -98,6 +98,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
   
 }
 
@@ -233,8 +234,9 @@
 }
 
 .cc-bandRed{
-  background: var(--cc-red);
+  background: #7b0b0b;
   color: var(--cc-white);
+
 }
 
 .cc-bandBlue{
@@ -303,17 +305,20 @@
 .cc-section{
   padding: 40px 0 46px;
   background: #fff;
+  
 }
 
 .cc-cardGrid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+
 }
 
 
 .cc-feature{
-  border: 1px solid var(--border);
+  border: 5px solid var(--border);
+  border-color: #2F3E52;
   border-radius: 18px;
   box-shadow: 0 16px 40px rgba(11,18,32,.08);
   padding: 18px;
@@ -422,6 +427,7 @@
 .cc-quoteList{
   display: grid;
   gap: 12px;
+
 }
 
 .cc-quote{
@@ -431,20 +437,23 @@
   border: 1px solid rgba(47,62,82,.14);
   border-left: 6px solid var(--cc-red);
   background: linear-gradient(180deg, rgba(47,62,82,.04), rgba(139,0,0,.03));
+  background: #2F3E52;
+
 }
 
 .cc-quote blockquote{
   margin: 0;
   font-weight: 850;
   line-height: 1.45;
-  color: rgba(11,18,32,.86);
+  color: #ffffff;
 }
 
 .cc-quote figcaption{
   margin-top: 8px;
   font-weight: 850;
-  color: rgba(11,18,32,.58);
+
   font-size: 13px;
+    color: #ffffff;
 }
 
 .cc-videoFrame{
@@ -677,3 +686,39 @@
     padding-left: 2.5vw;
   }
 }
+
+
+/* =========================
+   IMÁGENES MUCHO MÁS GRANDES (FORZADO)
+========================= */
+
+/* La card reparte más espacio a la imagen */
+.cc-feature{
+  grid-template-columns: 1fr 1fr !important; /* 50% texto / 50% imagen */
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+
+/* Contenedor de la imagen */
+.cc-featureMedia{
+  min-height: 280px !important;   /* 🔥 tamaño grande */
+  height: 100% !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  box-shadow: 0 24px 60px rgba(11,18,32,.22) !important;
+}
+
+/* La imagen llena TODO */
+.cc-featureMedia img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Un poco más de aire al texto para balance */
+.cc-featureText{
+  padding-right: 6px !important;
+}
+
+
