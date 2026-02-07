@@ -3,6 +3,10 @@ import { Outlet, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import Navbar from "./components/NavBar/Navbar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import ImageModal from "./components/ImageModal.jsx";
+import Jeanne from "./components/Jeanne.jsx";
 
 /* ============================
    TRANSICIÓN GLOBAL
@@ -52,6 +56,10 @@ const V = {
   },
 };
 
+export default function App() {
+  const location = useLocation();
+  const isHome = location.pathname === "/" || location.pathname === "/inicio";
+
 /* ============================
    MAPEO POR RUTA (elige uno)
 ============================ */
@@ -85,14 +93,13 @@ function getVariants(path) {
   if (path.startsWith("/conocenos")) return V.left;
 
   return V.fadeUp; // default bonito
-}
+  };
 
-export default function App() {
-  const location = useLocation();
-  const pageVariants = getVariants(location.pathname);
+    const pageVariants = getVariants(location.pathname);
 
   return (
     <>
+    <ScrollToTop />
       <Navbar />
 
       <main className="app-main">
@@ -106,7 +113,11 @@ export default function App() {
         >
           <Outlet />
         </motion.div>
+
       </main>
+            <ImageModal />
+      {isHome && <Jeanne />}
+        <Footer />
     </>
   );
 }

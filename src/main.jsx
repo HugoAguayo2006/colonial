@@ -11,7 +11,7 @@ import App from "./App.jsx";
 import Inicio from "./pages/Inicio.jsx";
 
 // ⛔ Niveles (comentados)
-// import Primaria from "./pages/niveles-educativos/Primaria.jsx";
+import Primaria from "./pages/niveles-educativos/Primaria.jsx";
 // import Secundaria from "./pages/niveles-educativos/Secundaria.jsx";
 import Niveles from "./pages/niveles-educativos/NivelesEscolares.jsx";
 
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
 
       // ⛔ Niveles
       // { path: "niveles/secundaria", element: <Secundaria /> },
-      // { path: "niveles/primaria", element: <Primaria /> },
+       { path: "niveles/primaria", element: <Primaria /> },
        { path: "niveles", element: <Niveles /> },
 
       // ⛔ Inscripciones

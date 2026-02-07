@@ -1,0 +1,237 @@
+/* =========================
+   Jeanne Float (fixed)
+========================= */
+.jeanne-float {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 0rem;
+  z-index: 999;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0rem;
+
+  pointer-events: none;
+}
+
+/* 🍎 Ajuste iOS: baja 10px */
+.jeanne-float.jeanne-apple {
+  bottom: -10px;
+}
+
+/* =========================
+   Speech wrapper (globo + triángulo)
+========================= */
+.jeanne-speech {
+  position: relative;
+  transform: translateY(-42px);
+  pointer-events: auto;
+
+  margin-right: -10px;
+  z-index: 1; /* globo por delante del triángulo */
+}
+
+/* Triángulo del speech (apunta a Jeanne) — detrás de Jeanne */
+.jeanne-speech::after {
+  content: "";
+  position: absolute;
+
+  right: 12px !important; /* tu ajuste forzado */
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 10px solid white;
+
+  z-index: 0; /* 🔥 detrás */
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.18));
+}
+
+/* Globo */
+.jeanne-float-bubble {
+  position: relative;
+  background: white;
+  color: #1f2a85;
+  font-weight: 600;
+
+  font-size: 0.9rem;
+  padding: 0.8rem 1rem;
+
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+  max-width: 220px;
+  text-align: center;
+
+  pointer-events: auto;
+}
+
+/* Jeanne */
+.jeanne-float-figure {
+  position: relative;
+  width: 140px;
+  pointer-events: auto;
+  z-index: 2; /* Jeanne al frente */
+}
+
+.jeanne-float-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+}
+
+
+/* Hitbox: toda la monita */
+.jeanne-float-shield {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+/* WhatsApp inline */
+.wa-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #25D366;
+  font-weight: 700;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.wa-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* =========================
+   LANDSCAPE MOBILE MODE
+   - monita al otro lado (izquierda)
+   - bubble hacia el centro (derecha de la monita)
+   - triángulo apunta al lado correcto
+========================= */
+.jeanne-float.jeanne-landscape {
+  left: 1.2rem;
+  right: auto;
+  bottom: 0rem;
+
+  /* invierte el orden visual para que la monita quede pegada a la esquina */
+  flex-direction: row-reverse;
+}
+
+/* En landscape, el speech ya no debe “jalarse” a la derecha, sino al otro lado */
+.jeanne-float.jeanne-landscape .jeanne-speech {
+  margin-right: 0;
+  margin-left: -10px; /* pegado a la monita */
+}
+
+/* En landscape el triángulo debe salir por el lado IZQUIERDO del globo y apuntar a la monita */
+.jeanne-float.jeanne-landscape .jeanne-speech::after {
+  right: auto !important;
+  left: 12px !important;
+
+  border-left: 0;
+  border-right: 10px solid white; /* apunta hacia la izquierda */
+}
+
+/* =========================
+   MOBILE: ajustes
+========================= */
+@media (max-width: 768px) {
+  .jeanne-float-figure {
+    width: 110px;
+  }
+
+  .jeanne-float-bubble {
+    font-size: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    max-width: 200px;
+  }
+
+  .jeanne-speech {
+    transform: translateY(-34px) !important;
+    margin-right: -9px;
+  }
+
+  .wa-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jeanne-float {
+    right: 0.9rem;
+    bottom: 0rem;
+  }
+
+  .jeanne-float-figure {
+    width: 95px;
+  }
+
+  .jeanne-float-bubble {
+    font-size: 0.68rem;
+    padding: 0.5rem 0.65rem;
+    max-width: 180px;
+  }
+
+  .jeanne-speech {
+    transform: translateY(-28px) !important;
+    margin-right: -8px;
+  }
+
+  .wa-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* landscape en pantallas chicas: ajusta un poco el offset */
+  .jeanne-float.jeanne-landscape {
+    left: 0.9rem;
+  }
+  .jeanne-float.jeanne-landscape .jeanne-speech {
+    margin-left: -8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .jeanne-float-figure {
+    width: 85px;
+  }
+
+  .jeanne-float-bubble {
+    font-size: 0.62rem;
+    padding: 0.45rem 0.6rem;
+    max-width: 160px;
+  }
+}
+
+
+/* =========================
+   LANDSCAPE: subir un poco más la isla del texto
+========================= */
+.jeanne-float.jeanne-landscape .jeanne-speech {
+  transform: translateY(-50px) !important;
+}
+
+.jeanne-speech::after {
+  right: -8px !important;
+}
+
+/* =========================
+   LANDSCAPE: flecha hacia la izquierda
+========================= */
+.jeanne-float.jeanne-landscape .jeanne-speech::after {
+  right: auto !important;
+  left: -8px !important;
+
+  border-left: 0 !important;
+  border-right: 10px solid white !important;
+}

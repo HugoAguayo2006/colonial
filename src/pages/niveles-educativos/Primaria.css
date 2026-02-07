@@ -1,0 +1,633 @@
+.prim{
+  color: var(--text);
+}
+
+/* ============== HERO ============== */
+.prim-hero{
+  position: relative;
+  overflow: hidden;
+  padding: clamp(18px, 3vw, 34px) 0 34px;
+}
+
+.prim-hero__bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.prim-hero__bgImg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  opacity: 0;
+  transition: opacity .85s ease;
+  filter: saturate(1.05);
+}
+
+.prim-hero__bgImg.is-on{
+  opacity: 1;
+}
+
+.prim-hero__shade{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 520px at 18% 52%, rgba(0,0,0,.62), rgba(0,0,0,.25) 52%, rgba(0,0,0,.15) 70%, rgba(0,0,0,.06)),
+    linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.25));
+}
+
+.prim-hero__container{
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.35fr .95fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.prim-hero__content{
+  padding: clamp(18px, 3vw, 28px);
+  border-radius: 26px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 55px rgba(0,0,0,.22);
+}
+
+.prim-chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 13px;
+  color: #fff;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.prim-title{
+  margin: 10px 0 8px;
+  color: #fff;
+  font-weight: 1000;
+  letter-spacing: -0.02em;
+  font-size: clamp(40px, 4.2vw, 64px);
+  line-height: 1.03;
+  text-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.prim-sub{
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.55;
+  max-width: 62ch;
+  text-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+
+.prim-hero__actions{
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ✅ Botones */
+.prim-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 950;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease;
+}
+
+.prim-btn--solid{
+  background: #ffffff;
+  color: var(--blue);
+  box-shadow: 0 18px 45px rgba(0,0,0,.25);
+}
+
+.prim-btn--ghost{
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border-color: rgba(255,255,255,0.20);
+  backdrop-filter: blur(10px);
+}
+
+.prim-btn:hover{
+  transform: translateY(-1px);
+}
+
+.prim-btn--big{
+  padding: 14px 18px;
+  font-size: 15px;
+
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #22c55e;
+  color: #ffffff;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px -10px rgba(34, 197, 94, 0.5);
+  font-weight: 700;
+}
+
+/* ✅ Dots */
+.prim-dots{
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.prim-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 99px;
+  border: 1px solid rgba(255,255,255,0.36);
+  background: rgba(255,255,255,0.20);
+  cursor: pointer;
+  transition: width .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.prim-dot.is-active{
+  width: 28px;
+  background: #fff;
+  border-color: #fff;
+}
+
+/* ============== RIGHT CARD ============== */
+.prim-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  padding: 18px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(31,42,133,0.14);
+  box-shadow: 0 18px 55px rgba(0,0,0,.18);
+}
+
+.prim-card__bg{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.prim-orb{
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: .45;
+}
+
+.prim-orb--1{
+  width: 240px;
+  height: 240px;
+  background: rgba(31,42,133,0.26);
+  top: -90px;
+  left: -90px;
+}
+
+.prim-orb--2{
+  width: 260px;
+  height: 260px;
+  background: rgba(181,30,39,0.20);
+  bottom: -110px;
+  right: -110px;
+}
+
+.prim-gridGlow{
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(900px 320px at 20% 10%, rgba(31,42,133,0.14), transparent 60%),
+    radial-gradient(900px 320px at 90% 85%, rgba(181,30,39,0.12), transparent 60%);
+}
+
+.prim-card > *{
+  position: relative;
+  z-index: 1;
+}
+
+.prim-card__top{
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.prim-shield{
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(31,42,133,0.12);
+  padding: 8px;
+}
+
+.prim-card__title{
+  margin: 0;
+  color: var(--blue);
+  font-weight: 1000;
+  letter-spacing: -0.02em;
+  margin-left: 13px;
+}
+
+.prim-card__text{
+  margin: 6px 0 0;
+  color: rgba(11,16,32,0.72);
+  line-height: 1.55;
+    margin-left: 13px;
+}
+
+.prim-stats{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.prim-stat{
+  padding: 10px 12px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.70);
+  border: 1px solid rgba(31,42,133,0.12);
+}
+
+.prim-stat__k{
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(31,42,133,0.75);
+}
+
+.prim-stat__v{
+  display: block;
+  font-size: 14px;
+  font-weight: 1000;
+  color: rgba(11,16,32,0.86);
+}
+
+.prim-miniActions{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.prim-miniActions-fe{
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end; /* 👈 los junta */
+  gap: 12px;               /* 👈 separación controlada */
+}
+
+.prim-linkBtn{
+  background: transparent;
+  border: 0;
+  padding: 8px 10px;
+  font-weight: 950;
+  color: rgba(31,42,133,0.85);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background .16s ease;
+}
+.prim-linkBtn:hover{
+  background: rgba(31,42,133,0.08);
+}
+
+/* ============== SECTIONS ============== */
+.prim-section{
+  padding: 44px 0;
+}
+
+.prim-section--alt{
+  background: rgba(31,42,133,0.04);
+}
+
+.prim-section--cta{
+  background: linear-gradient(135deg, rgba(31,42,133,0.08), rgba(181,30,39,0.06));
+}
+
+.prim-wrap{
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+.prim-head{
+  margin-bottom: 16px;
+}
+
+.prim-h2{
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 1000;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.prim-h3{
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 1000;
+  color: rgba(11,16,32,0.88);
+}
+
+.prim-p{
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 75ch;
+}
+
+.prim-p2{
+  margin: 0;
+  color: rgba(11,16,32,0.70);
+  line-height: 1.6;
+}
+
+.prim-grid3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.prim-feature{
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.80);
+  box-shadow: 0 18px 45px rgba(10,16,40,0.10);
+  border: 5px solid rgba(31,42,133,0.14);
+  border-color: #2F3E52;
+}
+
+.prim-feature__icon{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(31,42,133,0.08);
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.prim-split{
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.prim-list{
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+.prim-ctaRow{
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.prim-photoCard{
+  border-radius: 26px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.88);
+  box-shadow: 0 18px 55px rgba(10,16,40,0.12);
+  border: 5px solid rgba(31,42,133,0.14);
+  border-color: #2F3E52;
+}
+
+.prim-photoCard__img{
+  height: 280px;
+  overflow: hidden;
+}
+
+.prim-photoCard__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.prim-photoCard__bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  color: rgba(11,16,32,0.82);
+  font-weight: 900;
+}
+
+.prim-photoCard__pill{
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(31,42,133,0.08);
+  border: 1px solid rgba(31,42,133,0.14);
+  font-size: 12px;
+}
+
+.prim-grid2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.prim-card2{
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.80);
+  box-shadow: 0 18px 45px rgba(10,16,40,0.10);
+  border: 5px solid rgba(31,42,133,0.14); 
+  border-color: #2F3E52;
+}
+
+.prim-cta{
+  border-radius: 28px;
+  padding: 18px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(31,42,133,0.14);
+  box-shadow: 0 22px 70px rgba(10,16,40,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  border: 5px solid rgba(31,42,133,0.14);
+   border-color: #2F3E52;
+}
+
+.prim-cta__title{
+  margin: 0 0 6px;
+  color: var(--blue);
+  font-weight: 1000;
+  letter-spacing: -0.02em;
+}
+
+.prim-cta__text{
+  margin: 0;
+  color: rgba(11,16,32,0.72);
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+.prim-cta__actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.prim-note{
+  margin: 10px 0 0;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 980px){
+  .prim-hero__container{
+    grid-template-columns: 1fr;
+  }
+  .prim-split{
+    grid-template-columns: 1fr;
+  }
+  .prim-photoCard__img{
+    height: 240px;
+  }
+  .prim-grid3{
+    grid-template-columns: 1fr;
+  }
+  .prim-grid2{
+    grid-template-columns: 1fr;
+  }
+  .prim-stats{
+    grid-template-columns: 1fr;
+  }
+}
+
+.prim-photoCard__img{
+  height: 280px;
+  overflow: hidden;
+  position: relative; /* 🔥 CLAVE para overlay */
+}
+
+.prim-photoCard__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  display: block;
+}
+
+.prim-carouselBtn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.45);
+  background: rgba(0,0,0,0.38);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+  transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.prim-carouselBtn svg{
+  width: 22px;
+  height: 22px;
+  stroke: #fff;
+  stroke-width: 2.4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.prim-carouselBtn:hover{
+  background: rgba(0,0,0,0.55);
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+}
+
+.prim-carouselBtn--prev{ left: 12px; }
+.prim-carouselBtn--next{ right: 12px; }
+
+
+/* =========================
+   FE SLIDE CAROUSEL
+========================= */
+.prim-feCarousel{
+  position: relative;
+  overflow: hidden;
+  border-radius: 0; /* si tu card ya tiene radius, no hace falta aquí */
+}
+
+/* el track se mueve */
+.prim-feTrack{
+  height: 100%;
+  display: flex;
+  width: 100%;
+  transition: transform .55s cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
+}
+
+/* cada slide ocupa el 100% del contenedor visible */
+.prim-feSlide{
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.prim-feSlide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.01);
+}
+
+/* (Opcional) “snap” visual suave */
+@media (prefers-reduced-motion: reduce){
+  .prim-feTrack{ transition: none; }
+}
+
+.prim-feTrack{
+  height: 100% !important;
+  display: flex !important;
+  width: 100% !important;
+  transition: transform .55s cubic-bezier(.22,.61,.36,1) !important;
+  will-change: transform !important;
+}
+/* Columna izquierda: centrar verticalmente el contenido */
+.prim-feCol,
+.prim-feText{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 🔥 CENTRADO VERTICAL */
+}

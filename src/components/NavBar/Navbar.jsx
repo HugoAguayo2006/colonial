@@ -11,7 +11,7 @@ const SOCIAL = {
   facebook: "https://www.facebook.com/",
   instagram: "https://www.instagram.com/",
   whatsapp:
-    "https://wa.me/523331585919?text=Hola%20Instituto%20Nueva%20Galicia%20Tlajomulco%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+    "https://wa.me/5214424317022?text=Hola%20Colegio%20Colonial%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
 };
 
 export default function Navbar() {
@@ -31,6 +31,7 @@ export default function Navbar() {
           { label: "Misión y visión", href: "/conocenos/mision-vision" },
           { label: "Valores", href: "/conocenos/valores" },
           { label: "Otros Campus", href: "/conocenos/otros-campus" },
+          { label: "Clave de Centro de Trabajo", href: "/conocenos/cct" },
         ],
       },
       {
@@ -137,7 +138,7 @@ export default function Navbar() {
             </span>
 
             <span className="ing-titleInline">
-              Instituto Nueva Galicia Tlajomulco
+Colegio Colonial
             </span>
           </h1>
         </NavLink>

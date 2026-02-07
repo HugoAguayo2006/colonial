@@ -1,5 +1,5 @@
 :root{
-  --cc-red: #7b0b0b;
+  --cc-red: #8B0000;
   --cc-blue: #2F3E52;
   --cc-white: #ffffff;
 
@@ -73,7 +73,7 @@
 .cc-hero-title{
   margin: 0;
   display: inline-block;
-  background: rgba(139,0,0,.92);
+  background: #8b0000eb;
   color: var(--cc-white);
   padding: 18px 26px;
   border-radius: 10px;
@@ -204,7 +204,7 @@
   border-color: var(--cc-red);
   border-width: 4px;
 }
-.cc-btnPrimary:hover{ background: #780000; }
+.cc-btnPrimary:hover{ background: #8B0000; }
 
 .cc-btnBlue{
   background: var(--cc-blue);
@@ -234,7 +234,7 @@
 }
 
 .cc-bandRed{
-  background: #7b0b0b;
+  background: #8B0000;
   color: var(--cc-white);
 
 }

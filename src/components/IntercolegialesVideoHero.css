@@ -1,7 +1,7 @@
 .inter-video {
   position: relative;
   padding: clamp(28px, 4vw, 56px) 0 clamp(26px, 3vw, 44px);
-  background: #7b0b0b; /* 🔴 color fijo */
+  background: #8B0000; /* 🔴 color fijo */
   color: #fff;
 }
 
