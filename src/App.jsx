@@ -116,7 +116,7 @@ function getVariants(path) {
 
       </main>
             <ImageModal />
-      {isHome && <Jeanne />}
+     {/*  {isHome && <Jeanne />} */}
         <Footer />
     </>
   );
