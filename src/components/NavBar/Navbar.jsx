@@ -52,7 +52,7 @@ export default function Navbar() {
           },
           {
             label: "Inscripciones Secundaria",
-            href: "/inscripciones/inscripciones-secundaria",
+            href: "/inscripciones/secundaria",
           },
         ],
       },

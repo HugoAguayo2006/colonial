@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import "./Ins-primaria.css";
+import "./Ins-secundaria.css";
 
 const AccordionItem = ({ title, children, tone = "blue" }) => {
   const [open, setOpen] = useState(false);
@@ -25,15 +25,15 @@ const AccordionItem = ({ title, children, tone = "blue" }) => {
   );
 };
 
-export default function InscripcionesPrimaria() {
+export default function InscripcionesSecundaria() {
   const costos = useMemo(
     () => [
-      { label: "Inscripción", value: "$4,450", note: "Pago único" },
-      { label: "Colegiatura", value: "$2,650", note: "Mensual (12 meses)" },
+      { label: "Inscripción", value: "$5,080", note: "Pago único" },
+      { label: "Colegiatura", value: "$2,750", note: "Mensual (12 meses)" },
       {
-        label: "Becas y apoyos",
+        label: "Becas y descuentos",
         value: "Disponibles",
-        note: "Rendimiento + estudio socioeconómico",
+        note: "Rendimiento + estudio socioeconómico + hermanos",
       },
       {
         label: "Pagos",
@@ -48,7 +48,7 @@ export default function InscripcionesPrimaria() {
     () => [
       {
         t: "1) Solicitar informes",
-        d: "Me acerco al colegio para recibir orientación general del nivel Primaria y resolver dudas iniciales.",
+        d: "Me acerco al colegio para recibir orientación general del nivel Secundaria y resolver dudas iniciales.",
       },
       {
         t: "2) Inicio del proceso (Febrero–Agosto)",
@@ -102,8 +102,8 @@ export default function InscripcionesPrimaria() {
         a: (
           <p>
             Sí. El colegio acepta <b>traslados</b> de estudiantes provenientes de
-            otras instituciones, siempre que se cumplan los requisitos
-            establecidos para la admisión.
+            otras instituciones, siempre que se cumplan los requisitos establecidos
+            para la admisión.
           </p>
         ),
       },
@@ -126,22 +126,22 @@ export default function InscripcionesPrimaria() {
           <div className="plist">
             <ul>
               <li>
-                <b>Inscripción:</b> $4,450.
+                <b>Inscripción:</b> $5,080.
               </li>
               <li>
-                <b>Colegiatura:</b> $2,650 por mes (12 meses).
+                <b>Colegiatura:</b> $2,750 por mes (12 meses).
               </li>
             </ul>
           </div>
         ),
       },
       {
-        q: "¿Ofrecen becas o apoyos?",
+        q: "¿Ofrecen becas o descuentos?",
         a: (
           <p>
-            Sí. Se ofrecen <b>becas en Primaria</b> considerando el rendimiento
-            académico y un <b>estudio socioeconómico</b>. También hay{" "}
-            <b>apoyos para hermanos inscritos</b>.
+            Sí. Se ofrecen <b>becas en Secundaria</b> basadas en el rendimiento
+            académico y un <b>estudio socioeconómico</b>, así como{" "}
+            <b>descuentos para familias con hermanos inscritos</b>.
           </p>
         ),
       },
@@ -158,9 +158,9 @@ export default function InscripcionesPrimaria() {
         q: "¿Hay costos adicionales?",
         a: (
           <p>
-            Algunas <b>actividades extracurriculares o servicios especiales</b>{" "}
-            pueden tener cuotas adicionales, las cuales se informan previamente
-            según la actividad o servicio correspondiente.
+            Algunas <b>actividades extracurriculares o servicios especiales</b> pueden
+            tener cuotas adicionales, las cuales se informan previamente según la
+            actividad o servicio correspondiente.
           </p>
         ),
       },
@@ -185,10 +185,10 @@ export default function InscripcionesPrimaria() {
   return (
     <>
       <Helmet>
-        <title>Inscripciones Primaria | Instituto Nueva Galicia</title>
+        <title>Inscripciones Secundaria | Instituto Nueva Galicia</title>
         <meta
           name="description"
-          content="Inscripciones de Primaria: costos, becas, métodos de pago, proceso de admisión y preguntas frecuentes."
+          content="Inscripciones de Secundaria: costos, becas, métodos de pago, proceso de admisión y preguntas frecuentes."
         />
       </Helmet>
 
@@ -196,7 +196,7 @@ export default function InscripcionesPrimaria() {
         {/* ===== MINI HERO (CENTRADO) ===== */}
         <section className="pinc__top">
           <div className="pinc__topInner">
-            <p className="pinc__kicker">PRIMARIA</p>
+            <p className="pinc__kicker">SECUNDARIA</p>
             <h1 className="pinc__title">Inscripciones</h1>
             <p className="pinc__subtitle">
               Proceso de admisión, costos, becas y preguntas frecuentes para nuevo ingreso.
@@ -216,7 +216,7 @@ export default function InscripcionesPrimaria() {
             <header className="pinc__header">
               <h2>Proceso de admisión</h2>
               <p>
-                Para ingresar a Primaria, el proceso contempla evaluación académica,
+                Para ingresar a Secundaria, el proceso contempla evaluación académica,
                 valoración psicológica y entrevista.
               </p>
             </header>
@@ -254,7 +254,7 @@ export default function InscripcionesPrimaria() {
             <div className="pinc__stickyCard">
               <div className="pinc__stickyTop">
                 <div>
-                  <p className="pinc__stickyKicker">Primaria</p>
+                  <p className="pinc__stickyKicker">Secundaria</p>
                   <h3 className="pinc__stickyTitle">Costos y pagos</h3>
                 </div>
                 <span className="pinc__stickyPill">Feb–Ago</span>
@@ -287,7 +287,7 @@ export default function InscripcionesPrimaria() {
                   <b>Pago:</b> Efectivo o transferencia
                 </p>
                 <p className="pinc__miniLine">
-                  <b>Becas:</b> Rendimiento + estudio socioeconómico
+                  <b>Becas:</b> Rendimiento + estudio socioeconómico + hermanos
                 </p>
               </div>
             </div>

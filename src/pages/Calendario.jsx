@@ -1,0 +1,563 @@
+// /src/pages/Calendario.jsx
+import { useMemo, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import "./Calendario.css";
+import { EVENTS } from "../data/events";
+
+const LEVELS = [
+  { key: "preescolar", label: "Preescolar" },
+  { key: "primaria", label: "Primaria" },
+  { key: "secundaria", label: "Secundaria" },
+  { key: "preparatoria", label: "Preparatoria" },
+];
+
+const LEVEL_COLOR_VAR = {
+  preescolar: "var(--cc-blueSoft)",
+  primaria: "var(--cc-blue)",
+  secundaria: "var(--cc-red)",
+  preparatoria: "var(--cc-redSoft)",
+};
+
+/* ============================
+   HELPERS (ISO + Grid)
+============================ */
+function pad2(n) {
+  return String(n).padStart(2, "0");
+}
+function toISODate(d) {
+  return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+}
+function parseISO(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const dt = new Date(y, m - 1, d);
+  dt.setHours(0, 0, 0, 0);
+  return dt;
+}
+function isSameDay(a, b) {
+  return (
+    a.getFullYear() === b.getFullYear() &&
+    a.getMonth() === b.getMonth() &&
+    a.getDate() === b.getDate()
+  );
+}
+function startOfMonth(d) {
+  const x = new Date(d.getFullYear(), d.getMonth(), 1);
+  x.setHours(0, 0, 0, 0);
+  return x;
+}
+function endOfMonth(d) {
+  const x = new Date(d.getFullYear(), d.getMonth() + 1, 0);
+  x.setHours(0, 0, 0, 0);
+  return x;
+}
+function addMonths(d, delta) {
+  const x = new Date(d.getFullYear(), d.getMonth() + delta, 1);
+  x.setHours(0, 0, 0, 0);
+  return x;
+}
+function monthLabel(d) {
+  const text = d.toLocaleString("es-MX", { month: "long", year: "numeric" });
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+function dayLabelShort(i) {
+  return ["DOM", "LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB"][i];
+}
+
+// Construye matriz (semanas) del mes visible (inicia domingo) + preview mes anterior/siguiente
+function buildMonthGrid(visibleMonth) {
+  const first = startOfMonth(visibleMonth);
+  const last = endOfMonth(visibleMonth);
+
+  const gridStart = new Date(first);
+  gridStart.setDate(first.getDate() - first.getDay());
+  gridStart.setHours(0, 0, 0, 0);
+
+  const gridEnd = new Date(last);
+  gridEnd.setDate(last.getDate() + (6 - last.getDay()));
+  gridEnd.setHours(0, 0, 0, 0);
+
+  const weeks = [];
+  let cursor = new Date(gridStart);
+
+  while (cursor <= gridEnd) {
+    const week = [];
+    for (let i = 0; i < 7; i++) {
+      week.push(new Date(cursor));
+      cursor.setDate(cursor.getDate() + 1);
+    }
+    weeks.push(week);
+  }
+  return weeks;
+}
+
+// Normaliza level para evitar bugs (Primaria vs primaria, espacios, etc.)
+function normalizeLevel(v) {
+  return String(v ?? "").trim().toLowerCase();
+}
+
+// Fecha bonita para panel derecho
+function formatDayLong(dateObj) {
+  return dateObj.toLocaleDateString("es-MX", {
+    weekday: "long",
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+export default function Calendario() {
+  const today = useMemo(() => {
+    const t = new Date();
+    t.setHours(0, 0, 0, 0);
+    return t;
+  }, []);
+
+  // 🔥 Filtros
+  const [levelFilter, setLevelFilter] = useState("all"); // "all" | LEVELS.key
+  const [when, setWhen] = useState("upcoming"); // "upcoming" | "past" | "all"
+  const [query, setQuery] = useState("");
+
+  // Calendar state
+  const [visibleMonth, setVisibleMonth] = useState(() => startOfMonth(today));
+  const [selectedDay, setSelectedDay] = useState(() => today);
+  const selectedISO = toISODate(selectedDay);
+
+  // Grid mensual con preview
+  const monthGrid = useMemo(() => buildMonthGrid(visibleMonth), [visibleMonth]);
+
+  // Normaliza eventos a ISO (SIEMPRE YYYY-MM-DD), level normalizado, etc.
+  const normalizedEvents = useMemo(() => {
+    return (EVENTS || [])
+      .map((e) => {
+        const d = parseISO(e.date);
+        const isoFixed = toISODate(d);
+
+        return {
+          ...e,
+          _iso: isoFixed,
+          _dateObj: d,
+          _timeLabel: e.start ? `${e.start}${e.end ? `–${e.end}` : ""}` : "",
+          _levelKey: normalizeLevel(e.level),
+        };
+      })
+      .sort((a, b) => a._dateObj - b._dateObj);
+  }, []);
+
+  // Filtrado + búsqueda
+  const filteredEvents = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    const todayISO = toISODate(today);
+
+    return normalizedEvents.filter((ev) => {
+      if (levelFilter !== "all" && ev._levelKey !== levelFilter) return false;
+
+      if (when !== "all") {
+        const isUpcoming = ev._iso >= todayISO;
+        if (when === "upcoming" && !isUpcoming) return false;
+        if (when === "past" && isUpcoming) return false;
+      }
+
+      if (!q) return true;
+      const hay = `${ev.title} ${ev.location || ""} ${ev.description || ""} ${
+        ev.level || ""
+      }`.toLowerCase();
+      return hay.includes(q);
+    });
+  }, [normalizedEvents, levelFilter, when, query, today]);
+
+  // dayISO -> eventos
+  const eventsByISO = useMemo(() => {
+    const map = new Map();
+    for (const week of monthGrid) {
+      for (const d of week) map.set(toISODate(d), []);
+    }
+    for (const ev of filteredEvents) {
+      if (!map.has(ev._iso)) map.set(ev._iso, []);
+      map.get(ev._iso).push(ev);
+    }
+    for (const [k, arr] of map) {
+      arr.sort((a, b) => (a.start || "").localeCompare(b.start || ""));
+      map.set(k, arr);
+    }
+    return map;
+  }, [filteredEvents, monthGrid]);
+
+  // Dots: dayISO => tiene eventos
+  const dayHasEvents = useMemo(() => {
+    const map = new Map();
+    for (const [iso, arr] of eventsByISO) map.set(iso, (arr || []).length > 0);
+    return map;
+  }, [eventsByISO]);
+
+  // Eventos del día seleccionado
+  const eventsForSelectedDay = useMemo(() => {
+    return eventsByISO.get(selectedISO) || [];
+  }, [eventsByISO, selectedISO]);
+
+  const panelTitle =
+    when === "upcoming"
+      ? "Próximos eventos"
+      : when === "past"
+      ? "Eventos pasados"
+      : "Todos los eventos";
+
+  function jumpToday() {
+    setVisibleMonth(startOfMonth(today));
+    setSelectedDay(today);
+  }
+
+  const monthMeta = useMemo(() => {
+    const monthISO = `${visibleMonth.getFullYear()}-${pad2(visibleMonth.getMonth() + 1)}`;
+    const total = filteredEvents.filter((e) => e._iso.startsWith(monthISO)).length;
+    return total;
+  }, [visibleMonth, filteredEvents]);
+
+  return (
+    <main className="cccal">
+      <Helmet>
+        <title>Calendario | Colegio Colonial</title>
+      </Helmet>
+
+      {/* HERO / HEADER */}
+      <header className="cccal__header">
+        <div className="cccal__titleWrap">
+          <div className="cccal__kickerRow">
+            <span className="cccal__badge">Calendario</span>
+<span className="cccal__miniStat" title="Día actual">
+  <span className="cccal__miniDot" />
+  Hoy:{" "}
+  {today.toLocaleDateString("es-MX", {
+    day: "numeric",
+    month: "long",
+  })}
+</span>
+
+          </div>
+
+          <a
+            href="../calendar/calendario.ics"
+            className="calendar-btn"
+            aria-label="Agregar evento al calendario"
+          >
+            Agregar al calendario de tu celular <span>(Solo Apple)</span>
+          </a>
+
+          <h1 className="cccal__title">Calendario Escolar</h1>
+          <p className="cccal__subtitle">
+            Filtra por nivel educativo, busca eventos y revisa próximos o pasados.
+          </p>
+        </div>
+
+        <div className="cccal__topActions">
+          <button className="cccal__today" onClick={jumpToday} type="button">
+            Hoy
+          </button>
+        </div>
+      </header>
+
+      {/* FILTROS */}
+      <section className="cccal__filters">
+        <div className="cccal__search">
+          <label className="cccal__label">Buscar</label>
+          <input
+            className="cccal__input"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Ej. junta, feria, robótica, auditorio…"
+          />
+        </div>
+
+        <div className="cccal__when">
+          <label className="cccal__label">Mostrar</label>
+          <div className="cccal__chips">
+            <button
+              className={`ccchip ${when === "upcoming" ? "is-on" : ""}`}
+              onClick={() => setWhen("upcoming")}
+              type="button"
+            >
+              Próximos
+            </button>
+            <button
+              className={`ccchip ${when === "past" ? "is-on" : ""}`}
+              onClick={() => setWhen("past")}
+              type="button"
+            >
+              Pasados
+            </button>
+            <button
+              className={`ccchip ${when === "all" ? "is-on" : ""}`}
+              onClick={() => setWhen("all")}
+              type="button"
+            >
+              Todos
+            </button>
+          </div>
+        </div>
+
+        <div className="cccal__levels">
+          <label className="cccal__label">Nivel</label>
+          <div className="cccal__chips">
+            <button
+              className={`ccchip ccchip--level ${levelFilter === "all" ? "is-on" : ""}`}
+              onClick={() => setLevelFilter("all")}
+              type="button"
+            >
+              <span className="ccdot" style={{ background: "var(--cc-blueDeep)" }} />
+              Todos
+            </button>
+
+            {LEVELS.map((l) => (
+              <button
+                key={l.key}
+                className={`ccchip ccchip--level ${levelFilter === l.key ? "is-on" : ""}`}
+                onClick={() => setLevelFilter(l.key)}
+                type="button"
+              >
+                <span
+                  className="ccdot"
+                  style={{ background: LEVEL_COLOR_VAR[l.key] }}
+                />
+                {l.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="cccal__legend">
+          <div className="legend__row">
+            {LEVELS.map((l) => (
+              <span key={l.key} className="legend__item">
+                <span
+                  className="ccdot ccdot--lg"
+                  style={{ background: LEVEL_COLOR_VAR[l.key] }}
+                />
+                {l.label}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LAYOUT */}
+      <section className="cccal__layout">
+        {/* CALENDARIO */}
+        <div className="cccal__cal">
+          <div className="cccal__calTop">
+            <div className="monthNav">
+              <button
+                className="iconBtn"
+                onClick={() => setVisibleMonth((m) => addMonths(m, -1))}
+                type="button"
+                aria-label="Mes anterior"
+              >
+                ‹
+              </button>
+
+              <div className="monthNav__label">{monthLabel(visibleMonth)}</div>
+
+              <button
+                className="iconBtn"
+                onClick={() => setVisibleMonth((m) => addMonths(m, 1))}
+                type="button"
+                aria-label="Mes siguiente"
+              >
+                ›
+              </button>
+            </div>
+
+            <div className="cccal__hint">Selecciona un día para ver detalles</div>
+          </div>
+
+          <div className="dow">
+            {Array.from({ length: 7 }).map((_, i) => (
+              <div key={i} className="dow__cell">
+                {dayLabelShort(i)}
+              </div>
+            ))}
+          </div>
+
+          <div className="grid" role="grid" aria-label="Calendario mensual">
+            {monthGrid.map((week, wi) =>
+              week.map((d) => {
+                const iso = toISODate(d);
+                const inMonth = d.getMonth() === visibleMonth.getMonth();
+                const isToday = isSameDay(d, today);
+                const isSelected = isSameDay(d, selectedDay);
+
+                const isPast = d < today;
+                const dimPast = when === "upcoming" && isPast;
+
+                const has = dayHasEvents.get(iso);
+                const dayEvents = eventsByISO.get(iso) || [];
+
+                return (
+                  <button
+                    key={`${wi}-${iso}`}
+                    className={[
+                      "cell",
+                      inMonth ? "in-month" : "out-month",
+                      isToday ? "is-today" : "",
+                      isSelected ? "is-active" : "",
+                      dimPast ? "is-past" : "",
+                      has ? "has-events" : "",
+                    ].join(" ")}
+                    type="button"
+                    onClick={() => {
+                      if (dimPast) return;
+                      setSelectedDay(d);
+                    }}
+                    role="gridcell"
+                    aria-label={`Día ${d.getDate()}${has ? ", con eventos" : ""}`}
+                    title={
+                      has
+                        ? dayEvents.map((e) => e.title).slice(0, 3).join(" · ")
+                        : "Sin eventos"
+                    }
+                  >
+                    <div className="cell__top">
+                      <span className="cell__num">{d.getDate()}</span>
+                      {has ? (
+                        <span className="cell__count">{dayEvents.length}</span>
+                      ) : null}
+                    </div>
+
+                    <div className="cell__dots">
+                      {dayEvents.slice(0, 4).map((e) => (
+                        <span
+                          key={e.id}
+                          className="miniDot"
+                          title={`${e.title} (${e.level})`}
+                          style={{
+                            background: LEVEL_COLOR_VAR[normalizeLevel(e.level)],
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </button>
+                );
+              })
+            )}
+          </div>
+        </div>
+
+        {/* PANEL DERECHO */}
+        <aside className="cccal__side">
+          <div className="side__top">
+            <div className="side__date">{formatDayLong(selectedDay)}</div>
+            <div className="side__meta">
+              {eventsForSelectedDay.length === 0
+                ? "Sin eventos con los filtros actuales"
+                : `${eventsForSelectedDay.length} evento(s)`}
+            </div>
+          </div>
+
+          {/* Detalle del día */}
+          <div className="side__list" style={{ marginTop: 12 }}>
+            {eventsForSelectedDay.length ? (
+              eventsForSelectedDay.map((e) => (
+                <article key={e.id} className="eventCard">
+                  <div
+                    className="eventCard__bar"
+                    style={{ background: LEVEL_COLOR_VAR[e._levelKey] }}
+                  />
+                  <div className="eventCard__body">
+                    <div className="eventCard__top">
+                      <h3 className="eventCard__title">{e.title}</h3>
+                      {e._timeLabel ? (
+                        <span className="eventCard__time">{e._timeLabel}</span>
+                      ) : null}
+                    </div>
+
+                    <div className="eventCard__tags">
+                      <span className="tag">
+                        {LEVELS.find((x) => x.key === e._levelKey)?.label || e.level}
+                      </span>
+                      {e.location ? <span className="tag tag--ghost">{e.location}</span> : null}
+                    </div>
+
+                    {e.description ? (
+                      <p className="eventCard__desc">{e.description}</p>
+                    ) : null}
+                  </div>
+                </article>
+              ))
+            ) : (
+              <div className="empty">No hay eventos este día. Cambia el día o ajusta filtros.</div>
+            )}
+          </div>
+
+          {/* Lista de eventos filtrados */}
+          <div style={{ marginTop: 14 }}>
+            <div className="side__meta" style={{ marginTop: 0 }}>
+              {panelTitle} ({filteredEvents.length})
+            </div>
+
+            <div className="side__list side__list--rows">
+              {filteredEvents.length === 0 ? (
+                <div className="empty">No hay eventos con estos filtros.</div>
+              ) : (
+                filteredEvents.map((e) => (
+                  <button
+                    key={e.id}
+                    type="button"
+                    className="listRow listRow--btn"
+                    onClick={() => {
+                      const dd = e._dateObj;
+                      setVisibleMonth(startOfMonth(dd));
+                      setSelectedDay(dd);
+                    }}
+                    title="Ver en el calendario"
+                  >
+                    <div
+                      className="listRow__left"
+                      style={{ borderColor: LEVEL_COLOR_VAR[e._levelKey] }}
+                    >
+                      <div className="listRow__date">
+                        <span className="d1">
+                          {e._dateObj.toLocaleDateString("es-MX", {
+                            day: "2-digit",
+                            month: "short",
+                          })}
+                        </span>
+                        <span className="d2">
+                          {e._dateObj.toLocaleDateString("es-MX", {
+                            weekday: "short",
+                          })}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="listRow__main">
+                      <div className="listRow__top">
+                        <h3 className="listRow__title">{e.title}</h3>
+                        {e._timeLabel ? (
+                          <span className="listRow__time">{e._timeLabel}</span>
+                        ) : null}
+                      </div>
+
+                      <div className="listRow__meta">
+                        <span
+                          className="pill"
+                          style={{ background: LEVEL_COLOR_VAR[e._levelKey] }}
+                        >
+                          {LEVELS.find((x) => x.key === e._levelKey)?.label || e.level}
+                        </span>
+                        {e.location ? (
+                          <span className="pill pill--ghost">{e.location}</span>
+                        ) : null}
+                      </div>
+
+                      {e.description ? (
+                        <p className="listRow__desc">{e.description}</p>
+                      ) : null}
+                    </div>
+                  </button>
+                ))
+              )}
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+  );
+}

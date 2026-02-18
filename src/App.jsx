@@ -74,6 +74,7 @@ function getVariants(path) {
   // Inscripciones
   if (path.startsWith("/inscripciones")) return V.left;
   if (path.startsWith("/inscripciones/primaria")) return V.left;
+    if (path.startsWith("/inscripciones/secundaria")) return V.left;
 
   // Secciones sueltas
   if (path.startsWith("/contacto")) return V.right;

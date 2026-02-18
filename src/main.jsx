@@ -18,11 +18,11 @@ import Niveles from "./pages/niveles-educativos/NivelesEscolares.jsx";
 // ⛔ Inscripciones (comentados)
 import Inscripcion from "./pages/inscripciones/Inscripciones.jsx";
 import Inscripcion_Primaria from "./pages/inscripciones/Ins-primaria.jsx";
-// import Inscripcion_Secundaria from "./pages/inscripciones/secundaria.jsx";
+import Inscripcion_Secundaria from "./pages/inscripciones/Ins-secundaria.jsx";
 
 // ⛔ Otras páginas (comentadas)
-// import Contacto from "./pages/Contacto.jsx";
-// import Calendario from "./pages/Calendario.jsx";
+ import Contacto from "./pages/Contacto.jsx";
+ import Calendario from "./pages/Calendario.jsx";
 
 // ⛔ Vida colonial (comentadas)
 // import Eventos from "./pages/vida-colonial/Eventos.jsx";
@@ -73,12 +73,12 @@ const router = createBrowserRouter([
 
       // ⛔ Inscripciones
        { path: "inscripciones/primaria", element: <Inscripcion_Primaria /> },
-     // { path: "inscripciones/secundaria", element: <Inscripcion_Secundaria /> },
+      { path: "inscripciones/secundaria", element: <Inscripcion_Secundaria /> },
        { path: "inscripciones", element: <Inscripcion /> },
 
       // ⛔ Contacto / Calendario
-      // { path: "contacto", element: <Contacto /> },
-      // { path: "calendario", element: <Calendario /> },
+       { path: "contacto", element: <Contacto /> },
+      { path: "calendario", element: <Calendario /> },
 
       // ⛔ Vida ING
       // { path: "vida-ing", element: <ING /> },
