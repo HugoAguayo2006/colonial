@@ -1,4 +1,4 @@
-// src/components/Navbar/Navbar.jsx
+ // src/components/Navbar/Navbar.jsx
 import { useEffect, useMemo, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
@@ -38,20 +38,31 @@ export default function Navbar() {
         label: "Niveles",
         href: "/niveles",
         children: [
-          { label: "Preescolar", href: "/niveles/preescolar" },
           { label: "Primaria", href: "/niveles/primaria" },
           { label: "Secundaria", href: "/niveles/secundaria" },
-          { label: "Preparatoria", href: "/niveles/preparatoria" },
         ],
       },
-      { label: "Inscripciones", href: "/inscripciones" },
+      {
+        label: "Inscripciones",
+        href: "/inscripciones",
+        children: [
+          {
+            label: "Inscripciones Primaria",
+            href: "/inscripciones/primaria",
+          },
+          {
+            label: "Inscripciones Secundaria",
+            href: "/inscripciones/inscripciones-secundaria",
+          },
+        ],
+      },
       {
         label: "Vida Colonial",
         href: "/vida-colonial",
         children: [
-          { label: "Extracurriculares", href: "/vida-ing/extracurriculares" },
-          { label: "Eventos", href: "/vida-ing/eventos" },
-          { label: "Galería", href: "/vida-ing/galeria" },
+          { label: "Extracurriculares", href: "/vida-colonial/extracurriculares" },
+          { label: "Eventos", href: "/vida-colonial/eventos" },
+          { label: "Galería", href: "/vida-colonial/galeria" },
         ],
       },
       { label: "Calendario", href: "/calendario" },
@@ -100,7 +111,25 @@ export default function Navbar() {
     setMobileOpen(false);
   };
 
-  // clase activa para NavLink (sin cambiar tu CSS)
+  // ====== NUEVO: abrir dropdown con hover/focus (desktop) ======
+  const openOnHover = (id, hasChildren) => {
+    if (!hasChildren) return;
+    setOpenDropdown(id);
+  };
+
+  const closeOnLeave = (hasChildren) => {
+    if (!hasChildren) return;
+    setOpenDropdown(null);
+  };
+
+  const closeOnBlur = (e, hasChildren) => {
+    if (!hasChildren) return;
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setOpenDropdown(null);
+    }
+  };
+
+  // clases activas
   const navLinkClass = ({ isActive }) =>
     `ing-link${isActive ? " is-active" : ""}`;
 
@@ -127,7 +156,7 @@ export default function Navbar() {
           <img
             className="ing-logo"
             src={LOGO_SRC}
-            alt="Escudo Instituto Nueva Galicia"
+            alt="Escudo Colegio Colonial"
             loading="eager"
           />
 
@@ -137,9 +166,7 @@ export default function Navbar() {
               Colonial <span className="ing-titleBreak" />
             </span>
 
-            <span className="ing-titleInline">
-Colegio Colonial
-            </span>
+            <span className="ing-titleInline">Colegio Colonial</span>
           </h1>
         </NavLink>
 
@@ -157,7 +184,7 @@ Colegio Colonial
             >
               <img
                 src="/icons/facebook.webp"
-                alt="Facebook Instituto Nueva Galicia"
+                alt="Facebook Colegio Colonial"
                 className="ing-iconImg"
                 loading="lazy"
               />
@@ -174,7 +201,7 @@ Colegio Colonial
             >
               <img
                 src="/icons/instagram.webp"
-                alt="Instagram Instituto Nueva Galicia"
+                alt="Instagram Colegio Colonial"
                 className="ing-iconImg"
                 loading="lazy"
               />
@@ -191,7 +218,7 @@ Colegio Colonial
             >
               <img
                 src="/icons/WhatsApp.webp"
-                alt="WhatsApp Instituto Nueva Galicia"
+                alt="WhatsApp Colegio Colonial"
                 className="ing-iconImg"
                 loading="lazy"
               />
@@ -226,6 +253,10 @@ Colegio Colonial
                 <li
                   key={item.label}
                   className={`ing-item ${hasChildren ? "has-children" : ""}`}
+                  onMouseEnter={() => openOnHover(id, hasChildren)}
+                  onMouseLeave={() => closeOnLeave(hasChildren)}
+                  onFocusCapture={() => openOnHover(id, hasChildren)}
+                  onBlurCapture={(e) => closeOnBlur(e, hasChildren)}
                 >
                   <div className="ing-itemRow">
                     <NavLink
@@ -270,10 +301,7 @@ Colegio Colonial
             })}
           </ul>
         </nav>
-        
       </div>
-
-      
 
       {/* ====== PANEL MÓVIL ====== */}
       <div className={`ing-mobilePanel ${mobileOpen ? "open" : ""}`}>
@@ -330,6 +358,7 @@ Colegio Colonial
           </ul>
         </nav>
       </div>
+        <div className="separator-blue-1"></div>
     </header>
   );
 }
@@ -371,3 +400,4 @@ function BurgerIcon({ open }) {
     </svg>
   );
 }
+ 

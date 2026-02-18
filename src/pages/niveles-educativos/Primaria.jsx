@@ -100,8 +100,17 @@ export default function Primaria() {
               de acompañamiento.
             </p>
 
+                  {/* ✅ HORARIO INTEGRADO */}
+      <div className="prim-heroInfo" role="note" aria-label="Horario de clases">
+        <span className="prim-heroInfo__pill">🕒 Horario matutino</span>
+        <span className="prim-heroInfo__text">
+          Lunes a viernes · <strong>7:00 a.m.</strong> a{" "}
+          <strong>2:10 p.m.</strong>
+        </span>
+      </div>
+
             <div className="prim-hero__actions">
-              <Link className="prim-btn prim-btn--solid" to="/inscripciones">
+              <Link className="prim-btn prim-btn--solid" to="/inscripciones-primaria">
                 Inscripciones Primaria
               </Link>
 
@@ -245,7 +254,7 @@ export default function Primaria() {
         </ul>
 
         <div className="prim-ctaRow">
-          <Link className="prim-btn prim-btn--solid" to="/inscripciones">
+          <Link className="prim-btn prim-btn--solid" to="/inscripciones-primaria">
             Inscripciones Primaria
           </Link>
           <Link className="prim-btn prim-btn--ghost" to="/contacto">
@@ -347,19 +356,29 @@ export default function Primaria() {
             <div>
               <h2 className="prim-cta__title">Inscripciones · Primaria</h2>
               <p className="prim-cta__text">
-                Da el siguiente paso. Solicita informes y conoce el proceso de
-                admisión para Primaria.
+                Solicita informes y conoce el proceso de inscripción para
+                Primaria.
               </p>
+
+              <ul className="prim-list-1" style={{ marginTop: 14 }}>
+                <li>Turno matutino: lunes a viernes (7:50 a.m. a 2:00 p.m.)</li>
+                <li>Docentes especialistas por asignatura</li>
+                <li>Evaluación: cuaderno, proyectos, exámenes mensuales y trimestrales</li>
+                <li>Inglés desde 1° (sin certificación externa)</li>
+              </ul>
             </div>
 
             <div className="prim-cta__actions">
-              <Link className="prim-btn prim-btn--solid" to="/inscripciones">
+              <Link
+                className="prim-btn prim-btn--solid"
+                to="/inscripciones-primaria"
+              >
                 Más información
               </Link>
 
               <a
                 className="prim-btn prim-btn--ghost prim-btn--big"
-                href="https://wa.me/523331585919?text=Hola,%20quiero%20informaci%C3%B3n%20de%20Inscripciones%20para%20Primaria."
+                href="https://wa.me/5214424317022?text=Hola,%20quiero%20informaci%C3%B3n%20de%20Inscripciones%20para%20Primaria."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -367,8 +386,6 @@ export default function Primaria() {
               </a>
             </div>
           </div>
-
-
         </div>
       </section>
     </main>

@@ -214,7 +214,7 @@
 .ing-mobilePanel {
   display: none;
   background: #b51e27;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 0px solid rgba(255, 255, 255, 0.18);
   max-height: 0;
   overflow: hidden;
   transition: max-height 220ms ease;

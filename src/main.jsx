@@ -12,12 +12,12 @@ import Inicio from "./pages/Inicio.jsx";
 
 // ⛔ Niveles (comentados)
 import Primaria from "./pages/niveles-educativos/Primaria.jsx";
-// import Secundaria from "./pages/niveles-educativos/Secundaria.jsx";
+import Secundaria from "./pages/niveles-educativos/Secundaria.jsx";
 import Niveles from "./pages/niveles-educativos/NivelesEscolares.jsx";
 
 // ⛔ Inscripciones (comentados)
-// import Inscripcion from "./pages/inscripciones/Inscripciones.jsx";
-// import Inscripcion_Primaria from "./pages/inscripciones/primaria.jsx";
+import Inscripcion from "./pages/inscripciones/Inscripciones.jsx";
+import Inscripcion_Primaria from "./pages/inscripciones/Ins-primaria.jsx";
 // import Inscripcion_Secundaria from "./pages/inscripciones/secundaria.jsx";
 
 // ⛔ Otras páginas (comentadas)
@@ -66,14 +66,15 @@ const router = createBrowserRouter([
       { index: true, element: <Inicio /> },
 
       // ⛔ Niveles
-      // { path: "niveles/secundaria", element: <Secundaria /> },
+
        { path: "niveles/primaria", element: <Primaria /> },
+      { path: "niveles/secundaria", element: <Secundaria /> },
        { path: "niveles", element: <Niveles /> },
 
       // ⛔ Inscripciones
-      // { path: "inscripciones/primaria", element: <Inscripcion_Primaria /> },
-      // { path: "inscripciones/secundaria", element: <Inscripcion_Secundaria /> },
-      // { path: "inscripciones", element: <Inscripcion /> },
+       { path: "inscripciones/primaria", element: <Inscripcion_Primaria /> },
+     // { path: "inscripciones/secundaria", element: <Inscripcion_Secundaria /> },
+       { path: "inscripciones", element: <Inscripcion /> },
 
       // ⛔ Contacto / Calendario
       // { path: "contacto", element: <Contacto /> },

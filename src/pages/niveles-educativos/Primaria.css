@@ -405,6 +405,14 @@
   line-height: 1.7;
 }
 
+.prim-list-1{
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: #000000;
+  line-height: 1.7;
+  padding-top: -10px;
+}
+
 .prim-ctaRow{
   margin-top: 14px;
   display: flex;
@@ -630,4 +638,40 @@
   display: flex;
   flex-direction: column;
   justify-content: center; /* 🔥 CENTRADO VERTICAL */
+}
+
+/* ✅ PÉGALO en Primaria.css (o el css de Secundaria si lo separas) */
+.prim-heroInfo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.prim-heroInfo__pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .2px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.prim-heroInfo__text{
+  color: rgba(255,255,255,.92);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@media (max-width: 520px){
+  .prim-heroInfo__text{
+    width: 100%;
+  }
 }

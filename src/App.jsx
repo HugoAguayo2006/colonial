@@ -73,16 +73,17 @@ function getVariants(path) {
 
   // Inscripciones
   if (path.startsWith("/inscripciones")) return V.left;
+  if (path.startsWith("/inscripciones/primaria")) return V.left;
 
   // Secciones sueltas
   if (path.startsWith("/contacto")) return V.right;
   if (path.startsWith("/calendario")) return V.push;
 
   // Vida ING
-  if (path.startsWith("/vida-ing/eventos")) return V.push;
-  if (path.startsWith("/vida-ing/galeria")) return V.blur;
-  if (path.startsWith("/vida-ing/extracurriculares")) return V.up;
-  if (path.startsWith("/vida-ing")) return V.fadeUp;
+  if (path.startsWith("/vida-colonial/eventos")) return V.push;
+  if (path.startsWith("/vida-colonial/galeria")) return V.blur;
+  if (path.startsWith("/vida-colonial/extracurriculares")) return V.up;
+  if (path.startsWith("/vida-colonial")) return V.fadeUp;
 
   // Conócenos
   if (path.startsWith("/conocenos/mision-vision")) return V.fade;
