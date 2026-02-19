@@ -63,6 +63,7 @@ export default function Navbar() {
           { label: "Extracurriculares", href: "/vida-colonial/extracurriculares" },
           { label: "Eventos", href: "/vida-colonial/eventos" },
           { label: "Galería", href: "/vida-colonial/galeria" },
+          { label: "Otros Servicios", href: "/vida-colonial/otros-servicios" },
         ],
       },
       { label: "Calendario", href: "/calendario" },

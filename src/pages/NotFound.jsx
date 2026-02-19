@@ -1,79 +1,59 @@
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { NavLink } from "react-router-dom";
 import "./NotFound.css";
 
 export default function NotFound() {
-  const wa =
-    "https://wa.me/523328343223?text=" +
-    encodeURIComponent(
-      "Hola, vengo del sitio del Instituto Nueva Galicia Tlajomulco. Entré a una página que no encontré y me gustaría más información."
-    );
-
   return (
     <main className="nf">
       <Helmet>
-        <title>404 | Página no encontrada</title>
+        <title>404 | Colegio Colonial</title>
         <meta
           name="description"
-          content="La página que buscas no existe o fue movida. Vuelve al inicio o contáctanos."
+          content="La página que buscas no existe o fue movida. Regresa al inicio del Colegio Colonial."
         />
-        <meta name="robots" content="noindex" />
       </Helmet>
 
-      {/* fondo / decor */}
       <div className="nf__bg" aria-hidden="true">
-        <span className="nf__orb nf__orb--1" />
-        <span className="nf__orb nf__orb--2" />
+        <span className="nf__orb nf__orb--red" />
+        <span className="nf__orb nf__orb--blue" />
         <span className="nf__grid" />
-        <span className="nf__redLine" />
       </div>
 
-      <section className="nf__wrap">
-        <div className="nf__card">
-          <div className="nf__badge">Instituto Nueva Galicia</div>
+      <section className="nf__card" role="alert" aria-live="polite">
+        <div className="nf__badge">
+          <span className="nf__dot" />
+          Colegio Colonial
+        </div>
 
-          <div className="nf__code" aria-label="Error 404">
-            404
-          </div>
+        <h1 className="nf__title">
+          Error <span className="nf__code">404</span>
+        </h1>
 
-          <h1 className="nf__title">Página no encontrada</h1>
-          <p className="nf__text">
-            La ruta que buscabas no existe o fue movida. Si llegaste aquí por un
-            link, avísanos y lo corregimos.
-          </p>
+        <p className="nf__subtitle">
+          No encontramos esta página. Puede que el enlace esté mal escrito o que el
+          contenido haya cambiado de ubicación.
+        </p>
 
-          <div className="nf__actions">
-            <Link className="nf__btn nf__btn--primary" to="/">
-              Volver al inicio
-            </Link>
-            <Link className="nf__btn nf__btn--ghost" to="/contacto">
-              Ir a contacto
-            </Link>
+        <div className="nf__actions">
+          <NavLink className="nf__btn nf__btn--primary" to="/">
+            Volver al inicio
+          </NavLink>
+          <NavLink className="nf__btn nf__btn--ghost" to="/contacto">
+            Contacto
+          </NavLink>
+        </div>
 
-            <a
-              className="nf__btn nf__btn--wa"
-              href={wa}
-              target="_blank"
-              rel="noreferrer"
-            >
-              WhatsApp
-            </a>
-          </div>
+        <div className="nf__help">
+          <span className="nf__helpLabel">Tip:</span> revisa la URL o usa el menú para
+          navegar.
+        </div>
 
-          <div className="nf__links">
-            <span className="nf__hint">Rutas rápidas:</span>
-            <Link to="/eventos">Eventos</Link>
-            <span className="nf__dot">•</span>
-            <Link to="/calendario">Calendario</Link>
-            <span className="nf__dot">•</span>
-            <Link to="/galeria">Galería</Link>
-            <span className="nf__dot">•</span>
-            <Link to="/actividades">Extracurriculares</Link>
-          </div>
-
-          <div className="nf__small">
-            Si esto fue un error, escríbenos y lo arreglamos rápido.
-          </div>
+        <div className="nf__footer">
+          <span className="nf__mini">Colegio Colonial • Sitio Oficial</span>
+          <span className="nf__sep">•</span>
+          <NavLink className="nf__miniLink" to="/niveles">
+            Ver niveles
+          </NavLink>
         </div>
       </section>
     </main>

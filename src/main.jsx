@@ -25,10 +25,11 @@ import Inscripcion_Secundaria from "./pages/inscripciones/Ins-secundaria.jsx";
  import Calendario from "./pages/Calendario.jsx";
 
 // ⛔ Vida colonial (comentadas)
-// import Eventos from "./pages/vida-colonial/Eventos.jsx";
-// import Galeria from "./pages/vida-colonial/Galeria.jsx";
-// import Actividades from "./pages/vida-colonial/Extracurriculares.jsx";
-// import ING from "./pages/vida-colonial/VidaCol.jsx";
+ import Eventos from "./pages/vida-colonial/Eventos.jsx";
+ import Galeria from "./pages/vida-colonial/Galeria.jsx";
+ import Actividades from "./pages/vida-colonial/Extracurriculares.jsx";
+  import Otros from "./pages/vida-colonial/otros-servicios.jsx";
+ import COLONIAL from "./pages/vida-colonial/VidaCol.jsx";
 
 // ⛔ Conócenos (comentadas)
 // import VM from "./pages/conocenos/MisionVision.jsx";
@@ -39,7 +40,7 @@ import Inscripcion_Secundaria from "./pages/inscripciones/Ins-secundaria.jsx";
 // import Modelo from "./pages/conocenos/Modelo.jsx";
 
 // ⛔ NotFound comentado (opcional)
-// import NotFound from "./pages/NotFound.jsx";
+ import NotFound from "./pages/NotFound.jsx";
 
 // ✅ CSS (puedes comentarlo si quieres descartar estilos)
 import "./styles.css";
@@ -81,10 +82,11 @@ const router = createBrowserRouter([
       { path: "calendario", element: <Calendario /> },
 
       // ⛔ Vida ING
-      // { path: "vida-ing", element: <ING /> },
-      // { path: "vida-ing/eventos", element: <Eventos /> },
-      // { path: "vida-ing/galeria", element: <Galeria /> },
-      // { path: "vida-ing/extracurriculares", element: <Actividades /> },
+       { path: "vida-colonial", element: <COLONIAL /> },
+        { path: "vida-colonial/eventos", element: <Eventos /> },
+       { path: "vida-colonial/galeria", element: <Galeria /> },
+       { path: "vida-colonial/extracurriculares", element: <Actividades /> },
+              { path: "vida-colonial/otros-servicios", element: <Otros /> },
 
       // ⛔ Conócenos
       // { path: "conocenos/mision-vision", element: <VM /> },
@@ -95,7 +97,7 @@ const router = createBrowserRouter([
       // { path: "conocenos", element: <Conocenos /> },
 
       // ⛔ NotFound
-      // { path: "*", element: <NotFound /> },
+       { path: "*", element: <NotFound /> },
     ],
   },
 ]);

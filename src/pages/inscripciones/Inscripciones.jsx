@@ -1,157 +1,260 @@
-import { Link } from "react-router-dom";
+// src/pages/Inscripciones.jsx
+import { NavLink } from "react-router-dom";
 import "./Inscripciones.css";
 
-export default function Niveles() {
+export default function Inscripciones() {
   return (
-    <main className="niv_page">
+    <main className="insc2">
       {/* HERO */}
-      <header className="niv_hero">
-        <div className="niv_heroInner">
-          <h1 className="niv_title">Niveles Académicos</h1>
-          <p className="niv_subtitle">
-            Una formación que combina exigencia académica, acompañamiento humano y
-            valores para que cada estudiante crezca con propósito.
-          </p>
-
-          <div className="niv_heroCtas">
-            <Link className="niv_btn niv_btnBlue" to="/primaria">
-              Ver Primaria
-              <span className="niv_btnArrow">→</span>
-            </Link>
-            <Link className="niv_btn niv_btnRed" to="/secundaria">
-              Ver Secundaria
-              <span className="niv_btnArrow">→</span>
-            </Link>
+      <section className="insc2_hero">
+        <div className="insc2_wrap">
+          <div className="insc2_topline">
+            <span className="insc2_chip">Admisiones</span>
+            <span className="insc2_dot" />
+            <span className="insc2_brand">Colegio Colonial</span>
           </div>
 
-          <div className="niv_metrics">
-            <div className="niv_metric">
-              <div className="niv_metricNum">2</div>
-              <div className="niv_metricTxt">Niveles disponibles</div>
+          <div className="insc2_heroGrid">
+            <div className="insc2_heroLeft">
+              <h1 className="insc2_title">Inscripciones</h1>
+              <p className="insc2_lead">
+                Un proceso claro, cercano y rápido. Elige tu nivel para ver
+                requisitos, horarios y pasos de admisión.
+              </p>
+
+              <div className="insc2_ctas">
+                <NavLink to="/primaria" className="insc2_btn insc2_btnPrimary">
+                  Primaria
+                  <span className="insc2_btnArrow" aria-hidden="true">→</span>
+                </NavLink>
+
+                <NavLink to="/secundaria" className="insc2_btn insc2_btnOutline">
+                  Secundaria
+                  <span className="insc2_btnArrow" aria-hidden="true">→</span>
+                </NavLink>
+              </div>
+
+              <div className="insc2_kpis">
+                <div className="insc2_kpi">
+                  <div className="insc2_kpiNum">2</div>
+                  <div className="insc2_kpiText">Niveles</div>
+                </div>
+                <div className="insc2_kpi">
+                  <div className="insc2_kpiNum">1</div>
+                  <div className="insc2_kpiText">Ruta de inscripción</div>
+                </div>
+                <div className="insc2_kpi">
+                  <div className="insc2_kpiNum">100%</div>
+                  <div className="insc2_kpiText">Acompañamiento</div>
+                </div>
+              </div>
             </div>
-            <div className="niv_metric">
-              <div className="niv_metricNum">Valores</div>
-              <div className="niv_metricTxt">Formación integral</div>
-            </div>
-            <div className="niv_metric">
-              <div className="niv_metricNum">Enfoque</div>
-              <div className="niv_metricTxt">Académico y humano</div>
+
+            <div className="insc2_heroRight" aria-hidden="true">
+              <div className="insc2_crest">
+                <div className="insc2_crestRing" />
+                <div className="insc2_crestCore">
+                  <div className="insc2_crestTitle">Colegio Colonial</div>
+                  <div className="insc2_crestSub">Admisiones</div>
+                </div>
+              </div>
+
+              <div className="insc2_heroNote">
+                <div className="insc2_heroNoteTitle">Tip rápido</div>
+                <div className="insc2_heroNoteText">
+                  Entra al nivel y usa el botón principal para avanzar directo a
+                  inscripciones.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </header>
 
-              <div className="separator-red"></div>
+        <div className="insc2_bg" aria-hidden="true" />
+      </section>
 
-      {/* CONTENT */}
-      <section className="niv_section">
-        <div className="niv_container">
-          <h2 className="niv_h2">Elige el nivel</h2>
-          <p className="niv_p">
-            Cada etapa tiene su propio enfoque, pero comparten el mismo objetivo:
-            formar estudiantes capaces, responsables y con visión.
-          </p>
+      {/* NIVEL CARDS */}
+      <section className="insc2_section">
+        <div className="insc2_wrap">
+          <div className="insc2_header">
+            <div>
+              <h2 className="insc2_h2">Elige tu nivel</h2>
+              <p className="insc2_p">
+                Resumen rápido y acceso directo a la página del nivel.
+              </p>
+            </div>
+            <div className="insc2_headerBadge">
+              Inscripciones abiertas • Cupo limitado
+            </div>
+          </div>
 
-          <div className="niv_grid">
+          <div className="insc2_cards">
             {/* PRIMARIA */}
-            <article className="niv_card niv_cardBlue">
-              <div className="niv_cardTop">
-                <div className="niv_iconWrap">
-                  <span className="niv_icon">📘</span>
+            <article className="insc2_card insc2_cardBlue">
+              <div className="insc2_cardHead">
+                <div className="insc2_icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4 7.5L12 4l8 3.5v9L12 20l-8-3.5v-9Z"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M12 4v16"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </div>
-                <div className="niv_cardHead">
-                  <h3 className="niv_cardTitle">Primaria</h3>
-                  <div className="niv_chips">
-                    <span className="niv_chip">Bases académicas</span>
-                    <span className="niv_chip">Hábitos</span>
-                    <span className="niv_chip">Valores</span>
-                  </div>
+                <div className="insc2_cardTitles">
+                  <h3 className="insc2_h3">Primaria</h3>
+                  <p className="insc2_muted">
+                    Bases sólidas, hábitos y formación integral.
+                  </p>
                 </div>
+                <span className="insc2_pill">Nivel</span>
               </div>
 
-              <p className="niv_cardText">
-                Fortalecemos lectura, escritura y pensamiento lógico, mientras se
-                desarrollan habilidades socioemocionales, disciplina y trabajo en
-                equipo.
-              </p>
-
-              <ul className="niv_list">
-                <li>Aprendizaje activo y acompañamiento cercano</li>
-                <li>Desarrollo de hábitos de estudio</li>
-                <li>Formación en valores y convivencia</li>
+              <ul className="insc2_list">
+                <li>
+                  <span className="insc2_bullet" />
+                  Acompañamiento cercano y enfoque formativo.
+                </li>
+                <li>
+                  <span className="insc2_bullet" />
+                  Desarrollo de lectura, lógica y convivencia.
+                </li>
+                <li>
+                  <span className="insc2_bullet" />
+                  Actividades para disciplina, valores y confianza.
+                </li>
               </ul>
 
-              <div className="niv_cardActions">
-                <Link className="niv_btn niv_btnBlue" to="/primaria">
-                  Conocer Primaria <span className="niv_btnArrow">→</span>
-                </Link>
-                <Link className="niv_link" to="/contacto">
-                  Solicitar informes
-                </Link>
+              <div className="insc2_actions">
+                <NavLink to="/primaria" className="insc2_btn insc2_btnPrimary">
+                  Ir a Primaria <span aria-hidden="true">→</span>
+                </NavLink>
+                <a href="#pasos" className="insc2_btn insc2_btnSoft">
+                  Ver pasos
+                </a>
               </div>
-
-              <div className="niv_cornerTag">Azul Institucional</div>
             </article>
 
             {/* SECUNDARIA */}
-            <article className="niv_card niv_cardRed">
-              <div className="niv_cardTop">
-                <div className="niv_iconWrap">
-                  <span className="niv_icon">🎓</span>
+            <article className="insc2_card insc2_cardRed">
+              <div className="insc2_cardHead">
+                <div className="insc2_icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M7 7h10v14H7V7Z"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M9 3h6v4H9V3Z"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M9 11h6M9 15h6"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
                 </div>
-                <div className="niv_cardHead">
-                  <h3 className="niv_cardTitle">Secundaria</h3>
-                  <div className="niv_chips">
-                    <span className="niv_chip">Pensamiento crítico</span>
-                    <span className="niv_chip">Responsabilidad</span>
-                    <span className="niv_chip">Proyectos</span>
-                  </div>
+                <div className="insc2_cardTitles">
+                  <h3 className="insc2_h3">Secundaria</h3>
+                  <p className="insc2_muted">
+                    Pensamiento crítico, responsabilidad y alto nivel académico.
+                  </p>
                 </div>
+                <span className="insc2_pill insc2_pillRed">Turno Matutino</span>
               </div>
 
-              <p className="niv_cardText">
-                Consolidamos conocimientos con docentes especialistas, evaluaciones
-                periódicas y proyectos, impulsando el compromiso, el criterio y la
-                autonomía del estudiante.
-              </p>
-
-              <ul className="niv_list">
-                <li>Enfoque académico exigente y humano</li>
-                <li>Proyectos, exámenes mensuales y trimestrales</li>
-                <li>Formación integral y liderazgo</li>
+              <ul className="insc2_list">
+                <li>
+                  <span className="insc2_bullet insc2_bulletRed" />
+                  Docentes especialistas por asignatura.
+                </li>
+                <li>
+                  <span className="insc2_bullet insc2_bulletRed" />
+                  Proyectos, trabajos y evaluaciones periódicas.
+                </li>
+                <li>
+                  <span className="insc2_bullet insc2_bulletRed" />
+                  Inglés desde 1° (sin certificación externa).
+                </li>
               </ul>
 
-              <div className="niv_cardActions">
-                <Link className="niv_btn niv_btnRed" to="/secundaria">
-                  Conocer Secundaria <span className="niv_btnArrow">→</span>
-                </Link>
-                <Link className="niv_link" to="/contacto">
-                  Solicitar informes
-                </Link>
+              <div className="insc2_actions">
+                <NavLink to="/secundaria" className="insc2_btn insc2_btnPrimary">
+                  Ir a Secundaria <span aria-hidden="true">→</span>
+                </NavLink>
+                <a href="#pasos" className="insc2_btn insc2_btnSoft">
+                  Ver pasos
+                </a>
               </div>
-
-              <div className="niv_cornerTag">Rojo Institucional</div>
             </article>
           </div>
+        </div>
+      </section>
 
-          {/* CTA STRIP */}
-          <div className="niv_strip">
-            <div className="niv_stripLeft">
-              <h3 className="niv_stripTitle">¿Listo para dar el siguiente paso?</h3>
-              <p className="niv_stripText">
-                Si quieres conocer costos, proceso de inscripción y disponibilidad,
-                contáctanos y te respondemos rápido.
-              </p>
+      {/* PASOS */}
+      <section id="pasos" className="insc2_steps">
+        <div className="insc2_wrap">
+          <div className="insc2_stepsHead">
+            <h2 className="insc2_h2">Pasos de inscripción</h2>
+            <p className="insc2_p">
+              Ruta simple para avanzar sin perderte (los detalles exactos están
+              dentro de cada nivel).
+            </p>
+          </div>
+
+          <div className="insc2_timeline">
+            <div className="insc2_step">
+              <div className="insc2_stepNum">1</div>
+              <div className="insc2_stepBody">
+                <div className="insc2_stepTitle">Elegir nivel</div>
+                <div className="insc2_stepText">
+                  Selecciona Primaria o Secundaria para ver la información
+                  completa.
+                </div>
+              </div>
             </div>
 
-            <div className="niv_stripRight">
-              <Link className="niv_btn niv_btnGhost" to="/contacto">
-                Contacto <span className="niv_btnArrow">→</span>
-              </Link>
-              <Link className="niv_btn niv_btnOutline" to="/conocenos">
-                Conócenos <span className="niv_btnArrow">→</span>
-              </Link>
+            <div className="insc2_step">
+              <div className="insc2_stepNum">2</div>
+              <div className="insc2_stepBody">
+                <div className="insc2_stepTitle">Requisitos</div>
+                <div className="insc2_stepText">
+                  Prepara documentos y datos del alumno según el nivel.
+                </div>
+              </div>
             </div>
+
+            <div className="insc2_step">
+              <div className="insc2_stepNum">3</div>
+              <div className="insc2_stepBody">
+                <div className="insc2_stepTitle">Entrega y confirmación</div>
+                <div className="insc2_stepText">
+                  Se valida la información y se confirma el lugar.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="insc2_bottomCtas">
+            <NavLink to="/primaria" className="insc2_btn insc2_btnOutline">
+              Empezar con Primaria <span aria-hidden="true">→</span>
+            </NavLink>
+            <NavLink to="/secundaria" className="insc2_btn insc2_btnOutline">
+              Empezar con Secundaria <span aria-hidden="true">→</span>
+            </NavLink>
           </div>
         </div>
       </section>

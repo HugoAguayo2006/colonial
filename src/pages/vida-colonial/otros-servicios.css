@@ -1,0 +1,117 @@
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+
+.os {
+  font-family: "Onest", sans-serif;
+  background: #f5f7fa;
+  color: #2F3E52;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.os-hero {
+  position: relative;
+  background: linear-gradient(135deg, #2F3E52, #1e2a38);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.os-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(139, 0, 0, 0.15);
+}
+
+.os-hero-content {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.os-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.os-hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* =========================
+   SERVICIOS CARDS
+========================= */
+
+.os-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 80px 10%;
+}
+
+.os-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 6px solid #8B0000;
+}
+
+.os-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.os-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.os-card h2 {
+  margin-bottom: 15px;
+  color: #2F3E52;
+}
+
+.os-card p {
+  line-height: 1.6;
+  color: #444;
+}
+
+/* =========================
+   CTA FINAL
+========================= */
+
+.os-cta {
+  background: #8B0000;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.os-cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.os-btn {
+  background: white;
+  color: #8B0000;
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.os-btn:hover {
+  background: #2F3E52;
+  color: white;
+}

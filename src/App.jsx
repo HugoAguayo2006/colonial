@@ -84,6 +84,7 @@ function getVariants(path) {
   if (path.startsWith("/vida-colonial/eventos")) return V.push;
   if (path.startsWith("/vida-colonial/galeria")) return V.blur;
   if (path.startsWith("/vida-colonial/extracurriculares")) return V.up;
+    if (path.startsWith("/vida-colonial/otros-servicios")) return V.up;
   if (path.startsWith("/vida-colonial")) return V.fadeUp;
 
   // Conócenos
