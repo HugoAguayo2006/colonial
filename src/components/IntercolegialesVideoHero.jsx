@@ -5,13 +5,12 @@ export default function IntercolegialesVideoHero({
   subtitle = "Invitamos a los colegios de la orden a vivir una jornada de competencia, convivencia y espíritu deportivo.",
   youtubeId = "VNn2FhvNGTI",
   start = 0,
-  badge = "Convocatoria abierta",
   logoSrc = "/logo.svg",
   logoAlt = "Escudo",
 }) {
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?start=1(
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?start=${
     start || 0
-  )}&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1`;
+  }&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1`;
 
   return (
     <section className="inter-video">
@@ -19,14 +18,14 @@ export default function IntercolegialesVideoHero({
         <header className="inter-video__head">
           <h1 className="inter-video__title">{title}</h1>
 
-          {subtitle ? (
+          {subtitle && (
             <p className="inter-video__subtitle">{subtitle}</p>
-          ) : null}
+          )}
 
           <div className="inter-video__actions">
             <a
               className="inter-video__secondary"
-              href={`https://www.youtube.com/watch?v=${youtubeId}&t=0s`}
+              href={`https://www.youtube.com/watch?v=${youtubeId}&t=${start}s`}
               target="_blank"
               rel="noreferrer"
             >
@@ -36,7 +35,6 @@ export default function IntercolegialesVideoHero({
         </header>
 
         <div className="inter-video__frame">
-          {/* 🔴🟡🟢 */}
           <div className="inter-video__topbar" aria-hidden="true">
             <span className="inter-video__dot red" />
             <span className="inter-video__dot yellow" />
@@ -58,11 +56,11 @@ export default function IntercolegialesVideoHero({
             />
           </div>
 
-          {logoSrc ? (
+          {logoSrc && (
             <div className="inter-video__logo">
               <img src={logoSrc} alt={logoAlt} />
             </div>
-          ) : null}
+          )}
         </div>
       </div>
     </section>
