@@ -1,54 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Primaria.css";
-import TalleresSecundaria from "../../components/Talleres";
-
-const TALLERES_SECUNDARIA = [
-{
-  id: "pintura",
-  nombre: "Pintura",
-  descripcion: "Exploran técnicas artísticas mientras desarrollan sensibilidad estética y creatividad visual.",
-  fotos: ["/images/kinder/talleres/pintura1.webp"],
-  meta: ["Expresión artística", "Técnica", "Imaginación"],
-},
-{
-  id: "manualidades",
-  nombre: "Manualidades",
-  descripcion: "Creación de proyectos con distintos materiales que estimulan la paciencia y la destreza.",
-  fotos: ["/images/kinder/talleres/manualidades1.webp"],
-  meta: ["Creatividad", "Precisión", "Trabajo manual"],
-},
-{
-  id: "danza",
-  nombre: "Danza",
-  descripcion: "Desarrollan postura, equilibrio y seguridad a través del movimiento guiado.",
-  fotos: ["/images/kinder/talleres/danza1.webp"],
-  meta: ["Equilibrio", "Confianza", "Movimiento"],
-},
-{
-  id: "futbol",
-  nombre: "Fútbol",
-  descripcion: "Fortalecen resistencia física y valores como el respeto y la colaboración.",
-  fotos: ["/images/kinder/talleres/futbol1.webp"],
-  meta: ["Resistencia", "Respeto", "Trabajo en equipo"],
-},
-{
-  id: "basquetbol",
-  nombre: "Básquetbol",
-  descripcion: "Impulsa la coordinación ojo-mano y la toma de decisiones en equipo.",
-  fotos: ["/images/kinder/talleres/basquetbol1.webp"],
-  meta: ["Coordinación", "Estrategia", "Colaboración"],
-},
-{
-  id: "voleibol",
-  nombre: "Voleibol",
-  descripcion: "Promueve la comunicación y el sentido de responsabilidad dentro del juego colectivo.",
-  fotos: ["/images/kinder/talleres/voleibol1.webp"],
-  meta: ["Comunicación", "Responsabilidad", "Equipo"],
-}
-
-
-];
+import Extracurriculares from "../../components/Talleres";
+import { ACTIVIDADES } from "../../data/actividades-3";
 
 export default function Primaria() {
   // ✅ HERO: fotos SOLO del hero
@@ -385,14 +339,15 @@ export default function Primaria() {
         </div>
       </section>
 
-      <div id="talleres" className="anchor" />
-      <TalleresSecundaria
-        badge="Primaria"
-        title="Actividades extracurriculares"
-        subtitle="Además, ofrecemos actividades extracurriculares que estimulan la creatividad, el desarrollo físico y el pensamiento crítico."
-        schedule={{ label: "Horario", value: "2:40 – 3:40" }}
-        items={TALLERES_SECUNDARIA}
-      />
+        <div className="separator-blue"></div>
+    <Extracurriculares
+      nivel="primaria"
+      items={ACTIVIDADES}
+      title="Extracurriculares en Primaria"
+      subtitle="Actividades para fortalecer hábitos, disciplina y talentos."
+    />
+
+            <div className="separator-blue"></div>
 
       <section className="prim-section">
         <div className="prim-wrap">

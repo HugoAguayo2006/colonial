@@ -1,46 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Primaria.css";
-import TalleresPrimaria from "../../components/Talleres";
+import Extracurriculares from "../../components/Talleres";
+import { ACTIVIDADES } from "../../data/actividades-2";
 
-const TALLERES_PRIMARIA = [
-{
-  id: "manualidades",
-  nombre: "Manualidades",
-  descripcion: "Imaginación y destreza a través de la creación de proyectos con diferentes materiales.",
-  fotos: ["/images/kinder/talleres/manualidades1.webp"],
-  meta: ["Creatividad", "Motricidad fina", "Imaginación"],
-},
-{
-  id: "danza",
-  nombre: "Danza",
-  descripcion: "Movimiento, ritmo y expresión corporal para fortalecer la confianza y coordinación.",
-  fotos: ["/images/kinder/talleres/danza1.webp", "/images/kinder/talleres/danza2.webp"],
-  meta: ["Ritmo", "Expresión", "Coordinación"],
-},
-{
-  id: "futbol",
-  nombre: "Fútbol",
-  descripcion: "Trabajo en equipo, disciplina y desarrollo de habilidades básicas con enfoque lúdico.",
-  fotos: ["/images/kinder/talleres/futbol1.webp", "/images/kinder/talleres/futbol2.webp"],
-  meta: ["Equipo", "Disciplina", "Energía"],
-},
-{
-  id: "basquetbol",
-  nombre: "Básquetbol",
-  descripcion: "Agilidad, estrategia y cooperación mientras desarrollan habilidades deportivas.",
-  fotos: ["/images/kinder/talleres/basquetbol1.webp"],
-  meta: ["Agilidad", "Estrategia", "Trabajo en equipo"],
-},
-{
-  id: "voleibol",
-  nombre: "Voleibol",
-  descripcion: "Coordinación, comunicación y espíritu de equipo en un ambiente dinámico.",
-  fotos: ["/images/kinder/talleres/voleibol1.webp"],
-  meta: ["Coordinación", "Comunicación", "Equipo"],
-}
-
-];
 
 export default function Primaria() {
   // ✅ HERO: fotos SOLO del hero
@@ -357,15 +320,15 @@ export default function Primaria() {
     </div>
   </div>
 </section>
+        <div className="separator-blue"></div>
+    <Extracurriculares
+      nivel="primaria"
+      items={ACTIVIDADES}
+      title="Extracurriculares en Primaria"
+      subtitle="Actividades para fortalecer hábitos, disciplina y talentos."
+    />
 
-<div id="talleres" className="anchor" />
-<TalleresPrimaria
-  badge="Primaria"
-  title="Actividades extracurriculares"
-  subtitle="Además, ofrecemos actividades extracurriculares que estimulan la creatividad, el desarrollo físico y el pensamiento crítico."
-  schedule={{ label: "Horario", value: "2:40 – 3:40" }}
-  items={TALLERES_PRIMARIA}
-/>
+            <div className="separator-blue"></div>
 
       <section className="prim-section">
         <div className="prim-wrap">
