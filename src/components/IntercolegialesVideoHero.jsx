@@ -8,9 +8,7 @@ export default function IntercolegialesVideoHero({
   logoSrc = "/logo.svg",
   logoAlt = "Escudo",
 }) {
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?start=${
-    start || 0
-  }&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?start=0&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1`;;
 
   return (
     <section className="inter-video">
