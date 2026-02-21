@@ -13,6 +13,7 @@
 
 .cc-home{
   background: var(--cc-white);
+  margin-top: -30px;
 }
 
 /* =========================
@@ -721,4 +722,60 @@
   padding-right: 6px !important;
 }
 
+
+/* =========================
+   HERO: SIEMPRE TODO A LA IZQUIERDA
+========================= */
+
+/* 1) Que el contenedor no se centre por max-width/min() */
+.cc-hero-inner{
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 40px !important;   /* ajusta si quieres */
+  padding-right: 16px !important;
+}
+
+/* 2) Alineación izquierda real */
+.cc-hero-inner{
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  justify-items: start !important;
+  align-content: center !important;
+}
+
+/* 3) El bloque verde NO se centra nunca */
+.cc-hero-titleWrap{
+  justify-self: start !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  max-width: 760px !important;
+}
+
+/* 4) Los botones también a la izquierda */
+.cc-hero-actions,
+.cc-dots{
+  justify-content: flex-start !important;
+}
+
+/* 5) En móvil que no se pegue demasiado al borde */
+@media (max-width: 520px){
+  .cc-hero-inner{
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* =========================
+   HERO MÁS GRANDE Y POTENTE
+========================= */
+
+/* TÍTULO PRINCIPAL */
+.cc-hero-title{
+  font-size: clamp(30px, 6vw, 88px) !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+}
 
