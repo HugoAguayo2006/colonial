@@ -28,16 +28,17 @@ import Inscripcion_Secundaria from "./pages/inscripciones/Ins-secundaria.jsx";
  import Eventos from "./pages/vida-colonial/Eventos.jsx";
  import Galeria from "./pages/vida-colonial/Galeria.jsx";
  import Actividades from "./pages/vida-colonial/Extracurriculares.jsx";
-  import Otros from "./pages/vida-colonial/otros-servicios.jsx";
+ import Otros from "./pages/vida-colonial/otros-servicios.jsx";
  import COLONIAL from "./pages/vida-colonial/VidaCol.jsx";
 
 // ⛔ Conócenos (comentadas)
-// import VM from "./pages/conocenos/MisionVision.jsx";
-// import Valores from "./pages/conocenos/Valores.jsx";
-// import Historia from "./pages/conocenos/Historia.jsx";
-// import Campus from "./pages/conocenos/Campus.jsx";
-// import Conocenos from "./pages/conocenos/Conocenos.jsx";
-// import Modelo from "./pages/conocenos/Modelo.jsx";
+ import VM from "./pages/conocenos/MisionVision.jsx";
+ import Valores from "./pages/conocenos/Valores.jsx";
+ import Historia from "./pages/conocenos/Historia-1.jsx";
+ import Campus from "./pages/conocenos/Campus.jsx";
+import Conocenos from "./pages/conocenos/Conocenos.jsx";
+ import Modelo from "./pages/conocenos/Modelo.jsx";
+import CCT from "./pages/conocenos/CCT.jsx";
 
 // ⛔ NotFound comentado (opcional)
  import NotFound from "./pages/NotFound.jsx";
@@ -86,15 +87,16 @@ const router = createBrowserRouter([
         { path: "vida-colonial/eventos", element: <Eventos /> },
        { path: "vida-colonial/galeria", element: <Galeria /> },
        { path: "vida-colonial/extracurriculares", element: <Actividades /> },
-              { path: "vida-colonial/otros-servicios", element: <Otros /> },
+        { path: "vida-colonial/otros-servicios", element: <Otros /> },
 
       // ⛔ Conócenos
-      // { path: "conocenos/mision-vision", element: <VM /> },
-      // { path: "conocenos/valores", element: <Valores /> },
-      // { path: "conocenos/historia", element: <Historia /> },
-      // { path: "conocenos/otros-campus", element: <Campus /> },
-      // { path: "conocenos/modelo-educativo", element: <Modelo /> },
-      // { path: "conocenos", element: <Conocenos /> },
+       { path: "conocenos/mision-vision", element: <VM /> },
+     { path: "conocenos/valores", element: <Valores /> },
+      { path: "conocenos/historia", element: <Historia /> },
+     { path: "conocenos/otros-campus", element: <Campus /> },
+     { path: "conocenos/modelo-educativo", element: <Modelo /> },
+      { path: "conocenos/clave-de-centro-de-trabajo", element: <CCT /> },
+       { path: "conocenos", element: <Conocenos /> },
 
       // ⛔ NotFound
        { path: "*", element: <NotFound /> },

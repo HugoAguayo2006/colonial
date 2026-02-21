@@ -1,0 +1,1165 @@
+/* src/pages/Campus.css */
+
+/* ===== Tokens (ajusta si quieres) ===== */
+:root{
+  --ing-blue: #2F3E52;
+  --ing-red: #b51e27;
+  --card: #ffffff;
+  --bg: #f6f7fb;
+  --text: #0f1222;
+  --muted: rgba(15,18,34,.72);
+  --line: rgba(15,18,34,.10);
+  --shadow: 0 12px 28px rgba(15,18,34,.10);
+  --radius: 18px;
+}
+
+/* ===== Page ===== */
+.camp_page{
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+
+}
+
+/* si tu header es sticky/fixed */
+.camp_pagePad{
+  padding-top: 14px; /* si se te sigue tapando, súbelo a 24px */
+}
+
+/* container centrado */
+.camp_container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 14px 28px;
+}
+
+.camp_skeleton{
+  height: 520px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+/* ===== Header ===== */
+.camp_head{
+  display:flex;
+  gap:16px;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  margin-bottom: 14px;
+}
+
+.camp_title{
+  font-size: clamp(28px, 4vw, 44px);
+  color: #2F3E52;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.camp_subtitle{
+  margin:6px 0 0;
+  color: var(--muted);
+  max-width: 82ch;
+  line-height: 1.35;
+}
+
+/* filtros como "toolbar" */
+.camp_filters{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:flex-end;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px;
+  box-shadow: var(--shadow);
+}
+
+.camp_label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:12px;
+  color: rgba(15,18,34,.78);
+  min-width: 180px;
+}
+
+.camp_label.isDisabled{
+  opacity:.55;
+}
+
+.camp_select, .camp_input{
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  padding: 0 12px;
+  background:#fff;
+  outline:none;
+  font-size: 14px;
+}
+
+.camp_select:focus, .camp_input:focus{
+  border-color: rgba(31,42,133,.45);
+  box-shadow: 0 0 0 4px rgba(31,42,133,.12);
+}
+
+.camp_searchWrap{
+  min-width: 280px;
+}
+
+.camp_btn{
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background:#fff;
+  padding: 0 14px;
+  font-weight: 900;
+  cursor:pointer;
+  transition: transform .08s ease, background .15s ease;
+}
+
+.camp_btn:hover{
+  background: rgba(15,18,34,.04);
+}
+
+.camp_btn:active{
+  transform: translateY(1px);
+}
+
+/* ===== Featured ===== */
+.camp_featured{
+  border-radius: 22px;
+  padding: 16px;
+  margin: 14px 0;
+  background:
+    radial-gradient(900px 260px at 8% 0%, rgba(31,42,133,.10), transparent 60%),
+    radial-gradient(700px 260px at 88% 20%, rgba(181,30,39,.10), transparent 60%),
+    var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.camp_badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size: 12px;
+  font-weight: 950;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(15,18,34,.03);
+}
+
+.camp_featuredGrid{
+  display:grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+  align-items: stretch;
+}
+
+.camp_featuredName{
+  font-weight: 980;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.camp_featuredMeta{
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.camp_featuredAddr{
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgba(15,18,34,.86);
+}
+
+/* botones */
+.camp_actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 14px;
+  align-items:center;
+}
+
+.camp_btnMini, .camp_btnGhost{
+  height: 42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background:#fff;
+  text-decoration:none;
+  font-weight: 950;
+  cursor:pointer;
+  transition: transform .08s ease, background .15s ease, border-color .15s ease;
+}
+
+.camp_btnMini:hover, .camp_btnGhost:hover{
+  background: rgba(15,18,34,.04);
+}
+
+.camp_btnMini:active, .camp_btnGhost:active{
+  transform: translateY(1px);
+}
+
+.camp_btnPrimary{
+  background: linear-gradient(135deg, var(--ing-blue), #2F3E52);
+  color:#fff;
+  border-color: transparent;
+}
+
+.camp_btnPrimary:hover{
+  background: linear-gradient(135deg, #2F3E52, #2F3E52);
+}
+
+.camp_btnGhost{
+  background: transparent;
+}
+
+/* hint */
+.camp_hint{
+  border-radius: 18px;
+  padding: 14px;
+  border: 1px dashed rgba(15,18,34,.18);
+  background: rgba(15,18,34,.02);
+}
+
+.camp_hintTitle{
+  font-weight: 950;
+  margin-bottom: 6px;
+}
+
+.camp_hintText{
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+/* ===== Grid: List + Map ===== */
+.camp_grid{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 14px;
+}
+
+.camp_list{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height: 640px;
+  box-shadow: var(--shadow);
+}
+
+.camp_listHead{
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:
+    linear-gradient(90deg, rgba(31,42,133,.06), transparent 45%),
+    #fff;
+}
+
+.camp_listTitle{
+  font-weight: 980;
+  letter-spacing: -0.01em;
+}
+
+.camp_listCount{
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* cards */
+.camp_cards{
+  padding: 12px;
+  display:grid;
+  gap: 12px;
+  overflow:auto;
+      max-height: calc((3 * 182px) + (2 * 12px));
+}
+
+.camp_card{
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 12px;
+  background:#fff;
+  transition: transform .10s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.camp_card:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15,18,34,.10);
+  border-color: rgba(31,42,133,.25);
+}
+
+.camp_card.isFeatured{
+  border-color: rgba(181,30,39,.35);
+  box-shadow: 0 10px 26px rgba(181,30,39,.10);
+}
+
+.camp_cardName{
+  font-weight: 980;
+  letter-spacing: -0.01em;
+}
+
+.camp_cardMeta{
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.camp_cardAddr{
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgba(15,18,34,.86);
+}
+
+/* card buttons */
+.camp_cardBtns{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top: 10px;
+}
+
+.camp_btnMiniGhost{
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  font-weight: 950;
+  cursor:pointer;
+  transition: background .15s ease, transform .08s ease;
+}
+
+.camp_btnMiniGhost:hover{
+  background: rgba(15,18,34,.04);
+}
+
+.camp_btnMiniGhost:active{
+  transform: translateY(1px);
+}
+
+/* pill style for links too */
+.camp_btnMini{
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background:#fff;
+  font-weight: 950;
+}
+
+/* ===== Map ===== */
+.camp_mapCard{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow:hidden;
+  min-height: 640px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+/* gives rounded corners to Google map canvas */
+.camp_map{
+  width: 100%;
+  height: 640px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1100px){
+  .camp_container{ padding: 14px 12px 22px; }
+  .camp_grid{ grid-template-columns: 1fr; }
+  .camp_map{ height: 420px; }
+  .camp_mapCard{ min-height: 420px; }
+  .camp_list{ min-height: auto; max-height: 520px; }
+  .camp_featuredGrid{ grid-template-columns: 1fr; }
+  .camp_label{ min-width: 160px; }
+  .camp_searchWrap{ min-width: 220px; }
+}
+
+/* ===== Featured 2-up ===== */
+.camp_featuredTwo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.camp_featureCard{
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 14px;
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(6px);
+}
+
+.camp_featureCard.isPrimary{
+  border-color: rgba(31,42,133,.30);
+  box-shadow: 0 14px 30px rgba(31,42,133,.10);
+}
+
+.camp_featureTag{
+  display:inline-flex;
+  align-items:center;
+  font-size: 12px;
+  font-weight: 950;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(15,18,34,.03);
+  margin-bottom: 10px;
+}
+
+.camp_featureTop{
+  margin-bottom: 12px;
+}
+
+@media (max-width: 1100px){
+  .camp_featuredTwo{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ Barra de filtros a ancho completo del container (y más “larga”) */
+.camp_filtersWide{
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Hace que los selects e input se repartan mejor */
+.camp_filtersWide .camp_label{
+  flex: 1;
+  min-width: 200px;
+}
+
+.camp_filtersWide .camp_searchWrap{
+  flex: 2;
+  min-width: 320px;
+}
+
+/* botón no se estira */
+.camp_filtersWide .camp_btn{
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* ===== Header Campus (igual que insc__header) ===== */
+.camp_headInner{
+  max-width: 900px;          /* mismo ancho que insc */
+  margin: 0 auto 40px;       /* centrado horizontal */
+  text-align: center;        /* centra texto */
+}
+
+.camp_title{
+  font-size: clamp(28px, 4vw, 44px);
+  color: #2F3E52;
+  margin-bottom: 10px;
+}
+
+.camp_subtitle{
+  color: var(--muted);
+  line-height: 1.35;
+    margin-bottom: -40px;
+}
+
+/* ===== Botones por acción (colores) ===== */
+
+/* WhatsApp - Verde */
+.camp_btnWhatsapp{
+  background: #25D366;
+  color: #fff;
+  border-color: #25D366;
+}
+.camp_btnWhatsapp:hover{
+  background: #1ebe5d;
+}
+
+/* Web - Azul */
+.camp_btnWeb{
+  background: #2F3E52;
+  color: #fff;
+  border-color: #2F3E52;
+}
+.camp_btnWeb:hover{
+  background: #2F3E52;
+}
+
+/* Ver en mapa - Rojo */
+.camp_btnMap{
+  background: #b51e27;
+  color: #fff;
+  border-color: #b51e27;
+  font-size: 16px;
+}
+.camp_btnMap:hover{
+  background: #9f1820;
+}
+
+/* ✅ El card del mapa NO debe tener altura extra */
+.camp_mapCard{
+  min-height: auto !important;
+height: clamp(420px, 60vh, 720px);           /* ajusta a tu gusto */
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+/* ✅ El mapa DEBE ocupar el 100% del card */
+.camp_map{
+  width: 100% !important;
+  height: 100% !important;   /* clave para que no quede “muerto” abajo */
+  display: block;
+}
+
+/* Preview encima del mapa */
+.camp_pinPreview{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1f2a85;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  pointer-events: none;
+  position: relative;
+  z-index: 999999;
+}
+
+
+/* Asegura que el mapa tenga altura real y no “espacio muerto” */
+.camp_mapCard{
+  height: clamp(420px, 60vh, 720px);
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.camp_map{
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* ===== Preview mini de campus (InfoWindow fijo) ===== */
+
+/* Quita el "piquito" y el padding/estilo default del globo */
+.gm-style .gm-style-iw-c{
+  padding: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.gm-style .gm-style-iw-d{
+  overflow: visible !important;
+}
+.gm-style .gm-style-iw-tc{
+  display: none !important; /* el triangulito */
+}
+
+/* Quita el botón de cerrar SOLO (para los previews) */
+.gm-ui-hover-effect{
+  display: none !important;
+}
+
+/* Tu tag */
+.camp_iwPreview{
+  background: #fff;
+  border: 1px solid rgba(15,18,34,.14);
+  box-shadow: 0 10px 22px rgba(15,18,34,.14);
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--ing-blue);
+  white-space: nowrap;
+  pointer-events: none; /* no estorba al click del pin */
+}
+
+.camp_mapCard{
+  height: clamp(420px, 60vh, 720px);
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.camp_map{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.camp_mapCard{
+  height: clamp(420px, 60vh, 720px);
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.camp_map{
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+
+
+/* ===== InfoWindow personalizado ===== */
+
+/* Fondo blanco fuerte */
+.gm-style .gm-style-iw-c{
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.18) !important;
+  padding: 16px !important;
+}
+
+/* Contenedor interno */
+.gm-style .gm-style-iw-d{
+  overflow: visible !important;
+}
+
+/* Mantener el triangulito */
+.gm-style .gm-style-iw-tc{
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.12)) !important;
+}
+
+/* Botón de cerrar visible */
+.gm-ui-hover-effect{
+  display: block !important;
+  top: 8px !important;
+  right: 8px !important;
+}
+
+
+.camp_iwCard{
+  max-width: 260px;
+}
+
+.camp_iwTitle{
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: #1f2a85;
+}
+
+.camp_iwMeta{
+  font-size: 12px;
+  color: rgba(0,0,0,.6);
+  margin-bottom: 8px;
+}
+
+.camp_iwAddress{
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.camp_iwButtons{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.camp_iwButtons a{
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 2px 1px;
+  border-radius: 999px;
+  background: #f2f4ff;
+  color: #1f2a85;
+}
+
+/* Oculta botón default de cerrar */
+.gm-ui-hover-effect{
+  display: none !important;
+}
+
+
+.camp_iwCard{
+  max-width: 280px;
+  padding: 0 !important;
+}
+
+/* Header con nombre + X */
+.camp_iwHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Título */
+.camp_iwTitle{
+  font-weight: 900;
+  font-size: 16px;
+  color: #1f2a85;
+  margin: 0;
+}
+
+/* Botón cerrar */
+.camp_iwClose{
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 900;
+  color: #000;
+  padding: 4px;
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: -2px;
+}
+
+.camp_iwClose:hover{
+  color: #b51e27;
+}
+
+/* Meta */
+.camp_iwMeta{
+  font-size: 13px;
+  color: rgba(0,0,0,.6);
+  margin-bottom: 8px;
+}
+
+/* Dirección */
+.camp_iwAddress{
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+/* Botones */
+.camp_iwButtons{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.camp_iwButtons a{
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f2f4ff;
+  color: #1f2a85;
+}
+
+/* Reduce espacio blanco superior del InfoWindow */
+.gm-style .gm-style-iw-c{
+  padding-top: 4px !important;   /* antes suele ser ~16-20px */
+}
+
+
+
+@media (max-width: 680px) {
+
+}
+
+@media screen 
+  and (min-width: 300px) 
+  and (max-width: 400px) 
+  and (orientation: portrait) {
+  .camp_page{
+
+    margin-top: 20px;
+  }
+}
+
+@media screen 
+  and (min-width: 344px) 
+  and (max-width: 400px) 
+  and (orientation: portrait) {
+  .camp_page{
+
+    margin-top: -10px;
+  }
+
+}
+
+@media screen 
+  and (min-width: 535px) 
+  and (max-width: 540px) 
+  and (orientation: portrait) {
+  .camp_page{
+
+    margin-top: -25px;
+  }
+
+}
+
+
+
+
+/* =========================
+   InfoWindow (tu tarjeta)
+   ========================= */
+
+/* Quita estilos default del contenedor del InfoWindow (padding + triángulo) */
+.gm-style .gm-style-iw-c{
+  padding: 0 !important;
+  border-radius: 22px !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+}
+.gm-style .gm-style-iw-d{
+  overflow: visible !important;
+}
+.gm-style .gm-style-iw-tc{
+  display: none !important; /* triangulito */
+}
+
+/* Card */
+.camp_iwCard{
+  background: #fff !important;
+  border-radius: 22px !important;
+  padding: 16px 16px 14px !important;
+
+
+  width: 320px !important;
+  max-width: 320px !important;
+}
+
+/* ✅ SOLO cuando vienes de "Ver en el mapa" */
+.camp_iwCard.isFocus{
+  width: min(560px, calc(100vw - 40px)) !important;
+  max-width: min(560px, calc(100vw - 40px)) !important;
+}
+
+/* Header (título + X juntos, sin espacio arriba) */
+.camp_iwHeader{
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  margin: 0 0 6px 0 !important;
+  padding: 0 !important;
+  padding: 16px 18px 8px 18px;  /* ⬅ ajusta aquí */
+}
+
+.camp_iwTitle{
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.08 !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  color: #1f2a85 !important;
+
+}
+
+/* La X más arriba (tu pedido) */
+.camp_iwClose{
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-weight: 900 !important;
+
+
+  font-size: 22px !important;
+  line-height: 1 !important;
+
+  padding: 0 !important;
+  margin-top: 1px !important; /* 🔼 súbela */
+}
+
+.camp_iwMeta{
+  font-size: 14px !important;
+  color: rgba(15,18,34,.70) !important;
+  margin: 0 0 10px 0 !important;
+}
+
+.camp_iwAddress{
+  font-size: 18px !important;
+  color: rgba(15,18,34,.92) !important;
+  margin: 0 0 12px 0 !important;
+}
+
+.camp_iwButtons{
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin: 0 !important;
+}
+
+.camp_iwButtons a{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 30px !important;
+  padding: 1px 18px !important;
+  border-radius: 5px !important;
+  background: #eef0ff !important;
+  color: #1f2a85 !important;
+  text-decoration: none !important;
+  font-weight: 900 !important;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 640px){
+  .camp_iwCard{
+    width: calc(100vw - 28px) !important;
+    max-width: calc(100vw - 28px) !important;
+    padding: 14px 14px 12px !important;
+  }
+
+  .camp_iwTitle{
+    font-size: 20px !important;
+  }
+}
+
+
+/* antes lo tenías en 560px */
+.camp_iwCard.isFocus{
+  width: min(420px, calc(100vw - 40px)) !important;
+  max-width: min(420px, calc(100vw - 40px)) !important;
+}
+
+/* en móvil más cómodo */
+@media (max-width: 640px){
+  .camp_iwCard.isFocus{
+    width: calc(100vw - 28px) !important;
+    max-width: calc(100vw - 28px) !important;
+  }
+}
+
+
+
+.camp_iwCard{
+  max-width: 2060px;
+}
+
+.camp_cardNiveles {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.camp_nivelTag {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #eef2ff;
+  color: #1f2a85; /* tu azul ING */
+  font-weight: 500;
+}
+
+.camp_nivelTag-2 {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #eef2ff;
+  color: #1f2a85; /* tu azul ING */
+  font-weight: 500;
+}
+
+
+
+
+
+.camp_iwTitle {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+}
+
+
+.camp_iwCard {
+  padding-top: 6px !important;
+}
+
+.camp_iwHeader {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+/* =========================================================
+   🔥 FIX CONSISTENCIA InfoWindow (LOCALHOST vs VERCEL)
+   ========================================================= */
+
+/* 1) Quita padding/limitaciones del contenedor nativo de Google */
+.gm-style .gm-style-iw-c {
+  padding: 0 !important;
+  border-radius: 28px !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.18) !important;
+  max-width: none !important;
+}
+
+.gm-style .gm-style-iw-d {
+  overflow: hidden !important;
+  max-width: none !important;
+}
+
+/* 2) Evita que Google te meta el “margen” raro interno */
+.gm-style .gm-style-iw-t::after {
+  display: none !important; /* si quieres sin “punta” */
+}
+
+/* 3) Fuerza tu tarjeta a verse igual SIEMPRE */
+.camp_iwCard {
+  box-sizing: border-box !important;
+  width: 460px !important;
+  max-width: min(92vw, 460px) !important;
+
+  padding: 24px 26px 20px !important;
+  border-radius: 28px !important;
+
+  font-family: "Onest", system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* 4) Quita espacios default de headings */
+.camp_iwTitle {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.15 !important;
+}
+
+/* 5) Ajusta separación vertical para que no “cambie” */
+.camp_iwMeta {
+  margin-top: 10px !important;
+  line-height: 1.25 !important;
+}
+
+.camp_iwAddress {
+  margin-top: 12px !important;
+  line-height: 1.25 !important;
+}
+
+.camp_iwButtons {
+  margin-top: 4px !important;
+}
+
+
+/* ✅ Mueve el overlay a la izquierda (INFALIBLE) */
+.camp_iwShift {
+  transform: translateX(-180px) !important; /* prueba 120, 180, 240 */
+}
+
+/* opcional: en focus que se vaya un poquito más */
+.camp_iwShift.isFocus {
+  transform: translateX(-220px) !important;
+}
+
+/* ✅ En móvil mejor centrado para que no se salga */
+@media (max-width: 768px) {
+  .camp_iwShift,
+  .camp_iwShift.isFocus {
+    transform: translateX(0px) !important;
+  }
+}
+
+/* ✅ AGREGAR a tu Campus2.css (solo lo nuevo para el botón arriba del mapa) */
+
+.camp_mapCard {
+  position: relative;
+}
+
+/* Botón encima del mapa */
+.camp_mapResetBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 20;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 18, 34, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+
+  /* oculto por defecto */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.camp_mapResetBtn.isVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+margin-right: 50px;
+}
+
+/* ✅ para que la tarjeta no se pase en móvil */
+.camp_iwCard {
+  width: min(340px, calc(100vw - 28px));
+}
+
+
+
+/* Campus2.css (AGREGA ESTO AL FINAL) */
+
+/* tarjeta debajo del mapa (touch: móviles+iPads) */
+.camp_belowCard{
+  width: 100%;
+  padding: 12px 12px 0;
+}
+
+/* 🔥 Reset para que NO herede estilos de overlay */
+.camp_belowCard .camp_iwCard{
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  width: 100%;
+  max-width: 100%;
+  border-radius: 18px;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 544px){
+
+  /* Quita el espacio muerto izquierdo */
+  .camp_belowCard .camp_iwCard{
+    padding-left: 0 !important;
+  }
+
+  /* Si el espacio viene del contenedor */
+  .camp_belowCard{
+    padding-left: 0 !important;
+  }
+
+  /* Si tu card tiene padding general */
+  .camp_belowCard .camp_iwCard{
+    padding: 20px 16px 24px 0 !important;
+  }
+
+}

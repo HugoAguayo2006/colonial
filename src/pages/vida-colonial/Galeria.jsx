@@ -1,187 +1,258 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import "./Galeria.css";
-import { GALLERY } from "../../data/data_galeria"; // ✅ data externa
+import { createPortal } from "react-dom";
+import { normalizeText } from "../../utils/text"; // 🔥 helper global
 
-export default function Galeria() {
-  const [q, setQ] = useState("");
-  const [activeIndex, setActiveIndex] = useState(null);
+/**
+ * ✅ RECOMENDACIÓN:
+ * Guarda tus imágenes en /public/galeria/
+ * Ej:
+ * /public/galeria/campus-1.webp
+ * /public/galeria/campus-2.webp
+ * etc.
+ */
 
-  const filtered = useMemo(() => {
-    const query = q.trim().toLowerCase();
-    if (!query) return GALLERY;
+// Edita esto con tus fotos reales:
+const IMAGES = [
+  { id: 1, src: "/images/galeria/jeanne_ing_sin_fondo.webp", alt: "Campus - Entrada", tag: "Campus" },
+  { id: 2, src: "/images/galeria/campus-2.webp", alt: "Aulas - Ambiente", tag: "Aulas" },
+  { id: 3, src: "/images/galeria/campus-3.webp", alt: "Eventos escolares", tag: "Eventos" },
+  { id: 4, src: "/images/galeria/campus-4.webp", alt: "Actividades", tag: "Actividades" },
+  { id: 5, src: "/images/galeria/campus-5.webp", alt: "Instalaciones", tag: "Instalaciones" },
+  { id: 6, src: "/images/galeria/campus-6.webp", alt: "Convivencia", tag: "Eventos" },
+  { id: 7, src: "/images/galeria/campus-7.webp", alt: "Aula Maker", tag: "Aula Maker" },
+  { id: 8, src: "/images/galeria/campus-8.webp", alt: "Deportes", tag: "Actividades" },
+];
 
-    return GALLERY.filter((it) => {
-      const hay = `${it.title} ${it.desc} ${it.tag}`.toLowerCase();
-      return hay.includes(query);
-    });
-  }, [q]);
+// Mini componente: imagen con lazy + “blur” placeholder
+function LazyPhoto({ src, alt, onClick, priority = false }) {
+  const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef(null);
 
-  const active = activeIndex != null ? filtered[activeIndex] : null;
-
-  const openAt = (idx) => setActiveIndex(idx);
-  const close = () => setActiveIndex(null);
-
-  const prev = () =>
-    setActiveIndex((i) => (i == null ? i : (i - 1 + filtered.length) % filtered.length));
-  const next = () =>
-    setActiveIndex((i) => (i == null ? i : (i + 1) % filtered.length));
-
-  // ✅ Lock scroll + teclado (modal fullscreen)
+  // IntersectionObserver para cargar solo cuando aparece
   useEffect(() => {
-    if (activeIndex == null) return;
+    const el = imgRef.current;
+    if (!el) return;
+
+    // si priority, carga inmediato (útil para las primeras 2-3 fotos)
+    if (priority) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            el.dataset.inview = "true";
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: "250px" }
+    );
+
+    io.observe(el);
+    return () => io.disconnect();
+  }, [priority]);
+
+  return (
+    <button className="gal__tile" onClick={onClick} type="button" aria-label={`Abrir imagen: ${alt}`}>
+      <div className={`gal__ph ${loaded ? "is-loaded" : ""}`} />
+      <img
+        ref={imgRef}
+        className={`gal__img ${loaded ? "is-loaded" : ""}`}
+        src={src}
+        alt={alt}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={priority ? "high" : "auto"}
+        onLoad={() => setLoaded(true)}
+        data-nozoom // ✅ evita que el ImageModal global “por default” se dispare aquí
+      />
+      <span className="gal__shine" aria-hidden="true" />
+    </button>
+  );
+}
+
+function Lightbox({ open, items, index, onClose, onPrev, onNext }) {
+  useEffect(() => {
+    if (!open) return;
 
     const onKey = (e) => {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
     };
 
     document.addEventListener("keydown", onKey);
-
-    const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      document.body.style.overflow = "";
     };
-  }, [activeIndex, filtered.length]);
+  }, [open, onClose, onPrev, onNext]);
+
+  if (!open) return null;
+  const it = items[index];
+
+  return createPortal(
+    <div className="lb" role="dialog" aria-modal="true" aria-label="Visor de imagen">
+      {/* overlay clickable */}
+      <button className="lb__overlay" type="button" onClick={onClose} aria-label="Cerrar visor" />
+
+      <div className="lb__shell" role="document">
+        <div className="lb__top">
+          <span className="lb__pill">{it.tag}</span>
+
+          <div className="lb__topRight">
+            <span className="lb__counter">
+              {index + 1} / {items.length}
+            </span>
+            <button className="lb__close" onClick={onClose} type="button" aria-label="Cerrar">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <button className="lb__nav lb__nav--left" onClick={onPrev} type="button" aria-label="Anterior">
+          ‹
+        </button>
+
+        <figure className="lb__figure">
+          <img className="lb__img" src={it.src} alt={it.alt} decoding="async" />
+          <figcaption className="lb__cap">{it.alt}</figcaption>
+        </figure>
+
+        <button className="lb__nav lb__nav--right" onClick={onNext} type="button" aria-label="Siguiente">
+          ›
+        </button>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+export default function Galeria() {
+  const tags = useMemo(() => {
+    const s = new Set(IMAGES.map((x) => x.tag));
+    return ["Todas", ...Array.from(s)];
+  }, []);
+
+  const [active, setActive] = useState("Todas");
+  const [q, setQ] = useState("");
+  const [lbOpen, setLbOpen] = useState(false);
+  const [lbIndex, setLbIndex] = useState(0);
+
+  const filtered = useMemo(() => {
+    const query = normalizeText(q.trim());
+
+    return IMAGES.filter((x) => {
+      const okTag =
+        active === "Todas" ? true : normalizeText(x.tag) === normalizeText(active);
+
+      if (!query) return okTag;
+
+      const hay = normalizeText(`${x.alt} ${x.tag}`);
+      const okQ = hay.includes(query);
+
+      return okTag && okQ;
+    });
+  }, [active, q]);
+
+  const openAt = (idx) => {
+    setLbIndex(idx);
+    setLbOpen(true);
+  };
+
+  const onPrev = () => setLbIndex((i) => (i - 1 + filtered.length) % filtered.length);
+  const onNext = () => setLbIndex((i) => (i + 1) % filtered.length);
 
   return (
-    <main className="gal" data-no-global-image-modal>
+    <>
       <Helmet>
-        <title>Galería | Colegio Colonial</title>
+        <title>Galería |  Colegio Colonial</title>
         <meta
           name="description"
-          content="Galería del Colegio Colonial: instalaciones, vida escolar, eventos y espacios para aprender."
+          content="Galería de fotos del Colegio Colonial: campus, aulas, eventos, actividades e instalaciones."
         />
       </Helmet>
 
-      <header className="gal__hero">
-        <div className="gal__heroInner">
-          <p className="gal__badge">Colegio Colonial</p>
-          <h1 className="gal__title">Galería</h1>
-          <p className="gal__subtitle">
-            Conoce nuestras instalaciones y momentos destacados a través de imágenes.
-            Da click en cualquier foto para verla en grande.
-          </p>
+      <section className="gal">
+        <div className="gal__bg" aria-hidden="true">
+          <span className="gal__orb gal__orb--1" />
+          <span className="gal__orb gal__orb--2" />
+          <span className="gal__grid" />
+        </div>
 
-          <div className="gal__search">
-            <span className="gal__searchIcon" aria-hidden="true">
-              ⌕
-            </span>
-            <input
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="Buscar (ej. cancha, aula, biblioteca...)"
-              className="gal__input"
-              aria-label="Buscar en la galería"
-            />
-            {q ? (
-              <button className="gal__clear" onClick={() => setQ("")} type="button">
-                Limpiar
-              </button>
-            ) : null}
+        <div className="gal__container">
+          <header className="gal__head">
+            <p className="gal__kicker">Colegio Colonial</p>
+            <h1 className="gal__title">Galería</h1>
+            <p className="gal__sub">
+              Un vistazo a nuestro campus, aulas, experiencias y momentos que se viven día a día.
+            </p>
+          </header>
+
+          <div className="gal__controls">
+            <div className="gal__search">
+              <span className="gal__searchIcon" aria-hidden="true">
+                ⌕
+              </span>
+              <input
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                className="gal__input"
+                type="text"
+                placeholder="Buscar: aulas, campus, eventos…"
+                aria-label="Buscar en la galería"
+              />
+            </div>
+
+            <div className="gal__chips" role="tablist" aria-label="Filtros de galería">
+              {tags.map((t) => (
+                <button
+                  key={t}
+                  className={`gal__chip ${active === t ? "is-active" : ""}`}
+                  onClick={() => setActive(t)}
+                  type="button"
+                  role="tab"
+                  aria-selected={active === t}
+                >
+                  {t}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="gal__meta">
             <span className="gal__count">
-              Mostrando <b>{filtered.length}</b> {filtered.length === 1 ? "imagen" : "imágenes"}
+              Mostrando <strong>{filtered.length}</strong> de <strong>{IMAGES.length}</strong> fotos
             </span>
-            <span className="gal__hint">Tip: usa ← → para cambiar y Esc para cerrar</span>
+            <span className="gal__tip">Tip: usa ← → en el visor</span>
           </div>
-        </div>
-      </header>
 
-      <section className="gal__wrap">
-        {filtered.length === 0 ? (
-          <div className="gal__empty">
-            <h2>No encontré resultados</h2>
-            <p>Prueba con otra palabra (ej. “patio”, “deportes”, “eventos”).</p>
-            <button className="gal__btn" onClick={() => setQ("")} type="button">
-              Ver todo
-            </button>
-          </div>
-        ) : (
-          <div className="gal__grid" role="list">
+          <div className="gal__masonry" aria-label="Cuadrícula de galería">
             {filtered.map((it, idx) => (
-              <button
+              <LazyPhoto
                 key={it.id}
-                className="gal__card"
+                src={it.src}
+                alt={it.alt}
+                priority={idx < 3}
                 onClick={() => openAt(idx)}
-                type="button"
-                role="listitem"
-              >
-                <div className="gal__imgWrap">
-                  <img
-                    src={it.src}
-                    alt={it.title}
-                    loading="lazy"
-                    className="gal__img"
-                    data-nozoom
-                  />
-                  <span className="gal__tag">{it.tag}</span>
-                </div>
-
-                <div className="gal__caption">
-                  <h3 className="gal__capTitle">{it.title}</h3>
-                  <p className="gal__capDesc">{it.desc}</p>
-                </div>
-              </button>
+              />
             ))}
           </div>
-        )}
+        </div>
       </section>
 
-      {/* ✅ MODAL FULLSCREEN (único en pantalla + blur atrás) */}
-      {active ? (
-        <div className="galm" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-          <button className="galm__overlay" type="button" onClick={close} aria-label="Cerrar visor" />
-
-          <div className="galm__viewer" onClick={(e) => e.stopPropagation()}>
-            <div className="galm__top">
-              <span className="galm__pill">{active.tag}</span>
-
-              <div className="galm__topRight">
-                <span className="galm__counter">
-                  {activeIndex + 1} / {filtered.length}
-                </span>
-
-                <button className="galm__close" onClick={close} type="button" aria-label="Cerrar">
-                  ✕
-                </button>
-              </div>
-            </div>
-
-            <button
-              className="galm__nav galm__nav--left"
-              onClick={prev}
-              type="button"
-              aria-label="Anterior"
-            >
-              ‹
-            </button>
-
-            <figure className="galm__figure">
-              <img className="galm__img" src={active.src} alt={active.title} data-nozoom />
-              <figcaption className="galm__cap">
-                <strong>{active.tag} — {active.title}</strong>
-                <span>{active.desc}</span>
-              </figcaption>
-            </figure>
-
-            <button
-              className="galm__nav galm__nav--right"
-              onClick={next}
-              type="button"
-              aria-label="Siguiente"
-            >
-              ›
-            </button>
-          </div>
-        </div>
-      ) : null}
-    </main>
+      <Lightbox
+        open={lbOpen}
+        items={filtered}
+        index={lbIndex}
+        onClose={() => setLbOpen(false)}
+        onPrev={onPrev}
+        onNext={onNext}
+      />
+    </>
   );
 }

@@ -1,0 +1,137 @@
+.modelo {
+  font-family: "Onest", sans-serif;
+  background: #f8f9fb;
+  color: #2F3E52;
+}
+
+/* HERO */
+
+.modelo-hero {
+  background: linear-gradient(135deg, #2F3E52 0%, #1e2a3a 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.modelo-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.modelo-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* TITULOS */
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 60px;
+  color: #8B0000;
+}
+
+/* PILARES */
+
+.modelo-pilares {
+  padding: 100px 20px;
+  background: white;
+}
+
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.pilar-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 5px solid #8B0000;
+}
+
+.pilar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.pilar-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.pilar-card h3 {
+  margin-bottom: 15px;
+  color: #2F3E52;
+}
+
+/* ENFOQUE */
+
+.modelo-enfoque {
+  background: #2F3E52;
+  color: white;
+  padding: 100px 20px;
+}
+
+.enfoque-content {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.enfoque-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.enfoque-text ul {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.enfoque-text li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+/* CTA */
+
+.modelo-cta {
+  background: #8B0000;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.modelo-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.modelo-cta p {
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: white;
+  color: #8B0000;
+  padding: 14px 35px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #f2f2f2;
+  transform: scale(1.05);
+}

@@ -31,7 +31,7 @@ export default function Navbar() {
           { label: "Misión y visión", href: "/conocenos/mision-vision" },
           { label: "Valores", href: "/conocenos/valores" },
           { label: "Otros Campus", href: "/conocenos/otros-campus" },
-          { label: "Clave de Centro de Trabajo", href: "/conocenos/cct" },
+          { label: "Clave de Centro de Trabajo", href: "/conocenos/clave-de-centro-de-trabajo" },
         ],
       },
       {

@@ -1,0 +1,105 @@
+.cct-page {
+  min-height: 100dvh; /* mejor en navegadores modernos */
+  background: linear-gradient(135deg, #2F3E52 0%, #1e293b 100%);
+  padding: 60px 20px 40px 20px; /* reducimos el padding inferior */
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+
+  margin-top: -180px;
+}
+
+/* HERO */
+.cct-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cct-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cct-hero p {
+  opacity: 0.85;
+  font-size: 1.1rem;
+}
+
+/* CARDS */
+.cct-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cct-card {
+  background: white;
+  color: #2F3E52;
+  width: 320px;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  transition: 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.cct-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Badge superior */
+.cct-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8B0000;
+  color: white;
+  padding: 6px 18px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Logo */
+.cct-logo {
+  width: 110px;
+  margin: 20px 0;
+}
+
+/* Info */
+.cct-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+
+.cct-info h2 {
+  font-size: 1.8rem;
+  margin-top: 8px;
+  color: #8B0000;
+  font-weight: 700;
+}
+
+/* Diferenciación visual */
+.secundaria {
+  border-top: 6px solid #8B0000;
+}
+
+.primaria {
+  border-top: 6px solid #2F3E52;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cct-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

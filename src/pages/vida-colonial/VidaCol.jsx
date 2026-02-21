@@ -2,56 +2,57 @@ import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./VidaCol.css";
 
+const CAL_DATES = [
+  { day: "10", month: "FEB", title: "Inicio de inscripciones", meta: "Febrero – Agosto" },
+  { day: "23", month: "FEB", title: "Actividad escolar", meta: "1:00 p.m." },
+  { day: "15", month: "MAR", title: "Evaluación trimestral", meta: "Horario escolar" },
+];
+
 const SECTIONS = [
   {
     key: "talleres",
     title: "Actividades extracurriculares",
     desc:
-      "Talleres y actividades que fortalecen habilidades artísticas, deportivas y formativas. Un espacio para descubrir talentos y crecer con confianza.",
-    to: "/talleres", // ajusta si tu ruta real es otra
-    icon: "🎨",
-    accent: "blue",
-    chips: ["Creatividad", "Deporte", "Formación"],
+      "Talleres deportivos, artísticos y formativos que impulsan disciplina, creatividad y confianza.",
+    to: "/talleres",
+    tag: "Talento + crecimiento",
+    icon: "★",
   },
   {
     key: "calendario",
-    title: "Calendario escolar",
+    title: "Calendario",
     desc:
-      "Consulta fechas clave, periodos académicos y actividades importantes del ciclo escolar. Todo organizado para que no se te pase nada.",
+      "Fechas clave del ciclo escolar, periodos, actividades y organización clara para familias y alumnos.",
     to: "/calendario",
-    icon: "🗓️",
-    accent: "red",
-    chips: ["Fechas clave", "Ciclo escolar", "Planeación"],
+    tag: "Planeación",
+    icon: "▦",
   },
   {
     key: "eventos",
     title: "Eventos",
     desc:
-      "Conoce los eventos que dan vida a nuestra comunidad: celebraciones, encuentros, actividades culturales y más.",
+      "Celebraciones, convivencias y actividades culturales que fortalecen el sentido de comunidad.",
     to: "/eventos",
-    icon: "🎉",
-    accent: "blue",
-    chips: ["Comunidad", "Cultura", "Participación"],
+    tag: "Comunidad",
+    icon: "✦",
   },
   {
     key: "galeria",
     title: "Galería",
     desc:
-      "Revive momentos especiales y descubre el ambiente del Colegio Colonial a través de imágenes que reflejan nuestra esencia.",
-    to: "/galeria", // ajusta si tu ruta es /galeria-fotos o similar
-    icon: "📸",
-    accent: "red",
-    chips: ["Momentos", "Instalaciones", "Experiencias"],
+      "Momentos que reflejan nuestra esencia: aprendizaje, convivencia y experiencias en el Colegio Colonial.",
+    to: "/galeria",
+    tag: "Memorias",
+    icon: "⬚",
   },
   {
     key: "servicios",
     title: "Otros servicios",
     desc:
-      "Conoce servicios y apoyos que acompañan el desarrollo integral: atención, orientación y recursos para familias y estudiantes.",
-    to: "/servicios", // ajusta si aún no existe, puedes crearla después
-    icon: "🤝",
-    accent: "blue",
-    chips: ["Apoyo", "Acompañamiento", "Bienestar"],
+      "Cafetería, excursiones y apoyos que complementan el día a día y el desarrollo integral.",
+    to: "/servicios",
+    tag: "Bienestar",
+    icon: "❖",
   },
 ];
 
@@ -62,152 +63,220 @@ export default function VidaColonial() {
         <title>Vida Colonial | Colegio Colonial</title>
         <meta
           name="description"
-          content="Descubre la vida en el Colegio Colonial: actividades extracurriculares, calendario, eventos, galería y servicios."
+          content="Vida Colonial: actividades extracurriculares, calendario, eventos, galería, otros servicios y participación de padres de familia."
         />
       </Helmet>
 
       {/* HERO */}
-      <section className="vc-hero">
-        <div className="vc-hero__bg" aria-hidden="true" />
-        <div className="vc-hero__wrap">
+      <header className="vc-hero">
+        <div className="vc-hero__ribbon" aria-hidden="true" />
+        <div className="vc-container vc-hero__wrap">
           <div className="vc-hero__left">
-            <span className="vc-kicker">Vida Colonial</span>
+            <span className="vc-badge">Colegio Colonial</span>
             <h1 className="vc-title">
-              Una comunidad que se vive <span>todos los días</span>
+              Vida Colonial: <span>se vive</span>, se aprende y se comparte
             </h1>
             <p className="vc-subtitle">
-              En el Colegio Colonial, cada etapa se construye con experiencias:
-              aprendizaje, convivencia, actividades y momentos que forman
-              recuerdos. Aquí puedes explorar todo lo que hace especial nuestra
-              vida escolar.
+              Descubre lo que hace especial nuestro día a día: actividades,
+              eventos, calendario, galería y servicios que acompañan a cada familia.
             </p>
 
-            <div className="vc-ctaRow">
+            <div className="vc-actions">
               <NavLink className="vc-btn vc-btn--primary" to="/eventos">
                 Ver eventos
               </NavLink>
-              <NavLink className="vc-btn vc-btn--ghost" to="/galeria">
-                Explorar galería
+              <NavLink className="vc-btn vc-btn--outline" to="/contacto">
+                Contáctanos
               </NavLink>
             </div>
 
-            <div className="vc-miniStats" aria-label="Resumen de secciones">
-              <div className="vc-miniStat">
-                <div className="vc-miniStat__num">5</div>
-                <div className="vc-miniStat__txt">Secciones</div>
-              </div>
-              <div className="vc-miniStat">
-                <div className="vc-miniStat__num">100%</div>
-                <div className="vc-miniStat__txt">Vida escolar</div>
-              </div>
-              <div className="vc-miniStat">
-                <div className="vc-miniStat__num">+</div>
-                <div className="vc-miniStat__txt">Experiencias</div>
-              </div>
-            </div>
+            <nav className="vc-quickbar" aria-label="Accesos rápidos">
+              {SECTIONS.map((s) => (
+                <NavLink
+                  key={s.key}
+                  to={s.to}
+                  className={({ isActive }) =>
+                    "vc-chiplink" + (isActive ? " is-active" : "")
+                  }
+                >
+                  <span className="vc-chiplink__dot" aria-hidden="true" />
+                  {s.title}
+                </NavLink>
+              ))}
+            </nav>
           </div>
 
-          <div className="vc-hero__right">
-            <div className="vc-heroCard">
-              <div className="vc-heroCard__top">
-                <div className="vc-heroBadge">Colegio Colonial</div>
-                <div className="vc-heroDot" aria-hidden="true" />
-              </div>
+<div className="vc-hero__right">
+  <aside className="vc-calCard" aria-label="Fechas destacadas del calendario">
+    <div className="vc-calCard__top">
+      <div>
+        <div className="vc-calCard__kicker">Calendario</div>
+        <h3 className="vc-calCard__title">Fechas destacadas</h3>
+      </div>
 
-              <h3 className="vc-heroCard__title">Explora rápidamente</h3>
-              <p className="vc-heroCard__text">
-                Accede directo a cada sección y conoce todo lo que construye la
-                experiencia Colonial.
-              </p>
+      <NavLink className="vc-calCard__link" to="/calendario">
+        Ver todo →
+      </NavLink>
+    </div>
 
-              <div className="vc-quickLinks">
-                {SECTIONS.map((s) => (
-                  <NavLink
-                    key={s.key}
-                    to={s.to}
-                    className={({ isActive }) =>
-                      "vc-quickLink" + (isActive ? " is-active" : "")
-                    }
-                  >
-                    <span className="vc-quickLink__icon" aria-hidden="true">
-                      {s.icon}
-                    </span>
-                    <span className="vc-quickLink__label">{s.title}</span>
-                    <span className="vc-quickLink__arrow" aria-hidden="true">
-                      →
-                    </span>
-                  </NavLink>
-                ))}
-              </div>
-            </div>
+    <div className="vc-calList">
+      {CAL_DATES.map((d) => (
+        <div className="vc-calItem" key={`${d.day}-${d.month}-${d.title}`}>
+          <div className="vc-calDate" aria-hidden="true">
+            <div className="vc-calDate__day">{d.day}</div>
+            <div className="vc-calDate__month">{d.month}</div>
+          </div>
+
+          <div className="vc-calText">
+            <div className="vc-calText__title">{d.title}</div>
+            <div className="vc-calText__meta">{d.meta}</div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
 
-      {/* GRID */}
-      <section className="vc-grid">
+    <div className="vc-calCard__cta">
+      <NavLink className="vc-btn vc-btn--primary vc-calBtn" to="/calendario">
+        Ir al calendario
+      </NavLink>
+    </div>
+  </aside>
+</div>
+        </div>
+      </header>
+
+      {/* MOSAICO */}
+      <section className="vc-section">
         <div className="vc-container">
-          <header className="vc-head">
-            <h2 className="vc-h2">Todo lo que pasa en Colonial</h2>
-            <p className="vc-p">
-              Navega por cada sección y encuentra información clara, actualizada
-              y organizada para familias y estudiantes.
+          <div className="vc-head">
+            <h2>Explora cada parte de la vida escolar</h2>
+            <p>
+              Entra a la sección que necesitas y conoce todo lo que sucede en
+              nuestra comunidad Colonial.
             </p>
-          </header>
+          </div>
 
-          <div className="vc-cards">
-            {SECTIONS.map((s) => (
+          <div className="vc-mosaic">
+            {SECTIONS.map((s, idx) => (
               <article
                 key={s.key}
-                className={`vc-card vc-card--${s.accent}`}
+                className={"vc-tile " + (idx === 0 ? "is-featured" : "")}
               >
-                <div className="vc-card__top">
-                  <div className="vc-icon" aria-hidden="true">
+                <div className="vc-tile__top">
+                  <span className="vc-icon" aria-hidden="true">
                     {s.icon}
-                  </div>
-                  <div className="vc-card__chips">
-                    {s.chips.map((c) => (
-                      <span className="vc-chip" key={c}>
-                        {c}
-                      </span>
-                    ))}
-                  </div>
+                  </span>
+                  <span className="vc-tag">{s.tag}</span>
                 </div>
 
-                <h3 className="vc-card__title">{s.title}</h3>
-                <p className="vc-card__desc">{s.desc}</p>
+                <h3 className="vc-tile__title">{s.title}</h3>
+                <p className="vc-tile__desc">{s.desc}</p>
 
-                <div className="vc-card__actions">
-                  <NavLink className="vc-btn vc-btn--small" to={s.to}>
-                    Ir a {s.title.toLowerCase()}
+                <div className="vc-tile__actions">
+                  <NavLink className="vc-btn vc-btn--soft" to={s.to}>
+                    Ir a la sección
                   </NavLink>
                   <NavLink className="vc-link" to={s.to}>
-                    Ver más <span aria-hidden="true">→</span>
+                    Ver más →
                   </NavLink>
                 </div>
+
+                <div className="vc-tile__accent" aria-hidden="true" />
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* BIG CTA */}
-      <section className="vc-finalCta">
-        <div className="vc-container vc-finalCta__wrap">
-          <div className="vc-finalCta__left">
-            <h2 className="vc-finalCta__title">¿Listo para conocer más?</h2>
-            <p className="vc-finalCta__text">
-              Explora las secciones y descubre cómo se vive el día a día en el
-              Colegio Colonial.
+      {/* PADRES DE FAMILIA */}
+      <section className="vc-parents">
+        <div className="vc-container vc-parents__wrap">
+          <div className="vc-parents__left">
+            <span className="vc-parents__kicker">Vida en comunidad</span>
+            <h2 className="vc-parents__title">
+              Comités y Asociaciones de Padres de Familia
+            </h2>
+            <p className="vc-parents__text">
+              La participación de los padres de familia es fundamental en la vida
+              escolar. A través de comités y asociaciones, colaboran activamente
+              en la organización de eventos, el fortalecimiento de los valores
+              institucionales y el acompañamiento del proceso formativo de sus
+              hijos, promoviendo una comunidad unida y comprometida.
+            </p>
+
+            <div className="vc-parents__actions">
+              <NavLink className="vc-btn vc-btn--primary" to="/contacto">
+                Quiero participar
+              </NavLink>
+              <NavLink className="vc-btn vc-btn--outline" to="/eventos">
+                Ver próximos eventos
+              </NavLink>
+            </div>
+          </div>
+
+          <div className="vc-parents__right" aria-hidden="true">
+            <div className="vc-parentsCard">
+              <div className="vc-parentsCard__badge">Participación activa</div>
+
+              <div className="vc-parentsCard__list">
+                <div className="vc-parentsItem">
+                  <span className="vc-parentsItem__dot" />
+                  <div>
+                    <div className="vc-parentsItem__title">Organización</div>
+                    <div className="vc-parentsItem__desc">
+                      Apoyo en eventos y actividades escolares.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="vc-parentsItem">
+                  <span className="vc-parentsItem__dot" />
+                  <div>
+                    <div className="vc-parentsItem__title">Valores</div>
+                    <div className="vc-parentsItem__desc">
+                      Fortalecen la identidad y el sentido institucional.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="vc-parentsItem">
+                  <span className="vc-parentsItem__dot" />
+                  <div>
+                    <div className="vc-parentsItem__title">Acompañamiento</div>
+                    <div className="vc-parentsItem__desc">
+                      Cercanía en el proceso formativo de sus hijos.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="vc-parentsCard__footer">
+                <span className="vc-parentsCard__pill" />
+                <span className="vc-parentsCard__pill" />
+                <span className="vc-parentsCard__pill" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL ROJO */}
+      <section className="vc-cta">
+        <div className="vc-container vc-cta__wrap">
+          <div>
+            <h2>¿Quieres conocer más de Colonial?</h2>
+            <p>
+              Visita nuestras secciones o contáctanos para recibir información y
+              agendar una visita.
             </p>
           </div>
 
-          <div className="vc-finalCta__right">
-            <NavLink className="vc-btn vc-btn--primary" to="/calendario">
-              Ver calendario
+          <div className="vc-cta__btns">
+            <NavLink className="vc-btn vc-btn--white" to="/galeria">
+              Ver galería
             </NavLink>
-            <NavLink className="vc-btn vc-btn--ghost" to="/contacto">
-              Contáctanos
+            <NavLink className="vc-btn vc-btn--whiteOutline" to="/calendario">
+              Ver calendario
             </NavLink>
           </div>
         </div>
