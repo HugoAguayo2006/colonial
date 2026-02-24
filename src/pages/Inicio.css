@@ -802,3 +802,120 @@
   color: #2F3E52;
 }
 
+
+/* =========================
+   CALENDARIO FULL WIDTH REAL
+========================= */
+
+.cc-feature:not(:has(.cc-featureMedia)) {
+  display: block !important;
+}
+
+.cc-feature:not(:has(.cc-featureMedia)) .cc-featureText {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.cc-feature:not(:has(.cc-featureMedia)) .cc-miniGrid {
+  width: 100% !important;
+}
+
+/* =========================
+   CARD 4: STATS “OTROS CAMPUS”
+========================= */
+
+.cc-campusStats{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* tarjetas stats */
+.cc-stat{
+  border-radius: 16px;
+  border: 1px solid rgba(47,62,82,.14);
+  background:
+    radial-gradient(220px 160px at 20% 25%, rgba(139,0,0,.08), transparent 55%),
+    radial-gradient(220px 160px at 85% 40%, rgba(47,62,82,.08), transparent 55%),
+    #fff;
+  padding: 12px 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+  display: grid;
+  align-content: start;
+  gap: 2px;
+}
+
+.cc-statNum{
+  font-size: 26px;
+  font-weight: 950;
+  letter-spacing: -0.4px;
+  color: var(--cc-blue);
+  line-height: 1.05;
+}
+
+.cc-statLabel{
+  font-weight: 900;
+  color: var(--cc-red);
+  font-size: 13px;
+}
+
+.cc-statHint{
+  font-weight: 750;
+  font-size: 12px;
+  color: rgba(11,18,32,.65);
+}
+
+/* mini “mapa” creativo */
+.cc-stat--map{
+  grid-column: 1 / -1; /* ocupa todo el ancho */
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(280px 180px at 70% 20%, rgba(47,62,82,.10), transparent 60%),
+    radial-gradient(300px 200px at 25% 75%, rgba(139,0,0,.10), transparent 60%),
+    #fff;
+}
+
+.cc-mapTitle{
+  font-weight: 950;
+  color: var(--cc-blue);
+  letter-spacing: -0.2px;
+}
+
+.cc-mapDots{
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* “pines” */
+.cc-dotMap{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--cc-red);
+  box-shadow: 0 0 0 4px rgba(139,0,0,.12);
+}
+
+/* alterna azul para que se vea internacional */
+.cc-dotMap:nth-child(2),
+.cc-dotMap:nth-child(4){
+  background: var(--cc-blue);
+  box-shadow: 0 0 0 4px rgba(47,62,82,.12);
+}
+
+.cc-mapHint{
+  margin-top: 8px;
+  font-weight: 750;
+  font-size: 12px;
+  color: rgba(11,18,32,.65);
+}
+
+/* responsive */
+@media (max-width: 720px){
+  .cc-campusStats{
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,10 +1,65 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Inicio.css";
 import IntercolegialesVideoHero from "../components/IntercolegialesVideoHero";
 import Intercolegiales from "../components/Intercolegiales";
 
+
+
+
 export default function Inicio() {
+
+
+  // INTERCOLEGIALES
+
+  const SPORTS = [
+  { key: "all", label: "Todos" },
+  { key: "ajedrez", label: "Ajedrez" },
+  { key: "futbol", label: "Fútbol" },
+  { key: "basquetbol", label: "Básquetbol" },
+  { key: "voley", label: "Vóley" },
+];
+
+const ITEMS = [
+  { id: "i1", sport: "futbol", image: "/intercolegiales/futbol-1.webp" },
+  { id: "i2", sport: "futbol", image: "/intercolegiales/futbol-2.webp" },
+  { id: "i3", sport: "basquetbol", image: "/intercolegiales/basquet-1.webp" },
+  { id: "i4", sport: "voley", image: "/intercolegiales/voley-1.webp" },
+  { id: "i5", sport: "ajedrez", image: "/intercolegiales/ajedrez-1.webp" },
+];
+
+const [activeSport, setActiveSport] = useState("all");
+const trackRef = useRef(null);
+
+const filtered = useMemo(() => {
+  if (activeSport === "all") return ITEMS;
+  return ITEMS.filter((it) => it.sport === activeSport);
+}, [activeSport]);
+
+const scrollOne = (dir) => {
+  const track = trackRef.current;
+  if (!track) return;
+
+  const firstCard = track.querySelector(".home-icc-card");
+  if (!firstCard) return;
+
+  const computed = window.getComputedStyle(track);
+  const gap = parseFloat(computed.columnGap || computed.gap || "0") || 0;
+  const step = firstCard.getBoundingClientRect().width + gap;
+
+  track.scrollBy({ left: dir * step, behavior: "smooth" });
+};
+
+const labelSport = (k) =>
+  k === "ajedrez"
+    ? "Ajedrez"
+    : k === "futbol"
+    ? "Fútbol"
+    : k === "basquetbol"
+    ? "Básquetbol"
+    : "Vóley";
+
+
   // ✅ Carrusel SOLO en el Hero detrás del título
   const slides = useMemo(
     () => [
@@ -103,12 +158,7 @@ export default function Inicio() {
       />
     </div>
 
-            <div className="separator-blue" />
 
-          <Intercolegiales />
-
-
-                      <div className="separator-blue" />
       {/* =========================
           SECCIÓN: “Manifiesto”
       ========================== */}
@@ -244,6 +294,33 @@ export default function Inicio() {
     <NavLink className="cc-link" to="/otros-campus">
       Ver otros campus →
     </NavLink>
+
+    <div className="cc-campusStats" aria-label="Presencia internacional">
+  <div className="cc-stat">
+    <span className="cc-statNum">12</span>
+    <span className="cc-statLabel">Colegios</span>
+    <span className="cc-statHint">en la Orden</span>
+  </div>
+
+  <div className="cc-stat">
+    <span className="cc-statNum">10</span>
+    <span className="cc-statLabel">Países</span>
+    <span className="cc-statHint">presencia educativa</span>
+  </div>
+
+  {/* mini detalle visual */}
+  <div className="cc-stat cc-stat--map">
+    <span className="cc-mapTitle">Alcance</span>
+    <div className="cc-mapDots" aria-hidden="true">
+      <span className="cc-dotMap" />
+      <span className="cc-dotMap" />
+      <span className="cc-dotMap" />
+      <span className="cc-dotMap" />
+      <span className="cc-dotMap" />
+    </div>
+    <span className="cc-mapHint">Comunidad internacional</span>
+  </div>
+</div>
   </div>
 </article>
 

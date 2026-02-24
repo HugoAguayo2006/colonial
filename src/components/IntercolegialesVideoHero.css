@@ -3,6 +3,7 @@
   padding: clamp(28px, 4vw, 56px) 0 clamp(26px, 3vw, 44px);
   background: #8B0000; /* 🔴 color fijo */
   color: #fff;
+
 }
 
 /* CONTENEDOR */
@@ -45,11 +46,14 @@
 /* VIDEO FRAME */
 .inter-video__frame {
   position: relative;
-  border-radius: 18px;
+  border-radius: 26px;
   overflow: hidden;
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+
+  background: #000;
+  border: 8px solid #2F3E52; /* 🔥 marco blanco */
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.35),
+    0 0 0 2px rgba(255,255,255,0.2);
 }
 
 /* 🔴🟡🟢 BARRA SUPERIOR */
@@ -84,12 +88,14 @@
 .inter-video__ratio {
   aspect-ratio: 16 / 9;
   width: 100%;
+  
 }
 
 .inter-video__iframe {
   width: 100%;
   height: 100%;
   border: none;
+  
 }
 
 /* LOGO */
@@ -138,4 +144,216 @@
 .inter-video__secondary:hover{
   transform: translateY(-2px);
   background: rgba(0,0,0,0.20);
+}
+/* ===============================
+   CARRUSEL INTERCOLEGIALES (FIX)
+================================ */
+
+.inter-carousel {
+  background: #8B0000;
+  padding: 100px 0 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Intro */
+.inter-carousel__intro {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: -100px;
+}
+
+.inter-carousel__memoryTitle {
+  font-size: clamp(34px, 3.5vw, 48px);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.inter-carousel__memorySubtitle {
+  color: rgba(255,255,255,0.85);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: -25px;
+}
+
+/* Filtros */
+.inter-carousel__filters {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.inter-carousel__filter {
+  margin: 6px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.inter-carousel__filter:hover {
+  background: #fff;
+  color: #8B0000;
+}
+
+.inter-carousel__filter.active {
+  background: #fff;
+  color: #8B0000;
+}
+
+/* ✅ IMPORTANTE: en vez de 100vw + margin-left, usamos contenedor normal (no se recortan flechas) */
+.inter-carousel__wrap {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 90px;
+  border-radius: 28px;
+  margin-bottom: -130px;
+
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+
+  /* 🔵 MARCO AZUL GRUESO */
+  border: 6px solid #2F3E52;
+  box-shadow: 
+    0 50px 120px rgba(0,0,0,0.35);
+}
+
+/* Track */
+.inter-carousel__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (3 * 25px)) / 4);
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  position: relative;
+  z-index: 1;
+}
+
+.inter-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1500px) {
+  .inter-carousel__track {
+    grid-auto-columns: calc((100% - (4 * 25px)) / 5);
+  }
+}
+
+/* Cards */
+.inter-carousel__card {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  transition: 0.3s ease;
+  background: #fff;
+}
+
+.inter-carousel__card:hover {
+  transform: translateY(-8px);
+}
+
+.inter-carousel__media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+}
+
+.inter-carousel__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tag */
+.inter-carousel__media span {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  background: #2F3E52;
+}
+
+/* Flechas (UNA SOLA DEFINICIÓN, sin duplicados) */
+.inter-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  color: #8B0000;
+  font-size: 36px;
+  font-weight: 900;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  cursor: pointer;
+  z-index: 9999;
+
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+
+  /* ✅ ESTO ES LO QUE MUEVE EL SÍMBOLO HACIA ARRIBA */
+  line-height: 1;        /* evita que el glyph se “baje” */
+  padding-bottom: 8px;   /* sube ‹ › dentro del círculo */
+}
+
+.inter-carousel__arrow.left { left: 20px; }
+.inter-carousel__arrow.right { right: 20px; }
+
+.inter-carousel__arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: #8B0000;
+  color: #fff;
+}
+
+.inter-carousel__arrow.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ✅ evita que en disabled “suba” por hover */
+.inter-carousel__arrow.disabled:hover {
+  transform: translateY(-50%);
+  background: #fff;
+  color: #8B0000;
+}
+
+/* ✅ En móvil NO las escondemos: solo ajustamos */
+@media (max-width: 768px) {
+  .inter-carousel__wrap {
+    width: calc(100% - 24px);
+    padding: 22px 18px; /* sin espacio lateral enorme */
+  }
+
+  .inter-carousel__track {
+    grid-auto-columns: calc((100% - 15px) / 2);
+  }
+
+  .inter-carousel__arrow {
+    width: 46px;
+    height: 46px;
+    font-size: 30px;
+
+    /* ✅ también en móvil subimos un poco */
+    padding-bottom: 6px;
+  }
+
+  .inter-carousel__arrow.left { left: 8px; }
+  .inter-carousel__arrow.right { right: 8px; }
 }

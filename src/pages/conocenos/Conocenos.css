@@ -11,7 +11,7 @@
 .cc-page{
   background: var(--cc-bg);
   color: var(--cc-ink);
-  margin-top: -10px;
+  margin-top: -40px;
 }
 
 /* ============ HERO ============ */
@@ -302,7 +302,7 @@
 }
 
 .cc-section{
-  padding: 44px 0 26px;
+  padding: 20px 0 26px;
 }
 
 .cc-head{
@@ -687,7 +687,7 @@
 
 .cc-mock-img-1{
   grid-row: 1 / span 2;
-  background-image: url("/images/conocenos/img1.webp");
+  background-image: url("/images/conocenos/jeanne.webp");
 }
 .cc-mock-img-2{ background-image: url("/images/conocenos/img2.webp"); }
 .cc-mock-img-3{ background-image: url("/images/conocenos/img3.webp"); }
@@ -775,4 +775,215 @@
   }
 }
 
+/* =========================================
+   HERO FINAL (SIN ESPACIO MUERTO + 12px)
+   PÉGALO AL FINAL DEL CSS
+========================================= */
 
+.cc-hero{
+  position: relative !important;
+  overflow: hidden !important;
+
+  /* ✅ controla el alto aunque otro CSS meta height/min-height */
+  height: auto !important;
+  min-height: unset !important;
+
+  /* ✅ aquí está el “look” + el espacio final de 12px */
+  padding: 150px 18px 80px !important;
+
+  background:
+    radial-gradient(1200px 520px at 15% 15%, rgba(255,255,255,.12), transparent 60%),
+    radial-gradient(1100px 560px at 85% 35%, rgba(255,255,255,.08), transparent 62%),
+    linear-gradient(135deg, var(--cc-blue), var(--cc-red)) !important;
+
+  margin: 0 !important;
+
+}
+
+.cc-hero-bg{
+  position:absolute !important;
+  inset:-2px !important;
+  background:
+    radial-gradient(900px 420px at 20% 85%, rgba(0,0,0,.25), transparent 62%),
+    radial-gradient(900px 420px at 85% 15%, rgba(0,0,0,.18), transparent 62%) !important;
+  opacity:.9 !important;
+  pointer-events:none !important;
+}
+
+/* Layout del hero */
+.cc-hero-wrap{
+  position: relative !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+
+  display: grid !important;
+  grid-template-columns: 520px 1fr !important;
+  gap: 34px !important;
+
+  /* ✅ clave: evita que “se centre” y deje aire raro abajo */
+  align-items: start !important;
+}
+
+/* ===== IZQUIERDA: TARJETA GLASS ===== */
+.cc-hero-mock{
+  border-radius: 28px !important;
+  padding: 18px !important;
+  background: rgba(255,255,255,.12) !important;
+  border: 1px solid rgba(255,255,255,.20) !important;
+  box-shadow: 0 26px 90px rgba(0,0,0,.25) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.cc-mock-top{
+  display:flex !important;
+  justify-content: space-between !important;
+  align-items:center !important;
+  margin-bottom: 12px !important;
+}
+
+.cc-mock-brand{
+  color: rgba(255,255,255,.95) !important;
+  font-weight: 900 !important;
+  letter-spacing: .2px !important;
+  font-size: .95rem !important;
+}
+
+.cc-mock-chip{
+  color: rgba(255,255,255,.92) !important;
+  font-weight: 800 !important;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.12) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+}
+
+/* Collage */
+.cc-mock-collage{
+  height: 240px !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  overflow: hidden !important;
+
+  display:grid !important;
+  grid-template-columns: 2fr 1fr !important;
+  grid-template-rows: 1fr 1fr !important;
+  gap: 10px !important;
+
+  padding: 12px !important;
+  background:
+    radial-gradient(900px 240px at 20% 20%, rgba(255,255,255,.08), transparent 55%),
+    radial-gradient(700px 240px at 80% 60%, rgba(255,255,255,.06), transparent 55%),
+    linear-gradient(135deg, rgba(47,62,82,.25), rgba(139,0,0,.25)) !important;
+}
+
+.cc-mock-img{
+  border-radius: 18px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform .35s ease !important;
+}
+.cc-mock-img:hover{ transform: scale(1.03) !important; }
+
+.cc-mock-img::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background: linear-gradient(to bottom right, rgba(47,62,82,.18), rgba(139,0,0,.18)) !important;
+  opacity:.7 !important;
+}
+
+.cc-mock-img-1{
+  grid-row: 1 / span 2 !important;
+  background-image: url("/images/conocenos/jeanne.webp") !important;
+}
+.cc-mock-img-2{ background-image: url("/images/conocenos/img2.webp") !important; }
+.cc-mock-img-3{ background-image: url("/images/conocenos/img3.webp") !important; }
+
+/* Pills */
+.cc-mock-pills{
+  display:grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px !important;
+  margin-top: 14px !important;
+}
+
+.cc-mock-pill{
+  border-radius: 18px !important;
+  padding: 14px 12px !important;
+  background: rgba(255,255,255,.12) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  backdrop-filter: blur(10px) !important;
+  text-align: center !important;
+}
+
+.cc-pill-title{
+  color: rgba(255,255,255,.95) !important;
+  font-weight: 900 !important;
+  margin-bottom: 6px !important;
+}
+
+.cc-pill-sub{
+  color: rgba(255,255,255,.86) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  font-size: .92rem !important;
+}
+
+/* ===== DERECHA: COPY ===== */
+.cc-hero-copy{
+  text-align: left !important;
+}
+
+.cc-hero-copy h1{
+  color:#fff !important;
+  margin: 0 0 10px !important;
+  font-size: clamp(2rem, 3.4vw, 3.15rem) !important;
+  line-height: 1.05 !important;
+  text-shadow: 0 10px 30px rgba(0,0,0,.25) !important;
+  max-width: 720px !important;
+}
+
+.cc-hero-copy p{
+  color: rgba(255,255,255,.92) !important;
+  margin: 0 0 18px !important;
+  max-width: 660px !important;
+  line-height: 1.65 !important;
+}
+
+.cc-hero-actions{
+  display:flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+
+  /* ✅ esto también reduce aire visual */
+  margin-bottom: 16px !important;
+}
+
+.cc-hero-stats{
+  display:grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  max-width: 720px !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px){
+  .cc-hero{
+    padding: 120px 18px 12px !important;
+  }
+  .cc-hero-wrap{
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+  .cc-hero-copy{ text-align:center !important; }
+  .cc-hero-actions{ justify-content:center !important; }
+  .cc-hero-stats{ margin: 0 auto !important; }
+}
+
+@media (max-width: 560px){
+  .cc-mock-pills{
+    grid-template-columns: 1fr !important;
+  }
+}
