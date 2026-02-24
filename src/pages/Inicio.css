@@ -13,7 +13,7 @@
 
 .cc-home{
   background: var(--cc-white);
-  margin-top: -30px;
+  margin-top: -120px;
 }
 
 /* =========================
@@ -24,6 +24,7 @@
   height: clamp(520px, 70vh, 720px);
   overflow: hidden;
   background: #0b1220;
+
 }
 
 .cc-hero-bg{
@@ -777,5 +778,27 @@
   line-height: 1.05 !important;
   font-weight: 800 !important;
   letter-spacing: -1px !important;
+}
+
+.cc-mini{
+  background: white;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+.cc-miniDate{
+  font-weight: 700;
+  color: #8B0000;
+  font-size: 14px;
+}
+
+.cc-miniText{
+  font-size: 13px;
+  margin-top: 4px;
+  color: #2F3E52;
 }
 

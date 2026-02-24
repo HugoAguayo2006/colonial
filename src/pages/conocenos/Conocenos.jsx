@@ -69,43 +69,43 @@ export default function Conocenos() {
 <section className="cc-hero">
   <div className="cc-hero-bg" aria-hidden="true" />
 
-  <div className="cc-hero-inner cc-hero-split">
-    {/* PANEL IZQUIERDO (nuevo diseño) */}
-    <aside className="cc-hero-panel" aria-label="Vista general Colegio Colonial">
-      <div className="cc-hero-panel-top">
-        <span className="cc-hero-tag">Colegio Colonial</span>
-        <span className="cc-hero-chip">Conócenos</span>
+  <div className="cc-hero-wrap">
+    {/* IZQUIERDA: TARJETA GLASS */}
+    <aside className="cc-hero-mock" aria-label="Colegio Colonial - vista general">
+      <div className="cc-mock-top">
+        <div className="cc-mock-brand">Colegio Colonial</div>
+        <div className="cc-mock-chip">Conócenos</div>
       </div>
 
-<div className="cc-hero-panel-art">
-  <div className="cc-collage">
-    <div className="cc-img cc-img-1"></div>
-    <div className="cc-img cc-img-2"></div>
-    <div className="cc-img cc-img-3"></div>
-  </div>
-</div>
+      {/* Collage */}
+      <div className="cc-mock-collage">
+        <div className="cc-mock-img cc-mock-img-1" />
+        <div className="cc-mock-img cc-mock-img-2" />
+        <div className="cc-mock-img cc-mock-img-3" />
+      </div>
 
-      <div className="cc-hero-floats">
-        <div className="cc-float">
-          <div className="cc-float-k">Historia</div>
-          <div className="cc-float-v">Identidad + tradición</div>
+      {/* Pills */}
+      <div className="cc-mock-pills">
+        <div className="cc-mock-pill">
+          <div className="cc-pill-title">Historia</div>
+          <div className="cc-pill-sub">Identidad + tradición</div>
         </div>
-        <div className="cc-float">
-          <div className="cc-float-k">Modelo</div>
-          <div className="cc-float-v">Aprendizaje integral</div>
+
+        <div className="cc-mock-pill">
+          <div className="cc-pill-title">Modelo</div>
+          <div className="cc-pill-sub">Aprendizaje integral</div>
         </div>
-        <div className="cc-float">
-          <div className="cc-float-k">Valores</div>
-          <div className="cc-float-v">Respeto y compromiso</div>
+
+        <div className="cc-mock-pill">
+          <div className="cc-pill-title">Valores</div>
+          <div className="cc-pill-sub">Respeto y compromiso</div>
         </div>
       </div>
     </aside>
 
-    {/* TEXTO DERECHA (se mantiene, solo ajustado) */}
+    {/* DERECHA: COPY */}
     <div className="cc-hero-copy">
-      <h1>
-        Conócenos: tradición que forma, <span>innovación que impulsa</span>.
-      </h1>
+      <h1>Conócenos: tradición que forma, innovación que impulsa.</h1>
 
       <p>
         Aquí la educación es acompañamiento, carácter y futuro. Explora nuestras
@@ -130,16 +130,12 @@ export default function Conocenos() {
           <div className="cc-stat-num">100%</div>
           <div className="cc-stat-label">Enfoque integral</div>
         </div>
-        <div className="cc-stat">
-          <div className="cc-stat-num">1</div>
-          <div className="cc-stat-label">Comunidad</div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-        <div className="separator-blue"></div>
+      <div className="separator-blue"></div>
 
       {/* CARDS */}
       <section className="cc-section">

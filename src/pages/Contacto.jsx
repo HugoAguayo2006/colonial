@@ -125,7 +125,7 @@ export default function ContactoPage() {
                 </div>
                 <div className="ct_cardBody">
                   <h3>Ubicación</h3>
-                  <p>Tlajomulco, Jalisco</p>
+                  <p>Querétaro, Querétaro</p>
                   <a
                     href="https://www.google.com/maps"
                     target="_blank"

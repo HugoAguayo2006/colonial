@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Inicio.css";
 import IntercolegialesVideoHero from "../components/IntercolegialesVideoHero";
+import Intercolegiales from "../components/Intercolegiales";
 
 export default function Inicio() {
   // ✅ Carrusel SOLO en el Hero detrás del título
@@ -22,8 +23,8 @@ export default function Inicio() {
   }, [slides.length]);
 
   const quick = [
-    { label: "Primaria", to: "/primaria" },
-    { label: "Secundaria", to: "/secundaria" },
+    { label: "Primaria", to: "/niveles/primaria" },
+    { label: "Secundaria", to: "/niveles/secundaria" },
     { label: "Calendario", to: "/calendario" },
     { label: "Otros campus", to: "/otros-campus" },
   ];
@@ -101,6 +102,13 @@ export default function Inicio() {
         logoAlt="Escudo ING"
       />
     </div>
+
+            <div className="separator-blue" />
+
+          <Intercolegiales />
+
+
+                      <div className="separator-blue" />
       {/* =========================
           SECCIÓN: “Manifiesto”
       ========================== */}
@@ -149,7 +157,7 @@ export default function Inicio() {
       <p>
         Bases académicas sólidas, hábitos de estudio y formación en valores.
       </p>
-      <NavLink className="cc-link" to="/primaria">
+      <NavLink className="cc-link" to="/niveles/primaria">
         Ver Primaria →
       </NavLink>
     </div>
@@ -172,7 +180,7 @@ export default function Inicio() {
       <p>
         Disciplina, pensamiento crítico y crecimiento integral con acompañamiento.
       </p>
-      <NavLink className="cc-link" to="/secundaria">
+      <NavLink className="cc-link" to="/niveles/secundaria">
         Ver Secundaria →
       </NavLink>
     </div>
@@ -199,12 +207,27 @@ export default function Inicio() {
       Abrir Calendario →
     </NavLink>
 
-    <div className="cc-miniGrid" aria-hidden="true">
-      <div className="cc-mini" />
-      <div className="cc-mini" />
-      <div className="cc-mini" />
-      <div className="cc-mini" />
-    </div>
+<div className="cc-miniGrid">
+  <div className="cc-mini">
+    <span className="cc-miniDate">12 SEP</span>
+    <span className="cc-miniText">Misa inicio</span>
+  </div>
+
+  <div className="cc-mini">
+    <span className="cc-miniDate">15 SEP</span>
+    <span className="cc-miniText">Festival patrio</span>
+  </div>
+
+  <div className="cc-mini">
+    <span className="cc-miniDate">02 OCT</span>
+    <span className="cc-miniText">Junta padres</span>
+  </div>
+
+  <div className="cc-mini">
+    <span className="cc-miniDate">18 OCT</span>
+    <span className="cc-miniText">Convivencia</span>
+  </div>
+</div>
   </div>
 </article>
 
@@ -219,7 +242,7 @@ export default function Inicio() {
       Conoce nuestras sedes y encuentra la mejor opción para tu familia.
     </p>
     <NavLink className="cc-link" to="/otros-campus">
-      Ver Campus →
+      Ver otros campus →
     </NavLink>
   </div>
 </article>
@@ -242,24 +265,28 @@ export default function Inicio() {
             <div className="cc-quoteList">
               <figure className="cc-quote">
                 <blockquote>
-                  “I have never wanted, nor will I ever want to be learned; rather,
-                  I want to be a lover…”
+"Alabado sea el Verbo Encarnado en el Santísimo Sacramento"
                 </blockquote>
                 <figcaption>— Jeanne Chézard de Matel</figcaption>
               </figure>
 
               <figure className="cc-quote">
                 <blockquote>
-                  “La distancia geográfica o la ruptura de los lazos físicos no separan
-                  ni alejan a los espíritus unidos por el amor”.
+                  “Mi único deseo es pertenecer totalmente al Verbo Encarnado."
                 </blockquote>
                 <figcaption>— Jeanne Chézard de Matel</figcaption>
               </figure>
 
               <figure className="cc-quote">
                 <blockquote>
-                  “We must preserve peace with our neighbor… Let us be mediators of
-                  peace between our neighbor and God.”
+"Deseo que mi vida entera sea un acto de amor al Verbo Encarnado."
+                </blockquote>
+                <figcaption>— Jeanne Chézard de Matel</figcaption>
+              </figure>
+
+                            <figure className="cc-quote">
+                <blockquote>
+"No puedo desear otra cosa que cumplir en todo la voluntad de Dios."
                 </blockquote>
                 <figcaption>— Jeanne Chézard de Matel</figcaption>
               </figure>

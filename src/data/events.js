@@ -5,26 +5,7 @@
 // - level: "preescolar" | "primaria" | "secundaria" | "preparatoria"
 
 export const EVENTS = [
-  {
-    id: "e0",
-    title: "Junta informativa de Preescolar",
-    date: "2026-01-22",
-    start: "09:00",
-    end: "10:00",
-    level: "preescolar",
-    location: "Auditorio",
-    description: "Presentación del modelo educativo y actividades del semestre.",
-  },
-    {
-    id: "e1",
-    title: "Junta informativa de Preescolar",
-    date: "2026-01-23",
-    start: "09:00",
-    end: "10:00",
-    level: "preescolar",
-    location: "Auditorio",
-    description: "Presentación del modelo educativo y actividades del semestre.",
-  },
+
   {
     id: "e2",
     title: "Feria de Ciencias (Primaria)",
@@ -43,15 +24,6 @@ export const EVENTS = [
     level: "secundaria",
     location: "Aula Maker",
     description: "Prototipos, robots y retos por equipos.",
-  },
-  {
-    id: "e4",
-    title: "Conferencia vocacional",
-    date: "2026-02-07",
-    start: "13:00",
-    level: "preparatoria",
-    location: "Salón multimedia",
-    description: "Orientación sobre áreas: medicina, contabilidad, etc.",
   },
     {
     id: "e5",
@@ -72,15 +44,6 @@ export const EVENTS = [
     location: "Aula Maker",
     description: "Prototipos, robots y retos por equipos.",
   },
-  {
-    id: "e7",
-    title: "Conferencia vocacional",
-    date: "2026-02-07",
-    start: "13:00",
-    level: "preparatoria",
-    location: "Salón multimedia",
-    description: "Orientación sobre áreas: medicina, contabilidad, etc.",
-  },
     {
     id: "e8",
     title: "Feria de Ciencias (Primaria)",
@@ -100,13 +63,14 @@ export const EVENTS = [
     location: "Aula Maker",
     description: "Prototipos, robots y retos por equipos.",
   },
-  {
+    {
     id: "e10",
-    title: "Conferencia vocacional",
+    title: "Arte",
     date: "2026-02-27",
-    start: "13:00",
-    level: "preparatoria",
-    location: "Salón multimedia",
-    description: "Orientación sobre áreas: medicina, contabilidad, etc.",
+    start: "10:00",
+    end: "12:00",
+    level: "primaria",
+    location: "Aula Maker",
+    description: "Prototipos, robots y retos por equipos.",
   },
 ];

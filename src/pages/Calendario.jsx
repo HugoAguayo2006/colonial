@@ -5,10 +5,8 @@ import "./Calendario.css";
 import { EVENTS } from "../data/events";
 
 const LEVELS = [
-  { key: "preescolar", label: "Preescolar" },
   { key: "primaria", label: "Primaria" },
   { key: "secundaria", label: "Secundaria" },
-  { key: "preparatoria", label: "Preparatoria" },
 ];
 
 const LEVEL_COLOR_VAR = {
