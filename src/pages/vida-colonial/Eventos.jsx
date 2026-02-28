@@ -50,10 +50,43 @@ export default function Eventos() {
   return (
     <main className="ev" id="evTop">
       <Helmet>
-        <title>Eventos | Colegio Colonial</title>
+        <title>Eventos escolares en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
-          content="Conoce los próximos eventos del Colegio Colonial: Open House, actividades académicas, deportivas y más."
+          content="Consulta los eventos del Colegio Colonial en Querétaro: festivales, actividades académicas y deportivas para Primaria y Secundaria. Vive la Vida Colonial."
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/vida-colonial/eventos"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:title"
+          content="Eventos escolares en Querétaro | Colegio Colonial"
+        />
+        <meta
+          property="og:description"
+          content="Festivales, convivencias y eventos escolares del Colegio Colonial en Querétaro. Actividades para Primaria y Secundaria dentro de Vida Colonial."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/vida-colonial/eventos"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Eventos escolares en Querétaro | Colegio Colonial"
+        />
+        <meta
+          name="twitter:description"
+          content="Descubre próximos eventos y festivales del Colegio Colonial en Querétaro. Vida estudiantil para Primaria y Secundaria."
         />
       </Helmet>
 
@@ -71,7 +104,8 @@ export default function Eventos() {
 
           <h1 className="ev__title">Eventos</h1>
           <p className="ev__subtitle">
-            Actividades que fortalecen valores, talento y comunidad en el Colegio Colonial.
+            Actividades que fortalecen valores, talento y comunidad en el Colegio
+            Colonial.
           </p>
 
           <div className="ev__search">
@@ -144,7 +178,9 @@ export default function Eventos() {
                       ))}
                     </div>
 
-                    {event.tag ? <span className="evCard__tag">{event.tag}</span> : null}
+                    {event.tag ? (
+                      <span className="evCard__tag">{event.tag}</span>
+                    ) : null}
                   </div>
 
                   <div className="evCard__body">
@@ -173,8 +209,6 @@ export default function Eventos() {
                         ) : null}
                       </ul>
                     )}
-
-
                   </div>
                 </article>
               ))}
@@ -184,7 +218,8 @@ export default function Eventos() {
           <div className="evEmpty">
             <h3 className="evEmpty__title">No encontramos resultados</h3>
             <p className="evEmpty__text">
-              Prueba buscando con otras palabras (por ejemplo: “Open House”, “deportivo”, “festival”).
+              Prueba buscando con otras palabras (por ejemplo: “Open House”,
+              “deportivo”, “festival”).
             </p>
           </div>
         )}

@@ -2,6 +2,7 @@
   font-family: "Onest", sans-serif;
   background: #f8f9fb;
   color: #2F3E52;
+  margin-top: -30px;
 }
 
 /* HERO */
@@ -29,9 +30,10 @@
 
 .section-title {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 3.2rem;
   margin-bottom: 60px;
   color: #8B0000;
+  margin-top: -40px;
 }
 
 /* PILARES */
@@ -88,8 +90,9 @@
 }
 
 .enfoque-text h2 {
-  font-size: 2.2rem;
+  font-size: 3.2rem;
   margin-bottom: 20px;
+  margin-top: -20px;
 }
 
 .enfoque-text ul {
@@ -113,8 +116,9 @@
 }
 
 .modelo-cta h2 {
-  font-size: 2rem;
+  font-size: 3.2rem;
   margin-bottom: 15px;
+  margin-top: 25px;
 }
 
 .modelo-cta p {

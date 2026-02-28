@@ -1,17 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "./Primaria.css";
 import Extracurriculares from "../../components/Talleres";
 import { ACTIVIDADES } from "../../data/actividades-3";
 
-export default function Primaria() {
+export default function Secundaria() {
   // ✅ HERO: fotos SOLO del hero
   const heroSlides = useMemo(
-    () => [
-      "/images/secundaria/hero-1.webp",
-
-      "/images/secundaria/hero-3.webp",
-    ],
+    () => ["/images/secundaria/hero-1.webp", "/images/secundaria/hero-3.webp"],
     []
   );
 
@@ -22,7 +19,6 @@ export default function Primaria() {
       "/images/secundaria/fe-2.webp",
       "/images/secundaria/fe-3.webp",
       "/images/secundaria/fe-4.webp",
-
     ],
     []
   );
@@ -76,6 +72,54 @@ export default function Primaria() {
 
   return (
     <main className="prim">
+      <Helmet>
+        <title>Secundaria en Querétaro | Colegio Colonial</title>
+        <meta
+          name="description"
+          content="Secundaria privada en Querétaro con enfoque académico exigente y formación humana. Conoce horarios, talleres y solicita informes en Colegio Colonial."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/niveles/secundaria"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta
+          property="og:title"
+          content="Secundaria en Querétaro | Colegio Colonial"
+        />
+        <meta
+          property="og:description"
+          content="Secundaria privada en Querétaro con enfoque académico exigente y formación humana. Conoce horarios, talleres y solicita informes en Colegio Colonial."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/niveles/secundaria"
+        />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Secundaria en Querétaro | Colegio Colonial"
+        />
+        <meta
+          name="twitter:description"
+          content="Secundaria privada en Querétaro con enfoque académico exigente y formación humana. Conoce horarios, talleres y solicita informes en Colegio Colonial."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
+        />
+      </Helmet>
+
       {/* =========================
           HERO con carrusel de fondo
       ========================== */}
@@ -105,14 +149,18 @@ export default function Primaria() {
               comprometidos.
             </p>
 
-                  {/* ✅ HORARIO INTEGRADO */}
-      <div className="prim-heroInfo" role="note" aria-label="Horario de clases">
-        <span className="prim-heroInfo__pill">🕒 Horario matutino</span>
-        <span className="prim-heroInfo__text">
-          Lunes a viernes · <strong>7:50 a.m.</strong> a{" "}
-          <strong>2:00 p.m.</strong>
-        </span>
-      </div>
+            {/* ✅ HORARIO INTEGRADO */}
+            <div
+              className="prim-heroInfo"
+              role="note"
+              aria-label="Horario de clases"
+            >
+              <span className="prim-heroInfo__pill">🕒 Horario matutino</span>
+              <span className="prim-heroInfo__text">
+                Lunes a viernes · <strong>7:50 a.m.</strong> a{" "}
+                <strong>2:00 p.m.</strong>
+              </span>
+            </div>
 
             <div className="prim-hero__actions">
               <Link
@@ -239,15 +287,10 @@ export default function Primaria() {
                 Espacios para el desarrollo físico, convivencia y trabajo en
                 equipo.
               </p>
-
-
-
             </article>
           </div>
         </div>
       </section>
-
-
 
       <section className="prim-section prim-section--alt">
         <div className="prim-wrap">
@@ -339,15 +382,16 @@ export default function Primaria() {
         </div>
       </section>
 
-        <div className="separator-blue"></div>
-    <Extracurriculares
-      nivel="primaria"
-      items={ACTIVIDADES}
-      title="Extracurriculares en Primaria"
-      subtitle="Actividades para fortalecer hábitos, disciplina y talentos."
-    />
+      <div className="separator-blue"></div>
 
-            <div className="separator-blue"></div>
+      <Extracurriculares
+        nivel="secundaria"
+        items={ACTIVIDADES}
+        title="Extracurriculares en Secundaria"
+        subtitle="Actividades para fortalecer hábitos, disciplina y talentos."
+      />
+
+      <div className="separator-blue"></div>
 
       <section className="prim-section">
         <div className="prim-wrap">
@@ -433,7 +477,10 @@ export default function Primaria() {
               <ul className="prim-list-1" style={{ marginTop: 14 }}>
                 <li>Turno matutino: lunes a viernes (7:00 a.m. a 2:10 p.m.)</li>
                 <li>Docentes especialistas por asignatura</li>
-                <li>Evaluación: cuaderno, proyectos, exámenes mensuales y trimestrales</li>
+                <li>
+                  Evaluación: cuaderno, proyectos, exámenes mensuales y
+                  trimestrales
+                </li>
                 <li>Inglés desde 1° (sin certificación externa)</li>
               </ul>
             </div>
@@ -454,6 +501,17 @@ export default function Primaria() {
               >
                 WhatsApp
               </a>
+            </div>
+
+            {/* (Opcional) botón de scroll interno si lo quieres usar */}
+            <div style={{ marginTop: 12 }}>
+              <button
+                className="prim-btn prim-btn--ghost"
+                onClick={scrollToInscripciones}
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                Ver sección de inscripciones (scroll)
+              </button>
             </div>
           </div>
         </div>

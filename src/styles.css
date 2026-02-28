@@ -117,3 +117,9 @@ body {
   background-color: #8B0000; /* rojo institucional */
 }
 
+.separator-white {
+  width: 100%;
+  height: 10px;               /* grosor de la línea */
+  background-color: #ffffff; /* rojo institucional */
+}
+

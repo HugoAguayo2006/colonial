@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CAMPUSES, FEATURED_CAMPUS_IDS } from "../../data/campuses";
 import "./Campus.css";
 import { GoogleMap, Marker, OverlayView, useJsApiLoader } from "@react-google-maps/api";
+import { Helmet } from "react-helmet-async";
 
 const MAP_DEFAULT_CENTER = { lat: 20.63, lng: -103.42 };
 const MAP_DEFAULT_ZOOM = 4;
@@ -63,7 +64,7 @@ export default function Campus() {
   // ✅ Touch devices = móviles + iPads (coarse pointer) => tarjeta debajo del mapa
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   useEffect(() => {
-const mq = window.matchMedia("(max-width: 544px)");
+    const mq = window.matchMedia("(max-width: 544px)");
 
     const onChange = () => setIsTouchDevice(mq.matches);
     onChange();
@@ -139,30 +140,27 @@ const mq = window.matchMedia("(max-width: 544px)");
     mapRef.current.fitBounds(bounds);
   };
 
+  const isOneColumnLayout = () => {
+    const listEl = document.querySelector(".camp_list");
+    const mapEl = document.querySelector(".camp_mapCard");
+    if (!listEl || !mapEl) return false;
 
+    const listRect = listEl.getBoundingClientRect();
+    const mapRect = mapEl.getBoundingClientRect();
 
-const isOneColumnLayout = () => {
-  const listEl = document.querySelector(".camp_list");
-  const mapEl = document.querySelector(".camp_mapCard");
-  if (!listEl || !mapEl) return false;
+    // ✅ 1 columna = el mapa está claramente debajo de la lista
+    return mapRect.top > listRect.top + 80;
+  };
 
-  const listRect = listEl.getBoundingClientRect();
-  const mapRect = mapEl.getBoundingClientRect();
+  const scrollToMapIfOneColumn = () => {
+    if (!isOneColumnLayout()) return;
 
-  // ✅ 1 columna = el mapa está claramente debajo de la lista
-  return mapRect.top > (listRect.top + 80);
-};
+    const mapEl = document.querySelector(".camp_mapCard");
+    if (!mapEl) return;
 
-const scrollToMapIfOneColumn = () => {
-  if (!isOneColumnLayout()) return;
-
-  const mapEl = document.querySelector(".camp_mapCard");
-  if (!mapEl) return;
-
-  const top = mapEl.getBoundingClientRect().top + window.pageYOffset;
-  window.scrollTo({ top: top - 300, behavior: "smooth" });
-};
-
+    const top = mapEl.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: top - 300, behavior: "smooth" });
+  };
 
   // ✅ Reset
   const resetMapView = () => {
@@ -187,8 +185,7 @@ const scrollToMapIfOneColumn = () => {
     mapRef.current.setZoom(15);
     mapRef.current.panTo({ lat, lng });
 
-scrollToMapIfOneColumn();
-
+    scrollToMapIfOneColumn();
   };
 
   // si cambia país y ya no es México, resetea estado
@@ -217,6 +214,39 @@ scrollToMapIfOneColumn();
 
   return (
     <main className="camp_page camp_pagePad">
+      <Helmet>
+        <title>Otros campus del Colegio Colonial en Querétaro</title>
+
+        <meta
+          name="description"
+          content="Explora el mapa de todos los colegios del Colegio Colonial a lo largo del mundo y consulta sedes en Querétaro, México: ubicación, WhatsApp y sitio web."
+        />
+
+        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/conocenos/otros-campus" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:title" content="Otros campus del Colegio Colonial en Querétaro" />
+        <meta
+          property="og:description"
+          content="Explora el mapa de todos los colegios del Colegio Colonial a lo largo del mundo y revisa sedes en Querétaro: campus, ubicación y accesos rápidos."
+        />
+        <meta property="og:url" content="https://www.colegiocolonial.edu.mx/conocenos/otros-campus" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Otros campus del Colegio Colonial en Querétaro" />
+        <meta
+          name="twitter:description"
+          content="Mapa de todos los colegios del Colegio Colonial a lo largo del mundo + sedes en Querétaro, México: ubicación, WhatsApp y sitio web."
+        />
+
+        {/* SEO extra */}
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+      </Helmet>
+
       <div className="camp_container">
         <header className="camp_head">
           <div className="camp_headInner">
@@ -408,7 +438,7 @@ scrollToMapIfOneColumn();
                   onClick={() => {
                     setSelected(c);
                     setFocusMode(false);
-scrollToMapIfOneColumn();
+                    scrollToMapIfOneColumn();
                   }}
                 />
               ))}

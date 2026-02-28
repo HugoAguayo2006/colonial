@@ -5,10 +5,42 @@ export default function MisionVision() {
   return (
     <main className="mv2">
       <Helmet>
-        <title>Misión y Visión | Colegio Colonial</title>
+        <title>Misión y Visión | Colegio Colonial Querétaro</title>
         <meta
           name="description"
-          content="Misión y visión del Colegio Colonial: educación con calidad basada en humildad, amor y servicio."
+          content="Conoce la misión y visión del Colegio Colonial en Querétaro: formación integral con identidad católica, valores y participación de familias y docentes."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/conocenos/mision-vision"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:title"
+          content="Misión y Visión | Colegio Colonial Querétaro"
+        />
+        <meta
+          property="og:description"
+          content="Nuestra misión y visión en Querétaro: formación integral con identidad católica, valores y comunidad educativa comprometida."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/conocenos/mision-vision"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Misión y Visión | Colegio Colonial Querétaro"
+        />
+        <meta
+          name="twitter:description"
+          content="Misión y visión del Colegio Colonial en Querétaro: valores, propósito y formación integral con familias y docentes."
         />
       </Helmet>
 
@@ -27,7 +59,8 @@ export default function MisionVision() {
 
           <p className="mv2-subtitle">
             Una formación con propósito, basada en la pedagogía de la encarnación:
-            <strong> humildad</strong>, <strong>amor</strong> y <strong>servicio</strong>.
+            <strong> humildad</strong>, <strong>amor</strong> y{" "}
+            <strong>servicio</strong>.
           </p>
 
           <div className="mv2-badges">
@@ -128,7 +161,8 @@ export default function MisionVision() {
             <div className="mv2-strip-left">
               <h3 className="mv2-strip-title">Comunidad educativa</h3>
               <p className="mv2-strip-text">
-                La participación de docentes y padres de familia fortalece el proceso formativo.
+                La participación de docentes y padres de familia fortalece el
+                proceso formativo.
               </p>
             </div>
             <div className="mv2-strip-right" aria-hidden="true">

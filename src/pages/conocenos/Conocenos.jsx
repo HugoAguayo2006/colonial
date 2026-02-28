@@ -57,83 +57,130 @@ export default function Conocenos() {
   return (
     <main className="cc-page">
       <Helmet>
-        <title>Conócenos | Colegio Colonial</title>
+        <title>Conócenos | Colegio Colonial Querétaro</title>
         <meta
           name="description"
-          content="Conoce la historia, el modelo educativo, misión y visión, valores, campus y CCT del Colegio Colonial."
+          content="Conoce quiénes somos en Colegio Colonial Querétaro: historia, modelo educativo, misión, visión y valores. Descubre nuestra comunidad escolar."
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/conocenos"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:title"
+          content="Conócenos | Colegio Colonial Querétaro"
+        />
+        <meta
+          property="og:description"
+          content="Conoce quiénes somos en Colegio Colonial Querétaro: historia, modelo educativo, misión, visión y valores. Descubre nuestra comunidad escolar."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/conocenos"
+        />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/og/conocenos.jpg"
+        />
+        <meta
+          property="og:image:alt"
+          content="Conócenos - Colegio Colonial en Querétaro"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Conócenos | Colegio Colonial Querétaro"
+        />
+        <meta
+          name="twitter:description"
+          content="Conoce quiénes somos en Colegio Colonial Querétaro: historia, modelo educativo, misión, visión y valores. Descubre nuestra comunidad escolar."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/og/conocenos.jpg"
         />
       </Helmet>
 
       {/* HERO */}
-{/* HERO */}
-<section className="cc-hero">
-  <div className="cc-hero-bg" aria-hidden="true" />
+      <section className="cc-hero">
+        <div className="cc-hero-bg" aria-hidden="true" />
 
-  <div className="cc-hero-wrap">
-    {/* IZQUIERDA: TARJETA GLASS */}
-    <aside className="cc-hero-mock" aria-label="Colegio Colonial - vista general">
-      <div className="cc-mock-top">
-        <div className="cc-mock-brand">Colegio Colonial</div>
-        <div className="cc-mock-chip">Conócenos</div>
-      </div>
+        <div className="cc-hero-wrap">
+          {/* IZQUIERDA: TARJETA GLASS */}
+          <aside
+            className="cc-hero-mock"
+            aria-label="Colegio Colonial - vista general"
+          >
+            <div className="cc-mock-top">
+              <div className="cc-mock-brand">Colegio Colonial</div>
+              <div className="cc-mock-chip">Conócenos</div>
+            </div>
 
-      {/* Collage */}
-      <div className="cc-mock-collage">
-        <div className="cc-mock-img cc-mock-img-1" />
-        <div className="cc-mock-img cc-mock-img-2" />
-        <div className="cc-mock-img cc-mock-img-3" />
-      </div>
+            {/* Collage */}
+            <div className="cc-mock-collage">
+              <div className="cc-mock-img cc-mock-img-1" />
+              <div className="cc-mock-img cc-mock-img-2" />
+              <div className="cc-mock-img cc-mock-img-3" />
+            </div>
 
-      {/* Pills */}
-      <div className="cc-mock-pills">
-        <div className="cc-mock-pill">
-          <div className="cc-pill-title">Historia</div>
-          <div className="cc-pill-sub">Identidad + tradición</div>
+            {/* Pills */}
+            <div className="cc-mock-pills">
+              <div className="cc-mock-pill">
+                <div className="cc-pill-title">Historia</div>
+                <div className="cc-pill-sub">Identidad + tradición</div>
+              </div>
+
+              <div className="cc-mock-pill">
+                <div className="cc-pill-title">Modelo</div>
+                <div className="cc-pill-sub">Aprendizaje integral</div>
+              </div>
+
+              <div className="cc-mock-pill">
+                <div className="cc-pill-title">Valores</div>
+                <div className="cc-pill-sub">Respeto y compromiso</div>
+              </div>
+            </div>
+          </aside>
+
+          {/* DERECHA: COPY */}
+          <div className="cc-hero-copy">
+            <h1>Conócenos: tradición que forma, innovación que impulsa.</h1>
+
+            <p>
+              Aquí la educación es acompañamiento, carácter y futuro. Explora
+              nuestras secciones clave y descubre lo que nos distingue.
+            </p>
+
+            <div className="cc-hero-actions">
+              <NavLink to="/inscripciones" className="cc-btn cc-btn-primary">
+                Iniciar Inscripción
+              </NavLink>
+              <NavLink to="/contacto" className="cc-btn cc-btn-ghost">
+                Agendar visita
+              </NavLink>
+            </div>
+
+            <div className="cc-hero-stats">
+              <div className="cc-stat">
+                <div className="cc-stat-num">+6</div>
+                <div className="cc-stat-label">Secciones clave</div>
+              </div>
+              <div className="cc-stat">
+                <div className="cc-stat-num">100%</div>
+                <div className="cc-stat-label">Enfoque integral</div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div className="cc-mock-pill">
-          <div className="cc-pill-title">Modelo</div>
-          <div className="cc-pill-sub">Aprendizaje integral</div>
-        </div>
-
-        <div className="cc-mock-pill">
-          <div className="cc-pill-title">Valores</div>
-          <div className="cc-pill-sub">Respeto y compromiso</div>
-        </div>
-      </div>
-    </aside>
-
-    {/* DERECHA: COPY */}
-    <div className="cc-hero-copy">
-      <h1>Conócenos: tradición que forma, innovación que impulsa.</h1>
-
-      <p>
-        Aquí la educación es acompañamiento, carácter y futuro. Explora nuestras
-        secciones clave y descubre lo que nos distingue.
-      </p>
-
-      <div className="cc-hero-actions">
-        <NavLink to="/inscripciones" className="cc-btn cc-btn-primary">
-          Iniciar Inscripción
-        </NavLink>
-        <NavLink to="/contacto" className="cc-btn cc-btn-ghost">
-          Agendar visita
-        </NavLink>
-      </div>
-
-      <div className="cc-hero-stats">
-        <div className="cc-stat">
-          <div className="cc-stat-num">+6</div>
-          <div className="cc-stat-label">Secciones clave</div>
-        </div>
-        <div className="cc-stat">
-          <div className="cc-stat-num">100%</div>
-          <div className="cc-stat-label">Enfoque integral</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <div className="separator-blue"></div>
 
@@ -143,7 +190,8 @@ export default function Conocenos() {
           <header className="cc-head">
             <h2>Explora nuestras secciones</h2>
             <p>
-              Un vistazo rápido a lo más importante. Entra a cada apartado para ver la información completa.
+              Un vistazo rápido a lo más importante. Entra a cada apartado para
+              ver la información completa.
             </p>
           </header>
 
@@ -176,7 +224,8 @@ export default function Conocenos() {
           <header className="cc-head cc-head-light">
             <h2>Tu ruta rápida para conocer el Colegio</h2>
             <p>
-              Si vienes por primera vez, este recorrido te lleva por lo esencial en orden.
+              Si vienes por primera vez, este recorrido te lleva por lo esencial
+              en orden.
             </p>
           </header>
 
@@ -186,7 +235,9 @@ export default function Conocenos() {
               <div className="cc-step-card">
                 <h3>1) Nuestra historia</h3>
                 <p>De dónde venimos y qué nos define como institución.</p>
-                <NavLink to="/historia" className="cc-mini-link">Ir a Historia →</NavLink>
+                <NavLink to="/historia" className="cc-mini-link">
+                  Ir a Historia →
+                </NavLink>
               </div>
             </li>
 
@@ -194,8 +245,13 @@ export default function Conocenos() {
               <div className="cc-step-dot" />
               <div className="cc-step-card">
                 <h3>2) Cómo enseñamos</h3>
-                <p>Modelo educativo: lo académico + lo humano + habilidades para la vida.</p>
-                <NavLink to="/modelo-educativo" className="cc-mini-link">Ir a Modelo →</NavLink>
+                <p>
+                  Modelo educativo: lo académico + lo humano + habilidades para
+                  la vida.
+                </p>
+                <NavLink to="/modelo-educativo" className="cc-mini-link">
+                  Ir a Modelo →
+                </NavLink>
               </div>
             </li>
 
@@ -204,7 +260,9 @@ export default function Conocenos() {
               <div className="cc-step-card">
                 <h3>3) Propósito y dirección</h3>
                 <p>Misión y visión que guían cada proyecto y decisión.</p>
-                <NavLink to="/mision-vision" className="cc-mini-link">Ir a Misión y Visión →</NavLink>
+                <NavLink to="/mision-vision" className="cc-mini-link">
+                  Ir a Misión y Visión →
+                </NavLink>
               </div>
             </li>
 
@@ -213,7 +271,9 @@ export default function Conocenos() {
               <div className="cc-step-card">
                 <h3>4) Lo que vivimos</h3>
                 <p>Valores que se reflejan en la convivencia y el crecimiento.</p>
-                <NavLink to="/valores" className="cc-mini-link">Ir a Valores →</NavLink>
+                <NavLink to="/valores" className="cc-mini-link">
+                  Ir a Valores →
+                </NavLink>
               </div>
             </li>
 
@@ -221,8 +281,12 @@ export default function Conocenos() {
               <div className="cc-step-dot" />
               <div className="cc-step-card">
                 <h3>5) Nuestras sedes</h3>
-                <p>Otros campus y espacios para aprender, crear y convivir.</p>
-                <NavLink to="/otros-campus" className="cc-mini-link">Ir a Campus →</NavLink>
+                <p>
+                  Otros campus y espacios para aprender, crear y convivir.
+                </p>
+                <NavLink to="/otros-campus" className="cc-mini-link">
+                  Ir a Campus →
+                </NavLink>
               </div>
             </li>
 
@@ -231,7 +295,9 @@ export default function Conocenos() {
               <div className="cc-step-card">
                 <h3>6) Información institucional</h3>
                 <p>Consulta la Clave de Centro de Trabajo (CCT).</p>
-                <NavLink to="/cct" className="cc-mini-link">Ir a CCT →</NavLink>
+                <NavLink to="/cct" className="cc-mini-link">
+                  Ir a CCT →
+                </NavLink>
               </div>
             </li>
           </ol>
@@ -245,7 +311,8 @@ export default function Conocenos() {
             <div className="cc-cta-left">
               <h2>¿Listo para dar el siguiente paso?</h2>
               <p>
-                Inicia tu proceso o agenda una visita. Te acompañamos en todo el camino.
+                Inicia tu proceso o agenda una visita. Te acompañamos en todo el
+                camino.
               </p>
             </div>
             <div className="cc-cta-actions">

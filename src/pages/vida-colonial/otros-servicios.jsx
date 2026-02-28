@@ -5,10 +5,43 @@ export default function OtrosServicios() {
   return (
     <main className="os">
       <Helmet>
-        <title>Otros Servicios | Colegio Colonial</title>
+        <title>Otros Servicios Escolares | Colegio Colonial Qro</title>
         <meta
           name="description"
-          content="Conoce los servicios adicionales que ofrece el Colegio Colonial: cafetería saludable y excursiones escolares formativas."
+          content="Conoce los servicios del Colegio Colonial en Querétaro: apoyo a familias, opciones para alumnos y atención diaria en primaria y secundaria."
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/vida-colonial/otros-servicios"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Otros Servicios Escolares | Colegio Colonial Querétaro"
+        />
+        <meta
+          property="og:description"
+          content="Servicios y apoyo para familias y alumnos en Querétaro: atención y acompañamiento diario en primaria y secundaria del Colegio Colonial."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/vida-colonial/otros-servicios"
+        />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Otros Servicios Escolares | Colegio Colonial Querétaro"
+        />
+        <meta
+          name="twitter:description"
+          content="Descubre los servicios escolares del Colegio Colonial en Querétaro: apoyo a familias, atención a alumnos y acompañamiento en primaria y secundaria."
         />
       </Helmet>
 
@@ -24,7 +57,7 @@ export default function OtrosServicios() {
         </div>
       </section>
 
-            <div className="separator-red"></div>
+      <div className="separator-red"></div>
 
       {/* SERVICIOS */}
       <section className="os-services">
@@ -51,6 +84,8 @@ export default function OtrosServicios() {
           </p>
         </div>
       </section>
+
+                  <div className="separator-blue"></div>
 
       {/* CTA FINAL */}
       <section className="os-cta">

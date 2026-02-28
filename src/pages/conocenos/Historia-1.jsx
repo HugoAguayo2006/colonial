@@ -6,10 +6,42 @@ export default function Historia() {
   return (
     <>
       <Helmet>
-        <title>Nuestra Historia | Colegio Colonial</title>
+        <title>Historia del Colegio Colonial en Querétaro | Trayectoria</title>
         <meta
           name="description"
-          content="Conoce la historia del Colegio Colonial: momentos clave, crecimiento y compromiso con la educación."
+          content="Descubre la historia del Colegio Colonial en Querétaro: hitos, evolución institucional y compromiso formativo que han marcado nuestra trayectoria."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/conocenos/historia"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/conocenos/historia"
+        />
+        <meta
+          property="og:title"
+          content="Historia del Colegio Colonial en Querétaro"
+        />
+        <meta
+          property="og:description"
+          content="Conoce la trayectoria del Colegio Colonial en Querétaro: momentos clave, crecimiento y un compromiso constante con la educación."
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Historia del Colegio Colonial en Querétaro"
+        />
+        <meta
+          name="twitter:description"
+          content="Explora nuestra historia institucional y los hitos que han consolidado al Colegio Colonial en Querétaro."
         />
       </Helmet>
 
@@ -19,7 +51,8 @@ export default function Historia() {
             <p className="hist__kicker">Colegio Colonial</p>
             <h1 className="hist__title">Nuestra Historia</h1>
             <p className="hist__subtitle">
-              Un camino construido con valores, compromiso y pasión por la educación.
+              Un camino construido con valores, compromiso y pasión por la
+              educación.
             </p>
           </div>
           <div className="hist__heroGlow" aria-hidden="true" />

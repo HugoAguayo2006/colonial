@@ -60,10 +60,42 @@ export default function VidaColonial() {
   return (
     <main className="vc">
       <Helmet>
-        <title>Vida Colonial | Colegio Colonial</title>
+        <title>Vida Colonial Querétaro | Actividades y Eventos</title>
         <meta
           name="description"
-          content="Vida Colonial: actividades extracurriculares, calendario, eventos, galería, otros servicios y participación de padres de familia."
+          content="Conoce la Vida Colonial en Querétaro: actividades extracurriculares, eventos escolares, galería y servicios que impulsan la formación integral en primaria y secundaria."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/vida-colonial"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta
+          property="og:title"
+          content="Vida Colonial en Querétaro | Actividades y Eventos"
+        />
+        <meta
+          property="og:description"
+          content="Actividades, eventos y vida estudiantil en el Colegio Colonial. Formación integral en Querétaro para primaria y secundaria."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/vida-colonial"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="Vida Colonial en Querétaro | Actividades y Eventos"
+        />
+        <meta
+          name="twitter:description"
+          content="Vida estudiantil, actividades y eventos del Colegio Colonial en Querétaro. Conoce galería, servicios y formación integral."
         />
       </Helmet>
 
@@ -106,42 +138,42 @@ export default function VidaColonial() {
             </nav>
           </div>
 
-<div className="vc-hero__right">
-  <aside className="vc-calCard" aria-label="Fechas destacadas del calendario">
-    <div className="vc-calCard__top">
-      <div>
-        <div className="vc-calCard__kicker">Calendario</div>
-        <h3 className="vc-calCard__title">Fechas destacadas</h3>
-      </div>
+          <div className="vc-hero__right">
+            <aside className="vc-calCard" aria-label="Fechas destacadas del calendario">
+              <div className="vc-calCard__top">
+                <div>
+                  <div className="vc-calCard__kicker">Calendario</div>
+                  <h3 className="vc-calCard__title">Fechas destacadas</h3>
+                </div>
 
-      <NavLink className="vc-calCard__link" to="/calendario">
-        Ver todo →
-      </NavLink>
-    </div>
+                <NavLink className="vc-calCard__link" to="/calendario">
+                  Ver todo →
+                </NavLink>
+              </div>
 
-    <div className="vc-calList">
-      {CAL_DATES.map((d) => (
-        <div className="vc-calItem" key={`${d.day}-${d.month}-${d.title}`}>
-          <div className="vc-calDate" aria-hidden="true">
-            <div className="vc-calDate__day">{d.day}</div>
-            <div className="vc-calDate__month">{d.month}</div>
+              <div className="vc-calList">
+                {CAL_DATES.map((d) => (
+                  <div className="vc-calItem" key={`${d.day}-${d.month}-${d.title}`}>
+                    <div className="vc-calDate" aria-hidden="true">
+                      <div className="vc-calDate__day">{d.day}</div>
+                      <div className="vc-calDate__month">{d.month}</div>
+                    </div>
+
+                    <div className="vc-calText">
+                      <div className="vc-calText__title">{d.title}</div>
+                      <div className="vc-calText__meta">{d.meta}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="vc-calCard__cta">
+                <NavLink className="vc-btn vc-btn--primary vc-calBtn" to="/calendario">
+                  Ir al calendario
+                </NavLink>
+              </div>
+            </aside>
           </div>
-
-          <div className="vc-calText">
-            <div className="vc-calText__title">{d.title}</div>
-            <div className="vc-calText__meta">{d.meta}</div>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <div className="vc-calCard__cta">
-      <NavLink className="vc-btn vc-btn--primary vc-calBtn" to="/calendario">
-        Ir al calendario
-      </NavLink>
-    </div>
-  </aside>
-</div>
         </div>
       </header>
 

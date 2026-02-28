@@ -1,10 +1,50 @@
 // src/pages/Inscripciones.jsx
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import "./Inscripciones.css";
 
 export default function Inscripciones() {
   return (
     <main className="insc2">
+      <Helmet>
+        <title>Inscripciones | Colegio Colonial Querétaro</title>
+        <meta
+          name="description"
+          content="Inscripciones Colegio Colonial en Querétaro. Admisiones para Primaria y Secundaria: requisitos, pasos y cupo. Solicita informes y asegura tu lugar."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/inscripciones"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Inscripciones | Colegio Colonial Querétaro"
+        />
+        <meta
+          property="og:description"
+          content="Admisiones en Querétaro para Primaria y Secundaria. Consulta requisitos y pasos de inscripción del Colegio Colonial y solicita informes."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/inscripciones"
+        />
+        <meta property="og:site_name" content="Colegio Colonial" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Inscripciones | Colegio Colonial Querétaro"
+        />
+        <meta
+          name="twitter:description"
+          content="Inscripciones en Querétaro: Primaria y Secundaria. Requisitos, pasos y cupo. Solicita informes del Colegio Colonial."
+        />
+      </Helmet>
+
       {/* HERO */}
       <section className="insc2_hero">
         <div className="insc2_wrap">
@@ -25,12 +65,19 @@ export default function Inscripciones() {
               <div className="insc2_ctas">
                 <NavLink to="/primaria" className="insc2_btn insc2_btnPrimary">
                   Primaria
-                  <span className="insc2_btnArrow" aria-hidden="true">→</span>
+                  <span className="insc2_btnArrow" aria-hidden="true">
+                    →
+                  </span>
                 </NavLink>
 
-                <NavLink to="/secundaria" className="insc2_btn insc2_btnOutline">
+                <NavLink
+                  to="/secundaria"
+                  className="insc2_btn insc2_btnOutline"
+                >
                   Secundaria
-                  <span className="insc2_btnArrow" aria-hidden="true">→</span>
+                  <span className="insc2_btnArrow" aria-hidden="true">
+                    →
+                  </span>
                 </NavLink>
               </div>
 

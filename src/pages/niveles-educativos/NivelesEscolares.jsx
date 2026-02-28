@@ -1,9 +1,52 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import "./NivelesEscolares.css";
 
 export default function Niveles() {
   return (
     <main className="nv_page">
+      <Helmet>
+        <title>Niveles Educativos | Primaria y Secundaria en Querétaro</title>
+        <meta
+          name="description"
+          content="Conoce los niveles del Colegio Colonial en Querétaro: Primaria y Secundaria. Compara enfoques y solicita informes para elegir la mejor opción."
+        />
+
+        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/niveles" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:title"
+          content="Niveles Educativos en Querétaro | Colegio Colonial"
+        />
+        <meta
+          property="og:description"
+          content="Primaria y Secundaria en el Colegio Colonial (Querétaro). Revisa el enfoque de cada nivel y solicita informes para inscripciones."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/niveles"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Niveles Educativos | Colegio Colonial Querétaro"
+        />
+        <meta
+          name="twitter:description"
+          content="Oferta académica del Colegio Colonial en Querétaro: Primaria y Secundaria. Comparación rápida y contacto para informes."
+        />
+
+        {/* Refuerzo local */}
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
+      </Helmet>
+
       {/* HERO / HEADER */}
       <header className="nv_hero">
         <div className="nv_heroInner">

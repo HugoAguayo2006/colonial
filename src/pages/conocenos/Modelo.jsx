@@ -6,10 +6,43 @@ export default function ModeloEducativo() {
   return (
     <main className="modelo">
       <Helmet>
-        <title>Modelo Educativo | Colegio Colonial</title>
+        <title>Modelo Educativo en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
-          content="Conoce el modelo educativo del Colegio Colonial: formación integral, excelencia académica y valores sólidos."
+          content="Conoce el modelo educativo del Colegio Colonial en Querétaro: primaria y secundaria con enfoque integral, valores, inglés y acompañamiento."
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/conocenos/modelo-educativo"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Modelo Educativo en Querétaro | Colegio Colonial"
+        />
+        <meta
+          property="og:description"
+          content="Modelo educativo del Colegio Colonial en Querétaro: formación integral para primaria y secundaria, con valores, inglés y acompañamiento."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/conocenos/modelo-educativo"
+        />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Modelo Educativo en Querétaro | Colegio Colonial"
+        />
+        <meta
+          name="twitter:description"
+          content="Formación integral en primaria y secundaria en Querétaro: valores, excelencia académica, inglés y acompañamiento."
         />
       </Helmet>
 
@@ -23,7 +56,9 @@ export default function ModeloEducativo() {
           </p>
         </div>
       </section>
-<div className="separator-red"></div>
+
+      <div className="separator-red"></div>
+
       {/* PILARES */}
       <section className="modelo-pilares">
         <h2 className="section-title">Nuestros Pilares</h2>
@@ -80,6 +115,8 @@ export default function ModeloEducativo() {
         </div>
       </section>
 
+                  <div className="separator-white"></div>
+
       {/* CTA FINAL */}
       <section className="modelo-cta">
         <h2>Forma parte del Colegio Colonial</h2>
@@ -88,6 +125,8 @@ export default function ModeloEducativo() {
           Conocer Inscripciones
         </a>
       </section>
+
+ 
     </main>
   );
 }

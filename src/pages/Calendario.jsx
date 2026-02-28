@@ -205,7 +205,9 @@ export default function Calendario() {
   }
 
   const monthMeta = useMemo(() => {
-    const monthISO = `${visibleMonth.getFullYear()}-${pad2(visibleMonth.getMonth() + 1)}`;
+    const monthISO = `${visibleMonth.getFullYear()}-${pad2(
+      visibleMonth.getMonth() + 1
+    )}`;
     const total = filteredEvents.filter((e) => e._iso.startsWith(monthISO)).length;
     return total;
   }, [visibleMonth, filteredEvents]);
@@ -213,7 +215,41 @@ export default function Calendario() {
   return (
     <main className="cccal">
       <Helmet>
-        <title>Calendario | Colegio Colonial</title>
+        {/* ✅ SEO básico */}
+        <title>Calendario Escolar Querétaro | Colegio Colonial</title>
+        <meta
+          name="description"
+          content="Consulta el calendario escolar del Colegio Colonial en Querétaro: fechas importantes, eventos y actividades de Primaria y Secundaria."
+        />
+        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/calendario" />
+        <meta name="robots" content="index,follow" />
+
+        {/* ✅ Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:title" content="Calendario Escolar Querétaro | Colegio Colonial" />
+        <meta
+          property="og:description"
+          content="Fechas importantes, eventos y calendario escolar del Colegio Colonial en Querétaro para Primaria y Secundaria."
+        />
+        <meta property="og:url" content="https://www.colegiocolonial.edu.mx/calendario" />
+
+        {/* ✅ Sugerencia: usa una imagen institucional real si ya la tienes */}
+        <meta property="og:image" content="https://www.colegiocolonial.edu.mx/og/calendario.jpg" />
+        <meta property="og:image:alt" content="Calendario escolar del Colegio Colonial en Querétaro" />
+
+        {/* ✅ Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Calendario Escolar Querétaro | Colegio Colonial" />
+        <meta
+          name="twitter:description"
+          content="Consulta fechas importantes y eventos escolares del Colegio Colonial en Querétaro. Calendario de Primaria y Secundaria."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/og/calendario.jpg"
+        />
       </Helmet>
 
       {/* HERO / HEADER */}
@@ -221,15 +257,14 @@ export default function Calendario() {
         <div className="cccal__titleWrap">
           <div className="cccal__kickerRow">
             <span className="cccal__badge">Calendario</span>
-<span className="cccal__miniStat" title="Día actual">
-  <span className="cccal__miniDot" />
-  Hoy:{" "}
-  {today.toLocaleDateString("es-MX", {
-    day: "numeric",
-    month: "long",
-  })}
-</span>
-
+            <span className="cccal__miniStat" title="Día actual">
+              <span className="cccal__miniDot" />
+              Hoy:{" "}
+              {today.toLocaleDateString("es-MX", {
+                day: "numeric",
+                month: "long",
+              })}
+            </span>
           </div>
 
           <a
@@ -296,7 +331,9 @@ export default function Calendario() {
           <label className="cccal__label">Nivel</label>
           <div className="cccal__chips">
             <button
-              className={`ccchip ccchip--level ${levelFilter === "all" ? "is-on" : ""}`}
+              className={`ccchip ccchip--level ${
+                levelFilter === "all" ? "is-on" : ""
+              }`}
               onClick={() => setLevelFilter("all")}
               type="button"
             >
@@ -307,14 +344,13 @@ export default function Calendario() {
             {LEVELS.map((l) => (
               <button
                 key={l.key}
-                className={`ccchip ccchip--level ${levelFilter === l.key ? "is-on" : ""}`}
+                className={`ccchip ccchip--level ${
+                  levelFilter === l.key ? "is-on" : ""
+                }`}
                 onClick={() => setLevelFilter(l.key)}
                 type="button"
               >
-                <span
-                  className="ccdot"
-                  style={{ background: LEVEL_COLOR_VAR[l.key] }}
-                />
+                <span className="ccdot" style={{ background: LEVEL_COLOR_VAR[l.key] }} />
                 {l.label}
               </button>
             ))}
@@ -414,9 +450,7 @@ export default function Calendario() {
                   >
                     <div className="cell__top">
                       <span className="cell__num">{d.getDate()}</span>
-                      {has ? (
-                        <span className="cell__count">{dayEvents.length}</span>
-                      ) : null}
+                      {has ? <span className="cell__count">{dayEvents.length}</span> : null}
                     </div>
 
                     <div className="cell__dots">
@@ -425,9 +459,7 @@ export default function Calendario() {
                           key={e.id}
                           className="miniDot"
                           title={`${e.title} (${e.level})`}
-                          style={{
-                            background: LEVEL_COLOR_VAR[normalizeLevel(e.level)],
-                          }}
+                          style={{ background: LEVEL_COLOR_VAR[normalizeLevel(e.level)] }}
                         />
                       ))}
                     </div>
@@ -461,9 +493,7 @@ export default function Calendario() {
                   <div className="eventCard__body">
                     <div className="eventCard__top">
                       <h3 className="eventCard__title">{e.title}</h3>
-                      {e._timeLabel ? (
-                        <span className="eventCard__time">{e._timeLabel}</span>
-                      ) : null}
+                      {e._timeLabel ? <span className="eventCard__time">{e._timeLabel}</span> : null}
                     </div>
 
                     <div className="eventCard__tags">
@@ -473,9 +503,7 @@ export default function Calendario() {
                       {e.location ? <span className="tag tag--ghost">{e.location}</span> : null}
                     </div>
 
-                    {e.description ? (
-                      <p className="eventCard__desc">{e.description}</p>
-                    ) : null}
+                    {e.description ? <p className="eventCard__desc">{e.description}</p> : null}
                   </div>
                 </article>
               ))
@@ -512,15 +540,10 @@ export default function Calendario() {
                     >
                       <div className="listRow__date">
                         <span className="d1">
-                          {e._dateObj.toLocaleDateString("es-MX", {
-                            day: "2-digit",
-                            month: "short",
-                          })}
+                          {e._dateObj.toLocaleDateString("es-MX", { day: "2-digit", month: "short" })}
                         </span>
                         <span className="d2">
-                          {e._dateObj.toLocaleDateString("es-MX", {
-                            weekday: "short",
-                          })}
+                          {e._dateObj.toLocaleDateString("es-MX", { weekday: "short" })}
                         </span>
                       </div>
                     </div>
@@ -528,26 +551,17 @@ export default function Calendario() {
                     <div className="listRow__main">
                       <div className="listRow__top">
                         <h3 className="listRow__title">{e.title}</h3>
-                        {e._timeLabel ? (
-                          <span className="listRow__time">{e._timeLabel}</span>
-                        ) : null}
+                        {e._timeLabel ? <span className="listRow__time">{e._timeLabel}</span> : null}
                       </div>
 
                       <div className="listRow__meta">
-                        <span
-                          className="pill"
-                          style={{ background: LEVEL_COLOR_VAR[e._levelKey] }}
-                        >
+                        <span className="pill" style={{ background: LEVEL_COLOR_VAR[e._levelKey] }}>
                           {LEVELS.find((x) => x.key === e._levelKey)?.label || e.level}
                         </span>
-                        {e.location ? (
-                          <span className="pill pill--ghost">{e.location}</span>
-                        ) : null}
+                        {e.location ? <span className="pill pill--ghost">{e.location}</span> : null}
                       </div>
 
-                      {e.description ? (
-                        <p className="listRow__desc">{e.description}</p>
-                      ) : null}
+                      {e.description ? <p className="listRow__desc">{e.description}</p> : null}
                     </div>
                   </button>
                 ))

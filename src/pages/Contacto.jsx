@@ -7,9 +7,58 @@ import {
 } from "react-icons/fa";
 import "./Contacto.css";
 
+// ✅ Helmet (SEO)
+import { Helmet } from "react-helmet-async";
+
 export default function ContactoPage() {
   return (
     <div className="ct_page">
+      <Helmet>
+        {/* Title (≤ ~60 chars) */}
+        <title>Contacto Colegio Colonial Querétaro | Teléfono y Dirección</title>
+
+        {/* Meta Description (155–160 chars aprox) */}
+        <meta
+          name="description"
+          content="Contacta a Colegio Colonial en Querétaro. Teléfono +52 1 442 431 7022, WhatsApp, horario y ubicación. Solicita informes e inscripciones hoy."
+        />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/contacto" />
+
+        {/* Robots */}
+        <meta name="robots" content="index,follow" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:title" content="Contacto Colegio Colonial en Querétaro" />
+        <meta
+          property="og:description"
+          content="Teléfono +52 1 442 431 7022, WhatsApp, horario y ubicación. Solicita informes e inscripciones en Colegio Colonial, Querétaro."
+        />
+        <meta property="og:url" content="https://www.colegiocolonial.edu.mx/contacto" />
+
+        {/* ⚠️ Ajusta la ruta si tu imagen OG es diferente */}
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/og/og-contacto.jpg"
+        />
+        <meta property="og:image:alt" content="Contacto Colegio Colonial Querétaro" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contacto Colegio Colonial Querétaro" />
+        <meta
+          name="twitter:description"
+          content="Teléfono +52 1 442 431 7022, WhatsApp, horario y ubicación. Informes e inscripciones en Colegio Colonial, Querétaro."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/og/og-contacto.jpg"
+        />
+      </Helmet>
 
       {/* HERO ROJO INSTITUCIONAL */}
       <header className="ct_hero">
@@ -57,7 +106,6 @@ export default function ContactoPage() {
       {/* CONTENIDO PRINCIPAL */}
       <main className="ct_main">
         <div className="ct_container">
-
           {/* PANEL IZQUIERDO */}
           <aside className="ct_panel">
             <h2 className="ct_h2">Información de contacto</h2>
@@ -67,7 +115,6 @@ export default function ContactoPage() {
             </p>
 
             <div className="ct_cards">
-
               <div className="ct_card">
                 <div className="ct_icon">
                   <FaEnvelope />
@@ -135,7 +182,6 @@ export default function ContactoPage() {
                   </a>
                 </div>
               </div>
-
             </div>
           </aside>
 
@@ -143,13 +189,10 @@ export default function ContactoPage() {
           <section className="ct_formWrap">
             <div className="ct_formHeader">
               <h2 className="ct_h2">Envíanos un mensaje</h2>
-              <p className="ct_p">
-                Completa el formulario y te contactamos.
-              </p>
+              <p className="ct_p">Completa el formulario y te contactamos.</p>
             </div>
 
             <form className="ct_form" onSubmit={(e) => e.preventDefault()}>
-
               <div className="ct_row">
                 <label>
                   Nombre
@@ -179,13 +222,10 @@ export default function ContactoPage() {
               <button className="ct_submit" type="submit">
                 Enviar mensaje
               </button>
-
             </form>
           </section>
-
         </div>
       </main>
-
     </div>
   );
 }

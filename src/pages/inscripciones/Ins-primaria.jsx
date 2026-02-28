@@ -72,7 +72,7 @@ export default function InscripcionesPrimaria() {
       },
       {
         t: "7) Apertura de expediente y ficha descriptiva",
-        d: "Al ser aceptado, se abre el expediente del alumno y se completa una ficha descriptiva.",
+        d: "Al ser aceptado en el colegio, se abre el expediente del alumno y se completa una ficha descriptiva.",
       },
       {
         t: "8) Diálogo con maestras",
@@ -115,7 +115,7 @@ export default function InscripcionesPrimaria() {
             <ul>
               <li>Examen de conocimientos.</li>
               <li>Valoración por el área de Psicología.</li>
-              <li>Entrevista con el alumno y/o padres.</li>
+              <li>Entrevista con el alumno y/o los padres.</li>
             </ul>
           </div>
         ),
@@ -139,9 +139,9 @@ export default function InscripcionesPrimaria() {
         q: "¿Ofrecen becas o apoyos?",
         a: (
           <p>
-            Sí. Se ofrecen <b>becas en Primaria</b> considerando el rendimiento
-            académico y un <b>estudio socioeconómico</b>. También hay{" "}
-            <b>apoyos para hermanos inscritos</b>.
+            Sí. Ofrecemos becas en Primaria considerando el rendimiento académico
+            y un <b>estudio socioeconómico</b>, además de apoyos para{" "}
+            <b>hermanos inscritos</b>.
           </p>
         ),
       },
@@ -169,7 +169,7 @@ export default function InscripcionesPrimaria() {
         a: (
           <div className="plist">
             <ul>
-              <li>Se abre el expediente del alumno.</li>
+              <li>Se abre un expediente del alumno.</li>
               <li>Se completa una ficha descriptiva.</li>
               <li>Se realiza un diálogo con las maestras.</li>
               <li>Se solicitan los documentos necesarios.</li>
@@ -185,11 +185,49 @@ export default function InscripcionesPrimaria() {
   return (
     <>
       <Helmet>
-        <title>Inscripciones Primaria | Instituto Nueva Galicia</title>
+        <title>Inscripciones Primaria en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
-          content="Inscripciones de Primaria: costos, becas, métodos de pago, proceso de admisión y preguntas frecuentes."
+          content="Inscribe a tu hijo en Primaria del Colegio Colonial en Querétaro. Conoce requisitos, proceso de admisión y fechas. Cupo limitado. Solicita informes."
         />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/inscripciones/primaria"
+        />
+
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:title"
+          content="Inscripciones Primaria en Querétaro | Colegio Colonial"
+        />
+        <meta
+          property="og:description"
+          content="Conoce el proceso de admisión y requisitos de Primaria en el Colegio Colonial (Querétaro). Inscripciones abiertas de febrero a agosto. Cupo limitado."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/inscripciones/primaria"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Inscripciones Primaria en Querétaro | Colegio Colonial"
+        />
+        <meta
+          name="twitter:description"
+          content="Inscripciones Primaria (Querétaro): requisitos, admisión, fechas y cupo. Solicita informes para iniciar tu proceso."
+        />
+
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
+        <meta name="ICBM" content="20.588793,-100.389888" />
       </Helmet>
 
       <main className="pinc">
@@ -199,7 +237,8 @@ export default function InscripcionesPrimaria() {
             <p className="pinc__kicker">PRIMARIA</p>
             <h1 className="pinc__title">Inscripciones</h1>
             <p className="pinc__subtitle">
-              Proceso de admisión, costos, becas y preguntas frecuentes para nuevo ingreso.
+              Proceso de admisión, costos, becas y preguntas frecuentes para nuevo
+              ingreso.
             </p>
 
             <div className="pinc__note">
@@ -216,8 +255,8 @@ export default function InscripcionesPrimaria() {
             <header className="pinc__header">
               <h2>Proceso de admisión</h2>
               <p>
-                Para ingresar a Primaria, el proceso contempla evaluación académica,
-                valoración psicológica y entrevista.
+                Para ingresar a Primaria, el proceso contempla evaluación
+                académica, valoración psicológica y entrevista.
               </p>
             </header>
 
@@ -237,7 +276,8 @@ export default function InscripcionesPrimaria() {
               <div className="pstrip__item">
                 <span className="pstrip__dot" aria-hidden="true" />
                 <p>
-                  <b>Traslados:</b> se aceptan, siempre que se cumplan requisitos de admisión.
+                  <b>Traslados:</b> se aceptan, siempre que se cumplan requisitos
+                  de admisión.
                 </p>
               </div>
               <div className="pstrip__item">
@@ -274,7 +314,8 @@ export default function InscripcionesPrimaria() {
 
               <div className="pinc__small">
                 <p>
-                  <b>Nota:</b> Actividades extracurriculares o servicios especiales pueden generar cuotas adicionales.
+                  <b>Nota:</b> Actividades extracurriculares o servicios
+                  especiales pueden generar cuotas adicionales.
                 </p>
               </div>
 
@@ -298,12 +339,18 @@ export default function InscripcionesPrimaria() {
         <section className="pinc__faq" id="faq">
           <header className="pinc__header">
             <h2>Preguntas frecuentes</h2>
-            <p>Lo esencial sobre fechas, costos, becas y requisitos del proceso.</p>
+            <p>
+              Lo esencial sobre fechas, costos, becas y requisitos del proceso.
+            </p>
           </header>
 
           <div className="pinc__block">
             {faqs.map((f, i) => (
-              <AccordionItem key={i} title={f.q} tone={i % 3 === 0 ? "red" : "blue"}>
+              <AccordionItem
+                key={i}
+                title={f.q}
+                tone={i % 3 === 0 ? "red" : "blue"}
+              >
                 {f.a}
               </AccordionItem>
             ))}
@@ -313,7 +360,8 @@ export default function InscripcionesPrimaria() {
             <div className="pfinal__card">
               <h3>¿Listo para iniciar?</h3>
               <p>
-                Si quieres avanzar con el proceso, contáctanos para recibir información y dar el siguiente paso.
+                Si quieres avanzar con el proceso, contáctanos para recibir
+                información y dar el siguiente paso.
               </p>
               <div className="pfinal__actions">
                 <Link className="pbtn pbtn--primary" to="/contacto">

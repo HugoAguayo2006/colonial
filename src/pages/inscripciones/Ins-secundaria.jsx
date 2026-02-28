@@ -185,11 +185,49 @@ export default function InscripcionesSecundaria() {
   return (
     <>
       <Helmet>
-        <title>Inscripciones Secundaria | Instituto Nueva Galicia</title>
+        <title>Inscripciones Secundaria en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
-          content="Inscripciones de Secundaria: costos, becas, métodos de pago, proceso de admisión y preguntas frecuentes."
+          content="Inscripciones Secundaria en el Colegio Colonial (Querétaro). Requisitos, proceso de admisión, costos y fechas. Cupo limitado. Solicita informes."
         />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/inscripciones/secundaria"
+        />
+
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:title"
+          content="Inscripciones Secundaria en Querétaro | Colegio Colonial"
+        />
+        <meta
+          property="og:description"
+          content="Conoce el proceso de admisión y requisitos de Secundaria en el Colegio Colonial (Querétaro). Inscripciones de febrero a agosto. Cupo limitado."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/inscripciones/secundaria"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Inscripciones Secundaria en Querétaro | Colegio Colonial"
+        />
+        <meta
+          name="twitter:description"
+          content="Secundaria (Querétaro): requisitos, admisión, costos y fechas. Solicita informes para iniciar tu proceso."
+        />
+
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
+        <meta name="ICBM" content="20.588793,-100.389888" />
       </Helmet>
 
       <main className="pinc">
@@ -274,7 +312,8 @@ export default function InscripcionesSecundaria() {
 
               <div className="pinc__small">
                 <p>
-                  <b>Nota:</b> Actividades extracurriculares o servicios especiales pueden generar cuotas adicionales.
+                  <b>Nota:</b> Actividades extracurriculares o servicios
+                  especiales pueden generar cuotas adicionales.
                 </p>
               </div>
 
@@ -298,12 +337,18 @@ export default function InscripcionesSecundaria() {
         <section className="pinc__faq" id="faq">
           <header className="pinc__header">
             <h2>Preguntas frecuentes</h2>
-            <p>Lo esencial sobre fechas, costos, becas y requisitos del proceso.</p>
+            <p>
+              Lo esencial sobre fechas, costos, becas y requisitos del proceso.
+            </p>
           </header>
 
           <div className="pinc__block">
             {faqs.map((f, i) => (
-              <AccordionItem key={i} title={f.q} tone={i % 3 === 0 ? "red" : "blue"}>
+              <AccordionItem
+                key={i}
+                title={f.q}
+                tone={i % 3 === 0 ? "red" : "blue"}
+              >
                 {f.a}
               </AccordionItem>
             ))}
@@ -313,7 +358,8 @@ export default function InscripcionesSecundaria() {
             <div className="pfinal__card">
               <h3>¿Listo para iniciar?</h3>
               <p>
-                Si quieres avanzar con el proceso, contáctanos para recibir información y dar el siguiente paso.
+                Si quieres avanzar con el proceso, contáctanos para recibir
+                información y dar el siguiente paso.
               </p>
               <div className="pfinal__actions">
                 <Link className="pbtn pbtn--primary" to="/contacto">

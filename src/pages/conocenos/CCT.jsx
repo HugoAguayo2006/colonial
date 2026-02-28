@@ -8,13 +8,47 @@ export default function ClaveCentroTrabajo() {
         <title>Clave del Centro de Trabajo | Colegio Colonial</title>
         <meta
           name="description"
-          content="Consulta la Clave del Centro de Trabajo (CCT) de Primaria y Secundaria del Colegio Colonial."
+          content="Consulta la Clave de Centro de Trabajo (CCT) del Colegio Colonial en Querétaro, México. Información oficial registrada ante la Secretaría de Educación."
         />
+
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/conocenos/clave-de-centro-de-trabajo"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta
+          property="og:title"
+          content="Clave del Centro de Trabajo | Colegio Colonial"
+        />
+        <meta
+          property="og:description"
+          content="Consulta la Clave de Centro de Trabajo (CCT) del Colegio Colonial en Querétaro, México. Información oficial registrada ante la Secretaría de Educación."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/conocenos/clave-de-centro-de-trabajo"
+        />
+        <meta property="og:locale" content="es_MX" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="Clave del Centro de Trabajo | Colegio Colonial"
+        />
+        <meta
+          name="twitter:description"
+          content="Consulta la Clave de Centro de Trabajo (CCT) del Colegio Colonial en Querétaro, México. Información oficial registrada ante la Secretaría de Educación."
+        />
+
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       <main className="cct-page">
         <section className="cct-hero">
-          <h1>Clave del Centro de Trabajo</h1>
+          <h1>Claves del Centro de Trabajo</h1>
           <p>
             Consulta las claves oficiales registradas ante la Secretaría de
             Educación.

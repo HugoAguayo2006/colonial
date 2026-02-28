@@ -18,10 +18,42 @@ export default function Valores() {
   return (
     <main className="val">
       <Helmet>
-        <title>Valores | Colegio Colonial</title>
+        <title>Valores del Colegio Colonial en Querétaro</title>
         <meta
           name="description"
-          content="Valores institucionales del Colegio Colonial: formación integral centrada en la persona, guiada por la fe, el amor y el servicio."
+          content="Conoce los valores del Colegio Colonial en Querétaro: identidad, respeto, empatía y responsabilidad, con formación integral humana y académica."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/conocenos/valores"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:title"
+          content="Valores del Colegio Colonial | Querétaro"
+        />
+        <meta
+          property="og:description"
+          content="Valores institucionales en Querétaro: identidad, empatía, respeto, libertad, lealtad y trabajo colaborativo, con formación integral."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/conocenos/valores"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Valores del Colegio Colonial | Querétaro"
+        />
+        <meta
+          name="twitter:description"
+          content="Educación con valores en Querétaro: formación humana, académica y espiritual, centrada en la persona."
         />
       </Helmet>
 
@@ -59,11 +91,16 @@ export default function Valores() {
             </div>
             <div className="val-mini">
               <h3>Dimensión académica</h3>
-              <p>Disciplina, pensamiento crítico y compromiso con la excelencia.</p>
+              <p>
+                Disciplina, pensamiento crítico y compromiso con la excelencia.
+              </p>
             </div>
           </div>
         </div>
       </header>
+
+
+                  <div className="separator-red"></div>
 
       {/* CONSTELACIÓN DE VALORES */}
       <section className="val-section">
@@ -84,7 +121,9 @@ export default function Valores() {
                 role="listitem"
               >
                 <div className="val-card-top">
-                  <span className="val-chip">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="val-chip">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <span className="val-line" aria-hidden="true" />
                 </div>
                 <h3>{v.t}</h3>
@@ -94,6 +133,8 @@ export default function Valores() {
           </div>
         </div>
       </section>
+
+                        <div className="separator-red"></div>
 
       {/* MANIFIESTO / RELIGIOSO */}
       <section className="val-manifesto">
@@ -131,7 +172,9 @@ export default function Valores() {
             <h3>Enfoque integral</h3>
 
             <div className="val-pill">
-              <span className="val-ico" aria-hidden="true">❤</span>
+              <span className="val-ico" aria-hidden="true">
+                ❤
+              </span>
               <div>
                 <strong>Emocional</strong>
                 <small>Bienestar, convivencia, autoestima.</small>
@@ -139,7 +182,9 @@ export default function Valores() {
             </div>
 
             <div className="val-pill">
-              <span className="val-ico" aria-hidden="true">✦</span>
+              <span className="val-ico" aria-hidden="true">
+                ✦
+              </span>
               <div>
                 <strong>Espiritual</strong>
                 <small>Fe, amor, servicio, sentido.</small>
@@ -147,7 +192,9 @@ export default function Valores() {
             </div>
 
             <div className="val-pill">
-              <span className="val-ico" aria-hidden="true">⟡</span>
+              <span className="val-ico" aria-hidden="true">
+                ⟡
+              </span>
               <div>
                 <strong>Académica</strong>
                 <small>Excelencia, disciplina, pensamiento crítico.</small>

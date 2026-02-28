@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "./Primaria.css";
 import Extracurriculares from "../../components/Talleres";
 import { ACTIVIDADES } from "../../data/actividades-2";
-
 
 export default function Primaria() {
   // ✅ HERO: fotos SOLO del hero
@@ -74,6 +74,54 @@ export default function Primaria() {
 
   return (
     <main className="prim">
+      <Helmet>
+        <title>Primaria en Querétaro | Colegio Colonial</title>
+        <meta
+          name="description"
+          content="Primaria privada en Querétaro con acompañamiento cercano y formación integral. Conoce horarios, actividades y solicita informes en Colegio Colonial."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/niveles/primaria"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta
+          property="og:title"
+          content="Primaria en Querétaro | Colegio Colonial"
+        />
+        <meta
+          property="og:description"
+          content="Primaria privada en Querétaro con acompañamiento cercano y formación integral. Conoce horarios, actividades y solicita informes en Colegio Colonial."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/niveles/primaria"
+        />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Primaria en Querétaro | Colegio Colonial"
+        />
+        <meta
+          name="twitter:description"
+          content="Primaria privada en Querétaro con acompañamiento cercano y formación integral. Conoce horarios, actividades y solicita informes en Colegio Colonial."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
+        />
+      </Helmet>
+
       {/* =========================
           HERO con carrusel de fondo
       ========================== */}
@@ -103,17 +151,24 @@ export default function Primaria() {
               de acompañamiento.
             </p>
 
-                  {/* ✅ HORARIO INTEGRADO */}
-      <div className="prim-heroInfo" role="note" aria-label="Horario de clases">
-        <span className="prim-heroInfo__pill">🕒 Horario matutino</span>
-        <span className="prim-heroInfo__text">
-          Lunes a viernes · <strong>7:00 a.m.</strong> a{" "}
-          <strong>2:10 p.m.</strong>
-        </span>
-      </div>
+            {/* ✅ HORARIO INTEGRADO */}
+            <div
+              className="prim-heroInfo"
+              role="note"
+              aria-label="Horario de clases"
+            >
+              <span className="prim-heroInfo__pill">🕒 Horario matutino</span>
+              <span className="prim-heroInfo__text">
+                Lunes a viernes · <strong>7:00 a.m.</strong> a{" "}
+                <strong>2:10 p.m.</strong>
+              </span>
+            </div>
 
             <div className="prim-hero__actions">
-              <Link className="prim-btn prim-btn--solid" to="/inscripciones-primaria">
+              <Link
+                className="prim-btn prim-btn--solid"
+                to="/inscripciones-primaria"
+              >
                 Inscripciones Primaria
               </Link>
 
@@ -193,7 +248,9 @@ export default function Primaria() {
           </aside>
         </div>
       </section>
-                  <div className="separator-blue" />
+
+      <div className="separator-blue" />
+
       {/* =========================
           SECCIONES
       ========================== */}
@@ -237,98 +294,104 @@ export default function Primaria() {
         </div>
       </section>
 
-      
+      <section className="prim-section prim-section--alt">
+        <div className="prim-wrap">
+          <div className="prim-split prim-split--fe">
+            {/* IZQUIERDA: texto */}
+            <div className="prim-feText">
+              <h2 className="prim-h2">Formación en la fe</h2>
+              <p className="prim-p">
+                Vivimos valores cristianos en el día a día: respeto, empatía,
+                solidaridad y servicio.
+              </p>
 
-<section className="prim-section prim-section--alt">
-  <div className="prim-wrap">
-    <div className="prim-split prim-split--fe">
-      {/* IZQUIERDA: texto */}
-      <div className="prim-feText">
-        <h2 className="prim-h2">Formación en la fe</h2>
-        <p className="prim-p">
-          Vivimos valores cristianos en el día a día: respeto, empatía,
-          solidaridad y servicio.
-        </p>
+              <ul className="prim-list">
+                <li>Momentos de reflexión y acompañamiento</li>
+                <li>Convivencia basada en valores</li>
+                <li>Sentido de comunidad y pertenencia</li>
+              </ul>
 
-        <ul className="prim-list">
-          <li>Momentos de reflexión y acompañamiento</li>
-          <li>Convivencia basada en valores</li>
-          <li>Sentido de comunidad y pertenencia</li>
-        </ul>
-
-        <div className="prim-ctaRow">
-          <Link className="prim-btn prim-btn--solid" to="/inscripciones-primaria">
-            Inscripciones Primaria
-          </Link>
-          <Link className="prim-btn prim-btn--ghost" to="/contacto">
-            Agenda una visita
-          </Link>
-        </div>
-      </div>
-
-      {/* DERECHA: carrusel */}
-      <div className="prim-feCol">
-        <div className="prim-photoCard" aria-label="Galería de formación en la fe">
-          <div className="prim-photoCard__img prim-feCarousel">
-            <div
-              className="prim-feTrack"
-              style={{ transform: `translateX(-${feIdx * 100}%)` }}
-            >
-              {feSlides.map((src, i) => (
-                <div className="prim-feSlide" key={src}>
-                  <img
-                    src={src}
-                    alt={`Formación en la fe ${i + 1}`}
-                    loading="lazy"
-                    draggable="false"
-                  />
-                </div>
-              ))}
+              <div className="prim-ctaRow">
+                <Link
+                  className="prim-btn prim-btn--solid"
+                  to="/inscripciones-primaria"
+                >
+                  Inscripciones Primaria
+                </Link>
+                <Link className="prim-btn prim-btn--ghost" to="/contacto">
+                  Agenda una visita
+                </Link>
+              </div>
             </div>
 
-            <button
-              className="prim-carouselBtn prim-carouselBtn--prev"
-              onClick={() => goFe(feIdx - 1)}
-              aria-label="Anterior"
-              type="button"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </button>
+            {/* DERECHA: carrusel */}
+            <div className="prim-feCol">
+              <div
+                className="prim-photoCard"
+                aria-label="Galería de formación en la fe"
+              >
+                <div className="prim-photoCard__img prim-feCarousel">
+                  <div
+                    className="prim-feTrack"
+                    style={{ transform: `translateX(-${feIdx * 100}%)` }}
+                  >
+                    {feSlides.map((src, i) => (
+                      <div className="prim-feSlide" key={src}>
+                        <img
+                          src={src}
+                          alt={`Formación en la fe ${i + 1}`}
+                          loading="lazy"
+                          draggable="false"
+                        />
+                      </div>
+                    ))}
+                  </div>
 
-            <button
-              className="prim-carouselBtn prim-carouselBtn--next"
-              onClick={() => goFe(feIdx + 1)}
-              aria-label="Siguiente"
-              type="button"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M9 6l6 6-6 6" />
-              </svg>
-            </button>
-          </div>
+                  <button
+                    className="prim-carouselBtn prim-carouselBtn--prev"
+                    onClick={() => goFe(feIdx - 1)}
+                    aria-label="Anterior"
+                    type="button"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                  </button>
 
-          <div className="prim-photoCard__bar">
-            <span>Galería de formación en la fe</span>
-            <span className="prim-photoCard__pill">
-              Imagen {feIdx + 1} de {feSlides.length}
-            </span>
+                  <button
+                    className="prim-carouselBtn prim-carouselBtn--next"
+                    onClick={() => goFe(feIdx + 1)}
+                    aria-label="Siguiente"
+                    type="button"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M9 6l6 6-6 6" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div className="prim-photoCard__bar">
+                  <span>Galería de formación en la fe</span>
+                  <span className="prim-photoCard__pill">
+                    Imagen {feIdx + 1} de {feSlides.length}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-        <div className="separator-blue"></div>
-    <Extracurriculares
-      nivel="primaria"
-      items={ACTIVIDADES}
-      title="Extracurriculares en Primaria"
-      subtitle="Actividades para fortalecer hábitos, disciplina y talentos."
-    />
+      </section>
 
-            <div className="separator-blue"></div>
+      <div className="separator-blue"></div>
+
+      <Extracurriculares
+        nivel="primaria"
+        items={ACTIVIDADES}
+        title="Extracurriculares en Primaria"
+        subtitle="Actividades para fortalecer hábitos, disciplina y talentos."
+      />
+
+      <div className="separator-blue"></div>
 
       <section className="prim-section">
         <div className="prim-wrap">
@@ -344,8 +407,8 @@ export default function Primaria() {
             <article className="prim-card2">
               <h3 className="prim-h3">Seguimiento académico</h3>
               <p className="prim-p2">
-                Acompañamiento para fortalecer habilidades y mantener un progreso
-                constante.
+                Acompañamiento para fortalecer habilidades y mantener un
+                progreso constante.
               </p>
             </article>
 
@@ -362,7 +425,10 @@ export default function Primaria() {
       {/* =========================
           INSCRIPCIONES
       ========================== */}
-      <section className="prim-section prim-section--cta" id="primaria-inscripciones">
+      <section
+        className="prim-section prim-section--cta"
+        id="primaria-inscripciones"
+      >
         <div className="prim-wrap">
           <div className="prim-cta">
             <div>
@@ -375,16 +441,16 @@ export default function Primaria() {
               <ul className="prim-list-1" style={{ marginTop: 14 }}>
                 <li>Turno matutino: lunes a viernes (7:50 a.m. a 2:00 p.m.)</li>
                 <li>Docentes especialistas por asignatura</li>
-                <li>Evaluación: cuaderno, proyectos, exámenes mensuales y trimestrales</li>
+                <li>
+                  Evaluación: cuaderno, proyectos, exámenes mensuales y
+                  trimestrales
+                </li>
                 <li>Inglés desde 1° (sin certificación externa)</li>
               </ul>
             </div>
 
             <div className="prim-cta__actions">
-              <Link
-                className="prim-btn prim-btn--solid"
-                to="/inscripciones-primaria"
-              >
+              <Link className="prim-btn prim-btn--solid" to="/inscripciones-primaria">
                 Más información
               </Link>
 

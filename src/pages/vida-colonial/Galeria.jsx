@@ -170,10 +170,36 @@ export default function Galeria() {
   return (
     <>
       <Helmet>
-        <title>Galería |  Colegio Colonial</title>
+        <title>Galería Colegio Colonial | Fotos y Vida Escolar</title>
         <meta
           name="description"
-          content="Galería de fotos del Colegio Colonial: campus, aulas, eventos, actividades e instalaciones."
+          content="Explora la Galería del Colegio Colonial en Querétaro: fotos de campus, aulas, eventos y actividades de primaria y secundaria. Momentos reales."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/vida-colonial/galeria"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:title" content="Galería Colegio Colonial | Vida Colonial" />
+        <meta
+          property="og:description"
+          content="Fotos y momentos del Colegio Colonial en Querétaro: campus, aulas, eventos y actividades escolares de primaria y secundaria."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/vida-colonial/galeria"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Galería Colegio Colonial | Vida Colonial" />
+        <meta
+          name="twitter:description"
+          content="Explora fotos del Colegio Colonial en Querétaro: campus, aulas, eventos y actividades escolares de primaria y secundaria."
         />
       </Helmet>
 
