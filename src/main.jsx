@@ -21,8 +21,8 @@ import Inscripcion_Primaria from "./pages/inscripciones/Ins-primaria.jsx";
 import Inscripcion_Secundaria from "./pages/inscripciones/Ins-secundaria.jsx";
 
 // ⛔ Otras páginas (comentadas)
- import Contacto from "./pages/Contacto.jsx";
- import Calendario from "./pages/Calendario.jsx";
+import Contacto from "./pages/Contacto.jsx";
+import Calendario from "./pages/Calendario.jsx";
 
 // ⛔ Vida colonial (comentadas)
  import Eventos from "./pages/vida-colonial/Eventos.jsx";
