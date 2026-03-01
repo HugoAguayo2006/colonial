@@ -5,11 +5,17 @@ export default function IntercolegialesVideoHero({
   title = "Intercolegiales 2026",
   subtitle = "Invitamos a los colegios de la orden a vivir una jornada de competencia, convivencia y espíritu deportivo.",
   youtubeId = "VNn2FhvNGTI",
-  start = 0,
+  start = 0, // lo dejamos por compatibilidad, pero lo vamos a ignorar si quieres forzar 0
   logoSrc = "/logo.svg",
   logoAlt = "Escudo",
 }) {
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?start=${start}&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1`;
+  // ✅ FORZAR SIEMPRE 0 (si quieres respetar start, cambia esta línea por: const forcedStart = Number(start) || 0;)
+  const forcedStart = 0;
+
+  // ✅ Cache buster para evitar reuso/caché del iframe
+  const [cb] = useState(() => Date.now());
+
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?start=${forcedStart}&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1&cb=${cb}`;
 
   /* =======================
      DATA CARRUSEL
@@ -24,19 +30,14 @@ export default function IntercolegialesVideoHero({
   ];
 
   const ITEMS = [
-    // FÚTBOL
     { id: "f1", sport: "futbol", image: "/images/intercolegiales/futbol-1.webp" },
     { id: "f2", sport: "futbol", image: "/images/intercolegiales/futbol-2.webp" },
 
-    // BÁSQUETBOL
     { id: "b1", sport: "basquetbol", image: "/images/intercolegiales/basquet-1.webp" },
 
-
-    // VÓLEY
     { id: "v1", sport: "voley", image: "/images/intercolegiales/voley-1.webp" },
     { id: "v2", sport: "voley", image: "/images/intercolegiales/voley-2.webp" },
 
-    // AJEDREZ
     { id: "a1", sport: "ajedrez", image: "/images/intercolegiales/ajedrez-1.webp" },
     { id: "a2", sport: "ajedrez", image: "/images/intercolegiales/ajedrez-2.webp" },
     { id: "a3", sport: "ajedrez", image: "/images/intercolegiales/ajedrez-3.webp" },
@@ -74,12 +75,9 @@ export default function IntercolegialesVideoHero({
     const step = firstCard.getBoundingClientRect().width + gap;
 
     track.scrollBy({ left: dir * step, behavior: "smooth" });
-
-    // refresca estado
     setTimeout(updateScrollState, 400);
   };
 
-  // ✅ Al cambiar filtro, regresa al inicio y actualiza flechas
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -88,7 +86,6 @@ export default function IntercolegialesVideoHero({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeSport]);
 
-  // ✅ Primer render (por si ya hay overflow)
   useEffect(() => {
     setTimeout(updateScrollState, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -115,7 +112,7 @@ export default function IntercolegialesVideoHero({
           <div className="inter-video__actions">
             <a
               className="inter-video__secondary"
-              href={`https://www.youtube.com/watch?v=${youtubeId}&t=${start}s`}
+              href={`https://www.youtube.com/watch?v=${youtubeId}&t=${forcedStart}s`}
               target="_blank"
               rel="noreferrer"
             >
@@ -127,10 +124,12 @@ export default function IntercolegialesVideoHero({
         <div className="inter-video__frame">
           <div className="inter-video__ratio">
             <iframe
+              // ✅ KEY para forzar remount real del iframe
+              key={`${youtubeId}-${forcedStart}-${cb}`}
               className="inter-video__iframe"
               src={embedUrl}
               title={title}
-              loading="lazy"
+              loading="eager"
               allow="autoplay; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
             />
@@ -181,7 +180,11 @@ export default function IntercolegialesVideoHero({
             {filtered.map((item) => (
               <div className="inter-carousel__card" key={item.id}>
                 <div className="inter-carousel__media">
-                  <img src={item.image} alt={`Intercolegiales ${labelSport(item.sport)}`} loading="lazy" />
+                  <img
+                    src={item.image}
+                    alt={`Intercolegiales ${labelSport(item.sport)}`}
+                    loading="lazy"
+                  />
                   <span className={`tag-${item.sport}`}>{labelSport(item.sport)}</span>
                 </div>
               </div>
