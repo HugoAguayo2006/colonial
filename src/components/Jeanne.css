@@ -25,10 +25,10 @@
 ========================= */
 .jeanne-speech {
   position: relative;
-  transform: translateY(-42px);
+  transform: translateY(-35px);
   pointer-events: auto;
 
-  margin-right: -10px;
+  margin-right: -20px;
   z-index: 1; /* globo por delante del triángulo */
 }
 
@@ -77,6 +77,8 @@
   width: 140px;
   pointer-events: auto;
   z-index: 2; /* Jeanne al frente */
+  top: 10px;
+  left: 10px;
 }
 
 .jeanne-float-img {
@@ -183,8 +185,8 @@
   }
 
   .jeanne-speech {
-    transform: translateY(-28px) !important;
-    margin-right: -8px;
+    transform: translateY(-20px) !important;
+    margin-right: -20px;
   }
 
   .wa-icon {

@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import "./Jeanne.css";
 
 const WHATSAPP_URL =
-  "https://wa.me/523328343223?text=Hola,%20quiero%20más%20información%20del%20Instituto%20Nueva%20Galicia";
+  "https://wa.me/5214424317022?text=Hola%20Colegio%20Colonial%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.";
 
 export default function JeanneFloat() {
   const [isApple, setIsApple] = useState(false);
-  const [isLandscapeMobile, setIsLandscapeMobile] = useState(false);
   const [showSpeech, setShowSpeech] = useState(false);
 
   useEffect(() => {
@@ -18,44 +17,25 @@ export default function JeanneFloat() {
       (ua.includes("macintosh") && "ontouchend" in document);
     setIsApple(apple);
 
-    /* 📱 Detect mobile landscape (iPhone horizontal incluido) */
-    const mq = window.matchMedia(
-      "(orientation: landscape) and (max-height: 600px)"
-    );
-
-    const updateLandscape = () => setIsLandscapeMobile(mq.matches);
-    updateLandscape();
-
-    if (mq.addEventListener) mq.addEventListener("change", updateLandscape);
-    else mq.addListener(updateLandscape);
-
-    /* ⏳ Speech SIEMPRE después de 10s */
+    /* ⏳ Speech SIEMPRE después de 5s */
     const timer = setTimeout(() => {
       setShowSpeech(true);
-    }, 10000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer);
-      if (mq.removeEventListener) mq.removeEventListener("change", updateLandscape);
-      else mq.removeListener(updateLandscape);
     };
   }, []);
 
-  const rootClass = [
-    "jeanne-float",
-    isApple ? "jeanne-apple" : "",
-    isLandscapeMobile ? "jeanne-landscape" : "",
-  ]
+  const rootClass = ["jeanne-float", isApple ? "jeanne-apple" : ""]
     .filter(Boolean)
     .join(" ");
 
-  const jeanneSrc = isLandscapeMobile
-    ? "/images/jeanne_ing_sin_fondo.webp"
-    : "/images/jeanne.webp";
+  const jeanneSrc = "/jeanne.webp";
 
   return (
     <div className={rootClass}>
-      {/* Speech (aparece después de 10s) */}
+      {/* Speech (aparece después de 5s) */}
       {showSpeech && (
         <div className="jeanne-speech">
           <div className="jeanne-float-bubble">
@@ -69,7 +49,7 @@ export default function JeanneFloat() {
             >
               WhatsApp
               <img
-                src="/images/WhatsApp.webp"
+                src="/icons/WhatsApp.webp"
                 alt="WhatsApp"
                 className="wa-icon"
                 draggable="false"

@@ -179,7 +179,7 @@ export default function Inicio() {
               ))}
             </div>
 
-            <div className="cc-dots" aria-label="Cambiar imagen del carrusel">
+           {/* <div className="cc-dots" aria-label="Cambiar imagen del carrusel">
               {slides.map((_, i) => (
                 <button
                   key={i}
@@ -189,7 +189,7 @@ export default function Inicio() {
                   aria-label={`Ir a imagen ${i + 1}`}
                 />
               ))}
-            </div>
+            </div>*/}
           </div>
         </div>
       </header>
