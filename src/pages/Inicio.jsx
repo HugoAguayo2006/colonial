@@ -89,7 +89,7 @@ export default function Inicio() {
       ========================== */}
       <Helmet>
         <html lang="es-MX" />
-        <title>Colegio Colonial Querétaro | Primaria y Secundaria</title>
+        <title>Colegio Colonial Querétaro</title>
         <meta
           name="description"
           content="Colegio Colonial en Querétaro: primaria y secundaria privada con formación integral, acompañamiento y excelencia académica. Conoce nuestras instalaciones."
@@ -151,7 +151,7 @@ export default function Inicio() {
         <div className="cc-hero-inner cc-hero-left">
           <div className="cc-hero-titleWrap">
             <h1 className="cc-hero-title">Colegio Colonial</h1>
-            <p className="cc-hero-tag">
+            <p className="cc-hero-tag-1">
               Formación integral • Comunidad • Excelencia académica
             </p>
 
@@ -419,7 +419,7 @@ export default function Inicio() {
           </article>
 
           <article className="cc-panel cc-panelVideo">
-            <h3 className="cc-panelTitle">Nuestras Instalaciones.</h3>
+            <h3 className="cc-panelTitle-1">Nuestras Instalaciones.</h3>
             <p className="cc-panelSub">Una vista de nuestras maravillosas instalaciones.</p>
 
             <div className="cc-videoFrame" aria-label="Video de YouTube">

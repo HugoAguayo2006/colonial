@@ -825,5 +825,14 @@
     }
     .vc-calCard::before {
   display: none;
+
+
+}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vc {
+margin-top: -30px;
 }
 }

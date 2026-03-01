@@ -102,4 +102,8 @@
     flex-direction: column;
     align-items: center;
   }
+  .cct-page {
+
+  margin-top: -30px;
+}
 }

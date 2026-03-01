@@ -653,7 +653,7 @@
     justify-content: center;
     gap: 6px;
 
-    width: 100%;
+    width: 90%;
     margin-top: 14px;
 
     padding: 10px 12px;
@@ -690,6 +690,10 @@
   html.is-apple .calendar-btn:focus-visible{
     outline: 3px solid var(--cc-red);
     outline-offset: 3px;
+  }
+
+  .cccal{
+    margin-top: -20px;
   }
 }
 

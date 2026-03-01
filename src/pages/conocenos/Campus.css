@@ -1161,5 +1161,7 @@ margin-right: 50px;
   .camp_belowCard .camp_iwCard{
     padding: 20px 16px 24px 0 !important;
   }
-
+  .camp_page{
+    margin-top: 5px;
+  }
 }

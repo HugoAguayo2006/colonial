@@ -11,7 +11,7 @@
 .val{
   color: var(--col-blue);
   background: #fff;
-  margin-top: -15px;
+  margin-top: -40px;
 }
 
 /* =========================
@@ -338,6 +338,7 @@
   margin: 0 0 14px;
   font-size: 2.1rem;
   letter-spacing: -.02em;
+  margin-top: -30px;
 }
 
 .val-man-text p{
@@ -453,5 +454,6 @@
 @media (max-width: 900px){
   .val-hero-cards{ grid-template-columns: 1fr; }
   .val-man-grid{ grid-template-columns: 1fr; }
-  .val-ribbon{ right: -170px; }
+  .val-ribbon{ display: none;}
+
 }

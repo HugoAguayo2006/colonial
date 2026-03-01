@@ -987,3 +987,24 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ===== INVERTIR HERO EN MÓVIL ===== */
+@media (max-width: 980px){
+
+  .cc-hero-wrap{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cc-hero-copy{
+    order: 1;
+  }
+
+  .cc-hero-mock{
+    order: 2;
+  }
+
+  .cc-page{
+  margin-top: -90px;
+}
+}

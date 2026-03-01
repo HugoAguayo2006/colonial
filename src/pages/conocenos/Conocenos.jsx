@@ -177,6 +177,10 @@ export default function Conocenos() {
                 <div className="cc-stat-num">100%</div>
                 <div className="cc-stat-label">Enfoque integral</div>
               </div>
+                            <div className="cc-stat">
+                <div className="cc-stat-num">100%</div>
+                <div className="cc-stat-label">Educación católica</div>
+              </div>
             </div>
           </div>
         </div>

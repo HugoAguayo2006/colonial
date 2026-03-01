@@ -208,9 +208,7 @@ export default function VidaColonial() {
                   <NavLink className="vc-btn vc-btn--soft" to={s.to}>
                     Ir a la sección
                   </NavLink>
-                  <NavLink className="vc-link" to={s.to}>
-                    Ver más →
-                  </NavLink>
+
                 </div>
 
                 <div className="vc-tile__accent" aria-hidden="true" />
