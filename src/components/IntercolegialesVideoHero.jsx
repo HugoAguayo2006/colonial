@@ -27,20 +27,55 @@ export default function IntercolegialesVideoHero({
     { key: "futbol", label: "Fútbol" },
     { key: "basquetbol", label: "Básquetbol" },
     { key: "voley", label: "Vóley" },
+    { key: "premiacion", label: "Premiación" },
   ];
 
   const ITEMS = [
     { id: "f1", sport: "futbol", image: "/images/intercolegiales/futbol-1.webp" },
     { id: "f2", sport: "futbol", image: "/images/intercolegiales/futbol-2.webp" },
+    { id: "f3", sport: "futbol", image: "/images/intercolegiales/futbol-3.webp" },
+    { id: "f4", sport: "futbol", image: "/images/intercolegiales/futbol-4.webp" },
+    { id: "f5", sport: "futbol", image: "/images/intercolegiales/futbol-5.webp" },
+    { id: "f6", sport: "futbol", image: "/images/intercolegiales/futbol-6.webp" },
+    { id: "f7", sport: "futbol", image: "/images/intercolegiales/futbol-7.webp" },
+    { id: "f8", sport: "futbol", image: "/images/intercolegiales/futbol-8.webp" },
+    { id: "f9", sport: "futbol", image: "/images/intercolegiales/futbol-9.webp" },
 
     { id: "b1", sport: "basquetbol", image: "/images/intercolegiales/basquet-1.webp" },
 
     { id: "v1", sport: "voley", image: "/images/intercolegiales/voley-1.webp" },
     { id: "v2", sport: "voley", image: "/images/intercolegiales/voley-2.webp" },
+    { id: "v3", sport: "voley", image: "/images/intercolegiales/voley-3.webp" },
 
     { id: "a1", sport: "ajedrez", image: "/images/intercolegiales/ajedrez-1.webp" },
     { id: "a2", sport: "ajedrez", image: "/images/intercolegiales/ajedrez-2.webp" },
     { id: "a3", sport: "ajedrez", image: "/images/intercolegiales/ajedrez-3.webp" },
+
+    { id: "p1", sport: "premiacion", image: "/images/intercolegiales/premiacion-1.webp" },
+    { id: "p2", sport: "premiacion", image: "/images/intercolegiales/premiacion-2.webp" },
+    { id: "p3", sport: "premiacion", image: "/images/intercolegiales/premiacion-3.webp" },
+    { id: "p4", sport: "premiacion", image: "/images/intercolegiales/premiacion-4.webp" },
+    { id: "p5", sport: "premiacion", image: "/images/intercolegiales/premiacion-5.webp" },
+    { id: "p6", sport: "premiacion", image: "/images/intercolegiales/premiacion-6.webp" },
+    { id: "p7", sport: "premiacion", image: "/images/intercolegiales/premiacion-7.webp" },
+    { id: "p8", sport: "premiacion", image: "/images/intercolegiales/premiacion-8.webp" },
+    { id: "p9", sport: "premiacion", image: "/images/intercolegiales/premiacion-9.webp" },
+    { id: "p10", sport: "premiacion", image: "/images/intercolegiales/premiacion-10.webp" },
+    { id: "p11", sport: "premiacion", image: "/images/intercolegiales/premiacion-11.webp" },
+    { id: "p12", sport: "premiacion", image: "/images/intercolegiales/premiacion-12.webp" },
+    { id: "p13", sport: "premiacion", image: "/images/intercolegiales/premiacion-13.webp" },
+    { id: "p14", sport: "premiacion", image: "/images/intercolegiales/premiacion-14.webp" },
+    { id: "p15", sport: "premiacion", image: "/images/intercolegiales/premiacion-15.webp" },
+    { id: "p16", sport: "premiacion", image: "/images/intercolegiales/premiacion-16.webp" },
+    { id: "p17", sport: "premiacion", image: "/images/intercolegiales/premiacion-17.webp" },
+    { id: "p18", sport: "premiacion", image: "/images/intercolegiales/premiacion-18.webp" },
+    { id: "p19", sport: "premiacion", image: "/images/intercolegiales/premiacion-19.webp" },
+    { id: "p20", sport: "premiacion", image: "/images/intercolegiales/premiacion-20.webp" },
+    { id: "p21", sport: "premiacion", image: "/images/intercolegiales/premiacion-21.webp" },
+    { id: "p22", sport: "premiacion", image: "/images/intercolegiales/premiacion-22.webp" },
+    { id: "p23", sport: "premiacion", image: "/images/intercolegiales/premiacion-23.webp" },
+    { id: "p24", sport: "premiacion", image: "/images/intercolegiales/premiacion-24.webp" },
+    { id: "p25", sport: "premiacion", image: "/images/intercolegiales/premiacion-25.webp" },
   ];
 
   const [activeSport, setActiveSport] = useState("all");
@@ -91,14 +126,18 @@ export default function IntercolegialesVideoHero({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const labelSport = (k) =>
-    k === "ajedrez"
-      ? "Ajedrez"
-      : k === "futbol"
-      ? "Fútbol"
-      : k === "basquetbol"
-      ? "Básquetbol"
-      : "Vóley";
+const labelSport = (k) => {
+  const labels = {
+    ajedrez: "Ajedrez",
+    futbol: "Fútbol",
+    basquetbol: "Básquetbol",
+    voley: "Vóley",
+    premiacion: "Premiación",
+    all: "Todos",
+  };
+
+  return labels[k] || "";
+};
 
   return (
     <section className="inter-video">
