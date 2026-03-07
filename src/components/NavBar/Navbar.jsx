@@ -26,7 +26,6 @@ export default function Navbar() {
         label: "Conócenos",
         href: "/conocenos",
         children: [
-          { label: "Historia", href: "/conocenos/historia" },
           { label: "Modelo Educativo", href: "/conocenos/modelo-educativo" },
           { label: "Misión y visión", href: "/conocenos/mision-vision" },
           { label: "Valores", href: "/conocenos/valores" },
@@ -191,7 +190,7 @@ export default function Navbar() {
               />
             </a>
 
-            <a
+            {/*<a
               className="ing-iconBtn"
               href={SOCIAL.instagram}
               target="_blank"
@@ -206,7 +205,7 @@ export default function Navbar() {
                 className="ing-iconImg"
                 loading="lazy"
               />
-            </a>
+            </a>*/}
 
             <a
               className="ing-iconBtn"

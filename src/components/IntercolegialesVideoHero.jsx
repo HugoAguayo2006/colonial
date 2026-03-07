@@ -33,7 +33,7 @@ export default function IntercolegialesVideoHero({
 
   const ITEMS = [
 
-    { id: "b1", sport: "bienvenida", image: "/images/intercolegiales/bienvenida-1.webp" },
+    { id: "w1", sport: "bienvenida", image: "/images/intercolegiales/bienvenida-1.webp" },
 
     { id: "f1", sport: "futbol", image: "/images/intercolegiales/futbol-1.webp" },
     { id: "f2", sport: "futbol", image: "/images/intercolegiales/futbol-2.webp" },

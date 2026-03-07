@@ -14,6 +14,7 @@ export default function Inicio() {
     { key: "futbol", label: "Fútbol" },
     { key: "basquetbol", label: "Básquetbol" },
     { key: "voley", label: "Vóley" },
+    
   ];
 
   const ITEMS = [

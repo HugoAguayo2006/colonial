@@ -34,7 +34,7 @@ import Calendario from "./pages/Calendario.jsx";
 // ⛔ Conócenos (comentadas)
  import VM from "./pages/conocenos/MisionVision.jsx";
  import Valores from "./pages/conocenos/Valores.jsx";
- import Historia from "./pages/conocenos/Historia-1.jsx";
+ // import Historia from "./pages/conocenos/Historia-1.jsx";
  import Campus from "./pages/conocenos/Campus.jsx";
 import Conocenos from "./pages/conocenos/Conocenos.jsx";
  import Modelo from "./pages/conocenos/Modelo.jsx";
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
       // ⛔ Conócenos
        { path: "conocenos/mision-vision", element: <VM /> },
      { path: "conocenos/valores", element: <Valores /> },
-      { path: "conocenos/historia", element: <Historia /> },
+      // { path: "conocenos/historia", element: <Historia /> },
      { path: "conocenos/otros-campus", element: <Campus /> },
      { path: "conocenos/modelo-educativo", element: <Modelo /> },
       { path: "conocenos/clave-de-centro-de-trabajo", element: <CCT /> },

@@ -1,6 +1,7 @@
 // src/pages/Eventos.jsx
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { EVENTS } from "../../data/data_events";
 import { normalizeText } from "../../utils/text";
 import "./Eventos.css";
@@ -44,13 +45,13 @@ export default function Eventos() {
     });
   }, [query]);
 
-  // ✅ lazy render del grid (reduce "parpadeo" en Chrome)
   const { ref: gridRef, inView } = useInView();
 
   return (
     <main className="ev" id="evTop">
       <Helmet>
         <title>Eventos escolares en Querétaro | Colegio Colonial</title>
+
         <meta
           name="description"
           content="Consulta los eventos del Colegio Colonial en Querétaro: festivales, actividades académicas y deportivas para Primaria y Secundaria. Vive la Vida Colonial."
@@ -65,14 +66,17 @@ export default function Eventos() {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta property="og:locale" content="es_MX" />
+
         <meta
           property="og:title"
           content="Eventos escolares en Querétaro | Colegio Colonial"
         />
+
         <meta
           property="og:description"
-          content="Festivales, convivencias y eventos escolares del Colegio Colonial en Querétaro. Actividades para Primaria y Secundaria dentro de Vida Colonial."
+          content="Festivales, convivencias y eventos escolares del Colegio Colonial en Querétaro."
         />
+
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/vida-colonial/eventos"
@@ -80,17 +84,19 @@ export default function Eventos() {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+
         <meta
           name="twitter:title"
           content="Eventos escolares en Querétaro | Colegio Colonial"
         />
+
         <meta
           name="twitter:description"
-          content="Descubre próximos eventos y festivales del Colegio Colonial en Querétaro. Vida estudiantil para Primaria y Secundaria."
+          content="Descubre próximos eventos y festivales del Colegio Colonial en Querétaro."
         />
       </Helmet>
 
-      {/* Hero */}
+      {/* HERO */}
       <header className="ev__hero">
         <div className="ev__heroBg" aria-hidden="true">
           <span className="ev__orb ev__orb--1" />
@@ -103,6 +109,7 @@ export default function Eventos() {
           <div className="ev__kicker">Vida escolar</div>
 
           <h1 className="ev__title">Eventos</h1>
+
           <p className="ev__subtitle">
             Actividades que fortalecen valores, talento y comunidad en el Colegio
             Colonial.
@@ -122,7 +129,8 @@ export default function Eventos() {
                 placeholder="Buscar por nombre, fecha o lugar…"
                 aria-label="Buscar eventos"
               />
-              <span className="ev__count" title="Resultados">
+
+              <span className="ev__count">
                 {filtered.length} {filtered.length === 1 ? "evento" : "eventos"}
               </span>
             </div>
@@ -137,16 +145,16 @@ export default function Eventos() {
         </div>
       </header>
 
-      {/* Grid */}
+      {/* GRID */}
       <section className="ev__section" ref={gridRef}>
         <div className="ev__grid">
-          {/* Skeletons mientras la sección no entra en viewport */}
           {!inView
             ? Array.from({ length: 6 }).map((_, i) => (
                 <article className="evCard evCard--skeleton" key={`sk-${i}`}>
                   <div className="evCard__media">
                     <div className="evSk__photo" />
                   </div>
+
                   <div className="evCard__body">
                     <div className="evSk__line evSk__line--title" />
                     <div className="evSk__line" />
@@ -178,37 +186,59 @@ export default function Eventos() {
                       ))}
                     </div>
 
-                    {event.tag ? (
+                    {event.tag && (
                       <span className="evCard__tag">{event.tag}</span>
-                    ) : null}
+                    )}
                   </div>
 
                   <div className="evCard__body">
                     <h3 className="evCard__title">{event.title}</h3>
+
                     <p className="evCard__desc">{event.desc}</p>
 
                     {(event.date || event.time || event.place) && (
                       <ul className="evCard__meta">
-                        {event.date ? (
+                        {event.date && (
                           <li className="evCard__metaItem">
-                            <span className="evCard__dot" aria-hidden="true" />
+                            <span
+                              className="evCard__dot"
+                              aria-hidden="true"
+                            />
                             {event.date}
                           </li>
-                        ) : null}
-                        {event.time ? (
+                        )}
+
+                        {event.time && (
                           <li className="evCard__metaItem">
-                            <span className="evCard__dot" aria-hidden="true" />
+                            <span
+                              className="evCard__dot"
+                              aria-hidden="true"
+                            />
                             {event.time}
                           </li>
-                        ) : null}
-                        {event.place ? (
+                        )}
+
+                        {event.place && (
                           <li className="evCard__metaItem">
-                            <span className="evCard__dot" aria-hidden="true" />
+                            <span
+                              className="evCard__dot"
+                              aria-hidden="true"
+                            />
                             {event.place}
                           </li>
-                        ) : null}
+                        )}
                       </ul>
                     )}
+
+                    {/* BOTÓN GALERÍA */}
+                    <div className="evCard__actions">
+                      <Link
+                        className="evCard__btn"
+                        to="/vida-colonial/galeria"
+                      >
+                        Ir a la galería
+                      </Link>
+                    </div>
                   </div>
                 </article>
               ))}
@@ -217,6 +247,7 @@ export default function Eventos() {
         {inView && filtered.length === 0 && (
           <div className="evEmpty">
             <h3 className="evEmpty__title">No encontramos resultados</h3>
+
             <p className="evEmpty__text">
               Prueba buscando con otras palabras (por ejemplo: “Open House”,
               “deportivo”, “festival”).

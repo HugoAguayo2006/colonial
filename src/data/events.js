@@ -239,7 +239,7 @@ export const EVENTS = [
   },
 
         {
-    id: "e35",
+    id: "e37",
     title: "Actividad de Robótica",
     date: "2026-03-27",
     level: "primaria",

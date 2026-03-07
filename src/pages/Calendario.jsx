@@ -116,7 +116,7 @@ export default function Calendario() {
     return t;
   }, []);
 
-  // 🔥 Filtros
+  // Filtros
   const [levelFilter, setLevelFilter] = useState("all"); // "all" | LEVELS.key
   const [when, setWhen] = useState("upcoming"); // "upcoming" | "past" | "all"
   const [query, setQuery] = useState("");
@@ -153,11 +153,8 @@ export default function Calendario() {
     const todayISO = toISODate(today);
 
     return normalizedEvents.filter((ev) => {
-      if (
-        levelFilter !== "all" &&
-        ev._levelKey !== "all" &&
-        ev._levelKey !== levelFilter
-      ) {
+      // ✅ CORREGIDO: si el filtro no es "all", solo pasa el nivel exacto
+      if (levelFilter !== "all" && ev._levelKey !== levelFilter) {
         return false;
       }
 
@@ -168,9 +165,11 @@ export default function Calendario() {
       }
 
       if (!q) return true;
+
       const hay = `${ev.title} ${ev.location || ""} ${ev.description || ""} ${
         ev.level || ""
       }`.toLowerCase();
+
       return hay.includes(q);
     });
   }, [normalizedEvents, levelFilter, when, query, today]);
@@ -238,17 +237,32 @@ export default function Calendario() {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta property="og:locale" content="es_MX" />
-        <meta property="og:title" content="Calendario Escolar Querétaro | Colegio Colonial" />
+        <meta
+          property="og:title"
+          content="Calendario Escolar Querétaro | Colegio Colonial"
+        />
         <meta
           property="og:description"
           content="Fechas importantes, eventos y calendario escolar del Colegio Colonial en Querétaro para Primaria y Secundaria."
         />
-        <meta property="og:url" content="https://www.colegiocolonial.edu.mx/calendario" />
-        <meta property="og:image" content="https://www.colegiocolonial.edu.mx/og/calendario.jpg" />
-        <meta property="og:image:alt" content="Calendario escolar del Colegio Colonial en Querétaro" />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/calendario"
+        />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/og/calendario.jpg"
+        />
+        <meta
+          property="og:image:alt"
+          content="Calendario escolar del Colegio Colonial en Querétaro"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Calendario Escolar Querétaro | Colegio Colonial" />
+        <meta
+          name="twitter:title"
+          content="Calendario Escolar Querétaro | Colegio Colonial"
+        />
         <meta
           name="twitter:description"
           content="Consulta fechas importantes y eventos escolares del Colegio Colonial en Querétaro. Calendario de Primaria y Secundaria."
@@ -342,7 +356,10 @@ export default function Calendario() {
               onClick={() => setLevelFilter("all")}
               type="button"
             >
-              <span className="ccdot" style={{ background: "var(--cc-blueDeep)" }} />
+              <span
+                className="ccdot"
+                style={{ background: "var(--cc-blueDeep)" }}
+              />
               Todos
             </button>
 
@@ -355,7 +372,10 @@ export default function Calendario() {
                 onClick={() => setLevelFilter(l.key)}
                 type="button"
               >
-                <span className="ccdot" style={{ background: LEVEL_COLOR_VAR[l.key] }} />
+                <span
+                  className="ccdot"
+                  style={{ background: LEVEL_COLOR_VAR[l.key] }}
+                />
                 {l.label}
               </button>
             ))}
@@ -463,7 +483,9 @@ export default function Calendario() {
                   >
                     <div className="cell__top">
                       <span className="cell__num">{d.getDate()}</span>
-                      {has ? <span className="cell__count">{dayEvents.length}</span> : null}
+                      {has ? (
+                        <span className="cell__count">{dayEvents.length}</span>
+                      ) : null}
                     </div>
 
                     <div className="cell__dots">
@@ -520,15 +542,21 @@ export default function Calendario() {
                       <span className="tag">
                         {getLevelLabel(e._levelKey, e.level)}
                       </span>
-                      {e.location ? <span className="tag tag--ghost">{e.location}</span> : null}
+                      {e.location ? (
+                        <span className="tag tag--ghost">{e.location}</span>
+                      ) : null}
                     </div>
 
-                    {e.description ? <p className="eventCard__desc">{e.description}</p> : null}
+                    {e.description ? (
+                      <p className="eventCard__desc">{e.description}</p>
+                    ) : null}
                   </div>
                 </article>
               ))
             ) : (
-              <div className="empty">No hay eventos este día. Cambia el día o ajusta filtros.</div>
+              <div className="empty">
+                No hay eventos este día. Cambia el día o ajusta filtros.
+              </div>
             )}
           </div>
 
@@ -578,7 +606,9 @@ export default function Calendario() {
                     <div className="listRow__main">
                       <div className="listRow__top">
                         <h3 className="listRow__title">{e.title}</h3>
-                        {e._timeLabel ? <span className="listRow__time">{e._timeLabel}</span> : null}
+                        {e._timeLabel ? (
+                          <span className="listRow__time">{e._timeLabel}</span>
+                        ) : null}
                       </div>
 
                       <div className="listRow__meta">
@@ -591,10 +621,14 @@ export default function Calendario() {
                         >
                           {getLevelLabel(e._levelKey, e.level)}
                         </span>
-                        {e.location ? <span className="pill pill--ghost">{e.location}</span> : null}
+                        {e.location ? (
+                          <span className="pill pill--ghost">{e.location}</span>
+                        ) : null}
                       </div>
 
-                      {e.description ? <p className="listRow__desc">{e.description}</p> : null}
+                      {e.description ? (
+                        <p className="listRow__desc">{e.description}</p>
+                      ) : null}
                     </div>
                   </button>
                 ))
