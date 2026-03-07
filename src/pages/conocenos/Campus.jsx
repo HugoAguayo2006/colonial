@@ -1,9 +1,8 @@
 // src/pages/Campus.jsx
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CAMPUSES, FEATURED_CAMPUS_IDS } from "../../data/campuses";
+import { CAMPUSES, FEATURED_CAMPUS_IDS } from "../../data/c-2";
 import "./Campus.css";
 import { GoogleMap, Marker, OverlayView, useJsApiLoader } from "@react-google-maps/api";
-import { Helmet } from "react-helmet-async";
 
 const MAP_DEFAULT_CENTER = { lat: 20.63, lng: -103.42 };
 const MAP_DEFAULT_ZOOM = 4;
@@ -11,10 +10,14 @@ const MAP_DEFAULT_ZOOM = 4;
 function mapsLink(lat, lng) {
   return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 }
-function waLink(whatsapp, text = "Hola, me gustaría recibir información.") {
+function waLink(whatsapp, text = "Hola, me gustaría recibir información sobre ustedes.") {
   const msg = encodeURIComponent(text);
   return `https://wa.me/${whatsapp}?text=${msg}`;
 }
+
+// ✅ Reporte de error del mapa (WhatsApp)
+const MAP_REPORT_WA = "523310392675"; // +52 3310392675
+const MAP_REPORT_TEXT = "Hay un error en el mapa de la pagina web del Instituto Nueva Galicia Tlajomulco";
 
 // ✅ helpers para coords
 function toNum(v) {
@@ -27,24 +30,61 @@ function hasCoords(c) {
   return lat !== null && lng !== null;
 }
 
+/* =======================
+   ✅ helpers para ocultar botones
+======================= */
+const PLACEHOLDER = "hugo aguayo";
+
+function isBadValue(v) {
+  if (v == null) return true;
+  const s = String(v).trim();
+  if (!s) return true;
+  return s.toLowerCase().includes(PLACEHOLDER);
+}
+
+function firstValidSocialLink(arr) {
+  if (!Array.isArray(arr) || arr.length === 0) return null;
+  const found = arr.find((x) => !isBadValue(x));
+  return found ? String(found).trim() : null;
+}
+
 function CampusActionButtons({ campus, onViewMap }) {
+  const canWa = !isBadValue(campus.whatsapp);
+  const canWeb = !isBadValue(campus.website);
+  const canMaps = hasCoords(campus);
+  const socialHref = firstValidSocialLink(campus.social_links);
+
   return (
     <div className="camp_actions">
-      <a className="camp_btnMini camp_btnWhatsapp" href={waLink(campus.whatsapp)} target="_blank" rel="noreferrer">
-        WhatsApp
-      </a>
+      {canWa && (
+        <a className="camp_btnMini camp_btnWhatsapp" href={waLink(campus.whatsapp)} target="_blank" rel="noreferrer">
+          WhatsApp
+        </a>
+      )}
 
-      <a className="camp_btnMini" href={mapsLink(campus.lat, campus.lng)} target="_blank" rel="noreferrer">
-        Google Maps
-      </a>
+      {canMaps && (
+        <a className="camp_btnMini" href={mapsLink(campus.lat, campus.lng)} target="_blank" rel="noreferrer">
+          Google Maps
+        </a>
+      )}
 
-      <a className="camp_btnMini camp_btnWeb" href={campus.website} target="_blank" rel="noreferrer">
-        Página web
-      </a>
+      {canWeb && (
+        <a className="camp_btnMini camp_btnWeb" href={campus.website} target="_blank" rel="noreferrer">
+          Página web
+        </a>
+      )}
 
-      <button className="camp_btnMini camp_btnMap" type="button" onClick={() => onViewMap(campus)}>
-        Ver en el mapa
-      </button>
+      {socialHref && (
+        <a className="camp_btnMini" href={socialHref} target="_blank" rel="noreferrer">
+          Redes sociales
+        </a>
+      )}
+
+      {canMaps && (
+        <button className="camp_btnMini camp_btnMap" type="button" onClick={() => onViewMap(campus)}>
+          Ver en el mapa
+        </button>
+      )}
     </div>
   );
 }
@@ -65,7 +105,6 @@ export default function Campus() {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 544px)");
-
     const onChange = () => setIsTouchDevice(mq.matches);
     onChange();
     mq.addEventListener?.("change", onChange);
@@ -74,7 +113,7 @@ export default function Campus() {
 
   // filtros
   const [country, setCountry] = useState("Todos");
-  const [stateMx, setStateMx] = useState("Todos");
+  const [stateFilter, setStateFilter] = useState("Todos"); // ✅ ahora aplica a TODOS los países
 
   // destacados (2)
   const featuredList = useMemo(() => {
@@ -88,24 +127,21 @@ export default function Campus() {
     return ["Todos", ...Array.from(set).sort((a, b) => a.localeCompare(b, "es"))];
   }, []);
 
-  // estados de méxico
-  const mexicoStates = useMemo(() => {
-    const set = new Set(
-      CAMPUSES.filter((c) => c.country === "México")
-        .map((c) => c.state)
-        .filter(Boolean)
-    );
+  // ✅ estados / regiones según país seleccionado (o todos si país = Todos)
+  const states = useMemo(() => {
+    const base = country === "Todos" ? CAMPUSES : CAMPUSES.filter((c) => c.country === country);
+    const set = new Set(base.map((c) => c.state).filter(Boolean));
     return ["Todos", ...Array.from(set).sort((a, b) => a.localeCompare(b, "es"))];
-  }, []);
+  }, [country]);
 
   // campus filtrados
   const filtered = useMemo(() => {
     return CAMPUSES.filter((c) => {
       if (country !== "Todos" && c.country !== country) return false;
-      if (country === "México" && stateMx !== "Todos" && c.state !== stateMx) return false;
+      if (stateFilter !== "Todos" && c.state !== stateFilter) return false; // ✅ ahora siempre aplica
       return true;
     });
-  }, [country, stateMx]);
+  }, [country, stateFilter]);
 
   // ✅ SOLO coords válidas
   const filteredWithCoords = useMemo(() => {
@@ -188,10 +224,12 @@ export default function Campus() {
     scrollToMapIfOneColumn();
   };
 
-  // si cambia país y ya no es México, resetea estado
+  // ✅ si cambia país y el state seleccionado ya no existe en ese país => resetea state
   useEffect(() => {
-    if (country !== "México") setStateMx("Todos");
-  }, [country]);
+    const base = country === "Todos" ? CAMPUSES : CAMPUSES.filter((c) => c.country === country);
+    const set = new Set(base.map((c) => c.state).filter(Boolean));
+    if (stateFilter !== "Todos" && !set.has(stateFilter)) setStateFilter("Todos");
+  }, [country, stateFilter]);
 
   // al cambiar filtros: encuadra
   useEffect(() => {
@@ -200,7 +238,7 @@ export default function Campus() {
     setFocusMode(false);
     if (filteredWithCoords.length) fitTo(filteredWithCoords);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [country, stateMx, isLoaded, filteredWithCoords.length]);
+  }, [country, stateFilter, isLoaded, filteredWithCoords.length]);
 
   // al cargar: encuadra todos
   useEffect(() => {
@@ -214,44 +252,11 @@ export default function Campus() {
 
   return (
     <main className="camp_page camp_pagePad">
-      <Helmet>
-        <title>Otros campus del Colegio Colonial en Querétaro</title>
-
-        <meta
-          name="description"
-          content="Explora el mapa de todos los colegios del Colegio Colonial a lo largo del mundo y consulta sedes en Querétaro, México: ubicación, WhatsApp y sitio web."
-        />
-
-        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/conocenos/otros-campus" />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Colegio Colonial" />
-        <meta property="og:locale" content="es_MX" />
-        <meta property="og:title" content="Otros campus del Colegio Colonial en Querétaro" />
-        <meta
-          property="og:description"
-          content="Explora el mapa de todos los colegios del Colegio Colonial a lo largo del mundo y revisa sedes en Querétaro: campus, ubicación y accesos rápidos."
-        />
-        <meta property="og:url" content="https://www.colegiocolonial.edu.mx/conocenos/otros-campus" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Otros campus del Colegio Colonial en Querétaro" />
-        <meta
-          name="twitter:description"
-          content="Mapa de todos los colegios del Colegio Colonial a lo largo del mundo + sedes en Querétaro, México: ubicación, WhatsApp y sitio web."
-        />
-
-        {/* SEO extra */}
-        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-      </Helmet>
-
       <div className="camp_container">
         <header className="camp_head">
           <div className="camp_headInner">
             <h1 className="camp_title">Nuestros colegios en México y el mundo</h1>
-            <p className="camp_subtitle">Filtra por país y, si es México, por estado. Cada campus tiene WhatsApp, Maps y su web.</p>
+            <p className="camp_subtitle">Filtra por país y por estado/región (para cualquier país).</p>
           </div>
 
           <div className="camp_filters camp_filtersWide">
@@ -266,15 +271,10 @@ export default function Campus() {
               </select>
             </label>
 
-            <label className={`camp_label ${country !== "México" ? "isDisabled" : ""}`}>
-              Estado (México)
-              <select
-                className="camp_select"
-                value={stateMx}
-                onChange={(e) => setStateMx(e.target.value)}
-                disabled={country !== "México"}
-              >
-                {mexicoStates.map((s) => (
+            <label className="camp_label">
+              Estado / Región
+              <select className="camp_select" value={stateFilter} onChange={(e) => setStateFilter(e.target.value)}>
+                {states.map((s) => (
                   <option key={s} value={s}>
                     {s}
                   </option>
@@ -287,7 +287,7 @@ export default function Campus() {
               type="button"
               onClick={() => {
                 setCountry("Todos");
-                setStateMx("Todos");
+                setStateFilter("Todos");
                 resetMapView();
               }}
             >
@@ -310,7 +310,7 @@ export default function Campus() {
                     <div className="camp_featuredName">{campus.name}</div>
                     <div className="camp_featuredMeta">
                       {campus.country}
-                      {campus.country === "México" && campus.state ? ` · ${campus.state}` : ""}
+                      {campus.state ? ` · ${campus.state}` : ""}
                       {campus.city ? ` · ${campus.city}` : ""}
                     </div>
                     <div className="camp_featuredAddr">{campus.address}</div>
@@ -328,46 +328,66 @@ export default function Campus() {
           <aside className="camp_list">
             <div className="camp_listHead">
               <div className="camp_listTitle">Resultados</div>
-              <div className="camp_listCount">{filtered.length} campus</div>
+              <div className="camp_listCount">{filtered.length} resultados</div>
             </div>
 
             <div className="camp_cards">
-              {filtered.map((c) => (
-                <article key={c.id} className={`camp_card ${FEATURED_CAMPUS_IDS?.includes?.(c.id) ? "isFeatured" : ""}`}>
-                  <div className="camp_cardName">{c.name}</div>
-                  <div className="camp_cardMeta">
-                    {c.country}
-                    {c.country === "México" && c.state ? ` · ${c.state}` : ""}
-                    {c.city ? ` · ${c.city}` : ""}
-                  </div>
-                  <div className="camp_cardAddr">{c.address}</div>
+              {filtered.map((c) => {
+                const canWa = !isBadValue(c.whatsapp);
+                const canWeb = !isBadValue(c.website);
+                const canMaps = hasCoords(c);
+                const socialHref = firstValidSocialLink(c.social_links);
 
-                  {Array.isArray(c.niveles) && c.niveles.length > 0 && (
-                    <div className="camp_cardNiveles">
-                      {c.niveles.map((nivel, index) => (
-                        <span key={index} className="camp_nivelTag">
-                          {nivel}
-                        </span>
-                      ))}
+                return (
+                  <article key={c.id} className={`camp_card ${FEATURED_CAMPUS_IDS?.includes?.(c.id) ? "isFeatured" : ""}`}>
+                    <div className="camp_cardName">{c.name}</div>
+                    <div className="camp_cardMeta">
+                      {c.country}
+                      {c.state ? ` · ${c.state}` : ""}
+                      {c.city ? ` · ${c.city}` : ""}
                     </div>
-                  )}
+                    <div className="camp_cardAddr">{c.address}</div>
 
-                  <div className="camp_cardBtns">
-                    <a className="camp_btnMini camp_btnWhatsapp" href={waLink(c.whatsapp)} target="_blank" rel="noreferrer">
-                      WhatsApp
-                    </a>
-                    <a className="camp_btnMini" href={mapsLink(c.lat, c.lng)} target="_blank" rel="noreferrer">
-                      Maps
-                    </a>
-                    <a className="camp_btnMini camp_btnWeb" href={c.website} target="_blank" rel="noreferrer">
-                      Web
-                    </a>
-                    <button className="camp_btnMini camp_btnMap" type="button" onClick={() => goTo(c)}>
-                      Ver en el mapa
-                    </button>
-                  </div>
-                </article>
-              ))}
+                    {Array.isArray(c.niveles) && c.niveles.length > 0 && (
+                      <div className="camp_cardNiveles">
+                        {c.niveles.map((nivel, index) => (
+                          <span key={index} className="camp_nivelTag">
+                            {nivel}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="camp_cardBtns">
+                      {canWa && (
+                        <a className="camp_btnMini camp_btnWhatsapp" href={waLink(c.whatsapp)} target="_blank" rel="noreferrer">
+                          WhatsApp
+                        </a>
+                      )}
+                      {canMaps && (
+                        <a className="camp_btnMini" href={mapsLink(c.lat, c.lng)} target="_blank" rel="noreferrer">
+                          Maps
+                        </a>
+                      )}
+                      {canWeb && (
+                        <a className="camp_btnMini camp_btnWeb" href={c.website} target="_blank" rel="noreferrer">
+                          Web
+                        </a>
+                      )}
+                      {socialHref && (
+                        <a className="camp_btnMini" href={socialHref} target="_blank" rel="noreferrer">
+                          Redes sociales
+                        </a>
+                      )}
+                      {canMaps && (
+                        <button className="camp_btnMini camp_btnMap" type="button" onClick={() => goTo(c)}>
+                          Ver en el mapa
+                        </button>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </aside>
 
@@ -472,7 +492,7 @@ export default function Campus() {
 
                       <div className="camp_iwMeta">
                         {selected.country}
-                        {selected.country === "México" && selected.state ? ` · ${selected.state}` : ""}
+                        {selected.state ? ` · ${selected.state}` : ""}
                         {selected.city ? ` · ${selected.city}` : ""}
                       </div>
 
@@ -489,24 +509,48 @@ export default function Campus() {
                       )}
 
                       <div className="camp_iwButtons">
-                        <a href={waLink(selected.whatsapp)} target="_blank" rel="noreferrer">
-                          WhatsApp
-                        </a>
-                        <a href={mapsLink(selected.lat, selected.lng)} target="_blank" rel="noreferrer">
-                          Maps
-                        </a>
-                        <a href={selected.website} target="_blank" rel="noreferrer">
-                          Web
-                        </a>
+                        {!isBadValue(selected.whatsapp) && (
+                          <a href={waLink(selected.whatsapp)} target="_blank" rel="noreferrer">
+                            WhatsApp
+                          </a>
+                        )}
+                        {hasCoords(selected) && (
+                          <a href={mapsLink(selected.lat, selected.lng)} target="_blank" rel="noreferrer">
+                            Maps
+                          </a>
+                        )}
+                        {!isBadValue(selected.website) && (
+                          <a href={selected.website} target="_blank" rel="noreferrer">
+                            Web
+                          </a>
+                        )}
+                        </div>
+                      <div className="camp_iwButtons-1">
+                        {firstValidSocialLink(selected.social_links) && (
+                          <a href={firstValidSocialLink(selected.social_links)} target="_blank" rel="noreferrer">
+                            Redes sociales
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
                 </OverlayView>
               )}
             </GoogleMap>
+
           </div>
 
-          {/* ✅ MÓVIL + iPad: tarjeta DEBAJO del mapa (FUERA del mapCard, para que NO se recorte) */}
+{/* ✅ Botón de reporte debajo del mapa */}
+<a
+  className="camp_mapReportBtn-1"
+  href={waLink(MAP_REPORT_WA, MAP_REPORT_TEXT)}
+  target="_blank"
+  rel="noreferrer"
+>
+  Hay un problema con la información mostrada en el mapa, presiona aquí
+</a>
+
+          {/* ✅ MÓVIL + iPad: tarjeta DEBAJO del mapa */}
           {selected && isTouchDevice && (
             <div className="camp_belowCard">
               <div className="camp_iwCard isFocus">
@@ -527,7 +571,7 @@ export default function Campus() {
 
                 <div className="camp_iwMeta">
                   {selected.country}
-                  {selected.country === "México" && selected.state ? ` · ${selected.state}` : ""}
+                  {selected.state ? ` · ${selected.state}` : ""}
                   {selected.city ? ` · ${selected.city}` : ""}
                 </div>
 
@@ -544,19 +588,44 @@ export default function Campus() {
                 )}
 
                 <div className="camp_iwButtons">
-                  <a href={waLink(selected.whatsapp)} target="_blank" rel="noreferrer">
-                    WhatsApp
-                  </a>
-                  <a href={mapsLink(selected.lat, selected.lng)} target="_blank" rel="noreferrer">
-                    Maps
-                  </a>
-                  <a href={selected.website} target="_blank" rel="noreferrer">
-                    Web
-                  </a>
+                  {!isBadValue(selected.whatsapp) && (
+                    <a href={waLink(selected.whatsapp)} target="_blank" rel="noreferrer">
+                      WhatsApp
+                    </a>
+                  )}
+                  {hasCoords(selected) && (
+                    <a href={mapsLink(selected.lat, selected.lng)} target="_blank" rel="noreferrer">
+                      Maps
+                    </a>
+                  )}
+                  {!isBadValue(selected.website) && (
+                    <a href={selected.website} target="_blank" rel="noreferrer">
+                      Web
+                    </a>
+                  )}
+                  {firstValidSocialLink(selected.social_links) && (
+                    <a href={firstValidSocialLink(selected.social_links)} target="_blank" rel="noreferrer">
+                      Redes sociales
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
           )}
+
+          {/* ✅ Botón de reporte SOLO móvil y debajo de la tarjeta */}
+{isTouchDevice && (
+  <div className="camp_mobileReportWrap">
+    <a
+      className="camp_mapReportBtn"
+      href={waLink(MAP_REPORT_WA, MAP_REPORT_TEXT)}
+      target="_blank"
+      rel="noreferrer"
+    >
+      Hay un problema con la información mostrada en el mapa, presiona aquí
+    </a>
+  </div>
+)}
         </section>
       </div>
     </main>
