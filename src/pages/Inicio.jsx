@@ -57,7 +57,7 @@ export default function Inicio() {
 
   // ✅ Carrusel SOLO en el Hero detrás del título
   const slides = useMemo(
-    () => ["/images/inicio/hero-3.webp", "/images/inicio/hero-2.webp"],
+    () => ["/images/inicio/hero-3.webp", "/images/inicio/hero-1.webp"],
     []
   );
 
