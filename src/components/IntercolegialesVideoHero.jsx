@@ -28,9 +28,13 @@ export default function IntercolegialesVideoHero({
     { key: "basquetbol", label: "Básquetbol" },
     { key: "voley", label: "Vóley" },
     { key: "premiacion", label: "Premiación" },
+    { key: "bienvenida", label: "Bienvenida" },
   ];
 
   const ITEMS = [
+
+    { id: "b1", sport: "bienvenida", image: "/images/intercolegiales/bienvenida-1.webp" },
+
     { id: "f1", sport: "futbol", image: "/images/intercolegiales/futbol-1.webp" },
     { id: "f2", sport: "futbol", image: "/images/intercolegiales/futbol-2.webp" },
     { id: "f3", sport: "futbol", image: "/images/intercolegiales/futbol-3.webp" },
@@ -133,6 +137,7 @@ const labelSport = (k) => {
     basquetbol: "Básquetbol",
     voley: "Vóley",
     premiacion: "Premiación",
+    bienvenida: "Bienvenida",
     all: "Todos",
   };
 
