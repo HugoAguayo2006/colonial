@@ -83,7 +83,7 @@ export default function ContactoPage() {
 
             <a
               className="ct_btn ct_btnGhost"
-              href="mailto:informes@colegiocolonial.edu.mx"
+              href="mailto:colonial.a.c.qro@gmail.com"
             >
               <FaEnvelope /> Enviar correo
             </a>
@@ -92,7 +92,7 @@ export default function ContactoPage() {
           <div className="ct_quick">
             <div className="ct_quickItem">
               <FaClock />
-              <span>Lunes a Viernes · 7:00 a.m. – 3:00 p.m.</span>
+              <span>Lunes a Viernes · 8:00 a.m. – 3:00 p.m.</span>
             </div>
 
             <div className="ct_quickItem">
@@ -121,8 +121,8 @@ export default function ContactoPage() {
                 </div>
                 <div className="ct_cardBody">
                   <h3>Correo</h3>
-                  <a href="mailto:informes@colegiocolonial.edu.mx">
-                    informes@colegiocolonial.edu.mx
+                  <a href="mailto:colonial.a.c.qro@gmail.com">
+                    colonial.a.c.qro@gmail.com
                   </a>
                 </div>
               </div>
@@ -174,7 +174,7 @@ export default function ContactoPage() {
                   <h3>Ubicación</h3>
                   <p>Querétaro, Querétaro</p>
                   <a
-                    href="https://www.google.com/maps"
+                    href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMgYIABBFGDkyDggBEEUYJxg7GIAEGIoFMgYIAhAjGCcyBwgDEAAYgAQyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYQdIBCDIxNTNqMGo3qAIAsAIA&um=1&ie=UTF-8&fb=1&gl=mx&sa=X&geocode=KX_3_JguW9OFMQskUHkltkGI&daddr=C.+16+de+Septiembre+84,+La+Santa+Cruz,+Centro,+76020+Santiago+de+Quer%C3%A9taro,+Qro."
                     target="_blank"
                     rel="noopener noreferrer"
                   >

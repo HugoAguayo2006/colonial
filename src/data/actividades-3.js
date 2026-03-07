@@ -77,8 +77,8 @@ export const ACTIVIDADES = [
     descripcion:
       "Disciplina deportiva que promueve la comunicación efectiva, reflejos rápidos y trabajo colaborativo en equipo.",
     fotos: [
-      "/images/extras/voleibol-1.webp",
-      "/images/extras/voleibol-2.webp",
+      "/images/extras/voley-1.webp",
+      "/images/extras/voley-2.webp",
     ],
     meta: ["Comunicación", "Reflejos", "Trabajo colaborativo"],
     niveles: ["secundaria"],

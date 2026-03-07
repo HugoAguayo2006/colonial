@@ -63,7 +63,7 @@ export default function Inscripciones() {
               </p>
 
               <div className="insc2_ctas">
-                <NavLink to="/primaria" className="insc2_btn insc2_btnPrimary">
+                <NavLink to="/inscripciones/primaria" className="insc2_btn insc2_btnPrimary">
                   Primaria
                   <span className="insc2_btnArrow" aria-hidden="true">
                     →
@@ -180,12 +180,12 @@ export default function Inscripciones() {
               </ul>
 
               <div className="insc2_actions">
-                <NavLink to="/primaria" className="insc2_btn insc2_btnPrimary">
+                <NavLink to="/niveles/primaria" className="insc2_btn insc2_btnPrimary">
                   Ir a Primaria <span aria-hidden="true">→</span>
                 </NavLink>
-                <a href="#pasos" className="insc2_btn insc2_btnSoft">
+                <NavLink to="/inscripciones/primaria" className="insc2_btn insc2_btnSoft">
                   Ver pasos
-                </a>
+                </NavLink>
               </div>
             </article>
 
@@ -239,12 +239,13 @@ export default function Inscripciones() {
               </ul>
 
               <div className="insc2_actions">
-                <NavLink to="/secundaria" className="insc2_btn insc2_btnPrimary">
+                <NavLink to="/niveles/secundaria" className="insc2_btn insc2_btnPrimary">
                   Ir a Secundaria <span aria-hidden="true">→</span>
                 </NavLink>
-                <a href="#pasos" className="insc2_btn insc2_btnSoft">
+
+                <NavLink to="/inscripciones/secundaria" className="insc2_btn insc2_btnSoft">
                   Ver pasos
-                </a>
+                </NavLink>
               </div>
             </article>
           </div>
@@ -296,10 +297,10 @@ export default function Inscripciones() {
           </div>
 
           <div className="insc2_bottomCtas">
-            <NavLink to="/primaria" className="insc2_btn insc2_btnOutline">
+            <NavLink to="/inscripciones/primaria" className="insc2_btn insc2_btnOutline">
               Empezar con Primaria <span aria-hidden="true">→</span>
             </NavLink>
-            <NavLink to="/secundaria" className="insc2_btn insc2_btnOutline">
+            <NavLink to="/inscripciones/secundaria" className="insc2_btn insc2_btnOutline">
               Empezar con Secundaria <span aria-hidden="true">→</span>
             </NavLink>
           </div>

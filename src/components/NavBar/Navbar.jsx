@@ -8,7 +8,7 @@ const LOGO_SRC = "/images/logo-escudo.webp";
 
 // === Links de redes (externos) ===
 const SOCIAL = {
-  facebook: "https://www.facebook.com/",
+  facebook: "https://www.facebook.com/ColegioColonialOficial/",
   instagram: "https://www.instagram.com/",
   whatsapp:
     "https://wa.me/5214424317022?text=Hola%20Colegio%20Colonial%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",

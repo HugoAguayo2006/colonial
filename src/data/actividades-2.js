@@ -77,8 +77,8 @@ export const ACTIVIDADES = [
     descripcion:
       "Fortalecimiento de coordinación, resistencia y trabajo en equipo a través de entrenamientos estructurados.",
     fotos: [
-      "/images/extras/voleibol-1.webp",
-      "/images/extras/voleibol-2.webp",
+      "/images/extras/voley-1.webp",
+      "/images/extras/voley-2.webp",
     ],
     meta: ["Resistencia", "Trabajo en equipo"],
     niveles: ["secundaria"],

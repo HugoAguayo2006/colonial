@@ -94,11 +94,13 @@
   color: white;
   text-align: center;
   padding: 60px 20px;
+
 }
 
 .os-cta h3 {
   font-size: 1.8rem;
   margin-bottom: 25px;
+    margin-top: -0px;
 }
 
 .os-btn {

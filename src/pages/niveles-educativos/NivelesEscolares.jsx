@@ -65,10 +65,10 @@ export default function Niveles() {
           </p>
 
           <div className="nv_actions">
-            <Link className="nv_btn nv_btnBlue" to="/primaria">
+            <Link className="nv_btn nv_btnBlue" to="/niveles/primaria">
               Primaria <span className="nv_arrow">→</span>
             </Link>
-            <Link className="nv_btn nv_btnRed" to="/secundaria">
+            <Link className="nv_btn nv_btnRed" to="/niveles/secundaria">
               Secundaria <span className="nv_arrow">→</span>
             </Link>
             <Link className="nv_btn nv_btnGhost" to="/contacto">
@@ -138,11 +138,11 @@ export default function Niveles() {
               </div>
 
               <div className="nv_cardActions">
-                <Link className="nv_btn nv_btnBlue" to="/primaria">
+                <Link className="nv_btn nv_btnBlue" to="/niveles/primaria">
                   Conocer Primaria <span className="nv_arrow">→</span>
                 </Link>
-                <Link className="nv_link" to="/contacto">
-                  Inscripciones
+                <Link className="nv_link" to="/inscripciones/primaria">
+                  Inscripciones Primaria
                 </Link>
               </div>
 
@@ -187,11 +187,11 @@ export default function Niveles() {
               </div>
 
               <div className="nv_cardActions">
-                <Link className="nv_btn nv_btnRed" to="/secundaria">
+                <Link className="nv_btn nv_btnRed" to="/niveles/secundaria">
                   Conocer Secundaria <span className="nv_arrow">→</span>
                 </Link>
-                <Link className="nv_link" to="/contacto">
-                  Inscripciones
+                <Link className="nv_link" to="/inscripciones/secundaria">
+                  Inscripciones Secundaria
                 </Link>
               </div>
 

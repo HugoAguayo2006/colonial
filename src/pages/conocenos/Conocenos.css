@@ -687,7 +687,7 @@
 
 .cc-mock-img-1{
   grid-row: 1 / span 2;
-  background-image: url("/images/conocenos/jeanne.webp");
+  background-image: url("/images/conocenos/img1.webp");
 }
 .cc-mock-img-2{ background-image: url("/images/conocenos/img2.webp"); }
 .cc-mock-img-3{ background-image: url("/images/conocenos/img3.webp"); }
@@ -896,7 +896,7 @@
 
 .cc-mock-img-1{
   grid-row: 1 / span 2 !important;
-  background-image: url("/images/conocenos/jeanne.webp") !important;
+  background-image: url("/images/conocenos/img1.webp") !important;
 }
 .cc-mock-img-2{ background-image: url("/images/conocenos/img2.webp") !important; }
 .cc-mock-img-3{ background-image: url("/images/conocenos/img3.webp") !important; }

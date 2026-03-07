@@ -38,7 +38,7 @@ export const ACTIVIDADES = [
     nombre: "Básquetbol",
     descripcion:
       "La práctica del básquetbol favorece la coordinación, la agilidad y la toma de decisiones bajo presión. Impulsa el liderazgo positivo, la colaboración y la responsabilidad individual dentro del equipo.",
-    fotos: ["/extras/basquetbol_1.webp"],
+    fotos: ["/images/extras/basquet-1.webp","/images/extras/basquet-3.webp"],
     meta: ["Primaria/Secundaria", "Trabajo en equipo"],
   },
   {
@@ -46,7 +46,7 @@ export const ACTIVIDADES = [
     nombre: "Voleibol",
     descripcion:
       "El voleibol fortalece la comunicación, la estrategia y el respeto mutuo. A través del juego en conjunto, los alumnos aprenden a confiar en sus compañeros, superar retos y celebrar los logros compartidos.",
-    fotos: ["/extras/voleibol_1.webp"],
+    fotos: ["/images/extras/voley-1.webp","/images/extras/voley-2.webp"],
     meta: ["Secundaria", "Disciplina deportiva"],
   },
   {
@@ -54,7 +54,7 @@ export const ACTIVIDADES = [
     nombre: "Fútbol",
     descripcion:
       "El fútbol promueve el trabajo en equipo, la disciplina y la perseverancia. Los estudiantes desarrollan habilidades físicas y sociales mientras aprenden a respetar reglas, valorar el esfuerzo y crecer en compañerismo y espíritu deportivo.",
-    fotos: ["/extras/futbol_1.webp", "/extras/futbol_2.webp"],
+    fotos: ["/images/extras/futbol-1.webp", "/images/extras/futbol-3.webp"],
     meta: ["Primaria/Secundaria", "2-3 días/semana"],
   },
 ];

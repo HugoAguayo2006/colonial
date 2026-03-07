@@ -3,9 +3,9 @@ import { Helmet } from "react-helmet-async";
 import "./VidaCol.css";
 
 const CAL_DATES = [
-  { day: "10", month: "FEB", title: "Inicio de inscripciones", meta: "Febrero – Agosto" },
-  { day: "23", month: "FEB", title: "Actividad escolar", meta: "1:00 p.m." },
-  { day: "15", month: "MAR", title: "Evaluación trimestral", meta: "Horario escolar" },
+  { day: "10", month: "MAR", title: "Encuentro con Cristo (6° Primaria)", meta: "" },
+  { day: "23", month: "MAR", title: "Spelling Bee", meta: "" },
+  { day: "30", month: "MAR", title: "Inicio de Vacaciones", meta: "" },
 ];
 
 const SECTIONS = [
@@ -14,25 +14,16 @@ const SECTIONS = [
     title: "Actividades extracurriculares",
     desc:
       "Talleres deportivos, artísticos y formativos que impulsan disciplina, creatividad y confianza.",
-    to: "/talleres",
+    to: "/vida-colonial/extracurriculares",
     tag: "Talento + crecimiento",
     icon: "★",
-  },
-  {
-    key: "calendario",
-    title: "Calendario",
-    desc:
-      "Fechas clave del ciclo escolar, periodos, actividades y organización clara para familias y alumnos.",
-    to: "/calendario",
-    tag: "Planeación",
-    icon: "▦",
   },
   {
     key: "eventos",
     title: "Eventos",
     desc:
       "Celebraciones, convivencias y actividades culturales que fortalecen el sentido de comunidad.",
-    to: "/eventos",
+    to: "/vida-colonial/eventos",
     tag: "Comunidad",
     icon: "✦",
   },
@@ -41,7 +32,7 @@ const SECTIONS = [
     title: "Galería",
     desc:
       "Momentos que reflejan nuestra esencia: aprendizaje, convivencia y experiencias en el Colegio Colonial.",
-    to: "/galeria",
+    to: "/vida-colonial/galeria",
     tag: "Memorias",
     icon: "⬚",
   },
@@ -50,7 +41,7 @@ const SECTIONS = [
     title: "Otros servicios",
     desc:
       "Cafetería, excursiones y apoyos que complementan el día a día y el desarrollo integral.",
-    to: "/servicios",
+    to: "/vida-colonial/otros-servicios",
     tag: "Bienestar",
     icon: "❖",
   },
@@ -114,7 +105,7 @@ export default function VidaColonial() {
             </p>
 
             <div className="vc-actions">
-              <NavLink className="vc-btn vc-btn--primary" to="/eventos">
+              <NavLink className="vc-btn vc-btn--primary" to="/vida-colonial/eventos">
                 Ver eventos
               </NavLink>
               <NavLink className="vc-btn vc-btn--outline" to="/contacto">
@@ -145,10 +136,6 @@ export default function VidaColonial() {
                   <div className="vc-calCard__kicker">Calendario</div>
                   <h3 className="vc-calCard__title">Fechas destacadas</h3>
                 </div>
-
-                <NavLink className="vc-calCard__link" to="/calendario">
-                  Ver todo →
-                </NavLink>
               </div>
 
               <div className="vc-calList">
@@ -238,7 +225,7 @@ export default function VidaColonial() {
               <NavLink className="vc-btn vc-btn--primary" to="/contacto">
                 Quiero participar
               </NavLink>
-              <NavLink className="vc-btn vc-btn--outline" to="/eventos">
+              <NavLink className="vc-btn vc-btn--outline" to="/vida-colonial/eventos">
                 Ver próximos eventos
               </NavLink>
             </div>
@@ -302,7 +289,7 @@ export default function VidaColonial() {
           </div>
 
           <div className="vc-cta__btns">
-            <NavLink className="vc-btn vc-btn--white" to="/galeria">
+            <NavLink className="vc-btn vc-btn--white" to="/vida-colonial/galeria">
               Ver galería
             </NavLink>
             <NavLink className="vc-btn vc-btn--whiteOutline" to="/calendario">

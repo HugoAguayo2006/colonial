@@ -7,7 +7,7 @@ const SECTIONS = [
     title: "Historia",
     desc:
       "Nuestra esencia nace de la tradición y crece con innovación, construyendo una comunidad sólida con identidad propia.",
-    to: "/historia",
+    to: "/conocenos/historia",
     icon: "🏛️",
     tone: "blue",
   },
@@ -15,7 +15,7 @@ const SECTIONS = [
     title: "Modelo Educativo",
     desc:
       "Aprender haciendo: pensamiento crítico, acompañamiento docente y formación integral para la vida.",
-    to: "/modelo-educativo",
+    to: "/conocenos/modelo-educativo",
     icon: "📚",
     tone: "red",
   },
@@ -23,7 +23,7 @@ const SECTIONS = [
     title: "Misión y Visión",
     desc:
       "Guiamos con propósito: formar alumnos responsables, preparados y con valores que trascienden el aula.",
-    to: "/mision-vision",
+    to: "/conocenos/mision-vision",
     icon: "🎯",
     tone: "blue",
   },
@@ -31,7 +31,7 @@ const SECTIONS = [
     title: "Valores",
     desc:
       "Respeto, responsabilidad y compromiso: lo que vivimos todos los días dentro y fuera del salón.",
-    to: "/valores",
+    to: "/conocenos/valores",
     icon: "🤝",
     tone: "red",
   },
@@ -39,7 +39,7 @@ const SECTIONS = [
     title: "Otros Campus",
     desc:
       "Conoce nuestras sedes y descubre espacios diseñados para impulsar el desarrollo académico y personal.",
-    to: "/otros-campus",
+    to: "/conocenos/otros-campus",
     icon: "🏫",
     tone: "blue",
   },
@@ -47,7 +47,7 @@ const SECTIONS = [
     title: "Clave de Centro de Trabajo",
     desc:
       "Información institucional oficial que respalda nuestra operación y el reconocimiento educativo.",
-    to: "/cct",
+    to: "/conocenos/clave-de-centro-de-trabajo",
     icon: "✅",
     tone: "red",
   },
@@ -239,7 +239,7 @@ export default function Conocenos() {
               <div className="cc-step-card">
                 <h3>1) Nuestra historia</h3>
                 <p>De dónde venimos y qué nos define como institución.</p>
-                <NavLink to="/historia" className="cc-mini-link">
+                <NavLink to="/conocenos/historia" className="cc-mini-link">
                   Ir a Historia →
                 </NavLink>
               </div>
@@ -253,7 +253,7 @@ export default function Conocenos() {
                   Modelo educativo: lo académico + lo humano + habilidades para
                   la vida.
                 </p>
-                <NavLink to="/modelo-educativo" className="cc-mini-link">
+                <NavLink to="/conocenos/modelo-educativo" className="cc-mini-link">
                   Ir a Modelo →
                 </NavLink>
               </div>
@@ -264,7 +264,7 @@ export default function Conocenos() {
               <div className="cc-step-card">
                 <h3>3) Propósito y dirección</h3>
                 <p>Misión y visión que guían cada proyecto y decisión.</p>
-                <NavLink to="/mision-vision" className="cc-mini-link">
+                <NavLink to="/conocenos/mision-vision" className="cc-mini-link">
                   Ir a Misión y Visión →
                 </NavLink>
               </div>
@@ -275,7 +275,7 @@ export default function Conocenos() {
               <div className="cc-step-card">
                 <h3>4) Lo que vivimos</h3>
                 <p>Valores que se reflejan en la convivencia y el crecimiento.</p>
-                <NavLink to="/valores" className="cc-mini-link">
+                <NavLink to="/conocenos/valores" className="cc-mini-link">
                   Ir a Valores →
                 </NavLink>
               </div>
@@ -288,7 +288,7 @@ export default function Conocenos() {
                 <p>
                   Otros campus y espacios para aprender, crear y convivir.
                 </p>
-                <NavLink to="/otros-campus" className="cc-mini-link">
+                <NavLink to="/conocenos/otros-campus" className="cc-mini-link">
                   Ir a Campus →
                 </NavLink>
               </div>
@@ -299,7 +299,7 @@ export default function Conocenos() {
               <div className="cc-step-card">
                 <h3>6) Información institucional</h3>
                 <p>Consulta la Clave de Centro de Trabajo (CCT).</p>
-                <NavLink to="/cct" className="cc-mini-link">
+                <NavLink to="/conocenos/clave-de-centro-de-trabajo" className="cc-mini-link">
                   Ir a CCT →
                 </NavLink>
               </div>

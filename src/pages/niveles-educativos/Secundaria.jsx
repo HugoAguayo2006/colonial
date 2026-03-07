@@ -165,7 +165,7 @@ export default function Secundaria() {
             <div className="prim-hero__actions">
               <Link
                 className="prim-btn prim-btn--solid"
-                to="/inscripciones-secundaria"
+                to="/inscripciones/secundaria"
               >
                 Inscripciones Secundaria
               </Link>
@@ -314,7 +314,7 @@ export default function Secundaria() {
               <div className="prim-ctaRow">
                 <Link
                   className="prim-btn prim-btn--solid"
-                  to="/inscripciones-secundaria"
+                  to="/inscripciones/secundaria"
                 >
                   Inscripciones Secundaria
                 </Link>
@@ -488,7 +488,7 @@ export default function Secundaria() {
             <div className="prim-cta__actions">
               <Link
                 className="prim-btn prim-btn--solid"
-                to="/inscripciones-secundaria"
+                to="/inscripciones/secundaria"
               >
                 Más información
               </Link>
@@ -503,16 +503,6 @@ export default function Secundaria() {
               </a>
             </div>
 
-            {/* (Opcional) botón de scroll interno si lo quieres usar */}
-            <div style={{ marginTop: 12 }}>
-              <button
-                className="prim-btn prim-btn--ghost"
-                onClick={scrollToInscripciones}
-                style={{ width: "100%", justifyContent: "center" }}
-              >
-                Ver sección de inscripciones (scroll)
-              </button>
-            </div>
           </div>
         </div>
       </section>

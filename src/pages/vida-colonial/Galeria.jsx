@@ -15,14 +15,11 @@ import { normalizeText } from "../../utils/text"; // 🔥 helper global
 
 // Edita esto con tus fotos reales:
 const IMAGES = [
-  { id: 1, src: "/images/galeria/jeanne_ing_sin_fondo.webp", alt: "Campus - Entrada", tag: "Campus" },
-  { id: 2, src: "/images/galeria/campus-2.webp", alt: "Aulas - Ambiente", tag: "Aulas" },
-  { id: 3, src: "/images/galeria/campus-3.webp", alt: "Eventos escolares", tag: "Eventos" },
-  { id: 4, src: "/images/galeria/campus-4.webp", alt: "Actividades", tag: "Actividades" },
-  { id: 5, src: "/images/galeria/campus-5.webp", alt: "Instalaciones", tag: "Instalaciones" },
-  { id: 6, src: "/images/galeria/campus-6.webp", alt: "Convivencia", tag: "Eventos" },
-  { id: 7, src: "/images/galeria/campus-7.webp", alt: "Aula Maker", tag: "Aula Maker" },
-  { id: 8, src: "/images/galeria/campus-8.webp", alt: "Deportes", tag: "Actividades" },
+  { id: 1, src: "/images/galeria/futbol-1.webp", alt: "Juegos intercolegiales", tag: "Eventos" },
+  { id: 2, src: "/images/galeria/futbol-2.webp", alt: "Juegos intercolegiales", tag: "Eventos" },
+  { id: 3, src: "/images/galeria/misa-1.webp", alt: "Celebraciones", tag: "Celebraciones" },
+  { id: 4, src: "/images/galeria/misa-2.webp", alt: "Celebraciones", tag: "Celebraciones" },
+  { id: 5, src: "/images/galeria/misa-3.webp", alt: "Celebraciones", tag: "Celebraciones" },
 ];
 
 // Mini componente: imagen con lazy + “blur” placeholder

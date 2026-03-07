@@ -73,13 +73,13 @@ export default function Inicio() {
     { label: "Primaria", to: "/niveles/primaria" },
     { label: "Secundaria", to: "/niveles/secundaria" },
     { label: "Calendario", to: "/calendario" },
-    { label: "Otros campus", to: "/otros-campus" },
+    { label: "Otros campus", to: "/conocenos/otros-campus" },
   ];
 
   const explore = [
-    { label: "Modelo educativo", to: "/modelo-educativo" },
-    { label: "Instalaciones", to: "/instalaciones" },
-    { label: "Galería", to: "/galeria" },
+    { label: "Modelo educativo", to: "/conocenos/modelo-educativo" },
+    { label: "Inscripciones", to: "/inscripciones" },
+    { label: "Galería", to: "/vida-colonial/galeria" },
   ];
 
   return (
@@ -309,23 +309,25 @@ export default function Inicio() {
 
                 <div className="cc-miniGrid">
                   <div className="cc-mini">
-                    <span className="cc-miniDate">12 SEP</span>
-                    <span className="cc-miniText">Misa inicio</span>
+                    <span className="cc-miniDate">10 MAR</span>
+                    <span className="cc-miniText">
+                    Encuentro con Cristo (6° Primaria)
+                    </span>
                   </div>
 
                   <div className="cc-mini">
-                    <span className="cc-miniDate">15 SEP</span>
-                    <span className="cc-miniText">Festival patrio</span>
+                    <span className="cc-miniDate">20 MAR</span>
+                    <span className="cc-miniText">Conteo Candidatos a Rey y Reina del Verbo Encarnado</span>
                   </div>
 
                   <div className="cc-mini">
-                    <span className="cc-miniDate">02 OCT</span>
-                    <span className="cc-miniText">Junta padres</span>
+                    <span className="cc-miniDate">23 MAR</span>
+                    <span className="cc-miniText">Spelling Bee</span>
                   </div>
 
                   <div className="cc-mini">
-                    <span className="cc-miniDate">18 OCT</span>
-                    <span className="cc-miniText">Convivencia</span>
+                    <span className="cc-miniDate">30 MAR</span>
+                    <span className="cc-miniText">Inicio de Vacaciones</span>
                   </div>
                 </div>
               </div>
@@ -341,7 +343,7 @@ export default function Inicio() {
                   Conoce nuestras sedes y encuentra la mejor opción para tu
                   familia.
                 </p>
-                <NavLink className="cc-link" to="/otros-campus">
+                <NavLink className="cc-link" to="/conocenos/otros-campus">
                   Ver otros campus →
                 </NavLink>
 
@@ -433,10 +435,10 @@ export default function Inicio() {
             </div>
 
             <div className="cc-videoActions">
-              <NavLink className="cc-btn cc-btnBlue" to="/modelo-educativo">
+              <NavLink className="cc-btn cc-btnBlue" to="/conocenos/modelo-educativo">
                 Modelo educativo
               </NavLink>
-              <NavLink className="cc-btn cc-btnOutline" to="/galeria">
+              <NavLink className="cc-btn cc-btnOutline" to="/vida-colonial/galeria">
                 Galería
               </NavLink>
             </div>
@@ -458,13 +460,10 @@ export default function Inicio() {
             </div>
 
             <div className="cc-footerLinks">
-              <NavLink className="cc-chip" to="/instalaciones">
-                Instalaciones
-              </NavLink>
-              <NavLink className="cc-chip" to="/galeria">
+              <NavLink className="cc-chip" to="/vida-colonial/galeria">
                 Galería
               </NavLink>
-              <NavLink className="cc-chip" to="/eventos">
+              <NavLink className="cc-chip" to="/vida-colonial/eventos">
                 Eventos
               </NavLink>
               <NavLink className="cc-chip" to="/contacto">

@@ -142,20 +142,6 @@ export default function Actividades() {
                   </ul>
                 )}
 
-                <div className="exaCard__cta">
-                  <a className="exaCard__btn" href="/contacto">
-                    Solicitar informes
-                  </a>
-
-                  <a
-                    className="exaCard__btn exaCard__btn--ghost"
-                    href="https://wa.me/523331585919?text=Hola,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20actividades%20extracurriculares%20y%20horarios."
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    WhatsApp
-                  </a>
-                </div>
               </div>
             </article>
           ))}

@@ -167,7 +167,7 @@ export default function Primaria() {
             <div className="prim-hero__actions">
               <Link
                 className="prim-btn prim-btn--solid"
-                to="/inscripciones-primaria"
+                to="/inscripciones/primaria"
               >
                 Inscripciones Primaria
               </Link>
@@ -314,7 +314,7 @@ export default function Primaria() {
               <div className="prim-ctaRow">
                 <Link
                   className="prim-btn prim-btn--solid"
-                  to="/inscripciones-primaria"
+                  to="/inscripciones/primaria"
                 >
                   Inscripciones Primaria
                 </Link>

@@ -235,7 +235,7 @@ export default function InscripcionesPrimaria() {
         <section className="pinc__top">
           <div className="pinc__topInner">
             <p className="pinc__kicker">PRIMARIA</p>
-            <h1 className="pinc__title">Inscripciones</h1>
+            <h1 className="pinc__title">Inscripciones Primaria</h1>
             <p className="pinc__subtitle">
               Proceso de admisión, costos, becas y preguntas frecuentes para nuevo
               ingreso.
@@ -367,9 +367,6 @@ export default function InscripcionesPrimaria() {
                 <Link className="pbtn pbtn--primary" to="/contacto">
                   Contacto
                 </Link>
-                <a className="pbtn pbtn--ghost" href="#proceso">
-                  Revisar proceso
-                </a>
               </div>
             </div>
           </div>
