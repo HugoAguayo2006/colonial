@@ -310,25 +310,25 @@ export default function Inicio() {
 
                 <div className="cc-miniGrid">
                   <div className="cc-mini">
-                    <span className="cc-miniDate">10 MAR</span>
+                    <span className="cc-miniDate">13 ABRIL</span>
                     <span className="cc-miniText">
-                    Encuentro con Cristo (6° Primaria)
+                    Celebración de Pascua
                     </span>
                   </div>
 
                   <div className="cc-mini">
-                    <span className="cc-miniDate">20 MAR</span>
-                    <span className="cc-miniText">Conteo Candidatos a Rey y Reina del Verbo Encarnado</span>
+                    <span className="cc-miniDate">13 ABRIL</span>
+                    <span className="cc-miniText">Regreso a clases</span>
                   </div>
 
                   <div className="cc-mini">
-                    <span className="cc-miniDate">23 MAR</span>
-                    <span className="cc-miniText">Spelling Bee</span>
+                    <span className="cc-miniDate">24 ABRIL</span>
+                    <span className="cc-miniText">Honores al V.E. (1° Secundaria y 2° Primaria)</span>
                   </div>
 
                   <div className="cc-mini">
-                    <span className="cc-miniDate">30 MAR</span>
-                    <span className="cc-miniText">Inicio de Vacaciones</span>
+                    <span className="cc-miniDate">30 ABRIL</span>
+                    <span className="cc-miniText">Día del Niño</span>
                   </div>
                 </div>
               </div>
