@@ -4,14 +4,6 @@ import "./Conocenos.css";
 
 const SECTIONS = [
   {
-    title: "Historia",
-    desc:
-      "Nuestra esencia nace de la tradición y crece con innovación, construyendo una comunidad sólida con identidad propia.",
-    to: "/conocenos/historia",
-    icon: "🏛️",
-    tone: "blue",
-  },
-  {
     title: "Modelo Educativo",
     desc:
       "Aprender haciendo: pensamiento crítico, acompañamiento docente y formación integral para la vida.",
@@ -234,21 +226,12 @@ export default function Conocenos() {
           </header>
 
           <ol className="cc-timeline">
-            <li className="cc-step">
-              <div className="cc-step-dot" />
-              <div className="cc-step-card">
-                <h3>1) Nuestra historia</h3>
-                <p>De dónde venimos y qué nos define como institución.</p>
-                <NavLink to="/conocenos/historia" className="cc-mini-link">
-                  Ir a Historia →
-                </NavLink>
-              </div>
-            </li>
+
 
             <li className="cc-step">
               <div className="cc-step-dot" />
               <div className="cc-step-card">
-                <h3>2) Cómo enseñamos</h3>
+                <h3>1) Cómo enseñamos</h3>
                 <p>
                   Modelo educativo: lo académico + lo humano + habilidades para
                   la vida.
@@ -262,7 +245,7 @@ export default function Conocenos() {
             <li className="cc-step">
               <div className="cc-step-dot" />
               <div className="cc-step-card">
-                <h3>3) Propósito y dirección</h3>
+                <h3>2) Propósito y dirección</h3>
                 <p>Misión y visión que guían cada proyecto y decisión.</p>
                 <NavLink to="/conocenos/mision-vision" className="cc-mini-link">
                   Ir a Misión y Visión →
@@ -273,7 +256,7 @@ export default function Conocenos() {
             <li className="cc-step">
               <div className="cc-step-dot" />
               <div className="cc-step-card">
-                <h3>4) Lo que vivimos</h3>
+                <h3>3) Lo que vivimos</h3>
                 <p>Valores que se reflejan en la convivencia y el crecimiento.</p>
                 <NavLink to="/conocenos/valores" className="cc-mini-link">
                   Ir a Valores →
@@ -284,12 +267,12 @@ export default function Conocenos() {
             <li className="cc-step">
               <div className="cc-step-dot" />
               <div className="cc-step-card">
-                <h3>5) Nuestras sedes</h3>
+                <h3>4) Nuestras sedes</h3>
                 <p>
                   Otros campus y espacios para aprender, crear y convivir.
                 </p>
                 <NavLink to="/conocenos/otros-campus" className="cc-mini-link">
-                  Ir a Campus →
+                  Ir a Otros Campus →
                 </NavLink>
               </div>
             </li>
@@ -297,7 +280,7 @@ export default function Conocenos() {
             <li className="cc-step">
               <div className="cc-step-dot" />
               <div className="cc-step-card">
-                <h3>6) Información institucional</h3>
+                <h3>5) Información institucional</h3>
                 <p>Consulta la Clave de Centro de Trabajo (CCT).</p>
                 <NavLink to="/conocenos/clave-de-centro-de-trabajo" className="cc-mini-link">
                   Ir a CCT →

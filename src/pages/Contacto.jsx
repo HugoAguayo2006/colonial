@@ -6,11 +6,35 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import "./Contacto.css";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 // ✅ Helmet (SEO)
 import { Helmet } from "react-helmet-async";
 
 export default function ContactoPage() {
+
+  const [status, setStatus] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.sendForm(
+        "service_394osy1",
+        "template_01r406p",
+        e.target,
+        "K6KC06w8GnCGE6cU0"
+      );
+
+      setStatus("success");
+      e.target.reset();
+    } catch (error) {
+      console.error("Error al enviar:", error);
+      setStatus("error");
+    }
+  };
+
   return (
     <div className="ct_page">
       <Helmet>
@@ -74,7 +98,7 @@ export default function ContactoPage() {
           <div className="ct_actions">
             <a
               className="ct_btn ct_btnPrimary"
-              href="https://wa.me/5214421234567?text=Hola%20Colegio%20Colonial,%20me%20gustaría%20recibir%20información."
+              href="https://wa.me/5214424317022?text=Hola%20Colegio%20Colonial,%20me%20gustaría%20recibir%20información."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -133,9 +157,7 @@ export default function ContactoPage() {
                 </div>
                 <div className="ct_cardBody">
                   <h3>Teléfonos</h3>
-                  <a href="tel:+524421234567">(442) 123 4567</a>
-                  <span className="ct_sep">·</span>
-                  <a href="tel:+524427654321">(442) 765 4321</a>
+                  <a href="tel:+52442 431 7022">(442) 431 7022</a>
                 </div>
               </div>
 
@@ -146,7 +168,7 @@ export default function ContactoPage() {
                 <div className="ct_cardBody">
                   <h3>WhatsApp</h3>
                   <a
-                    href="https://wa.me/5214421234567?text=Hola%20Colegio%20Colonial,%20me%20gustaría%20recibir%20información."
+                    href="https://wa.me/5214424317022?text=Hola%20Colegio%20Colonial,%20me%20gustaría%20recibir%20información."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -192,27 +214,42 @@ export default function ContactoPage() {
               <p className="ct_p">Completa el formulario y te contactamos.</p>
             </div>
 
-            <form className="ct_form" onSubmit={(e) => e.preventDefault()}>
+            <form className="ct_form" onSubmit={handleSubmit}>
               <div className="ct_row">
                 <label>
                   Nombre
-                  <input type="text" placeholder="Tu nombre completo" required />
+                  <input
+                    type="text"
+                    name="from_name"
+                    placeholder="Tu nombre completo"
+                    required
+                  />
                 </label>
 
                 <label>
                   Teléfono
-                  <input type="tel" placeholder="(###) ### ####" />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="(###) ### ####"
+                  />
                 </label>
               </div>
 
               <label>
                 Correo
-                <input type="email" placeholder="tucorreo@email.com" required />
+                <input
+                  type="email"
+                  name="from_email"
+                  placeholder="tucorreo@email.com"
+                  required
+                />
               </label>
 
               <label>
                 Mensaje
                 <textarea
+                  name="message"
                   rows="5"
                   placeholder="Cuéntanos qué necesitas..."
                   required
@@ -222,6 +259,18 @@ export default function ContactoPage() {
               <button className="ct_submit" type="submit">
                 Enviar mensaje
               </button>
+
+{status === "success" && (
+  <p className="ct_msg ct_msgSuccess">
+    ✅ Mensaje enviado correctamente
+  </p>
+)}
+
+{status === "error" && (
+  <p className="ct_msg ct_msgError">
+    ❌ Error al enviar. Intenta de nuevo.
+  </p>
+)}
             </form>
           </section>
         </div>

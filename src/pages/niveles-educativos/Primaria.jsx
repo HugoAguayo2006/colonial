@@ -450,7 +450,7 @@ export default function Primaria() {
             </div>
 
             <div className="prim-cta__actions">
-              <Link className="prim-btn prim-btn--solid" to="/inscripciones-primaria">
+              <Link className="prim-btn prim-btn--solid" to="/inscripciones/primaria">
                 Más información
               </Link>
 

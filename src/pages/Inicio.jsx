@@ -79,7 +79,7 @@ export default function Inicio() {
 
   const explore = [
     { label: "Modelo educativo", to: "/conocenos/modelo-educativo" },
-    { label: "Inscripciones", to: "/inscripciones" },
+    { label: "Eventos", to: "/vida-colonial/eventos" },
     { label: "Galería", to: "/vida-colonial/galeria" },
   ];
 

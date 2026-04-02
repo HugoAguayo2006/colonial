@@ -71,7 +71,7 @@ export default function Inscripciones() {
                 </NavLink>
 
                 <NavLink
-                  to="/secundaria"
+                  to="/inscripciones/secundaria"
                   className="insc2_btn insc2_btnOutline"
                 >
                   Secundaria
@@ -87,8 +87,8 @@ export default function Inscripciones() {
                   <div className="insc2_kpiText">Niveles</div>
                 </div>
                 <div className="insc2_kpi">
-                  <div className="insc2_kpiNum">1</div>
-                  <div className="insc2_kpiText">Ruta de inscripción</div>
+                  <div className="insc2_kpiNum">2</div>
+                  <div className="insc2_kpiText">Rutas de inscripción</div>
                 </div>
                 <div className="insc2_kpi">
                   <div className="insc2_kpiNum">100%</div>

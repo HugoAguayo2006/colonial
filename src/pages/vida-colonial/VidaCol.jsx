@@ -3,9 +3,9 @@ import { Helmet } from "react-helmet-async";
 import "./VidaCol.css";
 
 const CAL_DATES = [
-  { day: "10", month: "MAR", title: "Encuentro con Cristo (6° Primaria)", meta: "" },
-  { day: "23", month: "MAR", title: "Spelling Bee", meta: "" },
-  { day: "30", month: "MAR", title: "Inicio de Vacaciones", meta: "" },
+  { day: "13", month: "ABRIL", title: "Celebración de Pascua", meta: "" },
+  { day: "24", month: "ABRIL", title: "Honores al V.E. (1° Secundaria y 2° Primaria)", meta: "" },
+  { day: "30", month: "ABRIL", title: "Día del Niño", meta: "" },
 ];
 
 const SECTIONS = [

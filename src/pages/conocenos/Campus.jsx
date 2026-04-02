@@ -198,13 +198,20 @@ export default function Campus() {
     window.scrollTo({ top: top - 300, behavior: "smooth" });
   };
 
-  // ✅ Reset
-  const resetMapView = () => {
-    setSelected(null);
-    setFocusMode(false);
-    const list = filteredWithCoords.length ? filteredWithCoords : allWithCoords;
-    setTimeout(() => fitTo(list), 0);
-  };
+const resetMapView = () => {
+  if (mapRef.current) {
+    const streetView = mapRef.current.getStreetView?.();
+    if (streetView?.getVisible()) {
+      streetView.setVisible(false);
+    }
+  }
+
+  setSelected(null);
+  setFocusMode(false);
+
+  const list = filteredWithCoords.length ? filteredWithCoords : allWithCoords;
+  setTimeout(() => fitTo(list), 0);
+};
 
   // ✅ Ver en el mapa
   const goTo = (campus) => {
@@ -232,13 +239,22 @@ export default function Campus() {
   }, [country, stateFilter]);
 
   // al cambiar filtros: encuadra
-  useEffect(() => {
-    if (!isLoaded) return;
-    setSelected(null);
-    setFocusMode(false);
-    if (filteredWithCoords.length) fitTo(filteredWithCoords);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [country, stateFilter, isLoaded, filteredWithCoords.length]);
+useEffect(() => {
+  if (!isLoaded) return;
+
+  if (mapRef.current) {
+    const streetView = mapRef.current.getStreetView?.();
+    if (streetView?.getVisible()) {
+      streetView.setVisible(false);
+    }
+  }
+
+  setSelected(null);
+  setFocusMode(false);
+
+  if (filteredWithCoords.length) fitTo(filteredWithCoords);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [country, stateFilter, isLoaded, filteredWithCoords.length]);
 
   // al cargar: encuadra todos
   useEffect(() => {
@@ -406,26 +422,31 @@ export default function Campus() {
               mapContainerClassName="camp_map"
               center={MAP_DEFAULT_CENTER}
               zoom={MAP_DEFAULT_ZOOM}
-              onLoad={(map) => {
-                mapRef.current = map;
+onLoad={(map) => {
+  mapRef.current = map;
 
-                mapListenersRef.current.forEach((l) => l.remove?.());
-                mapListenersRef.current = [];
+  const streetView = map.getStreetView?.();
+  if (streetView?.getVisible()) {
+    streetView.setVisible(false);
+  }
 
-                const lockNorth = () => {
-                  if (map.getHeading?.() !== 0) map.setHeading?.(0);
-                  if (map.getTilt?.() !== 0) map.setTilt?.(0);
-                };
+  mapListenersRef.current.forEach((l) => l.remove?.());
+  mapListenersRef.current = [];
 
-                map.setOptions({ heading: 0, tilt: 0, rotateControl: false });
-                lockNorth();
+  const lockNorth = () => {
+    if (map.getHeading?.() !== 0) map.setHeading?.(0);
+    if (map.getTilt?.() !== 0) map.setTilt?.(0);
+  };
 
-                mapListenersRef.current.push(map.addListener("heading_changed", lockNorth));
-                mapListenersRef.current.push(map.addListener("tilt_changed", lockNorth));
-                mapListenersRef.current.push(map.addListener("idle", lockNorth));
+  map.setOptions({ heading: 0, tilt: 0, rotateControl: false });
+  lockNorth();
 
-                setTimeout(() => (filteredWithCoords.length ? fitTo(filteredWithCoords) : fitTo(allWithCoords)), 250);
-              }}
+  mapListenersRef.current.push(map.addListener("heading_changed", lockNorth));
+  mapListenersRef.current.push(map.addListener("tilt_changed", lockNorth));
+  mapListenersRef.current.push(map.addListener("idle", lockNorth));
+
+  setTimeout(() => (filteredWithCoords.length ? fitTo(filteredWithCoords) : fitTo(allWithCoords)), 250);
+}}
               onUnmount={(map) => {
                 mapListenersRef.current.forEach((l) => l.remove?.());
                 mapListenersRef.current = [];
