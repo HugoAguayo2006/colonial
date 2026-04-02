@@ -358,7 +358,7 @@ export default function Calendario() {
             >
               <span
                 className="ccdot"
-                style={{ background: "var(--cc-blueDeep)" }}
+                style={{ background: "var(--cc-green)" }}
               />
               Todos
             </button>
