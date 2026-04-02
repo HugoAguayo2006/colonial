@@ -28,8 +28,8 @@ const AccordionItem = ({ title, children, tone = "blue" }) => {
 export default function InscripcionesPrimaria() {
   const costos = useMemo(
     () => [
-      { label: "Inscripción", value: "$4,450", note: "Pago único" },
-      { label: "Colegiatura", value: "$2,650", note: "Mensual (12 meses)" },
+      { label: "Inscripción", value: "$4,996", note: "Pago único" },
+      { label: "Colegiatura", value: "$2,870", note: "Mensual (12 meses)" },
       {
         label: "Becas y apoyos",
         value: "Disponibles",
@@ -126,10 +126,10 @@ export default function InscripcionesPrimaria() {
           <div className="plist">
             <ul>
               <li>
-                <b>Inscripción:</b> $4,450.
+                <b>Inscripción:</b> $4,996.
               </li>
               <li>
-                <b>Colegiatura:</b> $2,650 por mes (12 meses).
+                <b>Colegiatura:</b> $2,870 por mes (12 meses).
               </li>
             </ul>
           </div>

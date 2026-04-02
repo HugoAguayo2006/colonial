@@ -160,7 +160,7 @@ export default function Primaria() {
               <span className="prim-heroInfo__pill">🕒 Horario matutino</span>
               <span className="prim-heroInfo__text">
                 Lunes a viernes · <strong>7:00 a.m.</strong> a{" "}
-                <strong>2:10 p.m.</strong>
+                <strong>2:00 p.m.</strong>
               </span>
             </div>
 
