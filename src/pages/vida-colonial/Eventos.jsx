@@ -135,12 +135,7 @@ export default function Eventos() {
               </span>
             </div>
 
-            <div className="ev__tips" aria-hidden="true">
-              <span className="ev__tip">Open House</span>
-              <span className="ev__tip">Deportivo</span>
-              <span className="ev__tip">Festival</span>
-              <span className="ev__tip">Académico</span>
-            </div>
+
           </div>
         </div>
       </header>
@@ -236,7 +231,14 @@ export default function Eventos() {
                         className="evCard__btn"
                         to="/vida-colonial/galeria"
                       >
-                        Ir a la galería
+                        Presiona para ver más fotos en la galería.
+                      </Link>
+
+                      <Link
+                        className="evCard__btn"
+                        to="/calendario"
+                      >
+                        Presiona para consultar el calendario.
                       </Link>
                     </div>
                   </div>

@@ -355,6 +355,7 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+
 }
 
 .evBtn{
@@ -518,6 +519,7 @@
   margin-top: 16px;
 }
 
+
 .evCard__btn{
   display: inline-flex;
   align-items: center;
@@ -546,6 +548,7 @@
 }
 
 /* hover */
+.evCard__btn-1,
 .evCard__btn:hover{
   transform: translateY(-2px);
 
@@ -559,7 +562,12 @@
 }
 
 /* active click */
+  .evCard__btn-1,
 .evCard__btn:active{
   transform: translateY(0);
   box-shadow: 0 4px 12px rgba(0,0,0,.2);
 }
+
+  .evCard__btn-1{
+    background-color: #ffffff !important;
+  };

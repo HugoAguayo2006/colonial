@@ -81,12 +81,112 @@ const IMAGES = [
 { id: 46, src: "/images/intercolegiales/premiacion-24.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
 { id: 47, src: "/images/intercolegiales/premiacion-25.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
 
+{ id: 59, src: "/images/galeria/semana-cultural-01.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
+{ id: 60, src: "/images/galeria/semana-cultural-02.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
+{ id: 61, src: "/images/galeria/semana-cultural-03.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
+{ id: 62, src: "/images/galeria/semana-cultural-04.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
+{ id: 63, src: "/images/galeria/semana-cultural-05.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
+{ id: 64, src: "/images/galeria/semana-cultural-06.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
+{ id: 65, src: "/images/galeria/semana-cultural-07.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
+{ id: 66, src: "/images/galeria/semana-cultural-08.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
+{ id: 67, src: "/images/galeria/semana-cultural-09.webp", alt: "Semana Cultural", tag: ["Semana Cultural"] },
 
+
+{ id: 68, src: "/images/galeria/celebraciones-01.webp", alt: "Celebraciones", tag: ["Celebraciones"] },
+{ id: 69, src: "/images/galeria/celebraciones-02.webp", alt: "Celebraciones", tag: ["Celebraciones"] },
+{ id: 70, src: "/images/galeria/celebraciones-03.webp", alt: "Celebraciones", tag: ["Celebraciones"] },
+{ id: 71, src: "/images/galeria/celebraciones-04.webp", alt: "Celebraciones", tag: ["Celebraciones"] },
+{ id: 72, src: "/images/galeria/celebraciones-05.webp", alt: "Celebraciones", tag: ["Celebraciones"] },
+{ id: 73, src: "/images/galeria/celebraciones-06.webp", alt: "Celebraciones", tag: ["Celebraciones"] },
+{ id: 74, src: "/images/galeria/celebraciones-07.webp", alt: "Celebraciones", tag: ["Celebraciones"] },
+
+{ id: 75, src: "/images/galeria/mexicana-01.webp", alt: "Mañanitas Mexicanas", tag: ["Mañanitas Mexicanas"] },
+{ id: 76, src: "/images/galeria/mexicana-02.webp", alt: "Mañanitas Mexicanas", tag: ["Mañanitas Mexicanas"] },
+{ id: 77, src: "/images/galeria/mexicana-03.webp", alt: "Mañanitas Mexicanas", tag: ["Mañanitas Mexicanas"] },
+{ id: 78, src: "/images/galeria/mexicana-04.webp", alt: "Mañanitas Mexicanas", tag: ["Mañanitas Mexicanas"] },
+
+{ id: 79, src: "/images/galeria/mexicana-05.webp", alt: "Mañanitas Mexicanas", tag: ["Mañanitas Mexicanas"] },
+{ id: 80, src: "/images/galeria/mexicana-06.webp", alt: "Mañanitas Mexicanas", tag: ["Mañanitas Mexicanas"] },
+
+{ id: 81, src: "/images/galeria/muertos-01.webp", alt: "Día de Muertos", tag: ["Día de Muertos"] },
+{ id: 82, src: "/images/galeria/muertos-02.webp", alt: "Día de Muertos", tag: ["Día de Muertos"] },
+{ id: 83, src: "/images/galeria/muertos-03.webp", alt: "Día de Muertos", tag: ["Día de Muertos"] },
+{ id: 84, src: "/images/galeria/muertos-04.webp", alt: "Día de Muertos", tag: ["Día de Muertos"] },
+{ id: 85, src: "/images/galeria/muertos-05.webp", alt: "Día de Muertos", tag: ["Día de Muertos"] },
+{ id: 86, src: "/images/galeria/muertos-06.webp", alt: "Día de Muertos", tag: ["Día de Muertos"] },
+
+{ id: 87, src: "/images/galeria/navidad-01.webp", alt: "Posada Navideña", tag: ["Posada Navideña"] },
+{ id: 88, src: "/images/galeria/navidad-02.webp", alt: "Posada Navideña", tag: ["Posada Navideña"] },
+{ id: 89, src: "/images/galeria/navidad-03.webp", alt: "Posada Navideña", tag: ["Posada Navideña"] },
+{ id: 90, src: "/images/galeria/navidad-04.webp", alt: "Posada Navideña", tag: ["Posada Navideña"] },
+{ id: 91, src: "/images/galeria/navidad-05.webp", alt: "Posada Navideña", tag: ["Posada Navideña"] },
+{ id: 92, src: "/images/galeria/navidad-06.webp", alt: "Posada Navideña", tag: ["Posada Navideña"] },
+{ id: 93, src: "/images/galeria/navidad-07.webp", alt: "Posada Navideña", tag: ["Posada Navideña"] },
+
+{ id: 94, src: "/images/galeria/estudiante-01.webp", alt: "Día del Estudiante", tag: ["Día del Estudiante"] },
+{ id: 95, src: "/images/galeria/estudiante-02.webp", alt: "Día del Estudiante", tag: ["Día del Estudiante"] },
+{ id: 96, src: "/images/galeria/estudiante-03.webp", alt: "Día del Estudiante", tag: ["Día del Estudiante"] },
+
+{ id: 97, src: "/images/galeria/graduaciones-01.webp", alt: "Graduaciones", tag: ["Graduaciones"] },
+{ id: 98, src: "/images/galeria/graduaciones-02.webp", alt: "Graduaciones", tag: ["Graduaciones"] },
+{ id: 99, src: "/images/galeria/graduaciones-03.webp", alt: "Graduaciones", tag: ["Graduaciones"] },
+{ id: 100, src: "/images/galeria/graduaciones-04.webp", alt: "Graduaciones", tag: ["Graduaciones"] },
+{ id: 101, src: "/images/galeria/graduaciones-05.webp", alt: "Graduaciones", tag: ["Graduaciones"] },
+{ id: 102, src: "/images/galeria/graduaciones-06.webp", alt: "Graduaciones", tag: ["Graduaciones"] },
+{ id: 103, src: "/images/galeria/conocimiento-01.webp", alt: "Olimpiada de Conocimiento", tag: ["Olimpiada de Conocimiento"] },
+{ id: 104, src: "/images/galeria/bee-01.webp", alt: "Spelling Bee", tag: ["Spelling Bee"] },
+{ id: 105, src: "/images/galeria/bee-02.webp", alt: "Spelling Bee", tag: ["Spelling Bee"] },
+{ id: 106, src: "/images/galeria/bee-03.webp", alt: "Spelling Bee", tag: ["Spelling Bee"] },
+{ id: 107, src: "/images/galeria/revolucion-01.webp", alt: "20 de Noviembre - Revolución Mexicana", tag: ["20 de Noviembre - Revolución Mexicana"] },
+{ id: 108, src: "/images/galeria/revolucion-02.webp", alt: "20 de Noviembre - Revolución Mexicana", tag: ["20 de Noviembre - Revolución Mexicana"] },
+{ id: 109, src: "/images/galeria/revolucion-03.webp", alt: "20 de Noviembre - Revolución Mexicana", tag: ["20 de Noviembre - Revolución Mexicana"] },
+{ id: 110, src: "/images/galeria/familia-01.webp", alt: "Día de la Familia", tag: ["Día de la Familia"] },
+{ id: 111, src: "/images/galeria/familia-02.webp", alt: "Día de la Familia", tag: ["Día de la Familia"] },
+{ id: 112, src: "/images/galeria/familia-03.webp", alt: "Día de la Familia", tag: ["Día de la Familia"] },
+{ id: 113, src: "/images/galeria/12-01.webp", alt: "12 de diciembre - Virgen de Guadalupe", tag: ["12 de diciembre - Virgen de Guadalupe"] },
+{ id: 114, src: "/images/galeria/12-02.webp", alt: "12 de diciembre - Virgen de Guadalupe", tag: ["12 de diciembre - Virgen de Guadalupe"] },
+{ id: 115, src: "/images/galeria/12-03.webp", alt: "12 de diciembre - Virgen de Guadalupe", tag: ["12 de diciembre - Virgen de Guadalupe"] },
+{ id: 116, src: "/images/galeria/puerta-01.webp", alt: "Inauguración de la Puerta Santa", tag: ["Inauguración de la Puerta Santa"] },
+{ id: 117, src: "/images/galeria/puerta-02.webp", alt: "Inauguración de la Puerta Santa", tag: ["Inauguración de la Puerta Santa"] },
+{ id: 118, src: "/images/galeria/puerta-03.webp", alt: "Inauguración de la Puerta Santa", tag: ["Inauguración de la Puerta Santa"] },
+{ id: 119, src: "/images/galeria/puerta-04.webp", alt: "Inauguración de la Puerta Santa", tag: ["Inauguración de la Puerta Santa"] },
+{ id: 120, src: "/images/galeria/puerta-05.webp", alt: "Inauguración de la Puerta Santa", tag: ["Inauguración de la Puerta Santa"] },
+{ id: 121, src: "/images/galeria/rosario-01.webp", alt: "Rosario Misionero", tag: ["Rosario Misionero"] },
+{ id: 122, src: "/images/galeria/rosario-02.webp", alt: "Rosario Misionero", tag: ["Rosario Misionero"] },
+{ id: 123, src: "/images/galeria/rosario-03.webp", alt: "Rosario Misionero", tag: ["Rosario Misionero"] },
+
+{ id: 125, src: "/images/galeria/nino-01.webp", alt: "Día del Niño", tag: ["Día del Niño"] },
+{ id: 126, src: "/images/galeria/nino-02.webp", alt: "Día del Niño", tag: ["Día del Niño"] },
+{ id: 127, src: "/images/galeria/nino-03.webp", alt: "Día del Niño", tag: ["Día del Niño"] },
+{ id: 128, src: "/images/galeria/nino-04.webp", alt: "Día del Niño", tag: ["Día del Niño"] },
+{ id: 129, src: "/images/galeria/nino-05.webp", alt: "Día del Niño", tag: ["Día del Niño"] },
+
+{ id: 130, src: "/images/galeria/cristo-01.webp", alt: "Encuentro con Cristo", tag: ["Encuentro con Cristo"] },
+{ id: 131, src: "/images/galeria/cristo-02.webp", alt: "Encuentro con Cristo", tag: ["Encuentro con Cristo"] },
+{ id: 132, src: "/images/galeria/cristo-03.webp", alt: "Encuentro con Cristo", tag: ["Encuentro con Cristo"] },
+{ id: 133, src: "/images/galeria/cristo-04.webp", alt: "Encuentro con Cristo", tag: ["Encuentro con Cristo"] },
+{ id: 134, src: "/images/galeria/cristo-05.webp", alt: "Encuentro con Cristo", tag: ["Encuentro con Cristo"] },
+{ id: 135, src: "/images/galeria/cristo-06.webp", alt: "Encuentro con Cristo", tag: ["Encuentro con Cristo"] },
 ];
 
 const TAG_ORDER = [
   "Todas",
   "Celebraciones",
+  "Semana Cultural",
+  "Mañanitas Mexicanas",
+  "Día de Muertos",
+  "Posada Navideña",
+  "Día del Estudiante",
+  "Graduaciones",
+  "Olimpiada de Conocimiento",
+  "Spelling Bee",
+  "20 de Noviembre - Revolución Mexicana",
+  "Día de la Familia",
+  "12 de diciembre - Virgen de Guadalupe",
+  "Inauguración de la Puerta Santa",
+  "Rosario Misionero",
+  "Día del Niño",
+  "Encuentro con Cristo",
   "Intercolegiales",
   "Bienvenida",
   "Fútbol",
@@ -174,7 +274,9 @@ function Lightbox({ open, items, index, onClose, onPrev, onNext }) {
 
       <div className="lb__shell" role="document">
         <div className="lb__top">
-          <span className="lb__pill">{it.tag}</span>
+<span className="lb__pill">
+  {Array.isArray(it.tag) ? it.tag.join(" · ") : it.tag}
+</span>
 
           <div className="lb__topRight">
             <span className="lb__counter">
@@ -231,7 +333,7 @@ const okTag =
 
       if (!query) return okTag;
 
-      const hay = normalizeText(`${x.alt} ${x.tag.join(" ")}`);
+      const hay = normalizeText(`${x.alt} ${x.tag.join(" · ")}`);
       const okQ = hay.includes(query);
 
       return okTag && okQ;
