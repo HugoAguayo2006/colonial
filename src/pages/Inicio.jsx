@@ -350,13 +350,13 @@ export default function Inicio() {
 
                 <div className="cc-campusStats" aria-label="Presencia internacional">
                   <div className="cc-stat">
-                    <span className="cc-statNum">108</span>
+                    <span className="cc-statNum">87</span>
                     <span className="cc-statLabel">Presencias</span>
                     <span className="cc-statHint">de la Orden</span>
                   </div>
 
                   <div className="cc-stat">
-                    <span className="cc-statNum">11</span>
+                    <span className="cc-statNum">12</span>
                     <span className="cc-statLabel">Países</span>
                     <span className="cc-statHint">presencia educativa</span>
                   </div>

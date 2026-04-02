@@ -15,11 +15,86 @@ import { normalizeText } from "../../utils/text"; // 🔥 helper global
 
 // Edita esto con tus fotos reales:
 const IMAGES = [
-  { id: 1, src: "/images/galeria/futbol-1.webp", alt: "Juegos intercolegiales", tag: "Eventos" },
-  { id: 2, src: "/images/galeria/futbol-2.webp", alt: "Juegos intercolegiales", tag: "Eventos" },
-  { id: 3, src: "/images/galeria/misa-1.webp", alt: "Celebraciones", tag: "Celebraciones" },
-  { id: 4, src: "/images/galeria/misa-2.webp", alt: "Celebraciones", tag: "Celebraciones" },
-  { id: 5, src: "/images/galeria/misa-3.webp", alt: "Celebraciones", tag: "Celebraciones" },
+  { id: 3, src: "/images/galeria/misa-1.webp", alt: "Celebraciones", tag: ["Celebraciones" ]},
+    { id: 5, src: "/images/galeria/misa-3.webp", alt: "Celebraciones", tag: ["Celebraciones"] },
+  { id: 4, src: "/images/galeria/misa-2.webp", alt: "Celebraciones", tag: ["Celebraciones" ]},
+
+
+  { id: 6, src: "/images/intercolegiales/bienvenida-1.webp", alt: "Bienvenida", tag: ["Intercolegiales"] },
+  { id: 7, src: "/images/intercolegiales/futbol-1.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+  { id: 8, src: "/images/intercolegiales/futbol-2.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+  { id: 9, src: "/images/intercolegiales/futbol-3.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+  { id: 10, src: "/images/intercolegiales/futbol-4.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+  { id: 11, src: "/images/intercolegiales/futbol-5.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+  { id: 12, src: "/images/intercolegiales/futbol-6.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+  { id: 13, src: "/images/intercolegiales/futbol-7.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+  { id: 14, src: "/images/intercolegiales/futbol-8.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+  { id: 15, src: "/images/intercolegiales/futbol-9.webp", alt: "Fútbol", tag: ["Intercolegiales", "Fútbol"] },
+
+  { id: 16, src: "/images/intercolegiales/basquet-1.webp", alt: "Basquetbol", tag: ["Intercolegiales", "Basquetbol"] },
+  { id: 48, src: "/images/intercolegiales/basquet-02.webp", alt: "Basquetbol", tag: ["Intercolegiales", "Basquetbol"] },
+  { id: 49, src: "/images/intercolegiales/basquet-03.webp", alt: "Basquetbol", tag: ["Intercolegiales", "Basquetbol"] },
+  { id: 50, src: "/images/intercolegiales/basquet-04.webp", alt: "Basquetbol", tag: ["Intercolegiales", "Basquetbol"] },
+  { id: 51, src: "/images/intercolegiales/basquet-05.webp", alt: "Basquetbol", tag: ["Intercolegiales", "Basquetbol"] },
+  { id: 52, src: "/images/intercolegiales/basquet-06.webp", alt: "Basquetbol", tag: ["Intercolegiales", "Basquetbol"] },
+  { id: 53, src: "/images/intercolegiales/basquet-07.webp", alt: "Basquetbol", tag: ["Intercolegiales", "Basquetbol"] },
+
+  { id: 17, src: "/images/intercolegiales/voley-1.webp", alt: "Voley", tag: ["Intercolegiales", "Voley"] },
+  { id: 18, src: "/images/intercolegiales/voley-2.webp", alt: "Voley", tag: ["Intercolegiales", "Voley"] },
+  { id: 19, src: "/images/intercolegiales/voley-3.webp", alt: "Voley", tag: ["Intercolegiales", "Voley"] },
+  { id: 54, src: "/images/intercolegiales/voley-04.webp", alt: "Voley", tag: ["Intercolegiales", "Voley"] },
+  { id: 55, src: "/images/intercolegiales/voley-05.webp", alt: "Voley", tag: ["Intercolegiales", "Voley"] },
+
+  { id: 20, src: "/images/intercolegiales/ajedrez-1.webp", alt: "Ajedrez", tag: ["Intercolegiales", "Ajedrez"] },
+  { id: 21, src: "/images/intercolegiales/ajedrez-2.webp", alt: "Ajedrez", tag: ["Intercolegiales", "Ajedrez"] },
+  { id: 22, src: "/images/intercolegiales/ajedrez-3.webp", alt: "Ajedrez", tag: ["Intercolegiales", "Ajedrez"] },
+
+  { id: 56, src: "/images/intercolegiales/atletismo-01.webp", alt: "Atletismo", tag: ["Intercolegiales", "Atletismo"] },
+{ id: 57, src: "/images/intercolegiales/atletismo-02.webp", alt: "Atletismo", tag: ["Intercolegiales", "Atletismo"] },
+{ id: 58, src: "/images/intercolegiales/atletismo-03.webp", alt: "Atletismo", tag: ["Intercolegiales", "Atletismo"] },
+
+  // premiación igual 👇
+ 
+  { id: 23, src: "/images/intercolegiales/premiacion-01.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 24, src: "/images/intercolegiales/premiacion-02.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 25, src: "/images/intercolegiales/premiacion-03.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 26, src: "/images/intercolegiales/premiacion-04.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 27, src: "/images/intercolegiales/premiacion-05.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 28, src: "/images/intercolegiales/premiacion-06.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 29, src: "/images/intercolegiales/premiacion-07.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 30, src: "/images/intercolegiales/premiacion-08.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 31, src: "/images/intercolegiales/premiacion-09.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 32, src: "/images/intercolegiales/premiacion-10.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 33, src: "/images/intercolegiales/premiacion-11.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 34, src: "/images/intercolegiales/premiacion-12.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 35, src: "/images/intercolegiales/premiacion-13.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 36, src: "/images/intercolegiales/premiacion-14.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 37, src: "/images/intercolegiales/premiacion-15.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 38, src: "/images/intercolegiales/premiacion-16.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 39, src: "/images/intercolegiales/premiacion-17.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 40, src: "/images/intercolegiales/premiacion-18.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 41, src: "/images/intercolegiales/premiacion-19.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 42, src: "/images/intercolegiales/premiacion-20.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 43, src: "/images/intercolegiales/premiacion-21.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 44, src: "/images/intercolegiales/premiacion-22.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 45, src: "/images/intercolegiales/premiacion-23.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 46, src: "/images/intercolegiales/premiacion-24.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+{ id: 47, src: "/images/intercolegiales/premiacion-25.webp", alt: "Premiación", tag: ["Intercolegiales", "Premiación"] },
+
+
+];
+
+const TAG_ORDER = [
+  "Todas",
+  "Celebraciones",
+  "Intercolegiales",
+  "Bienvenida",
+  "Fútbol",
+  "Basquetbol",
+  "Voley",
+  "Ajedrez",
+   "Atletismo",
+  "Premiación",
 ];
 
 // Mini componente: imagen con lazy + “blur” placeholder
@@ -130,10 +205,15 @@ function Lightbox({ open, items, index, onClose, onPrev, onNext }) {
 }
 
 export default function Galeria() {
-  const tags = useMemo(() => {
-    const s = new Set(IMAGES.map((x) => x.tag));
-    return ["Todas", ...Array.from(s)];
-  }, []);
+const tags = useMemo(() => {
+  const set = new Set();
+
+  IMAGES.forEach((img) => {
+    img.tag.forEach((t) => set.add(t));
+  });
+
+  return TAG_ORDER.filter((t) => t === "Todas" || set.has(t));
+}, []);
 
   const [active, setActive] = useState("Todas");
   const [q, setQ] = useState("");
@@ -144,12 +224,14 @@ export default function Galeria() {
     const query = normalizeText(q.trim());
 
     return IMAGES.filter((x) => {
-      const okTag =
-        active === "Todas" ? true : normalizeText(x.tag) === normalizeText(active);
+const okTag =
+  active === "Todas"
+    ? true
+    : x.tag.some((t) => normalizeText(t) === normalizeText(active));
 
       if (!query) return okTag;
 
-      const hay = normalizeText(`${x.alt} ${x.tag}`);
+      const hay = normalizeText(`${x.alt} ${x.tag.join(" ")}`);
       const okQ = hay.includes(query);
 
       return okTag && okQ;
