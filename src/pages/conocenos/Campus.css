@@ -1164,3 +1164,56 @@ margin-right: 50px;
     margin-top: 5px;
   }
 }
+
+
+.camp_mapReportBtn-1{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 10px auto 0 auto; /* 👈 esto lo centra */
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+
+  background-color: #25D366;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Solo móvil */
+@media (max-width: 544px){
+
+  .camp_mobileReportWrap{
+    padding: 16px;
+  }
+
+  .camp_mapReportBtn{
+    display: block;
+    width: 90%;
+    text-align: center;
+    background: #2ecc71;
+    color: white;
+    font-weight: 700;
+    padding: 14px 16px;
+    border-radius: 18px;
+    text-decoration: none;
+  }
+  .camp_mapReportBtn-1{
+    display: none;
+  }
+}
+
+.camp_mapReportBtn{
+  display: block;
+  width: 90%;
+  margin: 0 auto; /* 👈 esto lo centra */
+  text-align: center;
+  background: #2ecc71;
+  color: white;
+  font-weight: 700;
+  padding: 14px 16px;
+  border-radius: 18px;
+  text-decoration: none;
+}

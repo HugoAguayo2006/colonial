@@ -17,7 +17,7 @@ function waLink(whatsapp, text = "Hola, me gustaría recibir información sobre 
 
 // ✅ Reporte de error del mapa (WhatsApp)
 const MAP_REPORT_WA = "523310392675"; // +52 3310392675
-const MAP_REPORT_TEXT = "Hay un error en el mapa de la pagina web del Instituto Nueva Galicia Tlajomulco";
+const MAP_REPORT_TEXT = "Hay un error en el mapa de la pagina web del Colegio Colonial";
 
 // ✅ helpers para coords
 function toNum(v) {
@@ -644,6 +644,7 @@ onLoad={(map) => {
       rel="noreferrer"
     >
       Hay un problema con la información mostrada en el mapa, presiona aquí
+
     </a>
   </div>
 )}
