@@ -708,3 +708,30 @@
 @media screen and (min-width: 535px) and (max-width: 540px) and (orientation: portrait){
   .cccal{ margin-top: -15px; }
 }
+
+
+@media (min-width: 340px) and (max-width: 395px) {
+  .cccal{
+    margin-top: -20px;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 600px) {
+    .cccal{
+    margin-top: -20px;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1280px) {
+    .cccal{
+    margin-top: -20px;
+  }
+}
+
+/* ROTADOS */
+
+@media (min-width: 660px) and (max-width: 740px) and (orientation: landscape) {
+      .cccal{
+    margin-top: -30px;
+  }
+}

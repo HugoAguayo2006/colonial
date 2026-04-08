@@ -56,7 +56,6 @@ export default function ClaveCentroTrabajo() {
         </section>
 
         <section className="cct-cards">
-          {/* Secundaria */}
           <div className="cct-card secundaria">
             <div className="cct-badge">Secundaria</div>
 
@@ -72,7 +71,6 @@ export default function ClaveCentroTrabajo() {
             </div>
           </div>
 
-          {/* Primaria */}
           <div className="cct-card primaria">
             <div className="cct-badge">Primaria</div>
 

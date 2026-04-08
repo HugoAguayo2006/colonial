@@ -1,61 +1,84 @@
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { NavLink } from "react-router-dom";
 import "./NotFound.css";
+
+const quickLinks = [
+  { label: "Volver al inicio", to: "/" },
+  { label: "Primaria", to: "/niveles/primaria" },
+  { label: "Secundaria", to: "/niveles/secundaria" },
+  { label: "Calendario", to: "/calendario" },
+  { label: "Contacto", to: "/contacto" },
+    { label: "Ver otros campus", to: "/conocenos/otros-campus" },
+];
 
 export default function NotFound() {
   return (
-    <main className="nf">
+    <>
       <Helmet>
-        <title>404 | Colegio Colonial</title>
+        <title>Página no encontrada | Colegio Colonial</title>
         <meta
           name="description"
-          content="La página que buscas no existe o fue movida. Regresa al inicio del Colegio Colonial."
+          content="La página que buscas no fue encontrada. Explora las secciones principales de Colegio Colonial."
         />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
-      <div className="nf__bg" aria-hidden="true">
-        <span className="nf__orb nf__orb--red" />
-        <span className="nf__orb nf__orb--blue" />
-        <span className="nf__grid" />
-      </div>
+      <main className="nf-page">
+        <section className="nf-wrap">
+          <div className="nf-glow nf-glow--1" />
+          <div className="nf-glow nf-glow--2" />
 
-      <section className="nf__card" role="alert" aria-live="polite">
-        <div className="nf__badge">
-          <span className="nf__dot" />
-          Colegio Colonial
-        </div>
+          <div className="nf-top">
+            <span className="nf-badge">Error 404</span>
+          </div>
 
-        <h1 className="nf__title">
-          Error <span className="nf__code">404</span>
-        </h1>
+          <div className="nf-grid">
+            <div className="nf-copy">
+              <p className="nf-kicker">Colegio Colonial</p>
 
-        <p className="nf__subtitle">
-          No encontramos esta página. Puede que el enlace esté mal escrito o que el
-          contenido haya cambiado de ubicación.
-        </p>
+              <h1 className="nf-title">
+                Esta página
+                <span> no existe</span>
+              </h1>
 
-        <div className="nf__actions">
-          <NavLink className="nf__btn nf__btn--primary" to="/">
-            Volver al inicio
-          </NavLink>
-          <NavLink className="nf__btn nf__btn--ghost" to="/contacto">
-            Contacto
-          </NavLink>
-        </div>
+              <p className="nf-text">
+                La sección que intentaste abrir no está disponible, cambió de
+                dirección o ya no existe. Puedes volver al inicio o entrar
+                directamente a las secciones más importantes del sitio.
+              </p>
 
-        <div className="nf__help">
-          <span className="nf__helpLabel">Tip:</span> revisa la URL o usa el menú para
-          navegar.
-        </div>
+              <div className="nf-actions">
+                {quickLinks.map((item, index) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className={`nf-btn ${
+                      index === 0 ? "nf-btn--primary" : "nf-btn--secondary"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
 
-        <div className="nf__footer">
-          <span className="nf__mini">Colegio Colonial • Sitio Oficial</span>
-          <span className="nf__sep">•</span>
-          <NavLink className="nf__miniLink" to="/niveles">
-            Ver niveles
-          </NavLink>
-        </div>
-      </section>
-    </main>
+              <div className="nf-help">
+                <strong>Tip:</strong> revisa la URL o usa el menú principal para
+                seguir navegando.
+              </div>
+            </div>
+
+            <div className="nf-visual" aria-hidden="true">
+              <div className="nf-visual-card">
+                <div className="nf-404">404</div>
+                <div className="nf-visual-line" />
+                <p className="nf-visual-text">
+                  Sigamos explorando juntos el sitio de Colegio Colonial.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

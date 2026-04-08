@@ -1,5 +1,3 @@
-
-
 body {
   font-family: 'Onest', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -8,41 +6,48 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #8B0000; /* MISMO AZUL DEL FOOTER */
-  overflow-x: hidden; /* 🔑 evita fugas laterales */
+  background-color: #8B0000;
+  overflow-x: hidden;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
 
-/* Se utiliza para que el NavBar fijo no tape las demas secciones*/
-
-/* Ajusta según tus secciones. Desktop: 72 + 48 = 120 */
+/* Se utiliza para que el NavBar fijo no tape las demas secciones */
 .app-main {
   padding-top: 180px;
+  min-height: calc(100vh - 80px);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.route-page {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
-  /* El bloque azul es más alto en móvil */
   .app-main {
     padding-top: 180px;
   }
 }
 
-/* 📱 MÓVIL HORIZONTAL (override del padding-top) */
 @media (max-width: 933px) and (orientation: landscape) {
   .app-main {
-    padding-top: 70px !important; /* altura real del navbar horizontal */
+    padding-top: 70px !important;
   }
 }
 
-
-html, body, #root {
-  min-height: 100%;
+/* ===== SOLO PARA NOT FOUND ===== */
+.app-main--auto {
+  min-height: auto;
 }
 
-.app-main {
-  min-height: calc(100vh - 80px); /* ajusta según altura del navbar */
+.route-page--auto {
+  width: 100%;
 }
-
 
 /* =========================================================
    📞 15. BOTÓN FLOTANTE WHATSAPP
@@ -69,57 +74,33 @@ html, body, #root {
   height: 20px;
 }
 
-
-/* Evita scroll horizontal por el slide */
-html, body {
-  overflow-x: hidden;
-}
-
-/* Tu contenedor normal */
-.app-main {
-  position: relative;
-  overflow-x: hidden; /* clave para que no se vea el “arrastre” */
-}
-
-/* Página animada (ya NO fixed) */
-.route-page {
-  width: 100%;
-}
-
-
-html, body { overflow-x: hidden; }
-.app-main { position: relative; overflow-x: hidden; }
-.route-page { width: 100%; }
-
-/*
-html,
-body {
-  background-color: #1f2a85;  o #1f2a85 si quieres azul 
-}*/
-
-
-
 .separator-blue {
   width: 100%;
-  height: 10px;               /* grosor de la línea */
-  background-color: #2F3E52; /* azul institucional */
+  height: 10px;
+  background-color: #2F3E52;
 }
 
 .separator-blue-1 {
   width: 100%;
-  height: 5px;               /* grosor de la línea */
-  background-color: #2F3E52; /* azul institucional */
+  height: 5px;
+  background-color: #2F3E52;
 }
 
 .separator-red {
   width: 100%;
-  height: 10px;               /* grosor de la línea */
-  background-color: #8B0000; /* rojo institucional */
+  height: 10px;
+  background-color: #8B0000;
 }
 
 .separator-white {
   width: 100%;
-  height: 10px;               /* grosor de la línea */
-  background-color: #ffffff; /* rojo institucional */
+  height: 10px;
+  background-color: #ffffff;
 }
 
+.app-main:has(.nf-page),
+.app-main:has(.cccal),
+.app-main:has(.cct-page),
+.app-main:has(.os) {
+  min-height: auto;
+}
