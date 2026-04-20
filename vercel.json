@@ -5,6 +5,78 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+
+    {
+      "source": "/actividadesextracurriculares",
+      "destination": "/vida-colonial/extracurriculares",
+      "permanent": true
+    },
+    {
+      "source": "/inscripcionesprimaria",
+      "destination": "/inscripciones/primaria",
+      "permanent": true
+    },
+    {
+      "source": "/primaria",
+      "destination": "/niveles/primaria",
+      "permanent": true
+    },
+    {
+      "source": "/nosotros",
+      "destination": "/conocenos",
+      "permanent": true
+    },
+    {
+      "source": "/inscripcionessecundaria",
+      "destination": "/inscripciones/secundaria",
+      "permanent": true
+    },
+    {
+      "source": "/otrosservicios",
+      "destination": "/vida-colonial/otros-servicios",
+      "permanent": true
+    },
+    {
+      "source": "/eventos",
+      "destination": "/vida-colonial/eventos",
+      "permanent": true
+    },
+    {
+      "source": "/galeria",
+      "destination": "/vida-colonial/galeria",
+      "permanent": true
+    },
+    {
+      "source": "/secundaria",
+      "destination": "/niveles/secundaria",
+      "permanent": true
+    },
+
+    {
+      "source": "/book-online",
+      "destination": "/contacto",
+      "permanent": true
+    },
+    {
+      "source": "/instalaciones",
+      "destination": "/conocenos",
+      "permanent": true
+    },
+    {
+      "source": "/seguridad",
+      "destination": "/conocenos",
+      "permanent": true
+    },
+    {
+      "source": "/service-page/junta-con-las-directoras",
+      "destination": "/contacto",
+      "permanent": true
+    },
+    {
+      "source": "/service-page/recorrido-presencial-por-la-escuela",
+      "destination": "/contacto",
+      "permanent": true
     }
   ],
   "rewrites": [

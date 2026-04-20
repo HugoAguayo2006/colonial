@@ -1,5 +1,17 @@
 User-agent: *
+Disallow: /*?*
+Disallow: /foro/
+Disallow: /products/
+Disallow: /shop/
+Disallow: /contents/
+Disallow: /reserve/
+Disallow: /toyu/
+Disallow: /wp-
+Disallow: /cgi-
+Disallow: /*.php$
+Disallow: /*.html?
+
 Allow: /
 
 # Sitemap
-Sitemap: https://colegiocolonial.edu.mx/sitemap.xml
+Sitemap: https://www.colegiocolonial.edu.mx/sitemap.xml
