@@ -5,6 +5,7 @@ export default function MisionVision() {
   return (
     <main className="mv2">
       <Helmet>
+        <html lang="es-MX" />
         <title>Misión y Visión | Colegio Colonial Querétaro</title>
         <meta
           name="description"
@@ -14,6 +15,7 @@ export default function MisionVision() {
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/conocenos/mision-vision"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -31,6 +33,16 @@ export default function MisionVision() {
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/conocenos/mision-vision"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/jeanne.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Misión y visión del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -42,6 +54,12 @@ export default function MisionVision() {
           name="twitter:description"
           content="Misión y visión del Colegio Colonial en Querétaro: valores, propósito y formación integral con familias y docentes."
         />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/jeanne.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO */}

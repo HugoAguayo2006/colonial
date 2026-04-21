@@ -18,6 +18,7 @@ export default function Valores() {
   return (
     <main className="val">
       <Helmet>
+        <html lang="es-MX" />
         <title>Valores del Colegio Colonial en Querétaro</title>
         <meta
           name="description"
@@ -27,6 +28,7 @@ export default function Valores() {
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/conocenos/valores"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -44,6 +46,16 @@ export default function Valores() {
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/conocenos/valores"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img2.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Valores institucionales del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -55,6 +67,12 @@ export default function Valores() {
           name="twitter:description"
           content="Educación con valores en Querétaro: formación humana, académica y espiritual, centrada en la persona."
         />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img2.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO */}

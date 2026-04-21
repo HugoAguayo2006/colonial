@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CAMPUSES, FEATURED_CAMPUS_IDS } from "../../data/c-2";
 import "./Campus.css";
 import { GoogleMap, Marker, OverlayView, useJsApiLoader } from "@react-google-maps/api";
+import { Helmet } from "react-helmet-async";
 
 const MAP_DEFAULT_CENTER = { lat: 20.63, lng: -103.42 };
 const MAP_DEFAULT_ZOOM = 4;
@@ -268,6 +269,55 @@ useEffect(() => {
 
   return (
     <main className="camp_page camp_pagePad">
+      <Helmet>
+        <html lang="es-MX" />
+        <title>Otros Campus | Colegio Colonial Querétaro</title>
+        <meta
+          name="description"
+          content="Conoce otros campus y colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento: mapa interactivo, filtros por país y estado, datos de contacto y ubicación."
+        />
+        <link
+          rel="canonical"
+          href="https://www.colegiocolonial.edu.mx/conocenos/otros-campus"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:title" content="Otros Campus | Colegio Colonial Querétaro" />
+        <meta
+          property="og:description"
+          content="Mapa interactivo de colegios en México y el mundo, con filtros por país y estado/región, ubicaciones, WhatsApp, web y redes sociales."
+        />
+        <meta
+          property="og:url"
+          content="https://www.colegiocolonial.edu.mx/conocenos/otros-campus"
+        />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img3.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Otros campus y colegios vinculados al Colegio Colonial"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Otros Campus | Colegio Colonial Querétaro" />
+        <meta
+          name="twitter:description"
+          content="Explora otros campus con mapa interactivo, filtros por país y estado/región, ubicación y contacto."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img3.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
+      </Helmet>
       <div className="camp_container">
         <header className="camp_head">
           <div className="camp_headInner">

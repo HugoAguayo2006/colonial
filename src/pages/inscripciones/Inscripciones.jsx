@@ -7,15 +7,17 @@ export default function Inscripciones() {
   return (
     <main className="insc2">
       <Helmet>
+        <html lang="es-MX" />
         <title>Inscripciones | Colegio Colonial Querétaro</title>
         <meta
           name="description"
-          content="Inscripciones Colegio Colonial en Querétaro. Admisiones para Primaria y Secundaria: requisitos, pasos y cupo. Solicita informes y asegura tu lugar."
+          content="Consulta inscripciones del Colegio Colonial en Querétaro para primaria y secundaria: requisitos, pasos de admisión, fechas, costos y contacto para informes."
         />
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/inscripciones"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -25,13 +27,24 @@ export default function Inscripciones() {
         />
         <meta
           property="og:description"
-          content="Admisiones en Querétaro para Primaria y Secundaria. Consulta requisitos y pasos de inscripción del Colegio Colonial y solicita informes."
+          content="Admisiones para primaria y secundaria en Querétaro: requisitos, costos, pasos de inscripción y acompañamiento cercano."
         />
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/inscripciones"
         />
         <meta property="og:site_name" content="Colegio Colonial" />
+        <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-3.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Inscripciones del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -41,8 +54,14 @@ export default function Inscripciones() {
         />
         <meta
           name="twitter:description"
-          content="Inscripciones en Querétaro: Primaria y Secundaria. Requisitos, pasos y cupo. Solicita informes del Colegio Colonial."
+          content="Inscripciones en Querétaro para primaria y secundaria: requisitos, admisión, costos y contacto del Colegio Colonial."
         />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-3.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO */}

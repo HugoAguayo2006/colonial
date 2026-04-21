@@ -5,16 +5,18 @@ export default function ClaveCentroTrabajo() {
   return (
     <>
       <Helmet>
+        <html lang="es-MX" />
         <title>Clave del Centro de Trabajo | Colegio Colonial</title>
         <meta
           name="description"
-          content="Consulta la Clave de Centro de Trabajo (CCT) del Colegio Colonial en Querétaro, México. Información oficial registrada ante la Secretaría de Educación."
+          content="Consulta las Claves de Centro de Trabajo del Colegio Colonial en Querétaro para primaria y secundaria: 22PPR041N y 22PESO110M, información oficial institucional."
         />
 
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/conocenos/clave-de-centro-de-trabajo"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Colegio Colonial" />
@@ -24,22 +26,36 @@ export default function ClaveCentroTrabajo() {
         />
         <meta
           property="og:description"
-          content="Consulta la Clave de Centro de Trabajo (CCT) del Colegio Colonial en Querétaro, México. Información oficial registrada ante la Secretaría de Educación."
+          content="Claves oficiales CCT del Colegio Colonial en Querétaro para primaria y secundaria: 22PPR041N y 22PESO110M."
         />
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/conocenos/clave-de-centro-de-trabajo"
         />
         <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/logo-escudo.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Clave de Centro de Trabajo del Colegio Colonial"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
           content="Clave del Centro de Trabajo | Colegio Colonial"
         />
         <meta
           name="twitter:description"
-          content="Consulta la Clave de Centro de Trabajo (CCT) del Colegio Colonial en Querétaro, México. Información oficial registrada ante la Secretaría de Educación."
+          content="Consulta las claves CCT de primaria y secundaria del Colegio Colonial en Querétaro."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/logo-escudo.webp"
         />
 
         <meta name="geo.region" content="MX-QUE" />

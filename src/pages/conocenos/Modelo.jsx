@@ -6,6 +6,7 @@ export default function ModeloEducativo() {
   return (
     <main className="modelo">
       <Helmet>
+        <html lang="es-MX" />
         <title>Modelo Educativo en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
@@ -16,6 +17,7 @@ export default function ModeloEducativo() {
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/conocenos/modelo-educativo"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -33,6 +35,16 @@ export default function ModeloEducativo() {
         />
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta property="og:locale" content="es_MX" />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img3.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Modelo educativo del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -44,6 +56,12 @@ export default function ModeloEducativo() {
           name="twitter:description"
           content="Formación integral en primaria y secundaria en Querétaro: valores, excelencia académica, inglés y acompañamiento."
         />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img3.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO */}

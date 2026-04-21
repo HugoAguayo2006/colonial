@@ -51,6 +51,7 @@ export default function VidaColonial() {
   return (
     <main className="vc">
       <Helmet>
+        <html lang="es-MX" />
         <title>Vida Colonial Querétaro | Actividades y Eventos</title>
         <meta
           name="description"
@@ -60,6 +61,7 @@ export default function VidaColonial() {
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/vida-colonial"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:locale" content="es_MX" />
@@ -77,9 +79,19 @@ export default function VidaColonial() {
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/vida-colonial"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/familia-02.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Vida escolar del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
           content="Vida Colonial en Querétaro | Actividades y Eventos"
@@ -88,6 +100,12 @@ export default function VidaColonial() {
           name="twitter:description"
           content="Vida estudiantil, actividades y eventos del Colegio Colonial en Querétaro. Conoce galería, servicios y formación integral."
         />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/familia-02.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO */}

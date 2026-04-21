@@ -6,13 +6,15 @@ export default function Niveles() {
   return (
     <main className="nv_page">
       <Helmet>
+        <html lang="es-MX" />
         <title>Niveles Educativos | Primaria y Secundaria en Querétaro</title>
         <meta
           name="description"
-          content="Conoce los niveles del Colegio Colonial en Querétaro: Primaria y Secundaria. Compara enfoques y solicita informes para elegir la mejor opción."
+          content="Conoce los niveles educativos del Colegio Colonial en Querétaro: escuela primaria y escuela secundaria con formación académica, fe, valores y acompañamiento cercano."
         />
 
         <link rel="canonical" href="https://www.colegiocolonial.edu.mx/niveles" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -24,12 +26,22 @@ export default function Niveles() {
         />
         <meta
           property="og:description"
-          content="Primaria y Secundaria en el Colegio Colonial (Querétaro). Revisa el enfoque de cada nivel y solicita informes para inscripciones."
+          content="Primaria y secundaria en Querétaro con formación humana, fe, acompañamiento cercano, valores y exigencia académica."
         />
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/niveles"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-1.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Niveles educativos del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -39,7 +51,11 @@ export default function Niveles() {
         />
         <meta
           name="twitter:description"
-          content="Oferta académica del Colegio Colonial en Querétaro: Primaria y Secundaria. Comparación rápida y contacto para informes."
+          content="Oferta académica del Colegio Colonial: escuela primaria y secundaria en Querétaro con valore, fe y formación integral."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-1.webp"
         />
 
         {/* Refuerzo local */}

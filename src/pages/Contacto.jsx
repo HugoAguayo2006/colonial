@@ -38,6 +38,7 @@ export default function ContactoPage() {
   return (
     <div className="ct_page">
       <Helmet>
+        <html lang="es-MX" />
         {/* Title (≤ ~60 chars) */}
         <title>Contacto Colegio Colonial Querétaro | Teléfono y Dirección</title>
 
@@ -51,7 +52,7 @@ export default function ContactoPage() {
         <link rel="canonical" href="https://www.colegiocolonial.edu.mx/contacto" />
 
         {/* Robots */}
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -64,12 +65,13 @@ export default function ContactoPage() {
         />
         <meta property="og:url" content="https://www.colegiocolonial.edu.mx/contacto" />
 
-        {/* ⚠️ Ajusta la ruta si tu imagen OG es diferente */}
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/og/og-contacto.jpg"
+          content="https://www.colegiocolonial.edu.mx/images/logo-escudo.webp"
         />
         <meta property="og:image:alt" content="Contacto Colegio Colonial Querétaro" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -80,8 +82,10 @@ export default function ContactoPage() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/og/og-contacto.jpg"
+          content="https://www.colegiocolonial.edu.mx/images/logo-escudo.webp"
         />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO ROJO INSTITUCIONAL */}

@@ -49,16 +49,18 @@ export default function Conocenos() {
   return (
     <main className="cc-page">
       <Helmet>
+        <html lang="es-MX" />
         <title>Conócenos | Colegio Colonial Querétaro</title>
         <meta
           name="description"
-          content="Conoce quiénes somos en Colegio Colonial Querétaro: historia, modelo educativo, misión, visión y valores. Descubre nuestra comunidad escolar."
+          content="Conoce el Colegio Colonial en Querétaro: modelo educativo, misión, visión, valores, campus y datos institucionales de nuestra comunidad escolar."
         />
 
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/conocenos"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -70,7 +72,7 @@ export default function Conocenos() {
         />
         <meta
           property="og:description"
-          content="Conoce quiénes somos en Colegio Colonial Querétaro: historia, modelo educativo, misión, visión y valores. Descubre nuestra comunidad escolar."
+          content="Modelo educativo, misión, visión, valores, otros campus y datos institucionales del Colegio Colonial en Querétaro."
         />
         <meta
           property="og:url"
@@ -78,12 +80,14 @@ export default function Conocenos() {
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/og/conocenos.jpg"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img1.webp"
         />
         <meta
           property="og:image:alt"
           content="Conócenos - Colegio Colonial en Querétaro"
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -93,12 +97,14 @@ export default function Conocenos() {
         />
         <meta
           name="twitter:description"
-          content="Conoce quiénes somos en Colegio Colonial Querétaro: historia, modelo educativo, misión, visión y valores. Descubre nuestra comunidad escolar."
+          content="Conoce modelo educativo, misión, visión, valores y comunidad escolar del Colegio Colonial en Querétaro."
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/og/conocenos.jpg"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img1.webp"
         />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO */}
