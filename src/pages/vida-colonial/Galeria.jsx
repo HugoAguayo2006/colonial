@@ -351,37 +351,55 @@ const okTag =
   return (
     <>
       <Helmet>
-        <title>Galería Colegio Colonial | Fotos y Vida Escolar</title>
+        <html lang="es-MX" />
+        <title>Galería del Colegio Colonial | Fotos y Eventos Escolares</title>
         <meta
           name="description"
-          content="Explora la Galería del Colegio Colonial en Querétaro: fotos de campus, aulas, eventos y actividades de primaria y secundaria. Momentos reales."
+          content="Explora la galería del Colegio Colonial en Querétaro: fotos del día a día, eventos escolares, celebraciones, Intercolegiales y actividades de primaria y secundaria con filtros por evento."
         />
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/vida-colonial/galeria"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:locale" content="es_MX" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Colegio Colonial" />
-        <meta property="og:title" content="Galería Colegio Colonial | Vida Colonial" />
+        <meta property="og:title" content="Galería del Colegio Colonial | Vida Escolar" />
         <meta
           property="og:description"
-          content="Fotos y momentos del Colegio Colonial en Querétaro: campus, aulas, eventos y actividades escolares de primaria y secundaria."
+          content="Fotos de eventos, celebraciones, Intercolegiales, Semana Cultural, Día de Muertos, Posada Navideña, Día del Estudiante y Graduaciones con filtros por evento."
         />
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/vida-colonial/galeria"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/celebraciones-01.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Galería de eventos escolares del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Galería Colegio Colonial | Vida Colonial" />
+        <meta name="twitter:title" content="Galería del Colegio Colonial | Vida Escolar" />
         <meta
           name="twitter:description"
-          content="Explora fotos del Colegio Colonial en Querétaro: campus, aulas, eventos y actividades escolares de primaria y secundaria."
+          content="Consulta fotos del Colegio Colonial en Querétaro y filtra por eventos escolares, celebraciones, Intercolegiales y actividades."
         />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/celebraciones-01.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       <section className="gal">

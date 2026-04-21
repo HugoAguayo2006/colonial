@@ -226,24 +226,25 @@ export default function Calendario() {
   return (
     <main className="cccal">
       <Helmet>
-        <title>Calendario Escolar Querétaro | Colegio Colonial</title>
+        <html lang="es-MX" />
+        <title>Calendario Escolar Interactivo | Colegio Colonial Querétaro</title>
         <meta
           name="description"
-          content="Consulta el calendario escolar del Colegio Colonial en Querétaro: fechas importantes, eventos y actividades de Primaria y Secundaria."
+          content="Consulta el calendario escolar interactivo del Colegio Colonial en Querétaro: fechas importantes, días festivos, reuniones, evaluaciones, eventos, actividades pastorales y filtros por niveles escolares."
         />
         <link rel="canonical" href="https://www.colegiocolonial.edu.mx/calendario" />
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta property="og:locale" content="es_MX" />
         <meta
           property="og:title"
-          content="Calendario Escolar Querétaro | Colegio Colonial"
+          content="Calendario Escolar Interactivo | Colegio Colonial Querétaro"
         />
         <meta
           property="og:description"
-          content="Fechas importantes, eventos y calendario escolar del Colegio Colonial en Querétaro para Primaria y Secundaria."
+          content="Mantente informado con fechas importantes, evaluaciones, eventos especiales y actividades pastorales; filtra por primaria y secundaria."
         />
         <meta
           property="og:url"
@@ -251,26 +252,30 @@ export default function Calendario() {
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/og/calendario.jpg"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/navidad-04.webp"
         />
         <meta
           property="og:image:alt"
-          content="Calendario escolar del Colegio Colonial en Querétaro"
+          content="Calendario escolar interactivo del Colegio Colonial en Querétaro"
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Calendario Escolar Querétaro | Colegio Colonial"
+          content="Calendario Escolar Interactivo | Colegio Colonial Querétaro"
         />
         <meta
           name="twitter:description"
-          content="Consulta fechas importantes y eventos escolares del Colegio Colonial en Querétaro. Calendario de Primaria y Secundaria."
+          content="Consulta fechas escolares, eventos y actividades pastorales del Colegio Colonial, con filtros interactivos por niveles escolares."
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/og/calendario.jpg"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/navidad-04.webp"
         />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       <header className="cccal__header">

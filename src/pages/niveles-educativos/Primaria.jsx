@@ -75,15 +75,17 @@ export default function Primaria() {
   return (
     <main className="prim">
       <Helmet>
-        <title>Primaria en Querétaro | Colegio Colonial</title>
+        <html lang="es-MX" />
+        <title>Escuela Primaria en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
-          content="Primaria privada en Querétaro con acompañamiento cercano y formación integral. Conoce horarios, actividades y solicita informes en Colegio Colonial."
+          content="La Primaria del Colegio Colonial ofrece escuela primaria en Querétaro con formación académica y en valores, fe, atención personalizada y un ambiente seguro para el desarrollo integral."
         />
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/niveles/primaria"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:locale" content="es_MX" />
@@ -91,11 +93,11 @@ export default function Primaria() {
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta
           property="og:title"
-          content="Primaria en Querétaro | Colegio Colonial"
+          content="Escuela Primaria en Querétaro | Colegio Colonial"
         />
         <meta
           property="og:description"
-          content="Primaria privada en Querétaro con acompañamiento cercano y formación integral. Conoce horarios, actividades y solicita informes en Colegio Colonial."
+          content="Formación académica y en valores, fe, atención personalizada y ambiente seguro para el desarrollo integral de cada alumno."
         />
         <meta
           property="og:url"
@@ -105,21 +107,29 @@ export default function Primaria() {
           property="og:image"
           content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
         />
+        <meta
+          property="og:image:alt"
+          content="Escuela primaria del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Primaria en Querétaro | Colegio Colonial"
+          content="Escuela Primaria en Querétaro | Colegio Colonial"
         />
         <meta
           name="twitter:description"
-          content="Primaria privada en Querétaro con acompañamiento cercano y formación integral. Conoce horarios, actividades y solicita informes en Colegio Colonial."
+          content="Primaria del Colegio Colonial: formación académica, valores, atención personalizada y ambiente seguro en Querétaro."
         />
         <meta
           name="twitter:image"
           content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
         />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* =========================

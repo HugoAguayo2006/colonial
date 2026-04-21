@@ -185,17 +185,18 @@ export default function InscripcionesPrimaria() {
   return (
     <>
       <Helmet>
+        <html lang="es-MX" />
         <title>Inscripciones Primaria en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
-          content="Inscribe a tu hijo en Primaria del Colegio Colonial en Querétaro. Conoce requisitos, proceso de admisión y fechas. Cupo limitado. Solicita informes."
+          content="Encuentra información para inscribirte a primaria en el Colegio Colonial en Querétaro: requisitos, fechas importantes, proceso de admisión y datos de contacto."
         />
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/inscripciones/primaria"
         />
 
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="googlebot" content="index,follow" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
 
@@ -208,12 +209,22 @@ export default function InscripcionesPrimaria() {
         />
         <meta
           property="og:description"
-          content="Conoce el proceso de admisión y requisitos de Primaria en el Colegio Colonial (Querétaro). Inscripciones abiertas de febrero a agosto. Cupo limitado."
+          content="Requisitos, fechas importantes, proceso de admisión y contacto para formar parte de la primaria del Colegio Colonial en Querétaro."
         />
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/inscripciones/primaria"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Inscripciones a primaria en el Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -222,7 +233,11 @@ export default function InscripcionesPrimaria() {
         />
         <meta
           name="twitter:description"
-          content="Inscripciones Primaria (Querétaro): requisitos, admisión, fechas y cupo. Solicita informes para iniciar tu proceso."
+          content="Inscríbete a primaria en el Colegio Colonial: requisitos, fechas, admisión y contacto en Querétaro. Forma parte de nuestra comunidad."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
         />
 
         <meta name="geo.region" content="MX-QUE" />

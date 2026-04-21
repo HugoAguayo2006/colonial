@@ -50,17 +50,19 @@ export default function Eventos() {
   return (
     <main className="ev" id="evTop">
       <Helmet>
-        <title>Eventos escolares en Querétaro | Colegio Colonial</title>
+        <html lang="es-MX" />
+        <title>Eventos Escolares en Querétaro | Colegio Colonial</title>
 
         <meta
           name="description"
-          content="Consulta los eventos del Colegio Colonial en Querétaro: festivales, actividades académicas y deportivas para Primaria y Secundaria. Vive la Vida Colonial."
+          content="En el Colegio Colonial celebramos eventos escolares en Querétaro que fortalecen la comunidad, los valores cristianos y la experiencia educativa de alumnos de primaria y secundaria."
         />
 
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/vida-colonial/eventos"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -69,31 +71,47 @@ export default function Eventos() {
 
         <meta
           property="og:title"
-          content="Eventos escolares en Querétaro | Colegio Colonial"
+          content="Eventos Escolares en Querétaro | Colegio Colonial"
         />
 
         <meta
           property="og:description"
-          content="Festivales, convivencias y eventos escolares del Colegio Colonial en Querétaro."
+          content="Festivales, convivencias, celebraciones litúrgicas y actividades cívicas y culturales del Colegio Colonial en Querétaro."
         />
 
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/vida-colonial/eventos"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/celebraciones-02.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Eventos escolares del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta
           name="twitter:title"
-          content="Eventos escolares en Querétaro | Colegio Colonial"
+          content="Eventos Escolares en Querétaro | Colegio Colonial"
         />
 
         <meta
           name="twitter:description"
-          content="Descubre próximos eventos y festivales del Colegio Colonial en Querétaro."
+          content="Eventos del Colegio Colonial: festivales, convivencias y celebraciones que fortalecen valores cristianos en Querétaro."
         />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/celebraciones-02.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO */}

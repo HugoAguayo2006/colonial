@@ -5,16 +5,18 @@ export default function OtrosServicios() {
   return (
     <main className="os">
       <Helmet>
-        <title>Otros Servicios Escolares | Colegio Colonial Qro</title>
+        <html lang="es-MX" />
+        <title>Otros Servicios Escolares | Colegio Colonial Querétaro</title>
         <meta
           name="description"
-          content="Conoce los servicios del Colegio Colonial en Querétaro: apoyo a familias, opciones para alumnos y atención diaria en primaria y secundaria."
+          content="En el Colegio Colonial ofrecemos servicios complementarios en Querétaro como cafetería, viajes educativos y actividades recreativas que enriquecen la formación integral de nuestros alumnos."
         />
 
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/vida-colonial/otros-servicios"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -24,12 +26,22 @@ export default function OtrosServicios() {
         />
         <meta
           property="og:description"
-          content="Servicios y apoyo para familias y alumnos en Querétaro: atención y acompañamiento diario en primaria y secundaria del Colegio Colonial."
+          content="Cafetería, viajes educativos y actividades recreativas que complementan la vida escolar de primaria y secundaria en Colegio Colonial."
         />
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/vida-colonial/otros-servicios"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/familia-01.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Servicios complementarios del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta property="og:locale" content="es_MX" />
 
@@ -41,8 +53,14 @@ export default function OtrosServicios() {
         />
         <meta
           name="twitter:description"
-          content="Descubre los servicios escolares del Colegio Colonial en Querétaro: apoyo a familias, atención a alumnos y acompañamiento en primaria y secundaria."
+          content="Servicios complementarios del Colegio Colonial: cafetería, viajes educativos y actividades recreativas en Querétaro."
         />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/familia-01.webp"
+        />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* HERO */}

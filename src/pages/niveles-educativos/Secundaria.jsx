@@ -73,15 +73,17 @@ export default function Secundaria() {
   return (
     <main className="prim">
       <Helmet>
-        <title>Secundaria en Querétaro | Colegio Colonial</title>
+        <html lang="es-MX" />
+        <title>Escuela Secundaria en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
-          content="Secundaria privada en Querétaro con enfoque académico exigente y formación humana. Conoce horarios, talleres y solicita informes en Colegio Colonial."
+          content="La Secundaria del Colegio Colonial ofrece escuela secundaria en Querétaro con formación académica y en valores, fe, preparando a los jóvenes para su desarrollo integral y futuro éxito."
         />
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/niveles/secundaria"
         />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
         <meta property="og:locale" content="es_MX" />
@@ -89,11 +91,11 @@ export default function Secundaria() {
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta
           property="og:title"
-          content="Secundaria en Querétaro | Colegio Colonial"
+          content="Escuela Secundaria en Querétaro | Colegio Colonial"
         />
         <meta
           property="og:description"
-          content="Secundaria privada en Querétaro con enfoque académico exigente y formación humana. Conoce horarios, talleres y solicita informes en Colegio Colonial."
+          content="Formación académica y en valores para jóvenes, fe, con enfoque integral y preparación para su futuro académico y personal."
         />
         <meta
           property="og:url"
@@ -103,21 +105,29 @@ export default function Secundaria() {
           property="og:image"
           content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
         />
+        <meta
+          property="og:image:alt"
+          content="Escuela secundaria del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Secundaria en Querétaro | Colegio Colonial"
+          content="Escuela Secundaria en Querétaro | Colegio Colonial"
         />
         <meta
           name="twitter:description"
-          content="Secundaria privada en Querétaro con enfoque académico exigente y formación humana. Conoce horarios, talleres y solicita informes en Colegio Colonial."
+          content="Secundaria del Colegio Colonial: formación académica, valores y desarrollo integral para jóvenes en Querétaro."
         />
         <meta
           name="twitter:image"
           content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
         />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* =========================

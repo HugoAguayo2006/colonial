@@ -185,17 +185,18 @@ export default function InscripcionesSecundaria() {
   return (
     <>
       <Helmet>
+        <html lang="es-MX" />
         <title>Inscripciones Secundaria en Querétaro | Colegio Colonial</title>
         <meta
           name="description"
-          content="Inscripciones Secundaria en el Colegio Colonial (Querétaro). Requisitos, proceso de admisión, costos y fechas. Cupo limitado. Solicita informes."
+          content="Encuentra información para inscribirte a la escuela secundaria en Querétaro del Colegio Colonial: requisitos, fechas importantes, proceso de admisión y datos de contacto."
         />
         <link
           rel="canonical"
           href="https://www.colegiocolonial.edu.mx/inscripciones/secundaria"
         />
 
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="googlebot" content="index,follow" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
 
@@ -208,12 +209,22 @@ export default function InscripcionesSecundaria() {
         />
         <meta
           property="og:description"
-          content="Conoce el proceso de admisión y requisitos de Secundaria en el Colegio Colonial (Querétaro). Inscripciones de febrero a agosto. Cupo limitado."
+          content="Requisitos, fechas importantes, proceso de admisión y contacto para formar parte de la secundaria del Colegio Colonial en Querétaro."
         />
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/inscripciones/secundaria"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Inscripciones a secundaria en el Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -222,7 +233,11 @@ export default function InscripcionesSecundaria() {
         />
         <meta
           name="twitter:description"
-          content="Secundaria (Querétaro): requisitos, admisión, costos y fechas. Solicita informes para iniciar tu proceso."
+          content="Inscríbete a secundaria en el Colegio Colonial: admisión, requisitos, fechas y contacto en Querétaro."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
         />
 
         <meta name="geo.region" content="MX-QUE" />

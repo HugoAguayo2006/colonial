@@ -24,11 +24,12 @@ export default function Actividades() {
   return (
     <main className="exa">
       <Helmet>
-        <title>Extracurriculares en Querétaro | Colegio Colonial</title>
+        <html lang="es-MX" />
+        <title>Actividades Extracurriculares en Querétaro | Colegio Colonial</title>
 
         <meta
           name="description"
-          content="Conoce las extracurriculares del Colegio Colonial en Querétaro: deportes y talleres para primaria y secundaria, fortaleciendo la formación integral."
+          content="Descubre las actividades extracurriculares del Colegio Colonial en Querétaro, diseñadas para potenciar talento, creatividad y trabajo en equipo en primaria y secundaria."
         />
 
         <link
@@ -40,16 +41,26 @@ export default function Actividades() {
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta
           property="og:title"
-          content="Extracurriculares en Querétaro | Colegio Colonial"
+          content="Actividades Extracurriculares en Querétaro | Colegio Colonial"
         />
         <meta
           property="og:description"
-          content="Deportes y talleres en Querétaro para primaria y secundaria. Extracurriculares que impulsan habilidades, convivencia y formación integral."
+          content="Experiencias artísticas, deportivas y culturales que complementan la formación académica de estudiantes del Colegio Colonial."
         />
         <meta
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/vida-colonial/extracurriculares"
         />
+        <meta
+          property="og:image"
+          content="https://www.colegiocolonial.edu.mx/images/extras/futbol-1.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Actividades extracurriculares del Colegio Colonial en Querétaro"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
 
@@ -57,15 +68,21 @@ export default function Actividades() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Extracurriculares en Querétaro | Colegio Colonial"
+          content="Actividades Extracurriculares en Querétaro | Colegio Colonial"
         />
         <meta
           name="twitter:description"
-          content="Actividades extracurriculares en Querétaro: deportes y talleres para primaria y secundaria, con enfoque en formación integral."
+          content="Actividades extracurriculares en Querétaro para potenciar talento, creatividad y trabajo en equipo en primaria y secundaria."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.colegiocolonial.edu.mx/images/extras/futbol-1.webp"
         />
 
         {/* Robots */}
-        <meta name="robots" content="index,follow,max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       <header className="exa__hero">

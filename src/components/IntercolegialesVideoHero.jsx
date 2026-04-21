@@ -3,7 +3,7 @@ import "./IntercolegialesVideoHero.css";
 
 export default function IntercolegialesVideoHero({
   title = "Intercolegiales 2026",
-  subtitle = "Invitamos a los colegios de la orden a vivir una jornada de competencia, convivencia y espíritu deportivo.",
+  subtitle = "Invitamos a los colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento a vivir una jornada de competencia, convivencia y espíritu deportivo.",
   youtubeId = "VNn2FhvNGTI",
   start = 0, // lo dejamos por compatibilidad, pero lo vamos a ignorar si quieres forzar 0
   logoSrc = "/logo.svg",

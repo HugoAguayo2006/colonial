@@ -90,10 +90,10 @@ export default function Inicio() {
       ========================== */}
       <Helmet>
         <html lang="es-MX" />
-        <title>Colegio Colonial Querétaro</title>
+        <title>Colegio Colonial Querétaro | Primaria y Secundaria</title>
         <meta
           name="description"
-          content="Colegio Colonial en Querétaro: primaria y secundaria privada con formación integral, acompañamiento y excelencia académica. Conoce nuestras instalaciones."
+          content="El Colegio Colonial ofrece escuela primaria y secundaria en Querétaro, con valores, calidad académica y colegiaturas accesibles. Somos una institución católica de la Orden del Verbo Encarnado y del Santísimo Sacramento."
         />
         <link rel="canonical" href="https://www.colegiocolonial.edu.mx/" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -104,16 +104,20 @@ export default function Inicio() {
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta
           property="og:title"
-          content="Colegio Colonial en Querétaro | Primaria y Secundaria"
+          content="Colegio Colonial Querétaro | Escuela Primaria y Secundaria"
         />
         <meta
           property="og:description"
-          content="Primaria y secundaria privada en Querétaro con formación integral, comunidad y excelencia académica. Agenda una visita y conoce el colegio."
+          content="Colegio Colonial en Querétaro: escuela primaria y escuela secundaria con valores, calidad académica, formación católica y colegiaturas accesibles."
         />
         <meta property="og:url" content="https://www.colegiocolonial.edu.mx/" />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-1.webp"
+          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-3.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Colegio Colonial en Querétaro, escuela primaria y secundaria"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -126,12 +130,14 @@ export default function Inicio() {
         />
         <meta
           name="twitter:description"
-          content="Escuela privada en Querétaro: primaria y secundaria con acompañamiento, valores y alto nivel académico. Conoce el Colegio Colonial."
+          content="Escuela primaria y secundaria en Querétaro con valores, formación integral, calidad académica y colegiaturas accesibles."
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-1.webp"
+          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-3.webp"
         />
+        <meta name="geo.region" content="MX-QUE" />
+        <meta name="geo.placename" content="Querétaro, México" />
       </Helmet>
 
       {/* =========================
@@ -200,7 +206,7 @@ export default function Inicio() {
       <div>
         <IntercolegialesVideoHero
           title="Intercolegiales 2026"
-          subtitle="Invitamos a los colegios de la orden a disputar torneos deportivos y vivir una experiencia de unidad, respeto y convivencia."
+          subtitle="Invitamos a los colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento a disputar torneos deportivos y vivir una experiencia de unidad, respeto y convivencia."
           youtubeId="VNn2FhvNGTI"
           start={44}
           ctaHref="/intercolegiales/inscripcion"
