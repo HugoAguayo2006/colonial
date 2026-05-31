@@ -32,6 +32,7 @@ export default function Niveles() {
           property="og:url"
           content="https://www.colegiocolonial.edu.mx/niveles"
         />
+        
         <meta
           property="og:image"
           content="https://www.colegiocolonial.edu.mx/images/inicio/hero-1.webp"
