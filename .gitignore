@@ -7,16 +7,46 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+.vite/
+.vercel/
+.netlify/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
 *.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*credentials*
+*secret*
+*token*
+service-account*.json
+service_account*.json
+
+# Caches
+.cache/
+.eslintcache
+coverage/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+**/.DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
