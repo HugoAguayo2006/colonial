@@ -58,7 +58,7 @@ export default function Conocenos() {
 
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/conocenos"
+          href="https://colegiocolonial.edu.mx/conocenos"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -76,11 +76,11 @@ export default function Conocenos() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/conocenos"
+          content="https://colegiocolonial.edu.mx/conocenos"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/conocenos/img1.webp"
+          content="https://colegiocolonial.edu.mx/images/conocenos/img1.webp"
         />
         <meta
           property="og:image:alt"
@@ -101,7 +101,7 @@ export default function Conocenos() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/conocenos/img1.webp"
+          content="https://colegiocolonial.edu.mx/images/conocenos/img1.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

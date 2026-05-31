@@ -13,7 +13,7 @@ export default function Niveles() {
           content="Conoce los niveles educativos del Colegio Colonial en Querétaro: escuela primaria y escuela secundaria con formación académica, fe, valores y acompañamiento cercano."
         />
 
-        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/niveles" />
+        <link rel="canonical" href="https://colegiocolonial.edu.mx/niveles" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
@@ -30,11 +30,11 @@ export default function Niveles() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/niveles"
+          content="https://colegiocolonial.edu.mx/niveles"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-1.webp"
+          content="https://colegiocolonial.edu.mx/images/inicio/hero-1.webp"
         />
         <meta
           property="og:image:alt"
@@ -55,7 +55,7 @@ export default function Niveles() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-1.webp"
+          content="https://colegiocolonial.edu.mx/images/inicio/hero-1.webp"
         />
 
         {/* Refuerzo local */}

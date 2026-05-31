@@ -31,14 +31,14 @@ export const MENU = [
 // CONTACTO
 // ==============================
 export const CONTACT = {
-  address: "Av. Hidalgo #1083, Col Centro, C.P. 44100, Guadalajara, Jalisco",
-  email: "nuevagalicia@live.com.mx",
+  address: "Calle 16 de Septiembre 84, Col. Centro, Santiago de Querétaro, Querétaro",
+  email: "contacto@colegiocolonial.edu.mx",
 
   // Teléfonos de oficina (fijos)
-  phones: ["+52 33 3825 2014", "+52 33 3825 2102"],
+  phones: ["+52 442 224 2501"],
 
   // WhatsApp (principal)
-  whatsapp: "+52 33 2834 3223",
+  whatsapp: "+52 442 431 7022",
 
   hours: [
     { label: "Lun - Vie", value: "8:00 am – 3:00 pm" },
@@ -47,7 +47,7 @@ export const CONTACT = {
   ],
 
   mapsEmbedSrc:
-    "https://www.google.com/maps?q=Av.+Hidalgo+1083,+Guadalajara,+Jalisco&output=embed",
+    "https://www.google.com/maps?q=C.+16+de+Septiembre+84,+Santiago+de+Quer%C3%A9taro,+Quer%C3%A9taro,+M%C3%A9xico&output=embed",
 };
 
 // ==============================

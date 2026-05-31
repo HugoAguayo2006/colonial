@@ -95,7 +95,7 @@ export default function Inicio() {
           name="description"
           content="El Colegio Colonial ofrece escuela primaria y secundaria en Querétaro, con valores, calidad académica y colegiaturas accesibles. Somos una institución católica de la Orden del Verbo Encarnado y del Santísimo Sacramento."
         />
-        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/" />
+        <link rel="canonical" href="https://colegiocolonial.edu.mx/" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
         {/* Open Graph */}
@@ -110,10 +110,10 @@ export default function Inicio() {
           property="og:description"
           content="Colegio Colonial en Querétaro: escuela primaria y escuela secundaria con valores, calidad académica, formación católica y colegiaturas accesibles."
         />
-        <meta property="og:url" content="https://www.colegiocolonial.edu.mx/" />
+        <meta property="og:url" content="https://colegiocolonial.edu.mx/" />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-3.webp"
+          content="https://colegiocolonial.edu.mx/images/inicio/hero-3.webp"
         />
         <meta
           property="og:image:alt"
@@ -134,7 +134,7 @@ export default function Inicio() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-3.webp"
+          content="https://colegiocolonial.edu.mx/images/inicio/hero-3.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

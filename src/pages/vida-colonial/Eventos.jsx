@@ -60,7 +60,7 @@ export default function Eventos() {
 
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/vida-colonial/eventos"
+          href="https://colegiocolonial.edu.mx/vida-colonial/eventos"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -81,11 +81,11 @@ export default function Eventos() {
 
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/vida-colonial/eventos"
+          content="https://colegiocolonial.edu.mx/vida-colonial/eventos"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/galeria/celebraciones-02.webp"
+          content="https://colegiocolonial.edu.mx/images/galeria/celebraciones-02.webp"
         />
         <meta
           property="og:image:alt"
@@ -108,7 +108,7 @@ export default function Eventos() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/galeria/celebraciones-02.webp"
+          content="https://colegiocolonial.edu.mx/images/galeria/celebraciones-02.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

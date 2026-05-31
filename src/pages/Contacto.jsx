@@ -49,7 +49,7 @@ export default function ContactoPage() {
         />
 
         {/* Canonical */}
-        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/contacto" />
+        <link rel="canonical" href="https://colegiocolonial.edu.mx/contacto" />
 
         {/* Robots */}
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -63,11 +63,11 @@ export default function ContactoPage() {
           property="og:description"
           content="Teléfono +52 1 442 431 7022, WhatsApp, horario y ubicación. Solicita informes e inscripciones en Colegio Colonial, Querétaro."
         />
-        <meta property="og:url" content="https://www.colegiocolonial.edu.mx/contacto" />
+        <meta property="og:url" content="https://colegiocolonial.edu.mx/contacto" />
 
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/logo-escudo.webp"
+          content="https://colegiocolonial.edu.mx/images/logo-escudo.webp"
         />
         <meta property="og:image:alt" content="Contacto Colegio Colonial Querétaro" />
         <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@ export default function ContactoPage() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/logo-escudo.webp"
+          content="https://colegiocolonial.edu.mx/images/logo-escudo.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

@@ -83,7 +83,7 @@ export default function Primaria() {
         />
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/niveles/primaria"
+          href="https://colegiocolonial.edu.mx/niveles/primaria"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -101,11 +101,11 @@ export default function Primaria() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/niveles/primaria"
+          content="https://colegiocolonial.edu.mx/niveles/primaria"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
+          content="https://colegiocolonial.edu.mx/images/primaria/hero-1.webp"
         />
         <meta
           property="og:image:alt"
@@ -126,7 +126,7 @@ export default function Primaria() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
+          content="https://colegiocolonial.edu.mx/images/primaria/hero-1.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

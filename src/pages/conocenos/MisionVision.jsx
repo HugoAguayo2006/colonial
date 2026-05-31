@@ -13,7 +13,7 @@ export default function MisionVision() {
         />
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/conocenos/mision-vision"
+          href="https://colegiocolonial.edu.mx/conocenos/mision-vision"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -31,11 +31,11 @@ export default function MisionVision() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/conocenos/mision-vision"
+          content="https://colegiocolonial.edu.mx/conocenos/mision-vision"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/conocenos/jeanne.webp"
+          content="https://colegiocolonial.edu.mx/images/conocenos/jeanne.webp"
         />
         <meta
           property="og:image:alt"
@@ -56,7 +56,7 @@ export default function MisionVision() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/conocenos/jeanne.webp"
+          content="https://colegiocolonial.edu.mx/images/conocenos/jeanne.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

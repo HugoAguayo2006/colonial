@@ -69,21 +69,21 @@ Calle 16 de Septiembre 84, Col. Centro, Querétaro Centro, Mexico
                     <span className="ingf__pill">WhatsApp</span>
                   </a>
 
-                  {/*<a className="ingf__item" href="mailto:nuevagalicia@live.com.mx">
+                  {/*<a className="ingf__item" href="mailto:contacto@colegiocolonial.edu.mx">
                     <span className="ingf__itemIcon">✉️</span>
-                    <span className="ingf__itemText">contacto@ing.edu.mx</span>
+                    <span className="ingf__itemText">contacto@colegiocolonial.edu.mx</span>
                     <span className="ingf__pill">Correo</span>
                   </a>
 
-                  <a className="ingf__item" href="mailto:nuevagalicia@live.com.mx">
+                  <a className="ingf__item" href="mailto:difusion@colegiocolonial.edu.mx">
                     <span className="ingf__itemIcon">✉️</span>
-                    <span className="ingf__itemText">difusion@ing.edu.mx</span>
+                    <span className="ingf__itemText">difusion@colegiocolonial.edu.mx</span>
                     <span className="ingf__pill">Correo</span>
                   </a>*/}
 
-                  <a className="ingf__item" href="tel:+523338252014">
+                  <a className="ingf__item" href="tel:+524422242501">
                     <span className="ingf__itemIcon">📞</span>
-                    <span className="ingf__itemText">+44 2224 2501</span>
+                    <span className="ingf__itemText">+52 442 224 2501</span>
                     <span className="ingf__pill">Tel.</span>
                   </a>
 

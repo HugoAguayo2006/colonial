@@ -26,7 +26,7 @@ export default function Valores() {
         />
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/conocenos/valores"
+          href="https://colegiocolonial.edu.mx/conocenos/valores"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -44,11 +44,11 @@ export default function Valores() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/conocenos/valores"
+          content="https://colegiocolonial.edu.mx/conocenos/valores"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/conocenos/img2.webp"
+          content="https://colegiocolonial.edu.mx/images/conocenos/img2.webp"
         />
         <meta
           property="og:image:alt"
@@ -69,7 +69,7 @@ export default function Valores() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/conocenos/img2.webp"
+          content="https://colegiocolonial.edu.mx/images/conocenos/img2.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

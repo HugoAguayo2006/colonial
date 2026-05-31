@@ -15,7 +15,7 @@ export default function ModeloEducativo() {
 
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/conocenos/modelo-educativo"
+          href="https://colegiocolonial.edu.mx/conocenos/modelo-educativo"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -31,13 +31,13 @@ export default function ModeloEducativo() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/conocenos/modelo-educativo"
+          content="https://colegiocolonial.edu.mx/conocenos/modelo-educativo"
         />
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta property="og:locale" content="es_MX" />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/conocenos/img3.webp"
+          content="https://colegiocolonial.edu.mx/images/conocenos/img3.webp"
         />
         <meta
           property="og:image:alt"
@@ -58,7 +58,7 @@ export default function ModeloEducativo() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/conocenos/img3.webp"
+          content="https://colegiocolonial.edu.mx/images/conocenos/img3.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

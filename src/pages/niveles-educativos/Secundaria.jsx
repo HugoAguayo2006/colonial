@@ -81,7 +81,7 @@ export default function Secundaria() {
         />
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/niveles/secundaria"
+          href="https://colegiocolonial.edu.mx/niveles/secundaria"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -99,11 +99,11 @@ export default function Secundaria() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/niveles/secundaria"
+          content="https://colegiocolonial.edu.mx/niveles/secundaria"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
+          content="https://colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
         />
         <meta
           property="og:image:alt"
@@ -124,7 +124,7 @@ export default function Secundaria() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
+          content="https://colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

@@ -14,7 +14,7 @@ export default function OtrosServicios() {
 
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/vida-colonial/otros-servicios"
+          href="https://colegiocolonial.edu.mx/vida-colonial/otros-servicios"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -30,11 +30,11 @@ export default function OtrosServicios() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/vida-colonial/otros-servicios"
+          content="https://colegiocolonial.edu.mx/vida-colonial/otros-servicios"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/galeria/familia-01.webp"
+          content="https://colegiocolonial.edu.mx/images/galeria/familia-01.webp"
         />
         <meta
           property="og:image:alt"
@@ -57,7 +57,7 @@ export default function OtrosServicios() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/galeria/familia-01.webp"
+          content="https://colegiocolonial.edu.mx/images/galeria/familia-01.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

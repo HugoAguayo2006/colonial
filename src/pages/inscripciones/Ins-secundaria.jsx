@@ -193,7 +193,7 @@ export default function InscripcionesSecundaria() {
         />
         <link
           rel="canonical"
-          href="https://www.colegiocolonial.edu.mx/inscripciones/secundaria"
+          href="https://colegiocolonial.edu.mx/inscripciones/secundaria"
         />
 
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -213,11 +213,11 @@ export default function InscripcionesSecundaria() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/inscripciones/secundaria"
+          content="https://colegiocolonial.edu.mx/inscripciones/secundaria"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
+          content="https://colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
         />
         <meta
           property="og:image:alt"
@@ -237,7 +237,7 @@ export default function InscripcionesSecundaria() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
+          content="https://colegiocolonial.edu.mx/images/secundaria/hero-1.webp"
         />
 
         <meta name="geo.region" content="MX-QUE" />

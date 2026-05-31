@@ -232,7 +232,7 @@ export default function Calendario() {
           name="description"
           content="Consulta el calendario escolar interactivo del Colegio Colonial en Querétaro: fechas importantes, días festivos, reuniones, evaluaciones, eventos, actividades pastorales y filtros por niveles escolares."
         />
-        <link rel="canonical" href="https://www.colegiocolonial.edu.mx/calendario" />
+        <link rel="canonical" href="https://colegiocolonial.edu.mx/calendario" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
         <meta property="og:type" content="website" />
@@ -248,11 +248,11 @@ export default function Calendario() {
         />
         <meta
           property="og:url"
-          content="https://www.colegiocolonial.edu.mx/calendario"
+          content="https://colegiocolonial.edu.mx/calendario"
         />
         <meta
           property="og:image"
-          content="https://www.colegiocolonial.edu.mx/images/galeria/navidad-04.webp"
+          content="https://colegiocolonial.edu.mx/images/galeria/navidad-04.webp"
         />
         <meta
           property="og:image:alt"
@@ -272,7 +272,7 @@ export default function Calendario() {
         />
         <meta
           name="twitter:image"
-          content="https://www.colegiocolonial.edu.mx/images/galeria/navidad-04.webp"
+          content="https://colegiocolonial.edu.mx/images/galeria/navidad-04.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />
