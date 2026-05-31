@@ -7,1281 +7,308 @@ X-WR-CALNAME:Colegio Colonial - Calendario Escolar
 X-WR-TIMEZONE:America/Mexico_City
 
 BEGIN:VEVENT
-UID:e1@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260302T090000
-DTEND;TZID=America/Mexico_City:20260302T100000
-SUMMARY:Honores a la Bandera (2° Secundaria y 1° Primaria)
-DESCRIPTION:Ceremonia de honores a la bandera.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e2@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260307T090000
-DTEND;TZID=America/Mexico_City:20260307T100000
-SUMMARY:Celebración de Cuaresma
-DESCRIPTION:Actividad de celebración de cuaresma.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e3@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260309T090000
-DTEND;TZID=America/Mexico_City:20260309T100000
-SUMMARY:Honores a la Bandera 1° Secundaria
-DESCRIPTION:Ceremonia de honores a la bandera.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e36@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260309T090000
-DTEND;TZID=America/Mexico_City:20260309T100000
-SUMMARY:Honores a la Bandera 6° Primaria
-DESCRIPTION:Ceremonia de honores a la bandera.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e4@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260310T090000
-DTEND;TZID=America/Mexico_City:20260310T100000
-SUMMARY:Encuentro con Cristo (6° Primaria)
-DESCRIPTION:Actividad espiritual para alumnos de sexto de primaria.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e5@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260310T090000
-DTEND;TZID=America/Mexico_City:20260310T100000
-SUMMARY:Semana de Exámenes Trimestrales
-DESCRIPTION:Inicio de la semana de evaluaciones trimestrales.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e6@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260313T090000
-DTEND;TZID=America/Mexico_City:20260313T100000
-SUMMARY:Registro de Calificaciones
-DESCRIPTION:Registro de calificaciones del trimestre.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e7@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260314T090000
-DTEND;TZID=America/Mexico_City:20260314T100000
-SUMMARY:Celebración de Cuaresma
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e8@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260316T090000
-DTEND;TZID=America/Mexico_City:20260316T100000
-SUMMARY:Suspensión de Clases
-DESCRIPTION:Suspensión de actividades escolares.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e9@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260316T090000
-DTEND;TZID=America/Mexico_City:20260316T100000
-SUMMARY:Felicidades Profr. Jorge
-DESCRIPTION:Celebración de cumpleaños.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e10@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260317T090000
-DTEND;TZID=America/Mexico_City:20260317T100000
-SUMMARY:Feria de la Neurociencia UAQ (Participa Primaria)
-DESCRIPTION:Participación de primaria en la feria de neurociencia.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e11@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260318T080000
-DTEND;TZID=America/Mexico_City:20260318T090000
-SUMMARY:Entrega de Boletas
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e12@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260319T090000
-DTEND;TZID=America/Mexico_City:20260319T100000
-SUMMARY:Día de San José
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e13@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260319T090000
-DTEND;TZID=America/Mexico_City:20260319T100000
-SUMMARY:Entrega de Boletas
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e14@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260320T080000
-DTEND;TZID=America/Mexico_City:20260320T090000
-SUMMARY:Entrega de Boletas
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e15@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260320T090000
-DTEND;TZID=America/Mexico_City:20260320T100000
-SUMMARY:Conteo Candidatos a Rey y Reina del Verbo Encarnado
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e16@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260321T090000
-DTEND;TZID=America/Mexico_City:20260321T100000
-SUMMARY:Celebración de Cuaresma
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e17@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260323T090000
-DTEND;TZID=America/Mexico_City:20260323T100000
-SUMMARY:Inauguración Semana Cultural
-DESCRIPTION:Inicio de la semana cultural.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e18@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260323T090000
-DTEND;TZID=America/Mexico_City:20260323T100000
-SUMMARY:Proyectos Secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e19@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260323T090000
-DTEND;TZID=America/Mexico_City:20260323T100000
-SUMMARY:Actividad de Computación
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e20@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260324T090000
-DTEND;TZID=America/Mexico_City:20260324T100000
-SUMMARY:Spelling Bee
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e21@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260324T090000
-DTEND;TZID=America/Mexico_City:20260324T100000
-SUMMARY:Actividad de Robótica
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e22@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260325T090000
-DTEND;TZID=America/Mexico_City:20260325T100000
-SUMMARY:Fiesta Titular de la Orden del V.E.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e23@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260325T100000
-DTEND;TZID=America/Mexico_City:20260325T110000
-SUMMARY:Eucaristía
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e24@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260325T130000
-DTEND;TZID=America/Mexico_City:20260325T140000
-SUMMARY:Coronación y Presentación de Tablas Rítmicas
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e25@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260325T090000
-DTEND;TZID=America/Mexico_City:20260325T100000
-SUMMARY:Kermés
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e26@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260326T090000
-DTEND;TZID=America/Mexico_City:20260326T100000
-SUMMARY:Talent Show
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e27@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260326T090000
-DTEND;TZID=America/Mexico_City:20260326T100000
-SUMMARY:Clausura de la Semana Cultural
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e28@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260327T090000
-DTEND;TZID=America/Mexico_City:20260327T100000
-SUMMARY:C.T.E
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e29@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260328T090000
-DTEND;TZID=America/Mexico_City:20260328T100000
-SUMMARY:Domingo de Ramos (Inicio de Semana Santa)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e30@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260330T090000
-DTEND;TZID=America/Mexico_City:20260330T100000
-SUMMARY:Felicidades Profr. Luis
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e31@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260330T090000
-DTEND;TZID=America/Mexico_City:20260330T100000
-SUMMARY:Inicio de Vacaciones
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e32@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260324T090000
-DTEND;TZID=America/Mexico_City:20260324T100000
-SUMMARY:Preinscripciones y Reinscripciones
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e33@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260325T090000
-DTEND;TZID=America/Mexico_City:20260325T100000
-SUMMARY:Preinscripciones y Reinscripciones
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e34@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260326T090000
-DTEND;TZID=America/Mexico_City:20260326T100000
-SUMMARY:Preinscripciones y Reinscripciones
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e35@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260327T090000
-DTEND;TZID=America/Mexico_City:20260327T100000
-SUMMARY:Preinscripciones y Reinscripciones
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e37@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260327T090000
-DTEND;TZID=America/Mexico_City:20260327T100000
-SUMMARY:Actividad de Robótica
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e38@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260401T090000
-DTEND;TZID=America/Mexico_City:20260401T100000
-SUMMARY:Felicidades Hna. Lilia
-DESCRIPTION:Celebración de cumpleaños.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e39@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260401T090000
-DTEND;TZID=America/Mexico_City:20260401T100000
-SUMMARY:Inicio de Capítulo General (Oración por la orden)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e40@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260402T090000
-DTEND;TZID=America/Mexico_City:20260402T100000
-SUMMARY:Semana Santa
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e41@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260403T090000
-DTEND;TZID=America/Mexico_City:20260403T100000
-SUMMARY:Semana Santa
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e41-1@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260404T090000
-DTEND;TZID=America/Mexico_City:20260404T100000
-SUMMARY:Semana Santa
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e42@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260405T090000
-DTEND;TZID=America/Mexico_City:20260405T100000
-SUMMARY:Domingo de Pascua de la Resurrección del Señor
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e43@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260406T090000
-DTEND;TZID=America/Mexico_City:20260406T100000
-SUMMARY:Vacaciones (Semana de Pascua)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e44@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260407T090000
-DTEND;TZID=America/Mexico_City:20260407T100000
-SUMMARY:Vacaciones (Semana de Pascua)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e45@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260408T090000
-DTEND;TZID=America/Mexico_City:20260408T100000
-SUMMARY:Vacaciones (Semana de Pascua)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e46@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260409T090000
-DTEND;TZID=America/Mexico_City:20260409T100000
-SUMMARY:Vacaciones (Semana de Pascua)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e47@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260410T090000
-DTEND;TZID=America/Mexico_City:20260410T100000
-SUMMARY:Vacaciones (Semana de Pascua)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e48@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260411T090000
-DTEND;TZID=America/Mexico_City:20260411T100000
-SUMMARY:Vacaciones (Semana de Pascua)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e48-1@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260412T090000
-DTEND;TZID=America/Mexico_City:20260412T100000
-SUMMARY:Vacaciones (Semana de Pascua)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e49@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260413T090000
-DTEND;TZID=America/Mexico_City:20260413T100000
-SUMMARY:Regreso a clases
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e50@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260413T090000
-DTEND;TZID=America/Mexico_City:20260413T100000
-SUMMARY:Celebración de Pascua
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e51@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260414T090000
-DTEND;TZID=America/Mexico_City:20260414T100000
-SUMMARY:Asignación de proyectos secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e52@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260415T090000
-DTEND;TZID=America/Mexico_City:20260415T100000
-SUMMARY:Asignación de proyectos secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e53@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260416T090000
-DTEND;TZID=America/Mexico_City:20260416T100000
-SUMMARY:Asignación de proyectos secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e54@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260417T090000
-DTEND;TZID=America/Mexico_City:20260417T100000
-SUMMARY:Asignación de proyectos secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e55@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260424T090000
-DTEND;TZID=America/Mexico_City:20260424T100000
-SUMMARY:Honores al V.E. (1° Secundaria y 2° Primaria)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e55-1@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260424T090000
-DTEND;TZID=America/Mexico_City:20260424T100000
-SUMMARY:Honores al V.E. (1° Secundaria y 2° Primaria)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e56@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260425T090000
-DTEND;TZID=America/Mexico_City:20260425T100000
-SUMMARY:Felicidades Mtra. Norma
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e57@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260427T090000
-DTEND;TZID=America/Mexico_City:20260427T100000
-SUMMARY:Semana del Día del Niño
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e58@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260428T090000
-DTEND;TZID=America/Mexico_City:20260428T100000
-SUMMARY:Semana del Día del Niño
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e59@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260429T090000
-DTEND;TZID=America/Mexico_City:20260429T100000
-SUMMARY:Semana del Día del Niño
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e60@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260430T090000
-DTEND;TZID=America/Mexico_City:20260430T100000
-SUMMARY:Día del Niño
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e61@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260501T090000
-DTEND;TZID=America/Mexico_City:20260501T100000
-SUMMARY:Suspensión de clases
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e62@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260502T090000
-DTEND;TZID=America/Mexico_City:20260502T100000
-SUMMARY:Mes de María
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e63@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260504T090000
-DTEND;TZID=America/Mexico_City:20260504T100000
-SUMMARY:Suspensión de clases
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e64@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260505T090000
-DTEND;TZID=America/Mexico_City:20260505T100000
-SUMMARY:5 de mayo
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e65@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260505T090000
-DTEND;TZID=America/Mexico_City:20260505T100000
-SUMMARY:Entrega de proyectos secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e66@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260506T090000
-DTEND;TZID=America/Mexico_City:20260506T100000
-SUMMARY:Entrega de proyectos secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e67@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260507T090000
-DTEND;TZID=America/Mexico_City:20260507T100000
-SUMMARY:Ofrecimiento de flores 1° de primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e68@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260507T090000
-DTEND;TZID=America/Mexico_City:20260507T100000
-SUMMARY:Entrega de proyectos secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e69@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260508T093000
-DTEND;TZID=America/Mexico_City:20260508T103000
-SUMMARY:Eucaristía por las mamás
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e70@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260508T090000
-DTEND;TZID=America/Mexico_City:20260508T100000
-SUMMARY:Entrega de proyectos secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e71@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260509T090000
-DTEND;TZID=America/Mexico_City:20260509T100000
-SUMMARY:Feliz Día de las Madres
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e72@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260511T090000
-DTEND;TZID=America/Mexico_City:20260511T100000
-SUMMARY:Honores a la Bandera (2° Secundaria y 5° Primaria)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e72-1@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260511T090000
-DTEND;TZID=America/Mexico_City:20260511T100000
-SUMMARY:Honores a la Bandera (2° Secundaria y 5° Primaria)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e73@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260511T090000
-DTEND;TZID=America/Mexico_City:20260511T100000
-SUMMARY:Ofrecimiento de flores 2° de primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e74@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260512T090000
-DTEND;TZID=America/Mexico_City:20260512T100000
-SUMMARY:Ofrecimiento de flores 3° de primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e75@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260513T090000
-DTEND;TZID=America/Mexico_City:20260513T100000
-SUMMARY:Ofrecimiento de flores 4° de primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e76@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260514T120000
-DTEND;TZID=America/Mexico_City:20260514T130000
-SUMMARY:Salida para todos
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e77@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260514T090000
-DTEND;TZID=America/Mexico_City:20260514T100000
-SUMMARY:Felicidades Profr. Jorge Cortés
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e78@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260515T090000
-DTEND;TZID=America/Mexico_City:20260515T100000
-SUMMARY:Feliz Día del Maestr@
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e79@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260515T090000
-DTEND;TZID=America/Mexico_City:20260515T100000
-SUMMARY:Retiro para alumnos de Primera Comunión y Confirmación
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e80@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260515T090000
-DTEND;TZID=America/Mexico_City:20260515T100000
-SUMMARY:Suspensión de clases
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e81@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260516T090000
-DTEND;TZID=America/Mexico_City:20260516T100000
-SUMMARY:Primeras Comuniones y Confirmaciones
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e81-1@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260516T090000
-DTEND;TZID=America/Mexico_City:20260516T100000
-SUMMARY:Primeras Comuniones y Confirmaciones
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e82@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260518T090000
-DTEND;TZID=America/Mexico_City:20260518T100000
-SUMMARY:Honores a la Bandera (1° Secundaria y 4° Primaria)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e82-1@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260518T090000
-DTEND;TZID=America/Mexico_City:20260518T100000
-SUMMARY:Honores a la Bandera (1° Secundaria y 4° Primaria)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e83@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260518T090000
-DTEND;TZID=America/Mexico_City:20260518T100000
-SUMMARY:Semana de evaluación proyectos primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e84@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260519T090000
-DTEND;TZID=America/Mexico_City:20260519T100000
-SUMMARY:Ofrecimiento de flores 5° de primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e85@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260519T090000
-DTEND;TZID=America/Mexico_City:20260519T100000
-SUMMARY:Semana de evaluación proyectos primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e86@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260520T090000
-DTEND;TZID=America/Mexico_City:20260520T100000
-SUMMARY:Ofrecimiento de flores 3° de secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e87@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260520T090000
-DTEND;TZID=America/Mexico_City:20260520T100000
-SUMMARY:Semana de evaluación proyectos primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e88@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260521T090000
-DTEND;TZID=America/Mexico_City:20260521T100000
-SUMMARY:Ofrecimiento de flores 2° de secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e89@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260521T090000
-DTEND;TZID=America/Mexico_City:20260521T100000
-SUMMARY:Semana de evaluación proyectos primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e90@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260522T090000
-DTEND;TZID=America/Mexico_City:20260522T100000
-SUMMARY:Feliz Día del Estudiante
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e91@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260522T090000
-DTEND;TZID=America/Mexico_City:20260522T100000
-SUMMARY:Ofrecimiento de flores 6° de primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e92@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260522T090000
-DTEND;TZID=America/Mexico_City:20260522T100000
-SUMMARY:Semana de evaluación proyectos primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e93@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260523T090000
-DTEND;TZID=America/Mexico_City:20260523T100000
-SUMMARY:Felicidades Mtra. Rocío
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e94@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260525T090000
-DTEND;TZID=America/Mexico_City:20260525T100000
-SUMMARY:Honores al V.E. (3° Secundaria)
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e95@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260526T090000
-DTEND;TZID=America/Mexico_City:20260526T100000
-SUMMARY:Ofrecimiento de flores 1° de secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e96@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260527T090000
-DTEND;TZID=America/Mexico_City:20260527T100000
-SUMMARY:Saludo de bienvenida Hnas.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e97@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260527T090000
-DTEND;TZID=America/Mexico_City:20260527T100000
-SUMMARY:Reflexión primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e98@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260527T090000
-DTEND;TZID=America/Mexico_City:20260527T100000
-SUMMARY:Visita del Gobierno Regional
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e99@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260528T090000
-DTEND;TZID=America/Mexico_City:20260528T100000
-SUMMARY:Coronación de la Virgen
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e100@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260528T090000
-DTEND;TZID=America/Mexico_City:20260528T100000
-SUMMARY:Reflexión secundaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e101@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260528T090000
-DTEND;TZID=America/Mexico_City:20260528T100000
-SUMMARY:Visita del Gobierno Regional
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e102@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260529T090000
-DTEND;TZID=America/Mexico_City:20260529T100000
-SUMMARY:Encuentro con todo el personal
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e103@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260529T090000
-DTEND;TZID=America/Mexico_City:20260529T100000
-SUMMARY:C.T.E
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e104@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260529T090000
-DTEND;TZID=America/Mexico_City:20260529T100000
-SUMMARY:Visita del Gobierno Regional
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
 UID:e105@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260505T090000
-DTEND;TZID=America/Mexico_City:20260505T100000
-SUMMARY:Suspensión de labores
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260602T090000
+DTEND;TZID=America/Mexico_City:20260602T100000
+SUMMARY:Honores a la Bandera 3° de Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e105-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260602T090000
+DTEND;TZID=America/Mexico_City:20260602T100000
+SUMMARY:Honores a la Bandera 3° de Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e106@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260506T073000
-DTEND;TZID=America/Mexico_City:20260506T083000
-SUMMARY:Reunión de Padres de Familia 6° Primaria
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260603T090000
+DTEND;TZID=America/Mexico_City:20260603T100000
+SUMMARY:Fotografía de 6° de Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e106-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260603T090000
+DTEND;TZID=America/Mexico_City:20260603T100000
+SUMMARY:Fotografía de 3° de Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e107@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260507T090000
-DTEND;TZID=America/Mexico_City:20260507T100000
-SUMMARY:Reunión de Padres de Familia 3° Jardín de Niños
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260604T101500
+DTEND;TZID=America/Mexico_City:20260604T111500
+SUMMARY:Eucaristía Corpus Christi
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:a109@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260608T090000
+DTEND;TZID=America/Mexico_City:20260608T100000
+SUMMARY:Semana de Exámenes Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:a109-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260608T090000
+DTEND;TZID=America/Mexico_City:20260608T100000
+SUMMARY:Semana de Exámenes Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e108@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260511T083000
-DTEND;TZID=America/Mexico_City:20260511T093000
-SUMMARY:Honores a la Bandera
-DESCRIPTION:Coordina Licenciatura.
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260608T090000
+DTEND;TZID=America/Mexico_City:20260608T100000
+SUMMARY:Honores a la Bandera 2° de Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e108-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260608T090000
+DTEND;TZID=America/Mexico_City:20260608T100000
+SUMMARY:Honores a la Bandera 2° de Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e109@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260511T120000
-DTEND;TZID=America/Mexico_City:20260511T130000
-SUMMARY:Consejo Directivo
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260609T090000
+DTEND;TZID=America/Mexico_City:20260609T100000
+SUMMARY:Semana de Exámenes Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e109-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260609T090000
+DTEND;TZID=America/Mexico_City:20260609T100000
+SUMMARY:Semana de Exámenes Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e110@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260514T090000
-DTEND;TZID=America/Mexico_City:20260514T100000
-SUMMARY:Festejo Maestros
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260610T090000
+DTEND;TZID=America/Mexico_City:20260610T100000
+SUMMARY:Semana de Exámenes Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e110-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260610T090000
+DTEND;TZID=America/Mexico_City:20260610T100000
+SUMMARY:Semana de Exámenes Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e111@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260518T080000
-DTEND;TZID=America/Mexico_City:20260518T090000
-SUMMARY:Honores a la Bandera
-DESCRIPTION:Coordina 3° de primaria.
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260611T090000
+DTEND;TZID=America/Mexico_City:20260611T100000
+SUMMARY:Semana de Exámenes Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e111-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260611T090000
+DTEND;TZID=America/Mexico_City:20260611T100000
+SUMMARY:Semana de Exámenes Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e112@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260518T090000
-DTEND;TZID=America/Mexico_City:20260518T100000
-SUMMARY:Prácticas Licenciatura
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260612T090000
+DTEND;TZID=America/Mexico_City:20260612T100000
+SUMMARY:Semana de Exámenes Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e112-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260612T090000
+DTEND;TZID=America/Mexico_City:20260612T100000
+SUMMARY:Semana de Exámenes Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e113@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260519T085000
-DTEND;TZID=America/Mexico_City:20260519T095000
-SUMMARY:Actividades de Integración
-DESCRIPTION:Jardín de Niños y 1° de primaria. Inglés.
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260612T090000
+DTEND;TZID=America/Mexico_City:20260612T100000
+SUMMARY:Sagrado Corazón de Jesús
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e114@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260519T090000
-DTEND;TZID=America/Mexico_City:20260519T100000
-SUMMARY:Prácticas Licenciatura
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260615T090000
+DTEND;TZID=America/Mexico_City:20260615T100000
+SUMMARY:Honores a la Bandera 1° de Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e114-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260615T090000
+DTEND;TZID=America/Mexico_City:20260615T100000
+SUMMARY:Honores a la Bandera 1° de Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e115@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260520T090000
-DTEND;TZID=America/Mexico_City:20260520T100000
-SUMMARY:Visita de la Virgen de Zapopan
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260616T090000
+DTEND;TZID=America/Mexico_City:20260616T100000
+SUMMARY:Ofrecimiento de flores 1° y 2° de Primaria al Sagrado Corazón de Jesús
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e116@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260520T090000
-DTEND;TZID=America/Mexico_City:20260520T100000
-SUMMARY:Cumpleaños Mtra. Anahí
-DESCRIPTION:3° de primaria.
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260617T090000
+DTEND;TZID=America/Mexico_City:20260617T100000
+SUMMARY:Ofrecimiento de flores 3° y 4° de Primaria al Sagrado Corazón de Jesús
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e117@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260520T090000
-DTEND;TZID=America/Mexico_City:20260520T100000
-SUMMARY:Prácticas Licenciatura
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260619T090000
+DTEND;TZID=America/Mexico_City:20260619T100000
+SUMMARY:Día de la Familia
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e118@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260521T081500
-DTEND;TZID=America/Mexico_City:20260521T091500
-SUMMARY:Retiro Primera Comunión
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260619T120000
+DTEND;TZID=America/Mexico_City:20260619T130000
+SUMMARY:Salida todos los alumnos
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e119@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260521T090000
-DTEND;TZID=America/Mexico_City:20260521T100000
-SUMMARY:Prácticas Licenciatura
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260619T170000
+DTEND;TZID=America/Mexico_City:20260619T180000
+SUMMARY:Festival Día de la F.M.
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e120@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260522T090000
-DTEND;TZID=America/Mexico_City:20260522T100000
-SUMMARY:Despedida a la Virgen de Zapopan
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260620T090000
+DTEND;TZID=America/Mexico_City:20260620T100000
+SUMMARY:Feliz Día del Padre
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e121@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260522T090000
-DTEND;TZID=America/Mexico_City:20260522T100000
-SUMMARY:Prácticas Licenciatura
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260622T090000
+DTEND;TZID=America/Mexico_City:20260622T100000
+SUMMARY:Ofrecimiento de flores 6° de Primaria al Sagrado Corazón de Jesús
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e121-1@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260622T090000
+DTEND;TZID=America/Mexico_City:20260622T100000
+SUMMARY:Ofrecimiento de flores 1° de Secundaria al Sagrado Corazón de Jesús
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e122@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260523T120000
-DTEND;TZID=America/Mexico_City:20260523T130000
-SUMMARY:Primeras Comuniones
-LOCATION:Templo de San Miguel
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260623T090000
+DTEND;TZID=America/Mexico_City:20260623T100000
+SUMMARY:Felicidades Mtra. Miriam
+LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e123@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260525T090000
-DTEND;TZID=America/Mexico_City:20260525T100000
-SUMMARY:Honores V.E.
-DESCRIPTION:Coordina Jardín de Niños.
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260624T090000
+DTEND;TZID=America/Mexico_City:20260624T100000
+SUMMARY:Ofrecimiento de flores 2° y 3° de Secundaria al Sagrado Corazón de Jesús
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:a124@colegiocolonial.edu.mx
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260625T090000
+DTEND;TZID=America/Mexico_City:20260625T100000
+SUMMARY:Honores al V.E.
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e124@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260525T120000
-DTEND;TZID=America/Mexico_City:20260525T130000
-SUMMARY:Consejo Directivo
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260625T090000
+DTEND;TZID=America/Mexico_City:20260625T100000
+SUMMARY:5° de Primaria y Ofrecimiento de Flores
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e125@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260525T090000
-DTEND;TZID=America/Mexico_City:20260525T100000
-SUMMARY:Cumpleaños Mtra. Clara
-DESCRIPTION:Directora de Licenciatura.
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260626T090000
+DTEND;TZID=America/Mexico_City:20260626T100000
+SUMMARY:C.T.E
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
 UID:e126@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260525T090000
-DTEND;TZID=America/Mexico_City:20260525T100000
-SUMMARY:Prácticas Licenciatura
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e127@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260526T081500
-DTEND;TZID=America/Mexico_City:20260526T140000
-SUMMARY:Encuentro con Cristo 5° Primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e128@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260526T090000
-DTEND;TZID=America/Mexico_City:20260526T100000
-SUMMARY:Eucaristía
-DESCRIPTION:Coordina Jardín de Niños.
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e129@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260526T090000
-DTEND;TZID=America/Mexico_City:20260526T100000
-SUMMARY:Prácticas Licenciatura
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e130@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260527T090000
-DTEND;TZID=America/Mexico_City:20260527T100000
-SUMMARY:Prácticas Licenciatura
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e131@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260528T090000
-DTEND;TZID=America/Mexico_City:20260528T100000
-SUMMARY:Rosario y Coronación de la Virgen
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e132@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260528T090000
-DTEND;TZID=America/Mexico_City:20260528T100000
-SUMMARY:Prácticas Licenciatura
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e133@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260529T080000
-DTEND;TZID=America/Mexico_City:20260529T090000
-SUMMARY:Consejo Técnico Escolar
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e134@colegiocolonial.edu.mx
-DTSTAMP:20260507T000000Z
-DTSTART;TZID=America/Mexico_City:20260529T090000
-DTEND;TZID=America/Mexico_City:20260529T100000
-SUMMARY:Prácticas Licenciatura
+DTSTAMP:20260531T000000Z
+DTSTART;TZID=America/Mexico_City:20260629T090000
+DTEND;TZID=America/Mexico_City:20260629T100000
+SUMMARY:Honores a la Bandera Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
