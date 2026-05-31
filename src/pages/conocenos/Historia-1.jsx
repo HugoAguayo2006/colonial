@@ -13,7 +13,7 @@ export default function Historia() {
         />
         <link
           rel="canonical"
-          href="https://colegiocolonial.edu.mx/conocenos/historia"
+          href="https://www.colegiocolonial.edu.mx/conocenos/historia"
         />
 
         {/* Open Graph */}
@@ -22,7 +22,7 @@ export default function Historia() {
         <meta property="og:locale" content="es_MX" />
         <meta
           property="og:url"
-          content="https://colegiocolonial.edu.mx/conocenos/historia"
+          content="https://www.colegiocolonial.edu.mx/conocenos/historia"
         />
         <meta
           property="og:title"

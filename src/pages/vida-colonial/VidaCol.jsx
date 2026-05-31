@@ -59,7 +59,7 @@ export default function VidaColonial() {
         />
         <link
           rel="canonical"
-          href="https://colegiocolonial.edu.mx/vida-colonial"
+          href="https://www.colegiocolonial.edu.mx/vida-colonial"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -77,11 +77,11 @@ export default function VidaColonial() {
         />
         <meta
           property="og:url"
-          content="https://colegiocolonial.edu.mx/vida-colonial"
+          content="https://www.colegiocolonial.edu.mx/vida-colonial"
         />
         <meta
           property="og:image"
-          content="https://colegiocolonial.edu.mx/images/galeria/familia-02.webp"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/familia-02.webp"
         />
         <meta
           property="og:image:alt"
@@ -102,7 +102,7 @@ export default function VidaColonial() {
         />
         <meta
           name="twitter:image"
-          content="https://colegiocolonial.edu.mx/images/galeria/familia-02.webp"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/familia-02.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

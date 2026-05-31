@@ -14,7 +14,7 @@ export default function ClaveCentroTrabajo() {
 
         <link
           rel="canonical"
-          href="https://colegiocolonial.edu.mx/conocenos/clave-de-centro-de-trabajo"
+          href="https://www.colegiocolonial.edu.mx/conocenos/clave-de-centro-de-trabajo"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -30,12 +30,12 @@ export default function ClaveCentroTrabajo() {
         />
         <meta
           property="og:url"
-          content="https://colegiocolonial.edu.mx/conocenos/clave-de-centro-de-trabajo"
+          content="https://www.colegiocolonial.edu.mx/conocenos/clave-de-centro-de-trabajo"
         />
         <meta property="og:locale" content="es_MX" />
         <meta
           property="og:image"
-          content="https://colegiocolonial.edu.mx/images/logo-escudo.webp"
+          content="https://www.colegiocolonial.edu.mx/images/logo-escudo.webp"
         />
         <meta
           property="og:image:alt"
@@ -55,7 +55,7 @@ export default function ClaveCentroTrabajo() {
         />
         <meta
           name="twitter:image"
-          content="https://colegiocolonial.edu.mx/images/logo-escudo.webp"
+          content="https://www.colegiocolonial.edu.mx/images/logo-escudo.webp"
         />
 
         <meta name="geo.region" content="MX-QUE" />

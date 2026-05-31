@@ -34,7 +34,7 @@ export default function Actividades() {
 
         <link
           rel="canonical"
-          href="https://colegiocolonial.edu.mx/vida-colonial/extracurriculares"
+          href="https://www.colegiocolonial.edu.mx/vida-colonial/extracurriculares"
         />
 
         {/* Open Graph */}
@@ -49,11 +49,11 @@ export default function Actividades() {
         />
         <meta
           property="og:url"
-          content="https://colegiocolonial.edu.mx/vida-colonial/extracurriculares"
+          content="https://www.colegiocolonial.edu.mx/vida-colonial/extracurriculares"
         />
         <meta
           property="og:image"
-          content="https://colegiocolonial.edu.mx/images/extras/futbol-1.webp"
+          content="https://www.colegiocolonial.edu.mx/images/extras/futbol-1.webp"
         />
         <meta
           property="og:image:alt"
@@ -76,7 +76,7 @@ export default function Actividades() {
         />
         <meta
           name="twitter:image"
-          content="https://colegiocolonial.edu.mx/images/extras/futbol-1.webp"
+          content="https://www.colegiocolonial.edu.mx/images/extras/futbol-1.webp"
         />
 
         {/* Robots */}

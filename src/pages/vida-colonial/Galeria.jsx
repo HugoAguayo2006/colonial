@@ -359,7 +359,7 @@ const okTag =
         />
         <link
           rel="canonical"
-          href="https://colegiocolonial.edu.mx/vida-colonial/galeria"
+          href="https://www.colegiocolonial.edu.mx/vida-colonial/galeria"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -374,11 +374,11 @@ const okTag =
         />
         <meta
           property="og:url"
-          content="https://colegiocolonial.edu.mx/vida-colonial/galeria"
+          content="https://www.colegiocolonial.edu.mx/vida-colonial/galeria"
         />
         <meta
           property="og:image"
-          content="https://colegiocolonial.edu.mx/images/galeria/celebraciones-01.webp"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/celebraciones-01.webp"
         />
         <meta
           property="og:image:alt"
@@ -396,7 +396,7 @@ const okTag =
         />
         <meta
           name="twitter:image"
-          content="https://colegiocolonial.edu.mx/images/galeria/celebraciones-01.webp"
+          content="https://www.colegiocolonial.edu.mx/images/galeria/celebraciones-01.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

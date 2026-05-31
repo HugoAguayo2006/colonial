@@ -478,7 +478,7 @@ export const CAMPUSES = [
   lat: 20.5956276,
   lng: -100.3874703,
   whatsapp: "+5214424317022",
-  website: "https://colegiocolonial.edu.mx/",
+  website: "https://www.colegiocolonial.edu.mx/",
   source_page: "35",
   niveles: ["Primaria", "Secundaria"],
   social_links: ["https://www.facebook.com/ColegioColonialOficial/"],

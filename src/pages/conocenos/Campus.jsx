@@ -278,7 +278,7 @@ useEffect(() => {
         />
         <link
           rel="canonical"
-          href="https://colegiocolonial.edu.mx/conocenos/otros-campus"
+          href="https://www.colegiocolonial.edu.mx/conocenos/otros-campus"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -292,11 +292,11 @@ useEffect(() => {
         />
         <meta
           property="og:url"
-          content="https://colegiocolonial.edu.mx/conocenos/otros-campus"
+          content="https://www.colegiocolonial.edu.mx/conocenos/otros-campus"
         />
         <meta
           property="og:image"
-          content="https://colegiocolonial.edu.mx/images/conocenos/img3.webp"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img3.webp"
         />
         <meta
           property="og:image:alt"
@@ -313,7 +313,7 @@ useEffect(() => {
         />
         <meta
           name="twitter:image"
-          content="https://colegiocolonial.edu.mx/images/conocenos/img3.webp"
+          content="https://www.colegiocolonial.edu.mx/images/conocenos/img3.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

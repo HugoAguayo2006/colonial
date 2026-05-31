@@ -15,7 +15,7 @@ export default function Inscripciones() {
         />
         <link
           rel="canonical"
-          href="https://colegiocolonial.edu.mx/inscripciones"
+          href="https://www.colegiocolonial.edu.mx/inscripciones"
         />
         <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -31,13 +31,13 @@ export default function Inscripciones() {
         />
         <meta
           property="og:url"
-          content="https://colegiocolonial.edu.mx/inscripciones"
+          content="https://www.colegiocolonial.edu.mx/inscripciones"
         />
         <meta property="og:site_name" content="Colegio Colonial" />
         <meta property="og:locale" content="es_MX" />
         <meta
           property="og:image"
-          content="https://colegiocolonial.edu.mx/images/inicio/hero-3.webp"
+          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-3.webp"
         />
         <meta
           property="og:image:alt"
@@ -58,7 +58,7 @@ export default function Inscripciones() {
         />
         <meta
           name="twitter:image"
-          content="https://colegiocolonial.edu.mx/images/inicio/hero-3.webp"
+          content="https://www.colegiocolonial.edu.mx/images/inicio/hero-3.webp"
         />
         <meta name="geo.region" content="MX-QUE" />
         <meta name="geo.placename" content="Querétaro, México" />

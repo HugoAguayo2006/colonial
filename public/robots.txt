@@ -14,4 +14,4 @@ Disallow: /*.html?
 Allow: /
 
 # Sitemap
-Sitemap: https://colegiocolonial.edu.mx/sitemap.xml
+Sitemap: https://www.colegiocolonial.edu.mx/sitemap.xml

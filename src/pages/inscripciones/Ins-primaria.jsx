@@ -193,7 +193,7 @@ export default function InscripcionesPrimaria() {
         />
         <link
           rel="canonical"
-          href="https://colegiocolonial.edu.mx/inscripciones/primaria"
+          href="https://www.colegiocolonial.edu.mx/inscripciones/primaria"
         />
 
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -213,11 +213,11 @@ export default function InscripcionesPrimaria() {
         />
         <meta
           property="og:url"
-          content="https://colegiocolonial.edu.mx/inscripciones/primaria"
+          content="https://www.colegiocolonial.edu.mx/inscripciones/primaria"
         />
         <meta
           property="og:image"
-          content="https://colegiocolonial.edu.mx/images/primaria/hero-1.webp"
+          content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
         />
         <meta
           property="og:image:alt"
@@ -237,7 +237,7 @@ export default function InscripcionesPrimaria() {
         />
         <meta
           name="twitter:image"
-          content="https://colegiocolonial.edu.mx/images/primaria/hero-1.webp"
+          content="https://www.colegiocolonial.edu.mx/images/primaria/hero-1.webp"
         />
 
         <meta name="geo.region" content="MX-QUE" />

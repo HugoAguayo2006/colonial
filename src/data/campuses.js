@@ -98,7 +98,7 @@ export const CAMPUSES = [
     lat: 18.4326,
     lng: -101.1332,
     whatsapp: "5214424317022",
-    website: "https://colegiocolonial.edu.mx/",
+    website: "https://www.colegiocolonial.edu.mx/",
   }, 
   
   
@@ -112,7 +112,7 @@ export const CAMPUSES = [
     lat: 18.4326,
     lng: -101.1332,
     whatsapp: "5214424317022",
-    website: "https://colegiocolonial.edu.mx/",
+    website: "https://www.colegiocolonial.edu.mx/",
   },  
 
 
