@@ -1,9 +1,9 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion as Motion, useInView } from "framer-motion";
+import { createElement, useRef } from "react";
 
 export default function Reveal({
   children,
-  as: Tag = "div",
+  as: Component = "div",
   variant = "up",
   delay = 0,
   duration = 0.6,
@@ -30,7 +30,7 @@ export default function Reveal({
   const chosen = variants[variant] || variants.up;
 
   return (
-    <motion.div
+    <Motion.div
       ref={ref}
       className={className}
       variants={chosen}
@@ -38,7 +38,7 @@ export default function Reveal({
       animate={isInView ? "show" : "hidden"}
       transition={{ duration, delay, ease: [0.4, 0, 0.2, 1] }}
     >
-      <Tag>{children}</Tag>
-    </motion.div>
+      {children ? createElement(Component, null, children) : null}
+    </Motion.div>
   );
 }

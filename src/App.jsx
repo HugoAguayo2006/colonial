@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 import Navbar from "./components/NavBar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
@@ -106,7 +106,7 @@ export default function App() {
       <Navbar />
 
       <main className={`app-main ${isNotFoundPage ? "app-main--auto" : ""}`}>
-        <motion.div
+        <Motion.div
           key={location.key}
           className={`route-page ${isNotFoundPage ? "route-page--auto" : ""}`}
           variants={pageVariants}
@@ -115,7 +115,7 @@ export default function App() {
           transition={PAGE_TRANSITION}
         >
           <Outlet />
-        </motion.div>
+        </Motion.div>
       </main>
 
       <ImageModal />

@@ -65,13 +65,6 @@ export default function Primaria() {
     return () => clearInterval(t);
   }, [feSlides.length]);
 
-  const scrollToInscripciones = () => {
-    const el = document.getElementById("primaria-inscripciones");
-    if (!el) return;
-    const y = el.getBoundingClientRect().top + window.scrollY - 90; // offset navbar
-    window.scrollTo({ top: y, behavior: "smooth" });
-  };
-
   return (
     <main className="prim">
       <Helmet>

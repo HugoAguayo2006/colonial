@@ -5,18 +5,17 @@ const WHATSAPP_URL =
   "https://wa.me/5214424317022?text=Hola%20Colegio%20Colonial%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.";
 
 export default function JeanneFloat() {
-  const [isApple, setIsApple] = useState(false);
+  const [isApple] = useState(() => {
+    const ua = navigator.userAgent.toLowerCase();
+    return (
+      ua.includes("iphone") ||
+      ua.includes("ipad") ||
+      (ua.includes("macintosh") && "ontouchend" in document)
+    );
+  });
   const [showSpeech, setShowSpeech] = useState(false);
 
   useEffect(() => {
-    /* 🍎 Detect Apple (iPhone / iPad) */
-    const ua = navigator.userAgent.toLowerCase();
-    const apple =
-      ua.includes("iphone") ||
-      ua.includes("ipad") ||
-      (ua.includes("macintosh") && "ontouchend" in document);
-    setIsApple(apple);
-
     /* ⏳ Speech SIEMPRE después de 5s */
     const timer = setTimeout(() => {
       setShowSpeech(true);

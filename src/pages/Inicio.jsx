@@ -1,64 +1,26 @@
 // src/pages/Inicio.jsx
-import { useEffect, useRef, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./Inicio.css";
 import IntercolegialesVideoHero from "../components/IntercolegialesVideoHero";
-import Intercolegiales from "../components/Intercolegiales";
 
 export default function Inicio() {
-  // INTERCOLEGIALES
-  const SPORTS = [
-    { key: "all", label: "Todos" },
-    { key: "ajedrez", label: "Ajedrez" },
-    { key: "futbol", label: "Fútbol" },
-    { key: "basquetbol", label: "Básquetbol" },
-    { key: "voley", label: "Vóley" },
-    
-  ];
-
-  const ITEMS = [
-    { id: "i1", sport: "futbol", image: "/intercolegiales/futbol-1.webp" },
-    { id: "i2", sport: "futbol", image: "/intercolegiales/futbol-2.webp" },
-    { id: "i3", sport: "basquetbol", image: "/intercolegiales/basquet-1.webp" },
-    { id: "i4", sport: "voley", image: "/intercolegiales/voley-1.webp" },
-    { id: "i5", sport: "ajedrez", image: "/intercolegiales/ajedrez-1.webp" },
-  ];
-
-  const [activeSport, setActiveSport] = useState("all");
-  const trackRef = useRef(null);
-
-  const filtered = useMemo(() => {
-    if (activeSport === "all") return ITEMS;
-    return ITEMS.filter((it) => it.sport === activeSport);
-  }, [activeSport]);
-
-  const scrollOne = (dir) => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const firstCard = track.querySelector(".home-icc-card");
-    if (!firstCard) return;
-
-    const computed = window.getComputedStyle(track);
-    const gap = parseFloat(computed.columnGap || computed.gap || "0") || 0;
-    const step = firstCard.getBoundingClientRect().width + gap;
-
-    track.scrollBy({ left: dir * step, behavior: "smooth" });
-  };
-
-  const labelSport = (k) =>
-    k === "ajedrez"
-      ? "Ajedrez"
-      : k === "futbol"
-      ? "Fútbol"
-      : k === "basquetbol"
-      ? "Básquetbol"
-      : "Vóley";
-
   // ✅ Carrusel SOLO en el Hero detrás del título
   const slides = useMemo(
-    () => ["/images/inicio/hero-3.webp", "/images/inicio/hero-1.webp"],
+    () => [
+      {
+        src: "/images/inicio/hero-3.webp",
+        mobileSrc: "/images/inicio/hero-3-mobile.webp",
+        width: 1536,
+        height: 1152,
+      },
+      {
+        src: "/images/inicio/hero-1.webp",
+        width: 1600,
+        height: 1200,
+      },
+    ],
     []
   );
 
@@ -145,12 +107,28 @@ export default function Inicio() {
       ========================== */}
       <header className="cc-hero" aria-label="Inicio Colegio Colonial">
         <div className="cc-hero-bg" aria-hidden="true">
-          {slides.map((src, i) => (
-            <div
-              key={src}
+          {slides.map((slide, i) => (
+            <picture
+              key={slide.src}
               className={`cc-hero-slide ${i === idx ? "is-active" : ""}`}
-              style={{ backgroundImage: `url("${src}")` }}
-            />
+            >
+              {slide.mobileSrc && (
+                <source
+                  srcSet={slide.mobileSrc}
+                  media="(max-width: 768px)"
+                  type="image/webp"
+                />
+              )}
+              <img
+                src={slide.src}
+                alt=""
+                width={slide.width}
+                height={slide.height}
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchPriority={i === 0 ? "high" : "auto"}
+                decoding={i === 0 ? "sync" : "async"}
+              />
+            </picture>
           ))}
           <div className="cc-hero-overlay" />
         </div>

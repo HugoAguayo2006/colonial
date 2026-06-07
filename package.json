@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:images:check": "node scripts/optimize-images.mjs --check",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

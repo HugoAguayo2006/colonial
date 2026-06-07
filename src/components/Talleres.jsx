@@ -18,8 +18,6 @@ export default function Extracurriculares({
 (deportes, artes, tecnología y mucho más).`,
   placeholder = "Buscar actividad (ej. fútbol, danza, pintura...)",
   items = [],
-  contactHref = "/contacto",
-  whatsappHref = "https://wa.me/523331585919?text=Hola,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20actividades%20extracurriculares%20y%20horarios.",
   showHeader = true,
   showLevelPill = true,
 }) {

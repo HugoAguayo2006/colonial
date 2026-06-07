@@ -63,13 +63,6 @@ export default function Secundaria() {
     return () => clearInterval(t);
   }, [feSlides.length]);
 
-  const scrollToInscripciones = () => {
-    const el = document.getElementById("secundaria-inscripciones");
-    if (!el) return;
-    const y = el.getBoundingClientRect().top + window.scrollY - 90; // offset navbar
-    window.scrollTo({ top: y, behavior: "smooth" });
-  };
-
   return (
     <main className="prim">
       <Helmet>

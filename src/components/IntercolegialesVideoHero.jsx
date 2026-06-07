@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./IntercolegialesVideoHero.css";
 
 export default function IntercolegialesVideoHero({
@@ -9,8 +9,7 @@ export default function IntercolegialesVideoHero({
   logoSrc = "/logo.svg",
   logoAlt = "Escudo",
 }) {
-  // ✅ FORZAR SIEMPRE 0 (si quieres respetar start, cambia esta línea por: const forcedStart = Number(start) || 0;)
-  const forcedStart = 0;
+  const forcedStart = Number(start) || 0;
 
   // ✅ Cache buster para evitar reuso/caché del iframe
   const [cb] = useState(() => Date.now());
@@ -98,10 +97,8 @@ export default function IntercolegialesVideoHero({
   const [activeSport, setActiveSport] = useState("all");
   const trackRef = useRef(null);
 
-  const filtered = useMemo(() => {
-    if (activeSport === "all") return ITEMS;
-    return ITEMS.filter((it) => it.sport === activeSport);
-  }, [activeSport]);
+  const filtered =
+    activeSport === "all" ? ITEMS : ITEMS.filter((it) => it.sport === activeSport);
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -135,12 +132,10 @@ export default function IntercolegialesVideoHero({
     if (!track) return;
     track.scrollTo({ left: 0, behavior: "smooth" });
     setTimeout(updateScrollState, 200);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeSport]);
 
   useEffect(() => {
     setTimeout(updateScrollState, 0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 const labelSport = (k) => {
