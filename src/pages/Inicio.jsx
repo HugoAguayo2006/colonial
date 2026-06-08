@@ -1,9 +1,12 @@
 // src/pages/Inicio.jsx
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./Inicio.css";
-import IntercolegialesVideoHero from "../components/IntercolegialesVideoHero";
+
+const IntercolegialesVideoHero = lazy(() =>
+  import("../components/IntercolegialesVideoHero"),
+);
 
 export default function Inicio() {
   // ✅ Carrusel SOLO en el Hero detrás del título
@@ -182,15 +185,17 @@ export default function Inicio() {
       <div className="separator-blue" />
 
       <div>
-        <IntercolegialesVideoHero
-          title="Intercolegiales 2026"
-          subtitle="Invitamos a los colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento a disputar torneos deportivos y vivir una experiencia de unidad, respeto y convivencia."
-          youtubeId="VNn2FhvNGTI"
-          start={44}
-          ctaHref="/intercolegiales/inscripcion"
-          logoSrc="/images/logo-escudo.webp"
-          logoAlt="Escudo ING"
-        />
+        <Suspense fallback={<div className="cc-intercolegiales-fallback" />}>
+          <IntercolegialesVideoHero
+            title="Intercolegiales 2026"
+            subtitle="Invitamos a los colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento a disputar torneos deportivos y vivir una experiencia de unidad, respeto y convivencia."
+            youtubeId="VNn2FhvNGTI"
+            start={44}
+            ctaHref="/intercolegiales/inscripcion"
+            logoSrc="/images/logo-escudo.webp"
+            logoAlt="Escudo ING"
+          />
+        </Suspense>
       </div>
 
       {/* =========================
@@ -252,7 +257,10 @@ export default function Inicio() {
                 <img
                   src="/images/inicio/primaria-card.webp"
                   alt=""
+                  width="2048"
+                  height="1536"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </article>
@@ -276,7 +284,10 @@ export default function Inicio() {
                 <img
                   src="/images/inicio/secundaria-card.webp"
                   alt=""
+                  width="1536"
+                  height="2048"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </article>

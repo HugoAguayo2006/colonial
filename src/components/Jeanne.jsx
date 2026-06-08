@@ -51,6 +51,10 @@ export default function JeanneFloat() {
                 src="/icons/WhatsApp.webp"
                 alt="WhatsApp"
                 className="wa-icon"
+                width="2044"
+                height="2048"
+                loading="lazy"
+                decoding="async"
                 draggable="false"
               />
             </a>
@@ -64,6 +68,10 @@ export default function JeanneFloat() {
           src={jeanneSrc}
           alt="Madre Jeanne Chézard de Matel"
           className="jeanne-float-img"
+          width="1365"
+          height="2048"
+          loading="lazy"
+          decoding="async"
           draggable="false"
         />
 

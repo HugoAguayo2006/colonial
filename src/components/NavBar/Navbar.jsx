@@ -157,7 +157,10 @@ export default function Navbar() {
             className="ing-logo"
             src={LOGO_SRC}
             alt="Escudo Colegio Colonial"
+            width="1920"
+            height="1080"
             loading="eager"
+            fetchPriority="high"
           />
 
           <h1 className="ing-title">
@@ -186,6 +189,8 @@ export default function Navbar() {
                 src="/icons/facebook.webp"
                 alt="Facebook Colegio Colonial"
                 className="ing-iconImg"
+                width="2047"
+                height="2048"
                 loading="lazy"
               />
             </a>
@@ -203,6 +208,8 @@ export default function Navbar() {
                 src="/icons/instagram.webp"
                 alt="Instagram Colegio Colonial"
                 className="ing-iconImg"
+                width="250"
+                height="250"
                 loading="lazy"
               />
             </a>*/}
@@ -220,6 +227,8 @@ export default function Navbar() {
                 src="/icons/WhatsApp.webp"
                 alt="WhatsApp Colegio Colonial"
                 className="ing-iconImg"
+                width="2044"
+                height="2048"
                 loading="lazy"
               />
             </a>

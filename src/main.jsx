@@ -1,5 +1,5 @@
 // src/main.jsx
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -10,38 +10,26 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.jsx";
 import Inicio from "./pages/Inicio.jsx";
 
-// ⛔ Niveles (comentados)
-import Primaria from "./pages/niveles-educativos/Primaria.jsx";
-import Secundaria from "./pages/niveles-educativos/Secundaria.jsx";
-import Niveles from "./pages/niveles-educativos/NivelesEscolares.jsx";
-
-// ⛔ Inscripciones (comentados)
-import Inscripcion from "./pages/inscripciones/Inscripciones.jsx";
-import Inscripcion_Primaria from "./pages/inscripciones/Ins-primaria.jsx";
-import Inscripcion_Secundaria from "./pages/inscripciones/Ins-secundaria.jsx";
-
-// ⛔ Otras páginas (comentadas)
-import Contacto from "./pages/Contacto.jsx";
-import Calendario from "./pages/Calendario.jsx";
-
-// ⛔ Vida colonial (comentadas)
- import Eventos from "./pages/vida-colonial/Eventos.jsx";
- import Galeria from "./pages/vida-colonial/Galeria.jsx";
- import Actividades from "./pages/vida-colonial/Extracurriculares.jsx";
- import Otros from "./pages/vida-colonial/otros-servicios.jsx";
- import COLONIAL from "./pages/vida-colonial/VidaCol.jsx";
-
-// ⛔ Conócenos (comentadas)
- import VM from "./pages/conocenos/MisionVision.jsx";
- import Valores from "./pages/conocenos/Valores.jsx";
- // import Historia from "./pages/conocenos/Historia-1.jsx";
- import Campus from "./pages/conocenos/Campus.jsx";
-import Conocenos from "./pages/conocenos/Conocenos.jsx";
- import Modelo from "./pages/conocenos/Modelo.jsx";
-import CCT from "./pages/conocenos/CCT.jsx";
-
-// ⛔ NotFound comentado (opcional)
- import NotFound from "./pages/NotFound.jsx";
+const Primaria = lazy(() => import("./pages/niveles-educativos/Primaria.jsx"));
+const Secundaria = lazy(() => import("./pages/niveles-educativos/Secundaria.jsx"));
+const Niveles = lazy(() => import("./pages/niveles-educativos/NivelesEscolares.jsx"));
+const Inscripcion = lazy(() => import("./pages/inscripciones/Inscripciones.jsx"));
+const Inscripcion_Primaria = lazy(() => import("./pages/inscripciones/Ins-primaria.jsx"));
+const Inscripcion_Secundaria = lazy(() => import("./pages/inscripciones/Ins-secundaria.jsx"));
+const Contacto = lazy(() => import("./pages/Contacto.jsx"));
+const Calendario = lazy(() => import("./pages/Calendario.jsx"));
+const Eventos = lazy(() => import("./pages/vida-colonial/Eventos.jsx"));
+const Galeria = lazy(() => import("./pages/vida-colonial/Galeria.jsx"));
+const Actividades = lazy(() => import("./pages/vida-colonial/Extracurriculares.jsx"));
+const Otros = lazy(() => import("./pages/vida-colonial/otros-servicios.jsx"));
+const COLONIAL = lazy(() => import("./pages/vida-colonial/VidaCol.jsx"));
+const VM = lazy(() => import("./pages/conocenos/MisionVision.jsx"));
+const Valores = lazy(() => import("./pages/conocenos/Valores.jsx"));
+const Campus = lazy(() => import("./pages/conocenos/Campus.jsx"));
+const Conocenos = lazy(() => import("./pages/conocenos/Conocenos.jsx"));
+const Modelo = lazy(() => import("./pages/conocenos/Modelo.jsx"));
+const CCT = lazy(() => import("./pages/conocenos/CCT.jsx"));
+const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
 // ✅ CSS (puedes comentarlo si quieres descartar estilos)
 import "./styles.css";
@@ -69,40 +57,44 @@ const router = createBrowserRouter([
 
       // ⛔ Niveles
 
-       { path: "niveles/primaria", element: <Primaria /> },
-      { path: "niveles/secundaria", element: <Secundaria /> },
-       { path: "niveles", element: <Niveles /> },
+       { path: "niveles/primaria", element: lazyPage(<Primaria />) },
+      { path: "niveles/secundaria", element: lazyPage(<Secundaria />) },
+       { path: "niveles", element: lazyPage(<Niveles />) },
 
       // ⛔ Inscripciones
-       { path: "inscripciones/primaria", element: <Inscripcion_Primaria /> },
-      { path: "inscripciones/secundaria", element: <Inscripcion_Secundaria /> },
-       { path: "inscripciones", element: <Inscripcion /> },
+       { path: "inscripciones/primaria", element: lazyPage(<Inscripcion_Primaria />) },
+      { path: "inscripciones/secundaria", element: lazyPage(<Inscripcion_Secundaria />) },
+       { path: "inscripciones", element: lazyPage(<Inscripcion />) },
 
       // ⛔ Contacto / Calendario
-       { path: "contacto", element: <Contacto /> },
-      { path: "calendario", element: <Calendario /> },
+       { path: "contacto", element: lazyPage(<Contacto />) },
+      { path: "calendario", element: lazyPage(<Calendario />) },
 
       // ⛔ Vida ING
-       { path: "vida-colonial", element: <COLONIAL /> },
-        { path: "vida-colonial/eventos", element: <Eventos /> },
-       { path: "vida-colonial/galeria", element: <Galeria /> },
-       { path: "vida-colonial/extracurriculares", element: <Actividades /> },
-        { path: "vida-colonial/otros-servicios", element: <Otros /> },
+       { path: "vida-colonial", element: lazyPage(<COLONIAL />) },
+        { path: "vida-colonial/eventos", element: lazyPage(<Eventos />) },
+       { path: "vida-colonial/galeria", element: lazyPage(<Galeria />) },
+       { path: "vida-colonial/extracurriculares", element: lazyPage(<Actividades />) },
+        { path: "vida-colonial/otros-servicios", element: lazyPage(<Otros />) },
 
       // ⛔ Conócenos
-       { path: "conocenos/mision-vision", element: <VM /> },
-     { path: "conocenos/valores", element: <Valores /> },
+       { path: "conocenos/mision-vision", element: lazyPage(<VM />) },
+     { path: "conocenos/valores", element: lazyPage(<Valores />) },
       // { path: "conocenos/historia", element: <Historia /> },
-     { path: "conocenos/otros-campus", element: <Campus /> },
-     { path: "conocenos/modelo-educativo", element: <Modelo /> },
-      { path: "conocenos/clave-de-centro-de-trabajo", element: <CCT /> },
-       { path: "conocenos", element: <Conocenos /> },
+     { path: "conocenos/otros-campus", element: lazyPage(<Campus />) },
+     { path: "conocenos/modelo-educativo", element: lazyPage(<Modelo />) },
+      { path: "conocenos/clave-de-centro-de-trabajo", element: lazyPage(<CCT />) },
+       { path: "conocenos", element: lazyPage(<Conocenos />) },
 
       // ⛔ NotFound
-       { path: "*", element: <NotFound /> },
+       { path: "*", element: lazyPage(<NotFound />) },
     ],
   },
 ]);
+
+function lazyPage(element) {
+  return <Suspense fallback={null}>{element}</Suspense>;
+}
 
 /* =====================================================
    🚀 Render (sin Helmet por ahora)

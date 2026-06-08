@@ -16,6 +16,11 @@
   margin-top: -0px;
 }
 
+.cc-intercolegiales-fallback{
+  min-height: 360px;
+  background: #8B0000;
+}
+
 /* =========================
    HERO con carrusel atrás del título
 ========================= */
@@ -940,5 +945,4 @@
     }
 
 }
-
 

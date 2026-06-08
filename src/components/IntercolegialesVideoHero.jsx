@@ -10,9 +10,8 @@ export default function IntercolegialesVideoHero({
   logoAlt = "Escudo",
 }) {
   const forcedStart = Number(start) || 0;
-
-  // ✅ Cache buster para evitar reuso/caché del iframe
-  const [cb] = useState(() => Date.now());
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [cb] = useState(0);
 
   const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?start=${forcedStart}&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1&cb=${cb}`;
 
@@ -176,21 +175,32 @@ const labelSport = (k) => {
 
         <div className="inter-video__frame">
           <div className="inter-video__ratio">
-            <iframe
-              // ✅ KEY para forzar remount real del iframe
-              key={`${youtubeId}-${forcedStart}-${cb}`}
-              className="inter-video__iframe"
-              src={embedUrl}
-              title={title}
-              loading="eager"
-              allow="autoplay; encrypted-media; picture-in-picture; web-share"
-              allowFullScreen
-            />
+            {videoLoaded ? (
+              <iframe
+                key={`${youtubeId}-${forcedStart}`}
+                className="inter-video__iframe"
+                src={embedUrl}
+                title={title}
+                loading="lazy"
+                allow="autoplay; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            ) : (
+              <button
+                className="inter-video__poster"
+                type="button"
+                onClick={() => setVideoLoaded(true)}
+                aria-label="Reproducir video de Intercolegiales 2026"
+              >
+                <span className="inter-video__play" aria-hidden="true" />
+                <span className="inter-video__posterText">Reproducir video</span>
+              </button>
+            )}
           </div>
 
           {logoSrc && (
             <div className="inter-video__logo">
-              <img src={logoSrc} alt={logoAlt} />
+              <img src={logoSrc} alt={logoAlt} width="1920" height="1080" loading="lazy" />
             </div>
           )}
         </div>
@@ -236,7 +246,10 @@ const labelSport = (k) => {
                   <img
                     src={item.image}
                     alt={`Intercolegiales ${labelSport(item.sport)}`}
+                    width="1200"
+                    height="1600"
                     loading="lazy"
+                    decoding="async"
                   />
                   <span className={`tag-${item.sport}`}>{labelSport(item.sport)}</span>
                 </div>
