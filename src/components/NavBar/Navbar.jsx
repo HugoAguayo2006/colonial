@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 // === Logo webp ===
-const LOGO_SRC = "/images/logo-escudo.webp";
+const LOGO_SRC = "/images/logo-escudo-nav.webp";
 
 // === Links de redes (externos) ===
 const SOCIAL = {
@@ -157,8 +157,8 @@ export default function Navbar() {
             className="ing-logo"
             src={LOGO_SRC}
             alt="Escudo Colegio Colonial"
-            width="1920"
-            height="1080"
+            width="240"
+            height="135"
             loading="eager"
             fetchPriority="high"
           />
@@ -186,11 +186,11 @@ export default function Navbar() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src="/icons/facebook.webp"
+                src="/icons/facebook_icon.webp"
                 alt="Facebook Colegio Colonial"
                 className="ing-iconImg"
-                width="2047"
-                height="2048"
+                width="96"
+                height="96"
                 loading="lazy"
               />
             </a>
@@ -224,11 +224,11 @@ export default function Navbar() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src="/icons/WhatsApp.webp"
+                src="/icons/whatsapp-small.webp"
                 alt="WhatsApp Colegio Colonial"
                 className="ing-iconImg"
-                width="2044"
-                height="2048"
+                width="96"
+                height="96"
                 loading="lazy"
               />
             </a>
