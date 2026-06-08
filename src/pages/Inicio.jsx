@@ -1,5 +1,5 @@
 // src/pages/Inicio.jsx
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./Inicio.css";
@@ -7,6 +7,35 @@ import "./Inicio.css";
 const IntercolegialesVideoHero = lazy(() =>
   import("../components/IntercolegialesVideoHero"),
 );
+
+function DeferUntilVisible({ children, fallback = null }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || visible) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      const t = setTimeout(() => setVisible(true), 0);
+      return () => clearTimeout(t);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setVisible(true);
+        observer.disconnect();
+      },
+      { rootMargin: "0px 0px 120px 0px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [visible]);
+
+  return <div ref={ref}>{visible ? children : fallback}</div>;
+}
 
 export default function Inicio() {
   // ✅ Carrusel SOLO en el Hero detrás del título
@@ -28,12 +57,18 @@ export default function Inicio() {
   );
 
   const [idx, setIdx] = useState(0);
+  const [carouselReady, setCarouselReady] = useState(false);
 
   useEffect(() => {
     if (!slides.length) return;
     const t = setInterval(() => setIdx((p) => (p + 1) % slides.length), 5000);
     return () => clearInterval(t);
   }, [slides.length]);
+
+  useEffect(() => {
+    const t = setTimeout(() => setCarouselReady(true), 2400);
+    return () => clearTimeout(t);
+  }, []);
 
   const quick = [
     { label: "Primaria", to: "/niveles/primaria" },
@@ -110,7 +145,7 @@ export default function Inicio() {
       ========================== */}
       <header className="cc-hero" aria-label="Inicio Colegio Colonial">
         <div className="cc-hero-bg" aria-hidden="true">
-          {slides.map((slide, i) => (
+          {(carouselReady ? slides : slides.slice(0, 1)).map((slide, i) => (
             <picture
               key={slide.src}
               className={`cc-hero-slide ${i === idx ? "is-active" : ""}`}
@@ -185,17 +220,19 @@ export default function Inicio() {
       <div className="separator-blue" />
 
       <div>
-        <Suspense fallback={<div className="cc-intercolegiales-fallback" />}>
-          <IntercolegialesVideoHero
-            title="Intercolegiales 2026"
-            subtitle="Invitamos a los colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento a disputar torneos deportivos y vivir una experiencia de unidad, respeto y convivencia."
-            youtubeId="VNn2FhvNGTI"
-            start={44}
-            ctaHref="/intercolegiales/inscripcion"
-            logoSrc="/images/logo-escudo.webp"
-            logoAlt="Escudo ING"
-          />
-        </Suspense>
+        <DeferUntilVisible fallback={<div className="cc-intercolegiales-fallback" />}>
+          <Suspense fallback={<div className="cc-intercolegiales-fallback" />}>
+            <IntercolegialesVideoHero
+              title="Intercolegiales 2026"
+              subtitle="Invitamos a los colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento a disputar torneos deportivos y vivir una experiencia de unidad, respeto y convivencia."
+              youtubeId="VNn2FhvNGTI"
+              start={44}
+              ctaHref="/intercolegiales/inscripcion"
+              logoSrc="/images/logo-escudo.webp"
+              logoAlt="Escudo ING"
+            />
+          </Suspense>
+        </DeferUntilVisible>
       </div>
 
       {/* =========================
